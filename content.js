@@ -100,6 +100,7 @@
 
     visibleFields.set(key, { field, el: labelEl });
     updatePanel();
+    nudgeToggle();
   }
 
   function runEnhancement() {
@@ -116,6 +117,18 @@
       }
     });
     if (changed) updatePanel();
+  }
+
+  // Briefly animate the toggle button to signal fields are available
+  function nudgeToggle() {
+    const toggle = document.getElementById("shackademy-panel-toggle");
+    if (!toggle) return;
+    // Only play if not already animating
+    if (toggle.classList.contains("shackademy-nudge")) return;
+    toggle.classList.add("shackademy-nudge");
+    toggle.addEventListener("animationend", () => {
+      toggle.classList.remove("shackademy-nudge");
+    }, { once: true });
   }
 
   // ---------------------------------------------------------------------------
@@ -284,9 +297,8 @@
       return;
     }
 
-    if (!userClosedPanel) {
-      panel.classList.remove("hidden");
-    }
+    // Panel never auto-opens — user must click the toggle
+    // (The toggle button animates to signal fields are available)
 
     visibleFields.forEach(({ field }) => {
       const li = document.createElement("li");
