@@ -121,13 +121,12 @@
 
   // Briefly animate the toggle button to signal fields are available
   function nudgeToggle() {
-    const toggle = document.getElementById("shackademy-panel-toggle");
-    if (!toggle) return;
-    // Only play if not already animating
-    if (toggle.classList.contains("shackademy-nudge")) return;
-    toggle.classList.add("shackademy-nudge");
-    toggle.addEventListener("animationend", () => {
-      toggle.classList.remove("shackademy-nudge");
+    const tab = document.getElementById("shackademy-panel-tab");
+    if (!tab) return;
+    if (tab.classList.contains("shackademy-nudge")) return;
+    tab.classList.add("shackademy-nudge");
+    tab.addEventListener("animationend", () => {
+      tab.classList.remove("shackademy-nudge");
     }, { once: true });
   }
 
@@ -250,12 +249,14 @@
     panel.classList.add("hidden"); // start hidden; auto-opens when fields are detected
 
     panel.innerHTML = `
+      <button id="shackademy-panel-tab" aria-label="Toggle Shackademy field guide">
+        <span>S</span>
+      </button>
       <div id="shackademy-panel-header">
         <div id="shackademy-panel-logo">
           <span id="shackademy-panel-logo-mark">S</span>
           <span>Shackademy</span>
         </div>
-        <button id="shackademy-panel-close" aria-label="Close panel">&times;</button>
       </div>
       <div id="shackademy-panel-subheader">Fields on this page</div>
       <ul id="shackademy-panel-list" role="list"></ul>
@@ -268,21 +269,17 @@
 
     document.body.appendChild(panel);
 
-    panel.querySelector("#shackademy-panel-close")
+    panel.querySelector("#shackademy-panel-tab")
       ?.addEventListener("click", () => {
-        userClosedPanel = true;
-        panel.classList.add("hidden");
+        const isHidden = panel.classList.contains("hidden");
+        if (isHidden) {
+          userClosedPanel = false;
+          panel.classList.remove("hidden");
+        } else {
+          userClosedPanel = true;
+          panel.classList.add("hidden");
+        }
       });
-
-    const toggle = document.createElement("button");
-    toggle.id = "shackademy-panel-toggle";
-    toggle.setAttribute("aria-label", "Open Shackademy field guide");
-    toggle.innerHTML = `<span>S</span>`;
-    toggle.addEventListener("click", () => {
-      userClosedPanel = false;
-      panel.classList.remove("hidden");
-    });
-    document.body.appendChild(toggle);
   }
 
   function updatePanel() {
@@ -334,8 +331,7 @@
 
   function teardown() {
     closeModal();
-    document.getElementById(PANEL_ID)?.remove();
-    document.getElementById("shackademy-panel-toggle")?.remove();
+    document.getElementById(PANEL_ID)?.remove(); // panel-tab is inside panel, removed with it
 
     document.querySelectorAll(`[${ENHANCED_ATTR}="true"]`).forEach((el) => {
       el.removeAttribute(ENHANCED_ATTR);

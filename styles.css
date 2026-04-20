@@ -271,6 +271,7 @@
   flex-direction: column;
   font-family: Arial, sans-serif;
   transition: transform 0.22s ease;
+  overflow: visible;
 }
 
 #shackademy-panel.hidden {
@@ -308,24 +309,7 @@
   font-weight: 800;
 }
 
-#shackademy-panel-close {
-  border: none;
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-  font-size: 18px;
-  width: 26px;
-  height: 26px;
-  border-radius: 5px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.15s ease;
-}
-
-#shackademy-panel-close:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
+/* panel close button removed — the S tab now handles open/close */
 
 #shackademy-panel-subheader {
   padding: 10px 16px 8px;
@@ -423,12 +407,12 @@
   text-decoration: underline;
 }
 
-/* ── Panel toggle button (shown when panel is hidden) ───────────────────── */
+/* ── Panel tab (attached to left edge of panel, always visible) ─────────── */
 
-#shackademy-panel-toggle {
-  position: fixed;
+#shackademy-panel-tab {
+  position: absolute;
   top: 50%;
-  right: 0;
+  left: -32px;
   transform: translateY(-50%);
   width: 32px;
   height: 64px;
@@ -436,7 +420,6 @@
   border: none;
   border-radius: 8px 0 0 8px;
   cursor: pointer;
-  z-index: 2147483644;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -444,12 +427,13 @@
   transition: background 0.15s ease, width 0.15s ease;
 }
 
-#shackademy-panel-toggle:hover {
+#shackademy-panel-tab:hover {
   background: #1fcb97;
   width: 36px;
+  left: -36px;
 }
 
-#shackademy-panel-toggle span {
+#shackademy-panel-tab span {
   color: #ffffff;
   font-size: 14px;
   font-weight: 800;
@@ -468,15 +452,15 @@
   to   { opacity: 1; transform: translate(-50%, -50%); }
 }
 
-/* ── Toggle nudge animation (plays once when fields are detected) ────────── */
+/* ── Tab nudge animation (plays once when fields are detected) ───────────── */
 
-#shackademy-panel-toggle.shackademy-nudge {
+#shackademy-panel-tab.shackademy-nudge {
   animation: shackademy-nudge 1s ease forwards;
 }
 
 @keyframes shackademy-nudge {
-  0%   { background: #2B2E33; width: 32px; }
-  25%  { background: #1fcb97; width: 48px; }
-  60%  { background: #1fcb97; width: 48px; }
-  100% { background: #2B2E33; width: 32px; }
+  0%   { background: #2B2E33; width: 32px; left: -32px; }
+  25%  { background: #1fcb97; width: 52px; left: -52px; }
+  60%  { background: #1fcb97; width: 52px; left: -52px; }
+  100% { background: #2B2E33; width: 32px; left: -32px; }
 }
