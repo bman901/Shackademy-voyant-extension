@@ -309,7 +309,24 @@
   font-weight: 800;
 }
 
-/* panel close button removed — the S tab now handles open/close */
+#shackademy-panel-close {
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 18px;
+  width: 26px;
+  height: 26px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+}
+
+#shackademy-panel-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
 
 #shackademy-panel-subheader {
   padding: 10px 16px 8px;

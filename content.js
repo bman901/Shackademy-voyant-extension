@@ -257,6 +257,7 @@
           <span id="shackademy-panel-logo-mark">S</span>
           <span>Shackademy</span>
         </div>
+        <button id="shackademy-panel-close" aria-label="Close panel">&times;</button>
       </div>
       <div id="shackademy-panel-subheader">Fields on this page</div>
       <ul id="shackademy-panel-list" role="list"></ul>
@@ -268,6 +269,12 @@
     `;
 
     document.body.appendChild(panel);
+
+    panel.querySelector("#shackademy-panel-close")
+      ?.addEventListener("click", () => {
+        userClosedPanel = true;
+        panel.classList.add("hidden");
+      });
 
     panel.querySelector("#shackademy-panel-tab")
       ?.addEventListener("click", () => {
