@@ -231,6 +231,7 @@
     panel.id = PANEL_ID;
     panel.setAttribute("role", "complementary");
     panel.setAttribute("aria-label", "Shackademy field guide");
+    panel.classList.add("hidden"); // start hidden; auto-opens when fields are detected
 
     panel.innerHTML = `
       <div id="shackademy-panel-header">

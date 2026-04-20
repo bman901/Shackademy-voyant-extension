@@ -10,59 +10,57 @@
 //
 // Optional:
 //   lessonUrl — Shackademy lesson link. Omit if none.
-//   videoUrl  — YouTube embed URL. Omit if none.
+//   videoUrl  — YouTube link in any format (will be auto-converted to embed).
 //
 // If both lessonUrl and videoUrl are absent, the modal shows text only (no tabs).
 // If only lessonUrl is present, a button appears in the Details panel (no tabs).
 // If videoUrl is present, a Video tab appears alongside Details.
+//
+// EXAMPLES (remove // to activate):
+//
+// Field with lesson but no video:
+// {
+//   key: "employmentInputBonuses",
+//   label: "Bonus",
+//   helpText: `
+//     <p>Enter any <strong>expected annual bonus</strong> here.</p>
+//     <ul>
+//       <li>Use an average figure if it varies year to year</li>
+//       <li>Leave blank if no bonus is expected</li>
+//     </ul>
+//   `,
+//   lessonUrl: "https://shackademy.com/...",
+// },
+//
+// Text only, no lesson or video:
+// {
+//   key: "employmentInputStatePensionAge",
+//   label: "State Pension Age",
+//   helpText: `
+//     <p>Voyant pre-fills this based on current UK government projections.</p>
+//     <p>Only change it if the client has a specific reason to expect a different age.</p>
+//   `,
+// },
+//
+// Same visible label, different section:
+// {
+//   key: "spouseInputSalary",
+//   label: "Salary (partner)",
+//   helpText: `
+//     <h3>Partner's salary</h3>
+//     <p>Enter the partner's <strong>gross annual salary</strong> before deductions.</p>
+//   `,
+//   lessonUrl: "https://shackademy.com/...",
+// },
 // =============================================================================
-
-  // ── EXAMPLE — field with lesson but no video ─────────────────────────────
-  // {
-  //   key: "employmentInputBonuses",
-  //   label: "Bonus",
-  //   helpText: `
-  //     <p>Enter any <strong>expected annual bonus</strong> here.</p>
-  //     <ul>
-  //       <li>Use an average figure if it varies year to year</li>
-  //       <li>Leave blank if no bonus is expected</li>
-  //     </ul>
-  //   `,
-  //   lessonUrl: "https://shackademy.com/...",
-  // },
-
-  // ── EXAMPLE — text only, no lesson or video ──────────────────────────────
-  // {
-  //   key: "employmentInputStatePensionAge",
-  //   label: "State Pension Age",
-  //   helpText: `
-  //     <p>Voyant pre-fills this based on current UK government projections.</p>
-  //     <p>Only change it if the client has a specific reason to expect a different age.</p>
-  //   `,
-  // },
-
-  // ── EXAMPLE — same visible label, different section ──────────────────────
-  // {
-  //   key: "spouseInputSalary",
-  //   label: "Salary (partner)",
-  //   helpText: `
-  //     <h3>Partner's salary</h3>
-  //     <p>Enter the partner's <strong>gross annual salary</strong> before deductions.</p>
-  //   `,
-  //   lessonUrl: "https://shackademy.com/...",
-  // },
 
 const SHACKADEMY_FIELDS = [
 
   // ============================================================
-  // CATEGORY: People
+  // PAGE: People
   // ============================================================
 
-  // ------------------------------------------------------------
-  // SUB-CATEGORY: N/A
-  // ------------------------------------------------------------
-
-  // ── Tab: Basics ──────────────────────────────────────
+  // ── Tab: Basics ──────────────────────────────────────────────
 
   {
     key: "personInputTypeLabel",
@@ -71,7 +69,7 @@ const SHACKADEMY_FIELDS = [
       <h3>What to enter</h3>
       <p>Select your relationship to this person. Voyant uses this to correctly apply tax allowances, pension rules, and income calculations for each person.</p>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773147e337de51fe604f62aUnit"
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773147e337de51fe604f62aUnit",
   },
   {
     key: "personInputFirstName",
@@ -80,20 +78,20 @@ const SHACKADEMY_FIELDS = [
       <h3>What to enter</h3>
       <p>Enter the first name of the person you're adding. Voyant uses this throughout the plan to label charts, reports, and projections.</p>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773147e337de51fe604f62aUnit"
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773147e337de51fe604f62aUnit",
   },
   {
     key: "personInputLastName",
     label: "Last name",
     helpText: `
       <h3>What to enter</h3>
-      <p>Enter the last name of the person you're adding. This only flows through to Voyant reports, so if you prefer you can just use an initial</p>
+      <p>Enter the last name of the person you're adding. This only flows through to Voyant reports, so if you prefer you can just use an initial.</p>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773147e337de51fe604f62aUnit"
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773147e337de51fe604f62aUnit",
   },
   {
     key: "alreadyRetiredDropdown",
-    label: "Is this personal already retired?",
+    label: "Is this person already retired?",
     helpText: `
       <h3>What to enter</h3>
       <p>Select <strong>Yes</strong> if this person has already stopped working. Select <strong>No</strong> if they are still working, even part-time.</p>
@@ -105,7 +103,7 @@ const SHACKADEMY_FIELDS = [
         <li>If you have any issues with this, please ask in the community or contact Ben</li>
       </ul>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773147e337de51fe604f62aUnit"
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773147e337de51fe604f62aUnit",
   },
   {
     key: "retirementAge",
@@ -119,7 +117,7 @@ const SHACKADEMY_FIELDS = [
         <li>You can adjust retirement timing later using the timeline</li>
       </ul>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773147e337de51fe604f62aUnit"
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773147e337de51fe604f62aUnit",
   },
 
 ];
