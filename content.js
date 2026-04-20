@@ -20,7 +20,6 @@
   );
 
   // Track fields currently visible on the page: key -> { field, el }
-  // Tracks whether the user has explicitly closed the panel this session
   let userClosedPanel = false;
   const visibleFields = new Map();
 
@@ -28,18 +27,12 @@
   // Utilities
   // ---------------------------------------------------------------------------
 
-  // Given a span.help-wrapper-yield, return the key from its parent <label>.
-  // Prefers the `for` attribute; falls back to `id`.
-  function getLabelKey(spanEl) {
-    const labelEl = spanEl.closest("label");
-    if (!labelEl) return null;
+  // Given a label element, return its key (prefers `for`, falls back to `id`)
+  function getLabelKey(labelEl) {
     return labelEl.getAttribute("for") || labelEl.getAttribute("id") || null;
   }
 
   // Accepts any YouTube URL format and returns the embed URL.
-  //   https://www.youtube.com/watch?v=VIDEO_ID
-  //   https://youtu.be/VIDEO_ID
-  //   https://www.youtube.com/embed/VIDEO_ID  (passed through unchanged)
   function toEmbedUrl(url) {
     if (!url) return null;
     try {
@@ -62,56 +55,67 @@
   // Find & enhance targets
   // ---------------------------------------------------------------------------
 
+  // Target all <label> elements whose for/id matches a key in our config
   function findTargets() {
-    return Array.from(
-      document.querySelectorAll("span.help-wrapper-yield")
-    ).filter((el) => {
+    return Array.from(document.querySelectorAll("label")).filter((el) => {
       const key = getLabelKey(el);
       return key && fieldMap.has(key);
     });
   }
 
-  function enhanceTarget(el) {
-    if (el.getAttribute(ENHANCED_ATTR) === "true") return;
+  function enhanceTarget(labelEl) {
+    if (labelEl.getAttribute(ENHANCED_ATTR) === "true") return;
 
-    const key   = getLabelKey(el);
+    const key   = getLabelKey(labelEl);
     const field = fieldMap.get(key);
     if (!field) return;
 
-    el.setAttribute(ENHANCED_ATTR, "true");
-    el.classList.add("shackademy-enhanced");
-    el.setAttribute("role", "button");
-    el.setAttribute("tabindex", "0");
-    el.setAttribute("aria-haspopup", "dialog");
-    el.setAttribute("aria-label", `Open Shackademy help for ${field.label}`);
+    labelEl.setAttribute(ENHANCED_ATTR, "true");
+    labelEl.classList.add("shackademy-enhanced");
+    labelEl.setAttribute("role", "button");
+    labelEl.setAttribute("tabindex", "0");
+    labelEl.setAttribute("aria-haspopup", "dialog");
+    labelEl.setAttribute("aria-label", `Open Shackademy help for ${field.label}`);
 
-    if (!el.querySelector(`.${BADGE_CLASS}`)) {
+    if (!labelEl.querySelector(`.${BADGE_CLASS}`)) {
       const badge = document.createElement("span");
       badge.className = BADGE_CLASS;
       badge.textContent = "?";
       badge.setAttribute("aria-hidden", "true");
-      el.appendChild(badge);
+      labelEl.appendChild(badge);
     }
 
-    el.addEventListener("click", (e) => {
+    labelEl.addEventListener("click", (e) => {
       e.preventDefault();
       e.stopPropagation();
       openModal(field);
     });
 
-    el.addEventListener("keydown", (e) => {
+    labelEl.addEventListener("keydown", (e) => {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
         openModal(field);
       }
     });
 
-    visibleFields.set(key, { field, el });
+    visibleFields.set(key, { field, el: labelEl });
     updatePanel();
   }
 
   function runEnhancement() {
     findTargets().forEach(enhanceTarget);
+  }
+
+  // Remove any fields from visibleFields that are no longer in the DOM
+  function runCleanup() {
+    let changed = false;
+    visibleFields.forEach(({ el }, key) => {
+      if (!document.body.contains(el)) {
+        visibleFields.delete(key);
+        changed = true;
+      }
+    });
+    if (changed) updatePanel();
   }
 
   // ---------------------------------------------------------------------------
@@ -141,10 +145,9 @@
   function openModal(field) {
     if (document.getElementById(MODAL_ID)) closeModal();
 
-    const hasLesson  = !!field.lessonUrl;
-    const embedUrl   = toEmbedUrl(field.videoUrl);
-    const hasVideo   = !!embedUrl;
-    const hasTabs    = hasVideo;
+    const hasLesson = !!field.lessonUrl;
+    const embedUrl  = toEmbedUrl(field.videoUrl);
+    const hasVideo  = !!embedUrl;
 
     const lessonButtonHTML = hasLesson ? `
       <div class="shackademy-links">
@@ -153,7 +156,7 @@
         </a>
       </div>` : "";
 
-    const tabsHTML = hasTabs ? `
+    const tabsHTML = hasVideo ? `
       <div id="shackademy-tabs" role="tablist">
         <button class="shackademy-tab active" data-tab="details"
           role="tab" aria-selected="true" aria-controls="shackademy-panel-details">
@@ -277,17 +280,15 @@
     list.innerHTML = "";
 
     if (visibleFields.size === 0) {
-      // Auto-close when nothing is found on this page
       panel.classList.add("hidden");
       return;
     }
 
-    // Auto-open on first detection, unless the user has manually closed it
     if (!userClosedPanel) {
       panel.classList.remove("hidden");
     }
 
-    visibleFields.forEach(({ field, el }) => {
+    visibleFields.forEach(({ field }) => {
       const li = document.createElement("li");
       li.className = "shackademy-panel-item";
 
@@ -303,9 +304,12 @@
       `;
 
       li.querySelector("button").addEventListener("click", () => {
+        const entry = visibleFields.get(field.key);
+        if (entry) {
+          entry.el.scrollIntoView({ behavior: "smooth", block: "center" });
+          entry.el.focus();
+        }
         openModal(field);
-        el.scrollIntoView({ behavior: "smooth", block: "center" });
-        el.focus();
       });
 
       list.appendChild(li);
@@ -344,7 +348,10 @@
   // ---------------------------------------------------------------------------
 
   function startObserver() {
-    const observer = new MutationObserver(() => runEnhancement());
+    const observer = new MutationObserver(() => {
+      runEnhancement(); // pick up any newly added fields
+      runCleanup();     // remove any fields that have left the DOM
+    });
     observer.observe(document.body, { childList: true, subtree: true });
     window.__shackademyObserver = observer;
   }
