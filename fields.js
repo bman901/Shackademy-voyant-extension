@@ -341,6 +341,8 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter a distinguishable name for the account</p>
       <h3>Tips</h3>
       <ul>
+        <li>It may make it easier later to include the owner's name in the name</li>
+        <li>e.g. "Jane ABC current account"</li>
         <li>Ensure you don't include any identifiable information like account numbers</li>
       </ul>
     `,
@@ -426,6 +428,11 @@ window.SHACKADEMY_FIELDS = [
       <ul>
         <li>Default is set to 'Annually' but you can change this on the right hand side of the input box</li>
       </ul>
+      <h3>Where can I see these contributions after I've set them up?</h3>
+      <ul>
+        <li>Contributions are included in the black line of the Let's See chart, so setting up contributions when you didn't have them previously will push the black line up higher</li>
+        <li>You will also see contributions in the Year View > Expenses tab to see the contribution as an Expense</li>
+      <ul>
     `,
     lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit"
   },
@@ -504,6 +511,8 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter a distinguishable name for the account</p>
       <h3>Tips</h3>
       <ul>
+        <li>It may make it easier later to include the owner's name in the name</li>
+        <li>e.g. "Jane ABC ISA"</li>
         <li>Ensure you don't include any identifiable information like account numbers</li>
       </ul>
     `,
@@ -678,7 +687,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Grow the account by either entered values below or by Portfolio/Holdings which you can complete via the Tabs above.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Our suggestion is to use <strong>Entered Interest Rate</strong> for all accounts until you're familiar with the impact of changing to Portfolio/Holdings.</li>
+        <li>Our suggestion is to use <strong>Entered Growth Rate</strong> for all accounts until you're familiar with the impact of changing to Portfolio/Holdings.</li>
       </ul>
     `,
     lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit",
@@ -728,6 +737,209 @@ window.SHACKADEMY_FIELDS = [
     `,
   },
 
+//TODO: Property
+
+  // ============================================================
+  // CATEGORY: Pensions
+  // ============================================================
+
+  // ------------------------------------------------------------
+  // SUB-CATEGORY: Money Purchase
+  // ------------------------------------------------------------
+
+  // ── Tab: Basics ──────────────────────────────────────────────
+
+  {
+    key: "ukMoneyPurchaseInputOwnerLabel",
+    label: "Owner",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select the owner of the pension by expanding the menu and selecting / deselecting individuals by clicking on their names. You will see your selection in the owner window.</p>
+    `,
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773214bcbc96cfe9f04a018Unit",
+  },
+  {
+    key: "ukMoneyPurchaseInputName",
+    label: "Name",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter a distinguishable name for the account</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>It may make it easier later to include the owner's name in the name</li>
+        <li>e.g. "Jane ABC pension"</li>
+        <li>Ensure you don't include any identifiable information like account numbers</li>
+      </ul>
+    `,
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773214bcbc96cfe9f04a018Unit",
+  },
+  {
+    key: "ukMoneyPurchaseInputType",
+    label: "Type",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select the type of Money Purchase pension.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>The type is used largely for informational purposes only.</li>
+        <li>The type of money purchase does not appear in reports or on the Let's See charts or general overviews.</li>
+        <li>There is a difference, however, between personal pensions (PPP/GPP/SIPP) and occupational schemes (COMP/CIMP schemes, grouped together under the moniker 'Occupational Pension', and Small Self-Administered Schemes), in terms of how tax relief is granted.</li>
+        <li>See <a href="https://support.planwithvoyant.com/hc/en-us/articles/360054226432-Contributions-Tax-relief-on-contributions-to-Money-Purchase-Pensions-UK" target="_blank">this article on tax relief on contributions to money purchase pensions</a> for further information.</li>
+        <li>James explains the difference between 'net pay' and 'relief at source' pensions in <a href="https://shackademy.com/path-player?courseid=module-2&unit=6822ca51fae53e450e01914dUnit" target="_blank">this lesson.</a></li>
+      </ul>
+    `,
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773214bcbc96cfe9f04a018Unit",
+  },
+  {
+    key: "ukMoneyPurchaseInputBalanceLabel",
+    label: "Balance",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the balance of the pension as at today's date.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>The plan start date is 6th April each year</li>  
+        <li>This is updated to following tax year in October each year</li>
+        <li>This means there is only ever at maximum a 6 month differential in account balances</li>
+        <li>You will spend 6 months of the year working in arrears, and 6 months working in advance</li>
+        <li>The easiest way to approach this is to update your account balances in October and April each year</li>
+        <li><a href="https://shackademy.com/path-player?courseid=voyant&unit=68e5b24f932f5484590240fdUnit" target="_blank">Our lesson on how plan years are updated is here</a></li>
+      </ul>
+    `,
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773214bcbc96cfe9f04a018Unit",
+  },
+  {
+    key: "ieMoneyPurchaseEmployerContribution",
+    label: "Employer Contribution",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Whenever employer contributions are being made these should always be entered as a gross amount and they will be identified by the software as an 'unscheduled' contribution.</p>
+    `,
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773214bcbc96cfe9f04a018Unit",
+  },
+  {
+    key: "employerContributionType",
+    label: "Employer Contribution Type",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Our suggestion is to use 'Fixed' and enter the gross amount rather than 'Matching'</p>
+    `,
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773214bcbc96cfe9f04a018Unit",
+  },
+  {
+    key: "employerContributionType",
+    label: "Employer Contribution Type",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Our suggestion is to use 'Fixed' and enter the gross amount rather than 'Matching'</p>
+    `,
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773214bcbc96cfe9f04a018Unit",
+  },
+  {
+    key: "matchingPercentContribution",
+    label: "Matching Contribution",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Specify the percentage of your contribution that your employer is willing to match. For example, enter 100% to indicate that one hundred per cent of your contributions are matched by your company.</p>
+    `,
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773214bcbc96cfe9f04a018Unit",
+  },
+  {
+    key: "matchingPercentIncome",
+    label: "Matching Income",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>As a percentage of income, what is the maximum amount the employer is willing to match. For example, enter 10% to indicate that your employer would match up to a maximum of 10% your salary.</p>
+    `,
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773214bcbc96cfe9f04a018Unit",
+  },
+  {
+    key: "fixedContributionType",
+    label: "Contribution Type",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select how you wish to calculate regular contributions, either as a fixed amount (with or without inflation) or as a percentage of income.</p>
+    `,
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773214bcbc96cfe9f04a018Unit",
+  },
+  {
+    key: "ukMoneyPurchaseInputEmployerRebatePercent",
+    label: "Employer NI rebate (% of NI reduction)",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Specify the percentage of the employer's NI savings that will be rebated to you. Any rebated NI savings will be paid by the employer into the pension.</p>
+    `,
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773214bcbc96cfe9f04a018Unit",
+  },
+  {
+    key: "ukMoneyPurchaseInputEmployerNicRateCode",
+    label: "Employee Code",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select your NI rate code. This code will be used to calculate the employer's NI savings that may then be rebated to you as an additional pension contribution, based on the percentage entered above.</p>
+    `,
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773214bcbc96cfe9f04a018Unit",
+  },
+
+    // ── Tab: Crystallisations ──────────────────────────────────────────────
+
+  {
+    key: "crystallisationApplies",
+    label: "Apply Crystallisation Instructions",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>This section is predominantly for a one-off withdrawal from your pension - refer to the lesson below for details</p>
+    `,
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=67ca5669ebbfa089ff0ceec9Unit",
+  },
+
+    // ── Tab: Planned Withdrawals ──────────────────────────────────────────────
+
+  {
+    key: "drawdownUspWithdrawStrategy",
+    label: "Pension Strategy",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Two options are available to set how incomes will be taken from money purchases. These are UFPLS and Flexi (Flexible Access Drawdown) and they determine whether an element of taxable income will be included in each withdrawal or if withdrawals are to be taken entirely from the pension owner’s tax-free cash allowance if available.
+      <br><br>
+      <strong>Flexible Access Drawdown</strong> = Allows scheduled withdrawals from money purchase pensions to be taken from the owner's tax-free cash allowance first. The total withdrawal amount specified will be tax free. With each amount withdrawn tax free, an additional 75% is crystallised and moved into a linked drawdown account, which the software creates automatically.
+      <br><br>
+      <strong>Please Note</strong> – The Flexible Access Drawdown option can only work if the amount you are withdrawing is less than the pension’s overall tax-free cash allowance, which is normally 25% of the pension’s balance. For example, if you were to schedule a withdrawal of 50% or 100% of a pension’s total balance, the software will withdraw this amount. It will not limit withdrawals to only the tax-free allowance since the amount scheduled clearly exceeds it. You will receive a combination of taxable and tax-free cash, effectively an UFPLS withdrawal, even if you have the Flexible Access Withdrawal selected as the withdrawal strategy.
+      <br><br>
+      With the Flexi option, when the tax free cash runs out there is still likely to be pension money available in the drawdown pot. You will need to set up another planned withdrawal from the Drawdown - MP pension to liquidate these funds.
+      <br><br>
+      <strong>UFPLS</strong> = Withdrawals the Amount as 25% tax free and 75% potentially taxable. This is also the software’s default for 'as needed' withdrawals taken from money purchase pensions.
+      <br><br>
+      <strong>Note:</strong> The Pension Strategy window will not appear if only drawdown accounts are selected as there is no tax free element to them so all of the withdrawal is potentially taxable.</p>
+    `,
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=67ca5669ebbfa089ff0ceec9Unit",
+  },
+
+  // ── Tab: Beneficiaries ──────────────────────────────────────────────
+
+  {
+    key: "pensionSurvivorshipOptions",
+    label: "Survivorship Option",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Choose between 'Lump Sum' and 'Move to Beneficiary Drawdown Pension'</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>James covers the difference between the two in <a href="https://shackademy.com/path-player?courseid=module-2&unit=6823c15306c62685ba04c70dUnit" target="_blank">this lesson.</a></li>
+      </ul>
+    `,
+  },
+
+  // ── Tab: Annuitization ──────────────────────────────────────────────
+
+  {
+    key: "annuitizationApplies",
+    label: "Annuitization Applies",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Are you intending to use any of these pension's funds to purchase an annuity? If so, toggle 'yes'</p>
+    `,
+  },
 
 
 
