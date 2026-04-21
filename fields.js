@@ -937,7 +937,7 @@ window.SHACKADEMY_FIELDS = [
     label: "Annuitization Applies",
     helpText: `
       <h3>What to enter</h3>
-      <p>Are you intending to use any of these pension's funds to purchase an annuity? If so, toggle 'yes'</p>
+      <p>Are you intending to use any of this pension's funds to purchase an annuity? If so, toggle 'yes'</p>
     `,
   },
   {
