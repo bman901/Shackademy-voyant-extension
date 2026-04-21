@@ -125,7 +125,7 @@ window.SHACKADEMY_FIELDS = [
   },
 
   // ============================================================
-  // CATEGORY: People
+  // CATEGORY: Goals
   // ============================================================
 
   // ------------------------------------------------------------
@@ -139,7 +139,7 @@ window.SHACKADEMY_FIELDS = [
     label: "Owner",
     helpText: `
       <h3>What to enter</h3>
-      <p>Select who the expense belongs to whether an individual or multiple people.</p>
+      <p>Select the owner/s of the goal by expanding the menu and selecting / deselecting individuals by clicking on their names. You will see your selection/s in the owner window.</p>
     `,
     lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773147b8f48f0512d0bc578Unit",
     videoUrl: "https://www.youtube.com/watch?v=npuErPiZtWU",
@@ -282,15 +282,19 @@ window.SHACKADEMY_FIELDS = [
   label: "Preferred Payment Sources",
   helpText: `
     <h3>What to enter</h3>
-    <p>Tip: If setting a preferred payment source, use the "Only Use Preferred Sources" to Pay the Expense very sparingly, if at all. When ticked, this setting can create artificial shortfalls if the preferred source is inadequately funded to pay the linked expense. These artificial shortfalls can prevent the software’s need analysers from returning results.
+    <p>Tip: If setting a preferred payment source, use the "Only Use Preferred Sources" to Pay the Expense very sparingly, if at all.
+    <br><br>
+    When ticked, this setting can create artificial shortfalls if the preferred source is inadequately funded to pay the linked expense. These artificial shortfalls can prevent the software’s need analysers from returning results.
     <br><br>
     <strong>When might you tick the “Only Allow…”option? </strong>
-    <br><br>
+    <br>
     In most cases, we recommend only using this setting in a what-if scenario.
     <br><br>
-    For example, suppose you are saving for your children’s university fees and you want to run a test to determine if you are saving enough to a particular account.<br>
-    Even if the account is set as a preferred payment source, income and other assets sources will be used if the account does not have the funds to meet the linked expense.<br>
-    However, by selecting the “Only Use Preferred Payment Sources” option, you could, in this scenario, test the account for adequate funding.<br>
+    For example, suppose you are saving for your children’s university fees and you want to run a test to determine if you are saving enough to a particular account.
+    <br><br>
+    Even if the account is set as a preferred payment source, income and other assets sources will be used if the account does not have the funds to meet the linked expense.
+    <br><br>
+    However, by selecting the “Only Use Preferred Payment Sources” option, you could, in this scenario, test the account for adequate funding.
     </p>
     <h3>Tips</h3>
     <ul>
@@ -300,6 +304,86 @@ window.SHACKADEMY_FIELDS = [
   lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773147b8f48f0512d0bc578Unit",
   },
 
+//TODO: Event
 
+//TODO: Stage
+
+//TODO: Income
+
+  // ============================================================
+  // CATEGORY: Savings & Investments
+  // ============================================================
+
+  // ------------------------------------------------------------
+  // SUB-CATEGORY: Savings
+  // ------------------------------------------------------------
+
+  // ── Tab: Basics ──────────────────────────────────────────────
+
+  {
+    key: "ukSavingInputOwnerLabel",
+    label: "Owner",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select the owner/s of the Savings account by expanding the menu and selecting / deselecting individuals by clicking on their names. You will see your selection/s in the owner window.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Ownership defaults to the principle person. Check correct ownership for each product.</li>
+      </ul>
+    `,
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit"
+  },
+  {
+    key: "ukSavingInputName",
+    label: "Savings Account Name",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter a distinguishable name for the account</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Ensure you don't include any identifiable information like account numbers</li>
+      </ul>
+    `,
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit"
+  },
+  {
+    key: "ukSavingInputSavingType",
+    label: "Account Type",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select the type of savings account you wish to enter. This is for tax and contribution rules purposes.
+      <br><br>
+      The account type also determines when these assets will be accessed if needed in the plan.
+      <br><br>
+      <a href="https://shackademy.com/path-player?courseid=voyant&unit=67734dec1c6b5ca11b094f0cUnit" target="_blank">Learn more about the default selldown order here</a>
+      </p>
+      <h3>Account types</h3>
+      <ul>
+        <li><strong>Current accounts</strong> - A Cash Account - Interest is taxable.</li>
+        <li><strong>Savings accounts</strong> - A Cash Account - Interest is taxable.</li>
+        <li><strong>Cash ISAs</strong> - Treated as a Tax Free asset. Contributions will be limited to the ISA allowance</li>
+        <li><strong>National Savings Certificate</strong> - Treated as a Tax Free asset. Voyant sets no contribution limits on this type of account.</li>
+      </ul>
+    `,
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit"
+  },
+  {
+    key: "ukSavingsInputBalance",
+    label: "Balance",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the balance of the account as at today</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>The plan start date is 6th April each year</li>  
+        <li>This is updated to following tax year in October each year</li>
+        <li>This means there is only ever at maximum a 6 month differential in account balances</li>
+        <li>You will spend 6 months of the year working in arrears, and 6 months working in advance</li>
+        <li>The easiest way to approach this is to update your account balances in October and April each year</li>
+        <li><a href="https://shackademy.com/path-player?courseid=voyant&unit=68e5b24f932f5484590240fdUnit" target="_blank">Our lesson on how plan years are updated is here</a></li>
+      </ul>
+    `,
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit"
+  },
 
 ];
