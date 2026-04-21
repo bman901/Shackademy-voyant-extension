@@ -940,6 +940,130 @@ window.SHACKADEMY_FIELDS = [
       <p>Are you intending to use any of these pension's funds to purchase an annuity? If so, toggle 'yes'</p>
     `,
   },
+  {
+    key: "ukAnnuityAnnuitizationAge",
+    label: "Age",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the age at which you will convert pension funds into an annuity</p>
+    `,
+  },
+  {
+    key: "ukAnnuityAnnuitizationEvent",
+    label: "Purchase Event",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Link the purchase of an annuity to a timeline event which you can then move around</p>
+    `,
+  },
+  {
+    key: "annuityPercentAnnuitized",
+    label: "Percent Annuitized",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>What percentage of the pension will be converted into an annuity?</p>
+    `,
+  },
+  {
+    key: "annuityAnnuitizationYearsCertain",
+    label: "Years Certain",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Is the annuity guaranteed to pay out for X years, even on death? If so, input the number of years. If not, leave as 0</p>
+    `,
+  },
+  {
+    key: "annuityLumpSumPercent",
+    label: "Lump Sum",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>When converting the pension to an annuity, what percentage is to be paid out as TFC before the annuity starts</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This is typically 25% but you should confirm</li>
+      </ul>
+    `,
+  },
+  {
+    key: "annuityAnnuitizationEscalation",
+    label: "Escalation",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Choose how the annuity will escalate over time. If this will be a level annuity, select 'None'</p>
+    `,
+  },
+  {
+    key: "annuityAnnuitizationPayoutJoint",
+    label: "Payout",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Will this be a single or joint life annuity?</p>
+    `,
+  },
+  {
+    key: "annuityBeneficiaryLabel",
+    label: "Beneficiary",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Who will receive the benefits in the event of the death of the current pension owner?</p>
+    `,
+  },
+  {
+    key: "annuityAnnuitizationSurvivorshipPercent",
+    label: "Survivorship",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>What percentage of the annuity will the beneficiary receive upon the death of the current pension owner?</p>
+    `,
+  },
+  {
+    key: "annuityAnnuitizationCalcMethod",
+    label: "Annuity Rate Calculation",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Set an Assumed Interest Rate or Specified Annuity Rate
+      <br><br>
+      <strong>Assumed Interest Rate</strong>
+      <br>
+      The software's default option allows the software to 'derive' an annuity rate by using an Assumed Interest Rate.
+      <br><br>
+      The Assumed Interest Rate on an annuity is the underlying interest rate assumption on which the annuity calculation is based (or would be based, by an actuary). It would ordinarily reflect an assumed yield on mid-dated UK Sovereign debt (Gilt Yield).
+      <br><br>
+      <a href="https://support.planwithvoyant.com/hc/en-us/articles/20098166624923-Annuity-Rates-Options-for-calculating-future-annuity-payments-UK" target="_blank">Explained further here</a>
+      <br><br>
+      <strong>Specified Annuity Rate</strong>
+      <br>
+      Where you have a reasonable idea of the applicable market (annuity) rate, taking account of the expected age and circumstances, etc, you can change the Annuity Rate Calculation option to Specified Annuity Rate.
+      <br><br>
+      If chosen, the % entered is the straightforward 'Conversion Rate, i.e. the rate at which a lump sum converts into an annuity
+      <br>
+      e.g. a fund of £100,000 (after tax free cash) with a specified annuity rate of 5% will produce an annuity income of £5,000.</p>
+    `,
+  },
+  {
+    key: "annuityAssumedInterestRate",
+    label: "Assumed Interest Rate",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>The software's default option allows the software to 'derive' an annuity rate by using an Assumed Interest Rate.
+      <br><br>
+      The Assumed Interest Rate on an annuity is the underlying interest rate assumption on which the annuity calculation is based (or would be based, by an actuary). It would ordinarily reflect an assumed yield on mid-dated UK Sovereign debt (Gilt Yield).
+      <br><br>
+      It may be preferable to use Specified Annuity Rate if you wish to have more control over the level of income being received.</p>
+    `,
+  },
+  {
+    key: "annuityAnnuitizationRate",
+    label: "Specified Annuity Rate",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Where you have a reasonable idea of the applicable market (annuity) rate, taking account of the expected age and circumstances, etc, you can change the Annuity Rate Calculation option to Specified Annuity Rate.
+      <br><br>
+      If chosen, the % entered is the straightforward 'Conversion Rate, i.e. the rate at which a lump sum converts into an annuity
+      <br>
+      e.g. a fund of £100,000 (after tax free cash) with a specified annuity rate of 5% will produce an annuity income of £5,000.</p>
+    `,
+  },  
 
 
 
