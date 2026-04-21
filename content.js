@@ -189,7 +189,6 @@
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen>
         </iframe>
-        ${lessonButtonHTML}
       </div>` : "";
 
     const backdrop = document.createElement("div");
@@ -215,7 +214,7 @@
         <div class="shackademy-panel active" data-panel="details"
           id="shackademy-panel-details" role="tabpanel">
           <div class="shackademy-help-content">${field.helpText}</div>
-          ${!hasVideo ? lessonButtonHTML : ""}
+          ${lessonButtonHTML}
         </div>
         ${videoPanelHTML}
       </div>
