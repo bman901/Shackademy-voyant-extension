@@ -385,5 +385,96 @@ window.SHACKADEMY_FIELDS = [
     `,
     lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit"
   },
+  {
+    key: "growthInputGrowthType",
+    label: "Grow this account by",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Grow the account by Entered Interest Rate which you enter in the next field or by Portfolio/Holdings which will assume 100% cash growth rates on accounts in this 'Savings' section.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Our suggestion is to use <strong>Entered Interest Rate</strong> for all accounts until you're familiar with the impact of changing to Portfolio/Holdings.</li>
+      </ul>
+    `,
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit"
+  },
+  {
+    key: "toggleGrowthRateInputRate",
+    label: "Interest Rate",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>This is the amount the account will be assumed to grow by each year compounded if there are no withdrawals i.e. the Interest rate of the savings account.</p>
+    `,
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit"
+  },
+  {
+    key: "contributionType",
+    label: "Contribution Type",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select how you wish to calculate regular contributions, either as a fixed amount (with or without inflation) or as a percentage of income.</p>
+    `,
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit"
+  },
+  {
+    key: "contributionAmount",
+    label: "Contribution Amount",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter here the value of any regular contributions into this account.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Default is set to 'Annually' but you can change this on the right hand side of the input box</li>
+      </ul>
+    `,
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit"
+  },
+  {
+    key: "formContributionPresentFutureValue",
+    label: "Contribution Entered As",
+    helpText: `
+      <h3>Tips</h3>
+      <ul>
+        <li><strong>Present Value:</strong> If you want the expense to increase with inflation from <strong>today</strong>, choose this</li>
+        <li><strong>Future Value:</strong> If you want the expense to increase with inflation from <strong>the chosen start date (Timing tab)</strong>, choose this</li>
+      </ul>
+    `,
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit"
+  },
+  {
+    key: "contributionPercent",
+    label: "Percent of Salary",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>This will be relative to the <strong>gross</strong> salary of the owner chosen at the top of the page</p>
+    `,
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit",
+  },
+
+  // ── Tab: Withdrawal Limit ──────────────────────────────────────────────
+
+  {
+    key: "drawdownType",
+    label: "Withdrawal Type",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Withdrawal types allow you to specify the limit up to which withdrawals may be made.
+      <br><br>
+      If you would like a set amount to be withdrawn from the account each year, regardless of whether Voyant classes it 'As Needed', set this up in the Planned Withdrawals screen.</p>
+      <h3>Options</h3>
+      <ul>
+        <li><strong>Do Not Allow</strong>- Selecting 'Do Not Allow' will not allow any withdrawals from this account. The whole value of the growing account will be ringfenced from any spending. This is useful for setting up an Emergency Fund.</li>
+        <li><strong>Scheduled only</strong> - This option is relevant in conjunction with a Planned Withdrawal which has selected this account. This will prevent the account being used in any other way except for the Planned withdrawal.</li>
+        <li><strong>Minimum Balance</strong> - Will withdraw from the account, but not let the account go lower than the minimum balance. The Minimum Balance option is a fixed amount which does not inflate. Depending on your growth settings this account will also grow and anything above the minimum balance can be used. Also useful for setting up an Emergency Fund.</li>
+        <li><strong>As Needed</strong> - This is the default option and means this account will be accessed when required and as according to the liquidation order (after the Event specified on the Timeline).*</li>
+        <li><strong>Percentage</strong> - Limits the withdrawals to a maximum of this percentage out of this account annually if needed.*</li>
+        <li><strong>Fixed with Inflation</strong> - Limits the withdrawals to a maximum of this fixed value if needed in the plan and also inflates the value over time.*</li>
+        <li><strong>Fixed without inflation</strong> - Limits the withdrawals to a maximum of this fixed value if needed in the plan and does not inflate the value over time.*</li>
+        <li><strong>Max without penalty</strong> - For bonds there is an additional option of Maximum withdrawals without penalty. This means it will limits the withdrawals to the 5%/ year for 20 years where available and if needed in the plan. *</li>
+      </ul>
+      <p>*Note: These payments are the maximum amount Voyant is allowed to take from the account. The withdrawals will not be used if, for example, there isn't a shortfall to be met by using savings.</p>
+    `,
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit",
+  },
 
 ];
