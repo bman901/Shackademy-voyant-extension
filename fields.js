@@ -463,7 +463,7 @@ window.SHACKADEMY_FIELDS = [
       If you would like a set amount to be withdrawn from the account each year, regardless of whether Voyant classes it 'As Needed', set this up in the Planned Withdrawals screen.</p>
       <h3>Options</h3>
       <ul>
-        <li><strong>Do Not Allow</strong>- Selecting 'Do Not Allow' will not allow any withdrawals from this account. The whole value of the growing account will be ringfenced from any spending. This is useful for setting up an Emergency Fund.</li>
+        <li><strong>Do Not Allow</strong> - Selecting 'Do Not Allow' will not allow any withdrawals from this account. The whole value of the growing account will be ringfenced from any spending. This is useful for setting up an Emergency Fund.</li>
         <li><strong>Scheduled only</strong> - This option is relevant in conjunction with a Planned Withdrawal which has selected this account. This will prevent the account being used in any other way except for the Planned withdrawal.</li>
         <li><strong>Minimum Balance</strong> - Will withdraw from the account, but not let the account go lower than the minimum balance. The Minimum Balance option is a fixed amount which does not inflate. Depending on your growth settings this account will also grow and anything above the minimum balance can be used. Also useful for setting up an Emergency Fund.</li>
         <li><strong>As Needed</strong> - This is the default option and means this account will be accessed when required and as according to the liquidation order (after the Event specified on the Timeline).*</li>
@@ -476,5 +476,173 @@ window.SHACKADEMY_FIELDS = [
     `,
     lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit",
   },
+
+  // ------------------------------------------------------------
+  // SUB-CATEGORY: Investments
+  // ------------------------------------------------------------
+
+  // ── Tab: Basics ──────────────────────────────────────────────
+
+  {
+    key: "investmentInputOwnerLabel",
+    label: "Owner",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select the owner/s of the Investment account by expanding the menu and selecting / deselecting individuals by clicking on their names. You will see your selection/s in the owner window.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Ownership defaults to the principle person. Check correct ownership for each product.</li>
+      </ul>
+    `,
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit",
+  },
+  {
+    key: "investmentInputName",
+    label: "Investment Account Name",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter a distinguishable name for the account</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Ensure you don't include any identifiable information like account numbers</li>
+      </ul>
+    `,
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit"
+  },
+  {
+    key: "investmentInputInvesmentType",
+    label: "Type",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select the type of Investment accounts you wish to enter. This is for tax and contribution rules purposes. The account type also determines when these assets will be accessed if needed in the plan.</p>
+      <h3>Types of Account</h3>
+      <ul>
+        <li><strong>Bypass Trust & Loan Trusts</strong> - Trusts do not form part of the liquidation order. Voyant will not take adhoc/as needed withdrawals to fulfil expenses.</li>
+        <li><strong>Discounted Gift Trusts (DGT)</strong> - A DGT does not form part of the liquidation order however the software will make automatic planned withdrawals from the investment.<sup>1</sup></li>
+        <li><strong>Enterprise Investment Schemes (EIS)</strong> - EIS investments do not form part of the liquidation order. Adhoc withdrawals will not be taken from these investments. If withdrawals are needed these will need to be set up as Planned Withdrawals.<sup>2</sup></li>
+        <li><strong>Lifetime ISA</strong> - Treated as a Tax Free asset. Voyant will not access until the owner is over the required age.</li>
+        <li><strong>Onshore bond</strong> - Treated as a Tax Deferred asset. Voyant will treat withdrawals as tax deferred up to the allowance.</li>
+        <li><strong>Offshore bond</strong> - Treated as a Tax Deferred asset. Voyant will treat withdrawals as tax deferred up to the allowance.</li>
+        <li><strong>Offshore Taxable</strong> - Treated as a Tax Deferred asset. With this investment you can set the level of taxation as you choose.<sup>3</sup></li>
+        <li><strong>Stocks Market ISA/ Junior ISA</strong> - Treated by Voyant as a Tax Free asset. Voyant will use the appropriate ISA allowance depending on whether an adult or child is selected as the owner.</li>
+        <li><strong>Unwrapped investments</strong> - Treated as a Taxable asset. Voyant use unwrapped investments as the catch-all category for all manner of Taxable investments that are not subject to the special tax treatments. OEICs, unit trusts, equity holdings, stocks and shares, individual equities, businesses and even properties can all be modelled under the guise of unwrapped investments.</li>
+        <li><strong>Venture Capital Trusts (VCT)</strong> - VCT's do not form part of the liquidation order. Adhoc withdrawals will not be taken from these investments. If withdrawals are needed these will need to be set up as Planned Withdrawals.<sup>4</sup></li>
+      </ul>
+      <p><sup>1</sup><a href="https://support.planwithvoyant.com/hc/en-us/articles/4409206089499-Adding-Trusts-Loan-Trusts-DGTs-and-Other-Trusts" target="_blank">This article</a> will help explain how to enter Loan Trusts, DGT's and Other Trusts in more detail
+      <br>
+      <sup>2</sup><a href="https://support.planwithvoyant.com/hc/en-us/articles/200870009-EISs-How-to-enter-and-tax-treatment-of-Enterprise-Investment-Schemes-UK" target="_blank">This article</a> will explain how to enter an EIS and the tax treatment applicable;
+      <br>
+      <sup>3</sup><a href="https://support.planwithvoyant.com/hc/en-us/articles/38738632029723-Offshore-taxable-Investment-UK" target="_blank">This article</a> will explain how to model offshore taxable investments;
+      <br>
+      <sup>4</sup><a href="https://support.planwithvoyant.com/hc/en-us/articles/4406520094107-VCTs-How-to-enter-and-tax-treatment-of-Venture-Capital-Trusts-UK" target="_blank">This article</a> will explain how to enter an VCT and the tax treatment applicable;
+      </p>
+    `,
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit",
+  },
+  {
+    key: "investmentInputBalanceLabel",
+    label: "Balance",
+    helpText: `
+      <h3>What to enter</h3>  
+      <p>Enter the balance of the account as at today</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>The plan start date is 6th April each year</li>  
+        <li>This is updated to following tax year in October each year</li>
+        <li>This means there is only ever at maximum a 6 month differential in account balances</li>
+        <li>You will spend 6 months of the year working in arrears, and 6 months working in advance</li>
+        <li>The easiest way to approach this is to update your account balances in October and April each year</li>
+        <li><a href="https://shackademy.com/path-player?courseid=voyant&unit=68e5b24f932f5484590240fdUnit" target="_blank">Our lesson on how plan years are updated is here</a></li>
+      </ul>
+      <br>
+      <h3>Additional Notes</h3>
+      <ul>
+        <li><strong>VCT/EIS</strong> - Enter the balance as at the start of the plan if the investment is an existing investment. For new purchases leave the balance at £0</li>
+        <li><strong>Bypass Trusts</strong> - Balance would usually be £0 as this is a Trust set up to receive pension benefits on death. The Loan amount will be the original amount inherited in the Bypass Trust.</li>
+        <li><strong>Loan Trusts</strong> - Enter the current balance of the trust itself under Balance and the Balance of the Loan under Loan Balance.</li>
+      </ul>
+    `,
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit",
+  },
+  {
+    key: "investmentInputPurchaseYear",
+    label: "Year Purchased",
+    helpText: `
+      <h3>What to enter</h3>  
+      <p>Enter the year the bond was originally purchased. This is needed for tax calculations.</p>
+    `,
+  },
+  {
+    key: "investmentInputPurchaseValue",
+    label: "Purchase Value",
+    helpText: `
+      <h3>What to enter</h3>  
+      <p>Enter the original purchase value. This is needed for tax calculations.</p>
+      <h3>Additional notes</h3>
+      <ul>
+        <li>Investment Bond - Enter the original investment amount.</li>
+        <li><strong>Unwrapped Investments</strong> - This field determines the Capital Gains Tax (CGT) applicable to any gains within the investment. If this box is left blank the software will assume that the whole amount is liable to CGT.</li>
+        <li><strong>Loan Balance (applicable to Loans Trusts only)</strong> - Input the balance of the loan as at the start date of the plan under 'Loan Balance'.</li>
+        <li><strong>Loan Amount (applicable to Bypass Trusts only)</strong> - Input the amount that was originally inherited into the Bypass Trust.</li>
+        <li><strong>Discounted Gift Trust</strong> - Input the original investment amount</li>
+      </ul>
+    `,
+  },
+  {
+    key: "investmentInputDeathPayoutType",
+    label: "Insurance Payout",
+    helpText: `
+      <h3>What to enter</h3>  
+      <p>If the bond is jointly owned (in the Owner box) and Last to die is selected you will not see the bond pay out in the cash flow. Instead go to the Legacy screen to see the payout upon second death in there.</p>
+    `,
+  },
+  {
+    key: "investmentIhtExemptYear",
+    label: "Year qualifying for IHT exemption",
+    helpText: `
+      <h3>What to enter</h3>  
+      <p><strong>Existing Investments</strong>
+      <br><br>
+      The date in the 'Qualifies for IHT Relief' only applies to existing investments. This field is not relevant to Transfers and New/Regular contributions into a BPR/APR investment.
+      <br><br>
+      'Year Qualifying for IHT Exemption' this is the date that the relief will be given i.e. after the 2 year qualifying period.
+      <br><br>
+      <strong>New Investments</strong>
+      <br><br>
+      For new investments, IHT relief occurs 2 years after the transfer or contribution made into the investment. The 'Year Qualifying for IHT Exemption' field will be left blank in this instance and the software will determine the correct year in which IHT relief will apply.
+      <br><br>
+      If you are entering multiple transfers into a new investment, these would be best entered as separate investments to allow the software to start the 2 year clock after each investment.
+      <br><br>
+      Please bear in mind that in the software, mortality is assumed to occur at the start of the year, whereas transfers occur at the end of the year.
+      <br><br>
+      This means that for an investment set up by a transfer in 2024, IHT relief will apply from the end of 2026 (2 years) i.e. showing on the software at the start of 2027. We would expect to see the BPR relief from 2027 onwards."</p>
+    `,
+  },
+  {
+    key: "investmentIhtExemptionApplies",
+    label: "Qualifies for IHT Relief (BPR/APR)",
+    helpText: `
+      <h3>Tips</h3>
+      <ul>
+        <li>Business Property Relief reduces the value for IHT of the asset transferred. The asset must have been owned throughout the two years period prior to transfer. BPR is given at different rates depending on the asset.</li>
+        <li>Agricultural Property Relief is available for transfers of relevant property made either during life or on death.</li>
+      </ul>
+    `,
+  },
+  {
+    key: "investmentInputCurrentSegments",
+    label: "Current Segments",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the number of segments currently in force or, if it is a new purchase, to be purchased.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>The system will always default to 1 segment. If you are unsure of the number of segments within the Bond we would suggest that you enter 100 segments and follow up with your provider.</li>
+      </ul>
+    `,
+    lessonUrl: "",
+    videoUrl: "",
+  },
+
 
 ];
