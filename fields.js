@@ -1065,7 +1065,522 @@ window.SHACKADEMY_FIELDS = [
     `,
   },  
 
+  // ------------------------------------------------------------
+  // SUB-CATEGORY: Final Salary / CARE Pension
+  // ------------------------------------------------------------
 
+  // ── Tab: Basics ──────────────────────────────────────────────
+
+  {
+    key: "ukFinalSalaryInputOwnerLabel",
+    label: "Owner",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select the owner of this pension. Ownership defaults to the principal person — make sure you check this is correct before saving.</p>
+    `,
+  },
+  {
+    key: "ukFinalSalaryInputName",
+    label: "Name",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter a clear, recognisable name for this pension.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Including the owner's name and provider can help you identify it easily later</li>
+        <li>e.g. "Jane – NHS Pension"</li>
+        <li>Avoid including account numbers or other sensitive identifiers</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukFinalSalaryInputStatus",
+    label: "Status",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select the status that best describes where this pension currently stands.</p>
+      <h3>Options</h3>
+      <ul>
+        <li><strong>Active</strong> — you are currently accruing benefits in the scheme. You should link this to an employment so Voyant can calculate how benefits build up over time.</li>
+        <li><strong>Deferred</strong> — you have left the scheme but have not yet started taking benefits. The pension is preserved and will be revalued until it comes into payment.</li>
+        <li><strong>In Payment</strong> — you are already receiving pension income from this scheme. Enter the current annual amount in the Amount field.</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukFinalSalaryInputEmploymentId",
+    label: "Linked Employment",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>If this pension is <strong>Active</strong>, link it to the relevant employment entry. Voyant will use the salary from that employment — along with your accrual rate, salary scheme type, and years of service — to calculate your projected benefits at retirement.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>The employment's Timing tab controls when you are treated as an active member of the scheme</li>
+        <li>Any years the scheme is active within the plan are automatically added to your Years of Service to Date</li>
+        <li>If no employment is linked, you can instead enter a Pensionable Salary manually below — but this overrides the linked salary</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukFinalSalaryInputUseBaseSalaryOnly",
+    label: "Use Base Salary Only",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select <strong>Yes</strong> if only your basic salary (excluding any bonus) should be used when calculating your pension benefits.</p>
+      <p>Select <strong>No</strong> if bonuses paid through the linked employment should also be included in the pensionable earnings calculation.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Most final salary schemes are based on basic salary only — check your scheme rules if you're unsure</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukFinalSalaryInputPensionableSalary",
+    label: "Pensionable Salary",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>This field is only relevant if you have <strong>not</strong> linked an employment above. Enter your current pensionable salary here as a future value — it will not be inflated by Voyant.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>If a linked employment is selected, it will override anything entered here</li>
+        <li>Where no employment is linked, Voyant will treat all years up to the benefit start date as active</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukFinalSalaryInputEscalationTypeInDeferment",
+    label: "Escalation Type in Deferment",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select how your deferred pension benefits will increase between now and when they come into payment.</p>
+      <h3>Options</h3>
+      <ul>
+        <li><strong>None</strong> — benefits are frozen with no revaluation</li>
+        <li><strong>RPI</strong> — benefits increase in line with the Retail Prices Index</li>
+        <li><strong>LPI</strong> — benefits increase in line with Limited Price Indexation (typically capped at 5% or 2.5%)</li>
+        <li><strong>CPI</strong> — benefits increase in line with the Consumer Prices Index, using the rate set in your Plan Settings</li>
+        <li><strong>Other</strong> — enter a custom rate</li>
+      </ul>
+      <h3>Tips</h3>
+      <ul>
+        <li>Check your scheme booklet or annual benefit statement for the revaluation basis that applies to your scheme</li>
+        <li>Your CPI assumption can be found in Dashboard > Plan Settings > Inflation/Growth > CPI</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukFinalSalaryInputEscalationType",
+    label: "Escalation Type in Payment",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select how your pension income will increase once it is in payment.</p>
+      <h3>Options</h3>
+      <ul>
+        <li><strong>None</strong> — the pension is level with no increases</li>
+        <li><strong>RPI</strong> — increases in line with the Retail Prices Index</li>
+        <li><strong>LPI</strong> — increases in line with Limited Price Indexation</li>
+        <li><strong>CPI</strong> — increases in line with the Consumer Prices Index, using the rate set in your Plan Settings</li>
+        <li><strong>Other</strong> — enter a custom escalation rate</li>
+      </ul>
+      <h3>Tips</h3>
+      <ul>
+        <li>Your scheme rules will specify the escalation basis — check your annual benefit statement or member booklet</li>
+        <li>Your CPI assumption can be found in Dashboard > Plan Settings > Inflation/Growth > CPI</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukFinalSalaryInputSurvivorPercent",
+    label: "Survivor Percent",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the percentage of your pension that would continue to be paid to a surviving spouse or partner if you were to die first.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>A common figure is 50%, though many public sector schemes (e.g. NHS, Teachers') pay a higher percentage — check your scheme rules</li>
+        <li>In the plan, if you are the first to pass away, Voyant will show the survivor's pension being paid to your spouse at this percentage</li>
+        <li>If there is no survivor's pension, enter 0%</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukFinalSalaryInputAccrualRateType",
+    label: "Accrual Rate",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select the accrual rate that applies to your scheme. This is the fraction of your salary you earn as pension for each year of service.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>For example, a 1/60th accrual rate means you earn 1/60th of your final salary as pension for every year worked</li>
+        <li>Common rates include 1/60th, 1/80th, and 1/49th (CARE)</li>
+        <li>If your rate is not listed, select 'Other' and enter it manually</li>
+        <li>You'll find your accrual rate in your scheme booklet or annual benefit statement</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukFinalSalaryInputSalaryScheme",
+    label: "Salary Scheme",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select how your pension benefits will be calculated at retirement. This determines which salary figure Voyant uses in its benefit calculation.</p>
+      <h3>Options</h3>
+      <ul>
+        <li><strong>Last Year</strong> — uses your salary in the final year of employment</li>
+        <li><strong>Last 5 Years Average</strong> — uses the average of your last five years' salary</li>
+        <li><strong>Highest 3 Years Average</strong> — uses the average of your three highest-earning years</li>
+        <li><strong>CARE</strong> — Career Average Revalued Earnings. Each year's earnings are revalued (usually by CPI or a fixed rate) and averaged across your whole career</li>
+      </ul>
+      <h3>Tips</h3>
+      <ul>
+        <li>Most modern public sector schemes (NHS 2015, Teachers' 2015, LGPS) are CARE schemes</li>
+        <li>Older "final salary" sections of these schemes typically use Last Year or an average</li>
+        <li>Check your annual benefit statement or scheme booklet if you are unsure</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukFinalSalaryInputYearsOfService",
+    label: "Years of Service to Date",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the total number of years you have been a member of this scheme <strong>before</strong> the plan start date.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Voyant will automatically add any future years of active membership within the plan on top of this figure</li>
+        <li>You can usually find your total service to date on your annual benefit statement</li>
+        <li>If you have transferred in service from a previous scheme, include that transferred service here if it counts towards your benefit</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukFinalSalaryInputAccruedPensionToDate",
+    label: "Accrued Pension to Date",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the value of pension benefits you have already accrued in this scheme as at the plan start date, if known.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This figure is typically shown on your annual benefit statement as your "pension earned to date"</li>
+        <li>For a <strong>Deferred</strong> or <strong>In Payment</strong> pension, this is the key figure to enter — it represents the known benefit and Voyant will not calculate it from scratch</li>
+        <li>For an <strong>Active</strong> scheme where you are also using a linked employment, Voyant can calculate the accrued benefit automatically — in that case you can leave this blank</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukFinalSalaryInputRevaluationRate",
+    label: "Revaluation Rate",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>For CARE schemes, enter the rate at which your accrued pension earnings are revalued each year. This keeps pace with inflation or a set rate as specified by your scheme rules.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Many public sector CARE schemes revalue by CPI — check your scheme booklet to confirm the basis</li>
+        <li>This is separate from the escalation rate in payment — it applies only while you are still accruing or in deferment</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukFinalSalaryInputNormalRetirementAge",
+    label: "Normal Retirement Age",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the age at which your scheme's rules say you can take your full benefits without any reduction. This is <strong>not</strong> the age at which you plan to take your pension — that is set in the Timing tab.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>If you take benefits before this age, Voyant will apply the Actuarial Reduction Rate you enter below</li>
+        <li>For example: if the Normal Retirement Age is 65 but you retire at 60, an early retirement reduction will be applied</li>
+        <li>Most public sector schemes have a Normal Retirement Age of 65 or 67 — check your scheme booklet</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukFinalSalaryInputActuarialReductionRate",
+    label: "Actuarial Reduction Rate",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the percentage reduction applied to your pension for each year you take benefits before the Normal Retirement Age.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>For example, a 5% per year reduction taken 3 years early would reduce your pension by 15%</li>
+        <li>Your scheme will publish its early retirement factors — these are usually in your scheme booklet or on the scheme's website</li>
+        <li>If you plan to take benefits at or after the Normal Retirement Age, this field will have no effect</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukFinalSalaryInputAmount",
+    label: "Amount",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the annual pension income payable from this scheme.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>For a <strong>Deferred</strong> or <strong>In Payment</strong> pension, the benefit amount is already a known figure — enter it here and Voyant will use it directly rather than calculating it</li>
+        <li>For an <strong>Active</strong> scheme, Voyant will calculate the benefit from your salary, accrual rate, and years of service — you do not need to enter an amount here</li>
+        <li>For an <strong>In Payment</strong> pension, enter the current annual income being received</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukFinalSalaryInputLumpSumChoice",
+    label: "Lump Sum Type",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select how any tax-free lump sum from this scheme should be modelled.</p>
+      <h3>Options</h3>
+      <ul>
+        <li><strong>None</strong> — no lump sum is taken from this scheme</li>
+        <li><strong>Declared</strong> — enter a specific lump sum amount that the scheme will pay</li>
+        <li><strong>Commutation</strong> — a portion of the pension income is converted into a lump sum, using the scheme's commutation factor</li>
+        <li><strong>Accrual</strong> — the lump sum is calculated automatically based on your accrual rate and years of service (common in 1/80th schemes where a separate 3/80ths lump sum is built up)</li>
+        <li><strong>Maximum</strong> — Voyant models the maximum lump sum available under the scheme rules</li>
+      </ul>
+      <h3>Tips</h3>
+      <ul>
+        <li>Many older final salary schemes (e.g. 1/80th) include a separate automatic lump sum — check whether yours does before selecting Commutation</li>
+        <li>CARE and newer public sector schemes typically do not include an automatic lump sum — commutation is the most common option for these</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukFinalSalaryInputDeclaredLumpSumAmount",
+    label: "Lump Sum Amount (Declared)",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the lump sum amount that the scheme has confirmed will be paid at retirement, if you have selected <strong>Declared</strong> as the Lump Sum Type.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This figure is usually shown on your annual benefit statement or in a retirement quote from the scheme administrator</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukFinalSalaryInputFixedLumpSumAmount",
+    label: "Fixed Lump Sum Amount",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the fixed lump sum amount to be paid from this scheme at retirement.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Use this where you know the exact lump sum figure and want Voyant to use it without further calculation</li>
+        <li>This is typically used alongside the <strong>Accrual</strong> lump sum type for schemes with a defined separate cash entitlement</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukFinalSalaryInputCommutationRate",
+    label: "Commutation Rate",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the commutation factor your scheme uses to convert pension income into a tax-free lump sum.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>The commutation factor represents how much lump sum you receive for every £1 of annual pension you give up</li>
+        <li>For example, a factor of 12 means giving up £1,000 of annual pension produces a lump sum of £12,000</li>
+        <li>Your scheme will publish its commutation factors — these are usually available from the scheme administrator or in a retirement quote</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukFinalSalaryInputAccrualRateMultiplier",
+    label: "Pension Multiplier",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the multiplier used to calculate the lump sum under an accrual-based lump sum arrangement.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>For example, in a 1/80th scheme the pension accrual is 1/80th of salary per year, and the separate lump sum accrues at 3/80ths per year — the multiplier here would be 3</li>
+        <li>Check your scheme booklet to confirm the lump sum accrual fraction</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukFinalSalaryInputWidowsPensionApplies",
+    label: "Widows / Widower's Pension Applies",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Toggle this on if your scheme provides a pension to your surviving spouse or partner on your death.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Most defined benefit schemes include a spouse's or dependant's pension as a standard benefit — check your scheme booklet to confirm</li>
+        <li>Once enabled, you can set the calculation basis and percentage below</li>
+        <li>Note: this is separate from the Survivor Percent field in the Basics tab, which applies while the pension is in payment. The widow's/widower's pension here relates to the death-in-service or pre-retirement death benefit</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukFinalSalaryInputWidowsPensionCalcScheme",
+    label: "Final Salary Accrual Scheme",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select how the widow's or widower's pension benefit should be calculated.</p>
+      <h3>Options</h3>
+      <ul>
+        <li><strong>Service to Date</strong> — the survivor's pension is based on the pension accrued up to the date of death</li>
+        <li><strong>Normal Retirement Date</strong> — the survivor's pension is based on the projected pension you would have received at your Normal Retirement Date</li>
+      </ul>
+      <h3>Tips</h3>
+      <ul>
+        <li>Check your scheme rules to confirm which basis applies — schemes vary and it can make a significant difference to the projected benefit</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukFinalSalaryInputWidowsPensionPercent",
+    label: "Percent of Employee Pension",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the percentage of your pension that would be paid to your surviving spouse or partner as a widow's or widower's pension.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>A common figure is 50%, though many public sector schemes pay higher — check your scheme rules or annual benefit statement</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukFinalSalaryInputWidowsPensionEscalation",
+    label: "Escalation Percent",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the annual rate at which the widow's or widower's pension will increase once in payment.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This will often mirror the escalation basis of your own pension — check your scheme booklet to confirm</li>
+        <li>If the survivor's pension is level with no increases, enter 0%</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukFinalSalaryInputSurvivorshipInDeferment",
+    label: "Survivorship Applies",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Toggle this on if a survivor's pension would be payable to your spouse or partner in the event you die while the pension is still <strong>deferred</strong> (i.e. before benefits come into payment).</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Not all schemes provide a survivor's benefit during deferment — check your scheme rules</li>
+        <li>If the pension is Active or In Payment, this setting is less relevant as other survivorship options will apply</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukFinalSalaryInputLumpSumPaymentApplies",
+    label: "Lump Sum Benefit Applies",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Toggle this on if your scheme pays a lump sum death benefit — for example, a multiple of salary paid to your dependants if you die before retirement.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Many defined benefit schemes include a death-in-service lump sum of 2x, 3x, or 4x salary — check your scheme booklet</li>
+        <li>Once enabled, enter the lump sum amount in the field below</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukFinalSalaryInputLumpSumBenefitAmount",
+    label: "Lump Sum Benefit Amount",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the value of the lump sum death benefit payable from this scheme.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This is typically a multiple of salary — for example, 3x your pensionable salary</li>
+        <li>You can find this in your scheme booklet or on your annual benefit statement</li>
+        <li>If the amount is expressed as a multiple of salary rather than a fixed figure, calculate it based on your current pensionable earnings and enter the result here</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukFinalSalaryInputReturnIndividualContributions",
+    label: "Return Individual Contributions",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Toggle this on if, on death before retirement, your scheme would return the value of your own member contributions rather than (or in addition to) paying a lump sum death benefit.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Some schemes offer a return of contributions as an alternative death benefit option — check your scheme rules</li>
+        <li>If toggled on, enter the value of your contributions to date in the field below</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukFinalSalaryInputInitialContributionValue",
+    label: "Individual Contributions at Start",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the total value of your own member contributions paid into this scheme up to the plan start date.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This figure is typically shown on your annual benefit statement</li>
+        <li>It is used by Voyant to calculate the return of contributions death benefit if that option is selected above</li>
+      </ul>
+    `,
+  },
+  {
+    key: "indContributionsApply",
+    label: "Individual Employee Contribution Applies",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Toggle this on if you are making ongoing member contributions into this scheme. This allows Voyant to model your contributions as an outgoing within the plan.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Most active defined benefit scheme members pay a percentage of pensionable salary as a member contribution — check your payslip or scheme booklet for the rate</li>
+        <li>Once enabled, complete the Contribution Type and amount/percentage fields below</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukFinalSalaryInputIndividualContributionType",
+    label: "Contribution Type",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select whether your member contribution is expressed as a <strong>percentage of salary</strong> or as a <strong>fixed amount</strong>.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Defined benefit scheme contributions are almost always a percentage of pensionable salary — select Percent unless you know otherwise</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukFinalSalaryInputIndividualContributionPercent",
+    label: "Individual Percent",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter your member contribution rate as a percentage of your pensionable salary.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Your contribution rate is shown on your payslip and in your scheme booklet</li>
+        <li>Some schemes have tiered contribution rates based on salary — use the rate that applies to your current earnings</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukFinalSalaryInputIndividualContributionAmount",
+    label: "Individual Amount",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter your annual member contribution as a fixed amount, if you have selected <strong>Amount</strong> as the contribution type.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>You can find this on your payslip — multiply your monthly contribution by 12 to get the annual figure</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukFinalSalaryInputIndividualEscalation",
+    label: "Individual Escalation",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the rate at which your member contributions will increase each year within the plan.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>If your contribution is a percentage of salary and your salary grows each year, your contributions will increase automatically in line with that growth</li>
+        <li>If you have entered a fixed amount contribution, set an escalation rate here to keep pace with salary increases or inflation</li>
+        <li>If contributions are unlikely to change, you can leave this at 0%</li>
+      </ul>
+    `,
+  },
 
 
 ];
