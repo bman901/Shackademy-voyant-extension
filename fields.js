@@ -1,16 +1,16 @@
 // =============================================================================
-// SHACKADEMY — VOYANT HELP FIELD CONFIGURATION
+// SHACKADEMY - VOYANT HELP FIELD CONFIGURATION
 // =============================================================================
 // Each entry needs:
-//   key      — the value of the parent <label>'s `for` attribute, or its `id`
+//   key      - the value of the parent <label>'s `for` attribute, or its `id`
 //              if it has no `for`. Find it by inspecting the label in DevTools.
-//   label    — human-readable name, for the modal heading only (not used in logic)
-//   helpText — HTML string. Use <h3>, <p>, <ul>, <li>, <strong> etc. freely.
+//   label    - human-readable name, for the modal heading only (not used in logic)
+//   helpText - HTML string. Use <h3>, <p>, <ul>, <li>, <strong> etc. freely.
 //              This is hardcoded content so HTML is safe here.
 //
 // Optional:
-//   lessonUrl — Shackademy lesson link. Omit if none.
-//   videoUrl  — YouTube link in any format (will be auto-converted to embed).
+//   lessonUrl - Shackademy lesson link. Omit if none.
+//   videoUrl  - YouTube link in any format (will be auto-converted to embed).
 //
 // If both lessonUrl and videoUrl are absent, the modal shows text only (no tabs).
 // If only lessonUrl is present, a button appears in the Details panel (no tabs).
@@ -104,7 +104,7 @@ window.SHACKADEMY_FIELDS = [
         <li>If they're semi-retired but still earning any employment income, select No</li>
         <li>This affects how Voyant models their income and can be tricky to change to 'No' if you select 'Yes' accidentally</li>
         <li>You can adjust retirement timing later using the timeline</li>
-        <li>If you have any issues with this, please ask in the community or contact Ben</li>
+        <li>If you have any issues with this, please ask in the community or get in touch</li>
       </ul>
     `,
     lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773147e337de51fe604f62aUnit",
@@ -117,7 +117,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the age at which this person plans to fully stop working. Voyant uses this as the point at which employment income ends by default.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Use a realistic target age rather than an aspirational one — you can always model alternatives later using Voyant's 'What if' tools</li>
+        <li>Use a realistic target age rather than an aspirational one - you can always model alternatives later using Voyant's 'What if' tools</li>
         <li>You can adjust retirement timing later using the timeline</li>
       </ul>
     `,
@@ -164,7 +164,7 @@ window.SHACKADEMY_FIELDS = [
     label: "Amount",
     helpText: `
       <h3>What to enter</h3>
-      <p>The value of the expense. For example, £10,000/ year is needed for this type of expense.</p>
+      <p>Enter the value of this goal. For example, if you need £10,000 per year for school fees, enter £10,000 here.</p>
       <h3>Tips</h3>
       <ul>
         <li>The default is 'Annual' but you can change this on the right of the input box</li>
@@ -248,8 +248,7 @@ window.SHACKADEMY_FIELDS = [
   label: "Percentage of Income",
   helpText: `
     <h3>What to enter</h3>
-    <p>If you entered an inflation rate you're happy with in the 'Basics' tab, you don't have to enter anything here.<br><br>
-    Depending on who you select in the Owner field the relevant income/s will be shown above. You can choose to create this expenses as a percentage of these income/s.</p>
+    <p>Depending on who you select in the Owner field the relevant income/s will be shown above. You can choose to create this expenses as a percentage of these income/s.</p>
     <h3>Tips</h3>
     <ul>
       <li>Whatever you enter in this section will overwrite the 'Basics' tab</li>
@@ -269,7 +268,8 @@ window.SHACKADEMY_FIELDS = [
     <p>This is where you can change the goal so it occurs on a less frequent basis</p>
     <h3>Tips</h3>
     <ul>
-      <li>Check out the lesson for additional insights</li>
+      <li>For example, enter '2' for a biennial expense. The amount you entered will apply for each occurrence.</li>
+      <li>Check out the lesson below for additional details.</li>
     </ul>
   `,
   lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=67d09a17a12fc6a3b002401aUnit",
@@ -282,11 +282,11 @@ window.SHACKADEMY_FIELDS = [
   label: "Preferred Payment Sources",
   helpText: `
     <h3>What to enter</h3>
-    <p>Tip: If setting a preferred payment source, use the "Only Use Preferred Sources" to Pay the Expense very sparingly, if at all.
+    <p>If setting a preferred payment source, use the "Only Use Preferred Sources" to Pay the Expense very sparingly, if at all.
     <br><br>
     When ticked, this setting can create artificial shortfalls if the preferred source is inadequately funded to pay the linked expense. These artificial shortfalls can prevent the software’s need analysers from returning results.
     <br><br>
-    <strong>When might you tick the “Only Allow…”option? </strong>
+    <strong>When might you tick the “Only Use…”option? </strong>
     <br>
     In most cases, we recommend only using this setting in a what-if scenario.
     <br><br>
@@ -328,7 +328,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Select the owner/s of the Savings account by expanding the menu and selecting / deselecting individuals by clicking on their names. You will see your selection/s in the owner window.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Ownership defaults to the principle person. Check correct ownership for each product.</li>
+        <li>Ownership defaults to the principal person. Check correct ownership for each product.</li>
       </ul>
     `,
     lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit"
@@ -432,7 +432,7 @@ window.SHACKADEMY_FIELDS = [
       <ul>
         <li>Contributions are included in the black line of the Let's See chart, so setting up contributions when you didn't have them previously will push the black line up higher</li>
         <li>You will also see contributions in the Year View > Expenses tab to see the contribution as an Expense</li>
-      <ul>
+      </ul>
     `,
     lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit"
   },
@@ -498,7 +498,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Select the owner/s of the Investment account by expanding the menu and selecting / deselecting individuals by clicking on their names. You will see your selection/s in the owner window.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Ownership defaults to the principle person. Check correct ownership for each product.</li>
+        <li>Ownership defaults to the principal person. Check correct ownership for each product.</li>
       </ul>
     `,
     lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit",
@@ -589,7 +589,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the original purchase value. This is needed for tax calculations.</p>
       <h3>Additional notes</h3>
       <ul>
-        <li>Investment Bond - Enter the original investment amount.</li>
+        <li><strong>Investment Bond</strong> - Enter the original investment amount.</li>
         <li><strong>Unwrapped Investments</strong> - This field determines the Capital Gains Tax (CGT) applicable to any gains within the investment. If this box is left blank the software will assume that the whole amount is liable to CGT.</li>
         <li><strong>Loan Balance (applicable to Loans Trusts only)</strong> - Input the balance of the loan as at the start date of the plan under 'Loan Balance'.</li>
         <li><strong>Loan Amount (applicable to Bypass Trusts only)</strong> - Input the amount that was originally inherited into the Bypass Trust.</li>
@@ -602,7 +602,7 @@ window.SHACKADEMY_FIELDS = [
     label: "Insurance Payout",
     helpText: `
       <h3>What to enter</h3>  
-      <p>If the bond is jointly owned (in the Owner box) and Last to die is selected you will not see the bond pay out in the cash flow. Instead go to the Legacy screen to see the payout upon second death in there.</p>
+      <p>Select how the bond value is treated on death. For single-life bonds, the full value is paid out on death and will appear in the Legacy screen. For jointly-owned bonds with 'Last to Die' selected, the payout will not appear in the cash flow - check the Legacy screen to see this.</p>
     `,
   },
   {
@@ -631,6 +631,8 @@ window.SHACKADEMY_FIELDS = [
     key: "investmentIhtExemptionApplies",
     label: "Qualifies for IHT Relief (BPR/APR)",
     helpText: `
+      <h3>What to enter</h3>
+      <p>Toggle this on if this investment qualifies for Business Property Relief (BPR) or Agricultural Property Relief (APR), which can reduce or eliminate the IHT liability on this asset.</p>
       <h3>Tips</h3>
       <ul>
         <li>Business Property Relief reduces the value for IHT of the asset transferred. The asset must have been owned throughout the two years period prior to transfer. BPR is given at different rates depending on the asset.</li>
@@ -827,15 +829,6 @@ window.SHACKADEMY_FIELDS = [
     lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773214bcbc96cfe9f04a018Unit",
   },
   {
-    key: "employerContributionType",
-    label: "Employer Contribution Type",
-    helpText: `
-      <h3>What to enter</h3>
-      <p>Our suggestion is to use 'Fixed' and enter the gross amount rather than 'Matching'</p>
-    `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773214bcbc96cfe9f04a018Unit",
-  },
-  {
     key: "matchingPercentContribution",
     label: "Matching Contribution",
     helpText: `
@@ -888,7 +881,7 @@ window.SHACKADEMY_FIELDS = [
     label: "Apply Crystallisation Instructions",
     helpText: `
       <h3>What to enter</h3>
-      <p>This section is predominantly for a one-off withdrawal from your pension - refer to the lesson below for details</p>
+      <p>Crystallising a pension means moving it (or part of it) from uncrystallised to drawdown, which triggers access to your tax-free cash. This section is used primarily to model a one-off withdrawal or to take tax-free cash - refer to the lesson for a step-by-step walkthrough.</p>
     `,
     lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=67ca5669ebbfa089ff0ceec9Unit",
   },
@@ -904,7 +897,7 @@ window.SHACKADEMY_FIELDS = [
       <br><br>
       <strong>Flexible Access Drawdown</strong> = Allows scheduled withdrawals from money purchase pensions to be taken from the owner's tax-free cash allowance first. The total withdrawal amount specified will be tax free. With each amount withdrawn tax free, an additional 75% is crystallised and moved into a linked drawdown account, which the software creates automatically.
       <br><br>
-      <strong>Please Note</strong> – The Flexible Access Drawdown option can only work if the amount you are withdrawing is less than the pension’s overall tax-free cash allowance, which is normally 25% of the pension’s balance. For example, if you were to schedule a withdrawal of 50% or 100% of a pension’s total balance, the software will withdraw this amount. It will not limit withdrawals to only the tax-free allowance since the amount scheduled clearly exceeds it. You will receive a combination of taxable and tax-free cash, effectively an UFPLS withdrawal, even if you have the Flexible Access Withdrawal selected as the withdrawal strategy.
+      <strong>Please Note</strong> - The Flexible Access Drawdown option can only work if the amount you are withdrawing is less than the pension’s overall tax-free cash allowance, which is normally 25% of the pension’s balance. For example, if you were to schedule a withdrawal of 50% or 100% of a pension’s total balance, the software will withdraw this amount. It will not limit withdrawals to only the tax-free allowance since the amount scheduled clearly exceeds it. You will receive a combination of taxable and tax-free cash, effectively an UFPLS withdrawal, even if you have the Flexible Access Withdrawal selected as the withdrawal strategy.
       <br><br>
       With the Flexi option, when the tax free cash runs out there is still likely to be pension money available in the drawdown pot. You will need to set up another planned withdrawal from the Drawdown - MP pension to liquidate these funds.
       <br><br>
@@ -922,7 +915,11 @@ window.SHACKADEMY_FIELDS = [
     label: "Survivorship Option",
     helpText: `
       <h3>What to enter</h3>
-      <p>Choose between 'Lump Sum' and 'Move to Beneficiary Drawdown Pension'</p>
+      <p>Choose between 'Lump Sum' and 'Move to Beneficiary Drawdown Pension'
+      <br><br>
+      <strong>Lump Sum</strong> - the remaining pension fund is paid as a cash lump sum to the nominated beneficiary on death.
+      <br>
+      <strong>Move to Beneficiary Drawdown Pension</strong> - the fund is moved into a drawdown pension in the beneficiary's name, where it can be drawn down over time, potentially more tax-efficiently.</p>
       <h3>Tips</h3>
       <ul>
         <li>James covers the difference between the two in <a href="https://shackademy.com/path-player?courseid=module-2&unit=6823c15306c62685ba04c70dUnit" target="_blank">this lesson.</a></li>
@@ -1076,7 +1073,7 @@ window.SHACKADEMY_FIELDS = [
     label: "Owner",
     helpText: `
       <h3>What to enter</h3>
-      <p>Select the owner of this pension. Ownership defaults to the principal person — make sure you check this is correct before saving.</p>
+      <p>Select the owner of this pension. Ownership defaults to the principal person - make sure you check this is correct before saving.</p>
     `,
   },
   {
@@ -1088,7 +1085,7 @@ window.SHACKADEMY_FIELDS = [
       <h3>Tips</h3>
       <ul>
         <li>Including the owner's name and provider can help you identify it easily later</li>
-        <li>e.g. "Jane – NHS Pension"</li>
+        <li>e.g. "Jane - NHS Pension"</li>
         <li>Avoid including account numbers or other sensitive identifiers</li>
       </ul>
     `,
@@ -1101,9 +1098,9 @@ window.SHACKADEMY_FIELDS = [
       <p>Select the status that best describes where this pension currently stands.</p>
       <h3>Options</h3>
       <ul>
-        <li><strong>Active</strong> — you are currently accruing benefits in the scheme. You should link this to an employment so Voyant can calculate how benefits build up over time.</li>
-        <li><strong>Deferred</strong> — you have left the scheme but have not yet started taking benefits. The pension is preserved and will be revalued until it comes into payment.</li>
-        <li><strong>In Payment</strong> — you are already receiving pension income from this scheme. Enter the current annual amount in the Amount field.</li>
+        <li><strong>Active</strong> - you are currently accruing benefits in the scheme. You should link this to an employment so Voyant can calculate how benefits build up over time.</li>
+        <li><strong>Deferred</strong> - you have left the scheme but have not yet started taking benefits. The pension is preserved and will be revalued until it comes into payment.</li>
+        <li><strong>In Payment</strong> - you are already receiving pension income from this scheme. Enter the current annual amount in the Amount field.</li>
       </ul>
     `,
   },
@@ -1112,12 +1109,12 @@ window.SHACKADEMY_FIELDS = [
     label: "Linked Employment",
     helpText: `
       <h3>What to enter</h3>
-      <p>If this pension is <strong>Active</strong>, link it to the relevant employment entry. Voyant will use the salary from that employment — along with your accrual rate, salary scheme type, and years of service — to calculate your projected benefits at retirement.</p>
+      <p>If this pension is <strong>Active</strong>, link it to the relevant employment entry. Voyant will use the salary from that employment - along with your accrual rate, salary scheme type, and years of service - to calculate your projected benefits at retirement.</p>
       <h3>Tips</h3>
       <ul>
         <li>The employment's Timing tab controls when you are treated as an active member of the scheme</li>
         <li>Any years the scheme is active within the plan are automatically added to your Years of Service to Date</li>
-        <li>If no employment is linked, you can instead enter a Pensionable Salary manually below — but this overrides the linked salary</li>
+        <li>If no employment is linked, you can instead enter a Pensionable Salary manually below - but this overrides the linked salary</li>
       </ul>
     `,
   },
@@ -1130,7 +1127,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Select <strong>No</strong> if bonuses paid through the linked employment should also be included in the pensionable earnings calculation.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Most final salary schemes are based on basic salary only — check your scheme rules if you're unsure</li>
+        <li>Most final salary schemes are based on basic salary only - check your scheme rules if you're unsure</li>
       </ul>
     `,
   },
@@ -1139,7 +1136,7 @@ window.SHACKADEMY_FIELDS = [
     label: "Pensionable Salary",
     helpText: `
       <h3>What to enter</h3>
-      <p>This field is only relevant if you have <strong>not</strong> linked an employment above. Enter your current pensionable salary here as a future value — it will not be inflated by Voyant.</p>
+      <p>This field is only relevant if you have <strong>not</strong> linked an employment above. Enter your current pensionable salary here as a future value - it will not be inflated by Voyant.</p>
       <h3>Tips</h3>
       <ul>
         <li>If a linked employment is selected, it will override anything entered here</li>
@@ -1155,11 +1152,11 @@ window.SHACKADEMY_FIELDS = [
       <p>Select how your deferred pension benefits will increase between now and when they come into payment.</p>
       <h3>Options</h3>
       <ul>
-        <li><strong>None</strong> — benefits are frozen with no revaluation</li>
-        <li><strong>RPI</strong> — benefits increase in line with the Retail Prices Index</li>
-        <li><strong>LPI</strong> — benefits increase in line with Limited Price Indexation (typically capped at 5% or 2.5%)</li>
-        <li><strong>CPI</strong> — benefits increase in line with the Consumer Prices Index, using the rate set in your Plan Settings</li>
-        <li><strong>Other</strong> — enter a custom rate</li>
+        <li><strong>None</strong> - benefits are frozen with no revaluation</li>
+        <li><strong>RPI</strong> - benefits increase in line with the Retail Prices Index, using the rate set in your Plan Settings</li>
+        <li><strong>LPI</strong> - benefits increase in line with Limited Price Indexation (typically capped at 5% or 2.5%)</li>
+        <li><strong>CPI</strong> - benefits increase in line with the Consumer Prices Index, using the rate set in your Plan Settings</li>
+        <li><strong>Other</strong> - enter a custom rate</li>
       </ul>
       <h3>Tips</h3>
       <ul>
@@ -1176,15 +1173,15 @@ window.SHACKADEMY_FIELDS = [
       <p>Select how your pension income will increase once it is in payment.</p>
       <h3>Options</h3>
       <ul>
-        <li><strong>None</strong> — the pension is level with no increases</li>
-        <li><strong>RPI</strong> — increases in line with the Retail Prices Index</li>
-        <li><strong>LPI</strong> — increases in line with Limited Price Indexation</li>
-        <li><strong>CPI</strong> — increases in line with the Consumer Prices Index, using the rate set in your Plan Settings</li>
-        <li><strong>Other</strong> — enter a custom escalation rate</li>
+        <li><strong>None</strong> - the pension is level with no increases</li>
+        <li><strong>RPI</strong> - increases in line with the Retail Prices Index, using the rate set in your Plan Settings</li>
+        <li><strong>LPI</strong> - increases in line with Limited Price Indexation</li>
+        <li><strong>CPI</strong> - increases in line with the Consumer Prices Index, using the rate set in your Plan Settings</li>
+        <li><strong>Other</strong> - enter a custom escalation rate</li>
       </ul>
       <h3>Tips</h3>
       <ul>
-        <li>Your scheme rules will specify the escalation basis — check your annual benefit statement or member booklet</li>
+        <li>Your scheme rules will specify the escalation basis - check your annual benefit statement or member booklet</li>
         <li>Your CPI assumption can be found in Dashboard > Plan Settings > Inflation/Growth > CPI</li>
       </ul>
     `,
@@ -1197,7 +1194,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the percentage of your pension that would continue to be paid to a surviving spouse or partner if you were to die first.</p>
       <h3>Tips</h3>
       <ul>
-        <li>A common figure is 50%, though many public sector schemes (e.g. NHS, Teachers') pay a higher percentage — check your scheme rules</li>
+        <li>A common figure is 50%, though many public sector schemes (e.g. NHS, Teachers') pay a higher percentage - check your scheme rules</li>
         <li>In the plan, if you are the first to pass away, Voyant will show the survivor's pension being paid to your spouse at this percentage</li>
         <li>If there is no survivor's pension, enter 0%</li>
       </ul>
@@ -1226,10 +1223,10 @@ window.SHACKADEMY_FIELDS = [
       <p>Select how your pension benefits will be calculated at retirement. This determines which salary figure Voyant uses in its benefit calculation.</p>
       <h3>Options</h3>
       <ul>
-        <li><strong>Last Year</strong> — uses your salary in the final year of employment</li>
-        <li><strong>Last 5 Years Average</strong> — uses the average of your last five years' salary</li>
-        <li><strong>Highest 3 Years Average</strong> — uses the average of your three highest-earning years</li>
-        <li><strong>CARE</strong> — Career Average Revalued Earnings. Each year's earnings are revalued (usually by CPI or a fixed rate) and averaged across your whole career</li>
+        <li><strong>Last Year</strong> - uses your salary in the final year of employment</li>
+        <li><strong>Last 5 Years Average</strong> - uses the average of your last five years' salary</li>
+        <li><strong>Highest 3 Years Average</strong> - uses the average of your three highest-earning years</li>
+        <li><strong>CARE</strong> - Career Average Revalued Earnings. Each year's earnings are revalued (usually by CPI or a fixed rate) and averaged across your whole career</li>
       </ul>
       <h3>Tips</h3>
       <ul>
@@ -1262,8 +1259,6 @@ window.SHACKADEMY_FIELDS = [
       <h3>Tips</h3>
       <ul>
         <li>This figure is typically shown on your annual benefit statement as your "pension earned to date"</li>
-        <li>For a <strong>Deferred</strong> or <strong>In Payment</strong> pension, this is the key figure to enter — it represents the known benefit and Voyant will not calculate it from scratch</li>
-        <li>For an <strong>Active</strong> scheme where you are also using a linked employment, Voyant can calculate the accrued benefit automatically — in that case you can leave this blank</li>
       </ul>
     `,
   },
@@ -1275,8 +1270,8 @@ window.SHACKADEMY_FIELDS = [
       <p>For CARE schemes, enter the rate at which your accrued pension earnings are revalued each year. This keeps pace with inflation or a set rate as specified by your scheme rules.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Many public sector CARE schemes revalue by CPI — check your scheme booklet to confirm the basis</li>
-        <li>This is separate from the escalation rate in payment — it applies only while you are still accruing or in deferment</li>
+        <li>Many public sector CARE schemes revalue by CPI - check your scheme booklet to confirm the basis</li>
+        <li>This is separate from the escalation rate in payment - it applies only while you are still accruing or in deferment</li>
       </ul>
     `,
   },
@@ -1285,12 +1280,12 @@ window.SHACKADEMY_FIELDS = [
     label: "Normal Retirement Age",
     helpText: `
       <h3>What to enter</h3>
-      <p>Enter the age at which your scheme's rules say you can take your full benefits without any reduction. This is <strong>not</strong> the age at which you plan to take your pension — that is set in the Timing tab.</p>
+      <p>Enter the age at which your scheme's rules say you can take your full benefits without any reduction. This is <strong>not</strong> the age at which you plan to take your pension - that is set in the Timing tab.</p>
       <h3>Tips</h3>
       <ul>
         <li>If you take benefits before this age, Voyant will apply the Actuarial Reduction Rate you enter below</li>
         <li>For example: if the Normal Retirement Age is 65 but you retire at 60, an early retirement reduction will be applied</li>
-        <li>Most public sector schemes have a Normal Retirement Age of 65 or 67 — check your scheme booklet</li>
+        <li>Most public sector schemes have a Normal Retirement Age of 65 or 67 - check your scheme booklet</li>
       </ul>
     `,
   },
@@ -1303,7 +1298,7 @@ window.SHACKADEMY_FIELDS = [
       <h3>Tips</h3>
       <ul>
         <li>For example, a 5% per year reduction taken 3 years early would reduce your pension by 15%</li>
-        <li>Your scheme will publish its early retirement factors — these are usually in your scheme booklet or on the scheme's website</li>
+        <li>Your scheme will publish its early retirement factors - these are usually in your scheme booklet or on the scheme's website</li>
         <li>If you plan to take benefits at or after the Normal Retirement Age, this field will have no effect</li>
       </ul>
     `,
@@ -1316,8 +1311,8 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the annual pension income payable from this scheme.</p>
       <h3>Tips</h3>
       <ul>
-        <li>For a <strong>Deferred</strong> or <strong>In Payment</strong> pension, the benefit amount is already a known figure — enter it here and Voyant will use it directly rather than calculating it</li>
-        <li>For an <strong>Active</strong> scheme, Voyant will calculate the benefit from your salary, accrual rate, and years of service — you do not need to enter an amount here</li>
+        <li>For a <strong>Deferred</strong> or <strong>In Payment</strong> pension, the benefit amount is already a known figure - enter it here and Voyant will use it directly rather than calculating it</li>
+        <li>For an <strong>Active</strong> scheme, Voyant will calculate the benefit from your salary, accrual rate, and years of service - you do not need to enter an amount here</li>
         <li>For an <strong>In Payment</strong> pension, enter the current annual income being received</li>
       </ul>
     `,
@@ -1330,16 +1325,16 @@ window.SHACKADEMY_FIELDS = [
       <p>Select how any tax-free lump sum from this scheme should be modelled.</p>
       <h3>Options</h3>
       <ul>
-        <li><strong>None</strong> — no lump sum is taken from this scheme</li>
-        <li><strong>Declared</strong> — enter a specific lump sum amount that the scheme will pay</li>
-        <li><strong>Commutation</strong> — a portion of the pension income is converted into a lump sum, using the scheme's commutation factor</li>
-        <li><strong>Accrual</strong> — the lump sum is calculated automatically based on your accrual rate and years of service (common in 1/80th schemes where a separate 3/80ths lump sum is built up)</li>
-        <li><strong>Maximum</strong> — Voyant models the maximum lump sum available under the scheme rules</li>
+        <li><strong>None</strong> - no lump sum is taken from this scheme</li>
+        <li><strong>Declared</strong> - enter a specific lump sum amount that the scheme will pay</li>
+        <li><strong>Commutation</strong> - a portion of the pension income is converted into a lump sum, using the scheme's commutation factor</li>
+        <li><strong>Accrual</strong> - the lump sum is calculated automatically based on your accrual rate and years of service (common in 1/80th schemes where a separate 3/80ths lump sum is built up)</li>
+        <li><strong>Maximum</strong> - Voyant models the maximum lump sum available under the scheme's commutation rules</li>
       </ul>
       <h3>Tips</h3>
       <ul>
-        <li>Many older final salary schemes (e.g. 1/80th) include a separate automatic lump sum — check whether yours does before selecting Commutation</li>
-        <li>CARE and newer public sector schemes typically do not include an automatic lump sum — commutation is the most common option for these</li>
+        <li>Many older final salary schemes (e.g. 1/80th) include a separate automatic lump sum - check whether yours does before selecting Commutation</li>
+        <li>CARE and newer public sector schemes typically do not include an automatic lump sum - commutation is the most common option for these</li>
       </ul>
     `,
   },
@@ -1360,11 +1355,10 @@ window.SHACKADEMY_FIELDS = [
     label: "Fixed Lump Sum Amount",
     helpText: `
       <h3>What to enter</h3>
-      <p>Enter the fixed lump sum amount to be paid from this scheme at retirement.</p>
+      <p>Enter the lump sum amount to be paid from this scheme at retirement.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Use this where you know the exact lump sum figure and want Voyant to use it without further calculation</li>
-        <li>This is typically used alongside the <strong>Accrual</strong> lump sum type for schemes with a defined separate cash entitlement</li>
+        <li>This is the lump sum amount, not the amount your pension will be reduced by - Voyant will calculate that based on the commutation rate below</li>
       </ul>
     `,
   },
@@ -1378,7 +1372,7 @@ window.SHACKADEMY_FIELDS = [
       <ul>
         <li>The commutation factor represents how much lump sum you receive for every £1 of annual pension you give up</li>
         <li>For example, a factor of 12 means giving up £1,000 of annual pension produces a lump sum of £12,000</li>
-        <li>Your scheme will publish its commutation factors — these are usually available from the scheme administrator or in a retirement quote</li>
+        <li>Your scheme will publish its commutation factors - these are usually available from the scheme administrator or in a retirement quote</li>
       </ul>
     `,
   },
@@ -1390,7 +1384,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the multiplier used to calculate the lump sum under an accrual-based lump sum arrangement.</p>
       <h3>Tips</h3>
       <ul>
-        <li>For example, in a 1/80th scheme the pension accrual is 1/80th of salary per year, and the separate lump sum accrues at 3/80ths per year — the multiplier here would be 3</li>
+        <li>For example, in a 1/80th scheme the pension accrual is 1/80th of salary per year, and the separate lump sum accrues at 3/80ths per year - the multiplier here would be 3</li>
         <li>Check your scheme booklet to confirm the lump sum accrual fraction</li>
       </ul>
     `,
@@ -1403,7 +1397,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Toggle this on if your scheme provides a pension to your surviving spouse or partner on your death.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Most defined benefit schemes include a spouse's or dependant's pension as a standard benefit — check your scheme booklet to confirm</li>
+        <li>Most defined benefit schemes include a spouse's or dependant's pension as a standard benefit - check your scheme booklet to confirm</li>
         <li>Once enabled, you can set the calculation basis and percentage below</li>
         <li>Note: this is separate from the Survivor Percent field in the Basics tab, which applies while the pension is in payment. The widow's/widower's pension here relates to the death-in-service or pre-retirement death benefit</li>
       </ul>
@@ -1417,12 +1411,12 @@ window.SHACKADEMY_FIELDS = [
       <p>Select how the widow's or widower's pension benefit should be calculated.</p>
       <h3>Options</h3>
       <ul>
-        <li><strong>Service to Date</strong> — the survivor's pension is based on the pension accrued up to the date of death</li>
-        <li><strong>Normal Retirement Date</strong> — the survivor's pension is based on the projected pension you would have received at your Normal Retirement Date</li>
+        <li><strong>Service to Date</strong> - the survivor's pension is based on the pension accrued up to the date of death</li>
+        <li><strong>Normal Retirement Date</strong> - the survivor's pension is based on the projected pension you would have received at your Normal Retirement Date</li>
       </ul>
       <h3>Tips</h3>
       <ul>
-        <li>Check your scheme rules to confirm which basis applies — schemes vary and it can make a significant difference to the projected benefit</li>
+        <li>Check your scheme rules to confirm which basis applies - schemes vary and it can make a significant difference to the projected benefit</li>
       </ul>
     `,
   },
@@ -1434,7 +1428,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the percentage of your pension that would be paid to your surviving spouse or partner as a widow's or widower's pension.</p>
       <h3>Tips</h3>
       <ul>
-        <li>A common figure is 50%, though many public sector schemes pay higher — check your scheme rules or annual benefit statement</li>
+        <li>A common figure is 50%, though many public sector schemes pay higher - check your scheme rules or annual benefit statement</li>
       </ul>
     `,
   },
@@ -1446,7 +1440,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the annual rate at which the widow's or widower's pension will increase once in payment.</p>
       <h3>Tips</h3>
       <ul>
-        <li>This will often mirror the escalation basis of your own pension — check your scheme booklet to confirm</li>
+        <li>This will often mirror the escalation basis of your own pension - check your scheme booklet to confirm</li>
         <li>If the survivor's pension is level with no increases, enter 0%</li>
       </ul>
     `,
@@ -1459,7 +1453,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Toggle this on if a survivor's pension would be payable to your spouse or partner in the event you die while the pension is still <strong>deferred</strong> (i.e. before benefits come into payment).</p>
       <h3>Tips</h3>
       <ul>
-        <li>Not all schemes provide a survivor's benefit during deferment — check your scheme rules</li>
+        <li>Not all schemes provide a survivor's benefit during deferment - check your scheme rules</li>
         <li>If the pension is Active or In Payment, this setting is less relevant as other survivorship options will apply</li>
       </ul>
     `,
@@ -1469,10 +1463,10 @@ window.SHACKADEMY_FIELDS = [
     label: "Lump Sum Benefit Applies",
     helpText: `
       <h3>What to enter</h3>
-      <p>Toggle this on if your scheme pays a lump sum death benefit — for example, a multiple of salary paid to your dependants if you die before retirement.</p>
+      <p>Toggle this on if your scheme pays a lump sum death benefit - for example, a multiple of salary paid to your dependants if you die before retirement.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Many defined benefit schemes include a death-in-service lump sum of 2x, 3x, or 4x salary — check your scheme booklet</li>
+        <li>Many defined benefit schemes include a death-in-service lump sum of 2x, 3x, or 4x salary - check your scheme booklet</li>
         <li>Once enabled, enter the lump sum amount in the field below</li>
       </ul>
     `,
@@ -1485,7 +1479,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the value of the lump sum death benefit payable from this scheme.</p>
       <h3>Tips</h3>
       <ul>
-        <li>This is typically a multiple of salary — for example, 3x your pensionable salary</li>
+        <li>This is typically a multiple of salary - for example, 3x your pensionable salary</li>
         <li>You can find this in your scheme booklet or on your annual benefit statement</li>
         <li>If the amount is expressed as a multiple of salary rather than a fixed figure, calculate it based on your current pensionable earnings and enter the result here</li>
       </ul>
@@ -1499,7 +1493,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Toggle this on if, on death before retirement, your scheme would return the value of your own member contributions rather than (or in addition to) paying a lump sum death benefit.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Some schemes offer a return of contributions as an alternative death benefit option — check your scheme rules</li>
+        <li>Some schemes offer a return of contributions as an alternative death benefit option - check your scheme rules</li>
         <li>If toggled on, enter the value of your contributions to date in the field below</li>
       </ul>
     `,
@@ -1525,7 +1519,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Toggle this on if you are making ongoing member contributions into this scheme. This allows Voyant to model your contributions as an outgoing within the plan.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Most active defined benefit scheme members pay a percentage of pensionable salary as a member contribution — check your payslip or scheme booklet for the rate</li>
+        <li>Most active defined benefit scheme members pay a percentage of pensionable salary as a member contribution - check your payslip or scheme booklet for the rate</li>
         <li>Once enabled, complete the Contribution Type and amount/percentage fields below</li>
       </ul>
     `,
@@ -1538,7 +1532,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Select whether your member contribution is expressed as a <strong>percentage of salary</strong> or as a <strong>fixed amount</strong>.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Defined benefit scheme contributions are almost always a percentage of pensionable salary — select Percent unless you know otherwise</li>
+        <li>Defined benefit scheme contributions are almost always a percentage of pensionable salary - select Percent unless you know otherwise</li>
       </ul>
     `,
   },
@@ -1551,7 +1545,7 @@ window.SHACKADEMY_FIELDS = [
       <h3>Tips</h3>
       <ul>
         <li>Your contribution rate is shown on your payslip and in your scheme booklet</li>
-        <li>Some schemes have tiered contribution rates based on salary — use the rate that applies to your current earnings</li>
+        <li>Some schemes have tiered contribution rates based on salary - use the rate that applies to your current earnings</li>
       </ul>
     `,
   },
@@ -1563,7 +1557,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter your annual member contribution as a fixed amount, if you have selected <strong>Amount</strong> as the contribution type.</p>
       <h3>Tips</h3>
       <ul>
-        <li>You can find this on your payslip — multiply your monthly contribution by 12 to get the annual figure</li>
+        <li>You can find this on your payslip - multiply your monthly contribution by 12 to get the annual figure</li>
       </ul>
     `,
   },
