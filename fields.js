@@ -164,7 +164,7 @@ window.SHACKADEMY_FIELDS = [
     label: "Amount",
     helpText: `
       <h3>What to enter</h3>
-      <p>"The value of the expense. For example, £10,000/ year is needed for this type of expense.</p>
+      <p>The value of the expense. For example, £10,000/ year is needed for this type of expense.</p>
       <h3>Tips</h3>
       <ul>
         <li>The default is 'Annual' but you can change this on the right of the input box</li>
@@ -640,9 +640,96 @@ window.SHACKADEMY_FIELDS = [
         <li>The system will always default to 1 segment. If you are unsure of the number of segments within the Bond we would suggest that you enter 100 segments and follow up with your provider.</li>
       </ul>
     `,
-    lessonUrl: "",
-    videoUrl: "",
   },
+  {
+    key: "investmentInputRemainingCostBasis",
+    label: "Remaining Principal/Cost Basis",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>This is the total remaining value of all invested principal, i.e. original investment, plus any top-ups, less tax-deferred withdrawals.
+      <br><br>
+      This value should reflect the 'cost basis' of the asset as at the plan start date.
+      <br><br>
+      For example:
+      <br>
+      If there have been no previous withdrawals or top ups then this field will be the same as the Purchase Value.
+      <br><br>
+      If there has been 5% withdrawals prior to the start of the plan, this value should show the lower remaining principle/cost basis, so Voyant knows how many further 5% tax deferred withdrawals are allowed within the plan.
+      <br><br>
+      You may find this article useful when you are entering an existing Investment Bond: <a href="https://support.planwithvoyant.com/hc/en-us/articles/15359426508443-Enter-an-existing-Investment-Bond-Life-Fund-Segments-Previous-Withdrawals-Top-Ups" target="_blank">Entering an Existing Investment Bond</a></p>
+      `,
+  },
+  {
+    key: "investmentInputMostRecentExcessWithdrawalYear",
+    label: "Most recent excess withdrawal (year)",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>In the event that the owner(s) have taken a taxable withdrawal, at some point, the year of this withdrawal needs to be entered (as this impacts on any 'top-slicing' calculations).</p>
+    `,
+  },
+  
+  // ── Tab: Growth ──────────────────────────────────────────────
+
+  {
+    key: "rateInterestInputRateType",
+    label: "Grow this account by",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Grow the account by either entered values below or by Portfolio/Holdings which you can complete via the Tabs above.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Our suggestion is to use <strong>Entered Interest Rate</strong> for all accounts until you're familiar with the impact of changing to Portfolio/Holdings.</li>
+      </ul>
+    `,
+    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit",
+  },
+  {
+    key: "rateInterestInputRate",
+    label: "Growth rate",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>This is the amount the account will be assumed to grow by each year compounded. It is a percentage of the account balance.</p>
+    `,
+  },
+  {
+    key: "yearlyPercentGainsTaxed",
+    label: "Capital Gains Realized Annually",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Specify a percentage of the capital gains which will be sold and reinvested within the investment each year. Gains realised within any available capital gains allowance will not be taxed by Voyant.</p>
+    `,
+  },
+  {
+    key: "dividendYieldRate",
+    label: "Dividends",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>The dividends received as a percentage of the investment balance. I.e. If the investment balance is £100,000 and 2% is entered here then dividends of £2,000 will be paid annually.</p>
+    `,
+  },
+  {
+    key: "interestYieldRate",
+    label: "Interest",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Interest received as a percentage of the investment balance. I.e. is the investment balance is £100,000 and the number entered is 3% then £3,000 will be paid out in interest.</p>
+    `,
+  },
+  {
+    key: "growthReinvestYield",
+    label: "Reinvest Yield?",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>If you would like Voyant to reinvest yields back into the investment then select Yes.
+      <br><br>
+      By selecting No the yields will be paid out as an annual income.
+      <br><br>
+      You will see these in Dashboard or Let's See > Year View > Cash Flow tab</p>
+    `,
+  },
+
+
+
 
 
 ];
