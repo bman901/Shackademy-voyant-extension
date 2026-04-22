@@ -24,7 +24,7 @@
 // Override inline in a specific section's tabs entry if needed.
 // -----------------------------------------------------------------------------
 
-const TAB_DESCRIPTIONS = {
+window.TAB_DESCRIPTIONS = {
 
   timing: `
     <p>The Timing tab controls <strong>when this item starts and ends</strong> in your plan. Voyant uses timeline events — milestones you define, like Retirement or a specific age — rather than fixed calendar dates, so your plan stays dynamic as assumptions change.</p>
@@ -118,8 +118,8 @@ window.SHACKADEMY_SECTIONS = {
           <p>Check the current default by going to Dashboard > Plan Settings > Inflation/Growth > National Average Earnings %.</p>
         `,
       },
-      "timing": { description: TAB_DESCRIPTIONS.timing },
-      "steps":  { description: TAB_DESCRIPTIONS.steps  },
+      "timing": { description: window.TAB_DESCRIPTIONS.timing },
+      "steps":  { description: window.TAB_DESCRIPTIONS.steps  },
     },
   },
 
@@ -135,9 +135,9 @@ window.SHACKADEMY_SECTIONS = {
           <p>Use the Taxation Type field to tell Voyant how to tax this income — as income, property income, capital gains, or dividends.</p>
         `,
       },
-      "growth":  { description: TAB_DESCRIPTIONS.growth  },
-      "timing":  { description: TAB_DESCRIPTIONS.timing  },
-      "steps":   { description: TAB_DESCRIPTIONS.steps   },
+      "growth":  { description: window.TAB_DESCRIPTIONS.growth  },
+      "timing":  { description: window.TAB_DESCRIPTIONS.timing  },
+      "steps":   { description: window.TAB_DESCRIPTIONS.steps   },
     },
   },
 
@@ -162,12 +162,12 @@ window.SHACKADEMY_SECTIONS = {
           <p>When income falls short of expenses, Voyant draws on savings according to the liquidation order. Check Dashboard > Plan Settings > Liquidation Order to see and adjust this.</p>
         `,
       },
-      "growth":       { description: TAB_DESCRIPTIONS.growth       },
-      "contribution": { description: TAB_DESCRIPTIONS.contribution },
-      "timing":       { description: TAB_DESCRIPTIONS.timing       },
-      "fees":         { description: TAB_DESCRIPTIONS.fees         },
-      "steps":        { description: TAB_DESCRIPTIONS.steps        },
-      "withdrawal limit": { description: TAB_DESCRIPTIONS.withdrawal },
+      "growth":       { description: window.TAB_DESCRIPTIONS.growth       },
+      "contribution": { description: window.TAB_DESCRIPTIONS.contribution },
+      "timing":       { description: window.TAB_DESCRIPTIONS.timing       },
+      "fees":         { description: window.TAB_DESCRIPTIONS.fees         },
+      "steps":        { description: window.TAB_DESCRIPTIONS.steps        },
+      "withdrawal limit": { description: window.TAB_DESCRIPTIONS.withdrawal },
     },
   },
 
@@ -189,12 +189,12 @@ window.SHACKADEMY_SECTIONS = {
           <p>For investment bonds, make sure you enter the Purchase Value and Year Purchased accurately as these affect tax calculations.</p>
         `,
       },
-      "growth":       { description: TAB_DESCRIPTIONS.growth       },
-      "contribution": { description: TAB_DESCRIPTIONS.contribution },
-      "timing":       { description: TAB_DESCRIPTIONS.timing       },
-      "fees":         { description: TAB_DESCRIPTIONS.fees         },
-      "steps":        { description: TAB_DESCRIPTIONS.steps        },
-      "withdrawal limit": { description: TAB_DESCRIPTIONS.withdrawal },
+      "growth":       { description: window.TAB_DESCRIPTIONS.growth       },
+      "contribution": { description: window.TAB_DESCRIPTIONS.contribution },
+      "timing":       { description: window.TAB_DESCRIPTIONS.timing       },
+      "fees":         { description: window.TAB_DESCRIPTIONS.fees         },
+      "steps":        { description: window.TAB_DESCRIPTIONS.steps        },
+      "withdrawal limit": { description: window.TAB_DESCRIPTIONS.withdrawal },
     },
   },
 
@@ -257,12 +257,12 @@ window.SHACKADEMY_SECTIONS = {
           </ul>
         `,
       },
-      "contribution": { description: TAB_DESCRIPTIONS.contribution },
-      "growth":       { description: TAB_DESCRIPTIONS.growth       },
-      "timing":       { description: TAB_DESCRIPTIONS.timing       },
-      "fees":         { description: TAB_DESCRIPTIONS.fees         },
-      "steps":        { description: TAB_DESCRIPTIONS.steps        },
-      "withdrawal limit": { description: TAB_DESCRIPTIONS.withdrawal },
+      "contribution": { description: window.TAB_DESCRIPTIONS.contribution },
+      "growth":       { description: window.TAB_DESCRIPTIONS.growth       },
+      "timing":       { description: window.TAB_DESCRIPTIONS.timing       },
+      "fees":         { description: window.TAB_DESCRIPTIONS.fees         },
+      "steps":        { description: window.TAB_DESCRIPTIONS.steps        },
+      "withdrawal limit": { description: window.TAB_DESCRIPTIONS.withdrawal },
       "crystallisations": {
         description: `
           <p>The Crystallisations tab allows you to model <strong>specific pension crystallisation events</strong> — the point at which pension benefits are formally accessed and tax-free cash is taken.</p>
