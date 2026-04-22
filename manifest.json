@@ -20,9 +20,7 @@
       "resources": [
         "fields.js",
         "glossary.js",
-        "pages.js",
-        "fonts/Montserrat-VariableFont_wght.ttf",
-        "fonts/Montserrat-Italic-VariableFont_wght.ttf"
+        "pages.js"
       ],
       "matches": ["<all_urls>"]
     }
