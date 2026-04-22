@@ -319,6 +319,7 @@
       if (isHidden) {
         userClosedPanel = false;
         panel.classList.remove("hidden");
+        updateContextPanel();
       } else {
         userClosedPanel = true;
         panel.classList.add("hidden");
