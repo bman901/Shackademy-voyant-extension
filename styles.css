@@ -290,9 +290,13 @@
   z-index: 2147483644;
   display: flex;
   flex-direction: column;
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif !important;
   transition: transform 0.22s ease;
   overflow: visible;
+}
+
+#shackademy-panel * {
+  font-family: 'Montserrat', Arial, sans-serif !important;
 }
 
 #shackademy-panel.hidden {
