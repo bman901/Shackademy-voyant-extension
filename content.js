@@ -341,6 +341,13 @@
         doneBtn.click();
         userClosedPanel = true;
         panel.classList.add("hidden");
+        // Hide save button and clear context immediately — 
+        // don't wait for hashchange which may fire after panel reopens
+        const saveBtn = document.getElementById("shackademy-save-btn");
+        if (saveBtn) saveBtn.hidden = true;
+        currentSectionKey = null;
+        currentItemId     = null;
+        currentTabKey     = null;
       } else {
         // No Done button found — flash the button to indicate nothing to save
         const btn = panel.querySelector("#shackademy-save-btn");
