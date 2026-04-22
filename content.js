@@ -1,38 +1,44 @@
 // content.js
 // Orchestrates field enhancement, modal, and side panel.
-// Depends on: fields.js (must be injected first), styles.css
+// Depends on: fields.js, glossary.js, pages.js (must be injected first), styles.css
 
 (() => {
-  // Guard: prevent double-initialisation
   if (window.__shackademyInitialised) return;
   window.__shackademyInitialised = true;
 
+  // ---------------------------------------------------------------------------
   // Constants
-  const ENHANCED_ATTR = "data-shackademy-enhanced";
-  const MODAL_ID      = "shackademy-modal";
-  const BACKDROP_ID   = "shackademy-backdrop";
-  const PANEL_ID      = "shackademy-panel";
-  const BADGE_CLASS   = "shackademy-badge";
+  // ---------------------------------------------------------------------------
+  const ENHANCED_ATTR  = "data-shackademy-enhanced";
+  const MODAL_ID       = "shackademy-modal";
+  const BACKDROP_ID    = "shackademy-backdrop";
+  const PANEL_ID       = "shackademy-panel";
+  const BADGE_CLASS    = "shackademy-badge";
 
-  // Build lookup map: for/id key -> field config
-  const fieldMap = new Map(
-    (window.SHACKADEMY_FIELDS || []).map((f) => [f.key, f])
-  );
+  // ---------------------------------------------------------------------------
+  // Data
+  // ---------------------------------------------------------------------------
+  const fieldMap  = new Map((window.SHACKADEMY_FIELDS  || []).map((f) => [f.key, f]));
+  const termMap   = window.SHACKADEMY_TERMS   || {};
+  const lessonMap = window.SHACKADEMY_LESSONS || {};
+  const pageMap   = window.SHACKADEMY_PAGES   || {};
 
-  // Track fields currently visible on the page: key -> { field, el }
-  let userClosedPanel = false;
-  const visibleFields = new Map();
+  // ---------------------------------------------------------------------------
+  // State
+  // ---------------------------------------------------------------------------
+  let userClosedPanel  = false;
+  let currentPageKey   = null; // the matched page context key
+  let currentItemId    = null; // itemId from URL hash — stable across tab switches
+  const visibleFields  = new Map(); // key -> { field, el }
 
   // ---------------------------------------------------------------------------
   // Utilities
   // ---------------------------------------------------------------------------
 
-  // Given a label element, return its key (prefers `for`, falls back to `id`)
   function getLabelKey(labelEl) {
     return labelEl.getAttribute("for") || labelEl.getAttribute("id") || null;
   }
 
-  // Accepts any YouTube URL format and returns the embed URL.
   function toEmbedUrl(url) {
     if (!url) return null;
     try {
@@ -46,16 +52,49 @@
         id = u.searchParams.get("v");
       }
       return id ? `https://www.youtube.com/embed/${id}` : null;
-    } catch {
-      return null;
-    }
+    } catch { return null; }
+  }
+
+  // Extract the itemId (4th segment) from Voyant's hash URL
+  // Hash format: #/userId/planId/edit/itemId/tab
+  function getItemIdFromHash() {
+    const parts = window.location.hash.split("/");
+    return parts.length >= 5 ? parts[4] : null;
   }
 
   // ---------------------------------------------------------------------------
-  // Find & enhance targets
+  // Context detection
   // ---------------------------------------------------------------------------
 
-  // Target all <label> elements whose for/id matches a key in our config
+  function detectPageContext() {
+    const newItemId = getItemIdFromHash();
+
+    // If itemId hasn't changed, keep the current context (user switched tabs)
+    if (newItemId && newItemId === currentItemId && currentPageKey) return;
+
+    // ItemId changed — look for a new type indicator in the DOM
+    currentItemId  = newItemId;
+    currentPageKey = null;
+
+    for (const [pageKey, config] of Object.entries(pageMap)) {
+      if (config.typeIndicator) {
+        const el = document.querySelector(
+          `label[for="${config.typeIndicator}"], label[id="${config.typeIndicator}"]`
+        );
+        if (el) {
+          currentPageKey = pageKey;
+          break;
+        }
+      }
+    }
+
+    updateGlossaryPanel();
+  }
+
+  // ---------------------------------------------------------------------------
+  // Field enhancement
+  // ---------------------------------------------------------------------------
+
   function findTargets() {
     return Array.from(document.querySelectorAll("label")).filter((el) => {
       const key = getLabelKey(el);
@@ -99,7 +138,7 @@
     });
 
     visibleFields.set(key, { field, el: labelEl });
-    updatePanel();
+    updateFieldsPanel();
     nudgeToggle();
   }
 
@@ -107,7 +146,6 @@
     findTargets().forEach(enhanceTarget);
   }
 
-  // Remove any fields from visibleFields that are no longer in the DOM
   function runCleanup() {
     let changed = false;
     visibleFields.forEach(({ el }, key) => {
@@ -116,18 +154,7 @@
         changed = true;
       }
     });
-    if (changed) updatePanel();
-  }
-
-  // Briefly animate the toggle button to signal fields are available
-  function nudgeToggle() {
-    const tab = document.getElementById("shackademy-panel-tab");
-    if (!tab) return;
-    if (tab.classList.contains("shackademy-nudge")) return;
-    tab.classList.add("shackademy-nudge");
-    tab.addEventListener("animationend", () => {
-      tab.classList.remove("shackademy-nudge");
-    }, { once: true });
+    if (changed) updateFieldsPanel();
   }
 
   // ---------------------------------------------------------------------------
@@ -171,24 +198,16 @@
     const tabsHTML = hasVideo ? `
       <div id="shackademy-tabs" role="tablist">
         <button class="shackademy-tab active" data-tab="details"
-          role="tab" aria-selected="true" aria-controls="shackademy-panel-details">
-          Details
-        </button>
+          role="tab" aria-selected="true">Details</button>
         <button class="shackademy-tab" data-tab="video"
-          role="tab" aria-selected="false" aria-controls="shackademy-panel-video">
-          Video
-        </button>
+          role="tab" aria-selected="false">Video</button>
       </div>` : "";
 
     const videoPanelHTML = hasVideo ? `
-      <div class="shackademy-panel" data-panel="video"
-        id="shackademy-panel-video" role="tabpanel">
-        <iframe
-          src="${embedUrl}"
-          title="${field.label} help video"
+      <div class="shackademy-panel" data-panel="video" role="tabpanel">
+        <iframe src="${embedUrl}" title="${field.label} help video"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+          allowfullscreen></iframe>
       </div>` : "";
 
     const backdrop = document.createElement("div");
@@ -207,12 +226,9 @@
         <h2 id="shackademy-modal-title">${field.label}</h2>
         <button id="shackademy-modal-close" aria-label="Close help">&times;</button>
       </div>
-
       ${tabsHTML}
-
       <div id="shackademy-modal-body">
-        <div class="shackademy-panel active" data-panel="details"
-          id="shackademy-panel-details" role="tabpanel">
+        <div class="shackademy-panel active" data-panel="details" role="tabpanel">
           <div class="shackademy-help-content">${field.helpText}</div>
           ${lessonButtonHTML}
         </div>
@@ -223,9 +239,7 @@
     document.body.appendChild(backdrop);
     document.body.appendChild(modal);
 
-    modal.querySelector("#shackademy-modal-close")
-      ?.addEventListener("click", closeModal);
-
+    modal.querySelector("#shackademy-modal-close")?.addEventListener("click", closeModal);
     modal.querySelectorAll(".shackademy-tab").forEach((tab) => {
       tab.addEventListener("click", () => switchTab(tab.dataset.tab, modal));
     });
@@ -235,7 +249,7 @@
   }
 
   // ---------------------------------------------------------------------------
-  // Side panel
+  // Panel shell
   // ---------------------------------------------------------------------------
 
   function createPanel() {
@@ -245,10 +259,10 @@
     panel.id = PANEL_ID;
     panel.setAttribute("role", "complementary");
     panel.setAttribute("aria-label", "Shackademy field guide");
-    panel.classList.add("hidden"); // start hidden; auto-opens when fields are detected
+    panel.classList.add("hidden");
 
     panel.innerHTML = `
-      <button id="shackademy-panel-tab" aria-label="Toggle Shackademy field guide">
+      <button id="shackademy-panel-tab" aria-label="Toggle Shackademy panel">
         <span>S</span>
       </button>
       <div id="shackademy-panel-header">
@@ -258,8 +272,25 @@
         </div>
         <button id="shackademy-panel-close" aria-label="Close panel">&times;</button>
       </div>
-      <div id="shackademy-panel-subheader">Fields on this page</div>
-      <ul id="shackademy-panel-list" role="list"></ul>
+
+      <div id="shackademy-panel-nav">
+        <button class="shackademy-panel-nav-btn active" data-view="glossary">
+          Glossary &amp; Lessons
+        </button>
+        <button class="shackademy-panel-nav-btn" data-view="fields">
+          Fields
+        </button>
+      </div>
+
+      <div id="shackademy-panel-views">
+        <div class="shackademy-panel-view active" data-view="glossary">
+          <div id="shackademy-glossary-content"></div>
+        </div>
+        <div class="shackademy-panel-view" data-view="fields">
+          <ul id="shackademy-panel-list" role="list"></ul>
+        </div>
+      </div>
+
       <div id="shackademy-panel-footer">
         <a href="https://shackademy.com" target="_blank" rel="noopener noreferrer">
           Visit Shackademy ↗
@@ -269,26 +300,147 @@
 
     document.body.appendChild(panel);
 
-    panel.querySelector("#shackademy-panel-close")
-      ?.addEventListener("click", () => {
+    // Tab toggle
+    panel.querySelector("#shackademy-panel-tab")?.addEventListener("click", () => {
+      const isHidden = panel.classList.contains("hidden");
+      if (isHidden) {
+        userClosedPanel = false;
+        panel.classList.remove("hidden");
+      } else {
         userClosedPanel = true;
         panel.classList.add("hidden");
-      });
+      }
+    });
 
-    panel.querySelector("#shackademy-panel-tab")
-      ?.addEventListener("click", () => {
-        const isHidden = panel.classList.contains("hidden");
-        if (isHidden) {
-          userClosedPanel = false;
-          panel.classList.remove("hidden");
-        } else {
-          userClosedPanel = true;
-          panel.classList.add("hidden");
-        }
+    // Close button
+    panel.querySelector("#shackademy-panel-close")?.addEventListener("click", () => {
+      userClosedPanel = true;
+      panel.classList.add("hidden");
+    });
+
+    // Panel nav (Glossary / Fields)
+    panel.querySelectorAll(".shackademy-panel-nav-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        panel.querySelectorAll(".shackademy-panel-nav-btn").forEach((b) =>
+          b.classList.remove("active")
+        );
+        panel.querySelectorAll(".shackademy-panel-view").forEach((v) =>
+          v.classList.remove("active")
+        );
+        btn.classList.add("active");
+        panel.querySelector(`.shackademy-panel-view[data-view="${btn.dataset.view}"]`)
+          ?.classList.add("active");
       });
+    });
   }
 
-  function updatePanel() {
+  // ---------------------------------------------------------------------------
+  // Glossary panel
+  // ---------------------------------------------------------------------------
+
+  function updateGlossaryPanel() {
+    const container = document.getElementById("shackademy-glossary-content");
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    const pageConfig = currentPageKey ? pageMap[currentPageKey] : null;
+
+    if (!pageConfig) {
+      container.innerHTML = `
+        <p class="shackademy-panel-empty">
+          Navigate to a Voyant section to see relevant glossary terms and lessons here.
+        </p>`;
+      return;
+    }
+
+    // Terms section
+    const terms = (pageConfig.terms || [])
+      .map((k) => termMap[k])
+      .filter(Boolean);
+
+    if (terms.length > 0) {
+      const termsSection = document.createElement("div");
+      termsSection.className = "shackademy-glossary-section";
+      termsSection.innerHTML = `<div class="shackademy-glossary-section-title">Glossary</div>`;
+
+      terms.forEach((term) => {
+        const item = document.createElement("div");
+        item.className = "shackademy-glossary-item";
+
+        const legislativeNote = term.legislative ? `
+          <div class="shackademy-legislative-note">
+            ⚠️ References current legislation — subject to change.
+            Last reviewed ${term.lastReviewed}.
+          </div>` : "";
+
+        item.innerHTML = `
+          <button class="shackademy-glossary-term" aria-expanded="false">
+            <span>${term.term}</span>
+            <span class="shackademy-glossary-chevron">›</span>
+          </button>
+          <div class="shackademy-glossary-definition" hidden>
+            <div class="shackademy-help-content">${term.definition}</div>
+            ${legislativeNote}
+          </div>
+        `;
+
+        const btn = item.querySelector(".shackademy-glossary-term");
+        const def = item.querySelector(".shackademy-glossary-definition");
+
+        btn.addEventListener("click", () => {
+          const isOpen = !def.hidden;
+          // Close all others
+          container.querySelectorAll(".shackademy-glossary-definition").forEach((d) => {
+            d.hidden = true;
+          });
+          container.querySelectorAll(".shackademy-glossary-term").forEach((b) => {
+            b.setAttribute("aria-expanded", "false");
+            b.classList.remove("open");
+          });
+          // Toggle this one
+          if (!isOpen) {
+            def.hidden = false;
+            btn.setAttribute("aria-expanded", "true");
+            btn.classList.add("open");
+          }
+        });
+
+        termsSection.appendChild(item);
+      });
+
+      container.appendChild(termsSection);
+    }
+
+    // Lessons section
+    const lessons = (pageConfig.lessons || [])
+      .map((k) => lessonMap[k])
+      .filter(Boolean);
+
+    if (lessons.length > 0) {
+      const lessonsSection = document.createElement("div");
+      lessonsSection.className = "shackademy-glossary-section";
+      lessonsSection.innerHTML = `<div class="shackademy-glossary-section-title">Shackademy Lessons</div>`;
+
+      lessons.forEach((lesson) => {
+        const link = document.createElement("a");
+        link.className = "shackademy-lesson-link";
+        link.href = lesson.url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.innerHTML = `<span>${lesson.title}</span><span class="shackademy-lesson-arrow">↗</span>`;
+        lessonsSection.appendChild(link);
+      });
+
+      container.appendChild(lessonsSection);
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Fields panel
+  // ---------------------------------------------------------------------------
+
+  function updateFieldsPanel() {
     const panel = document.getElementById(PANEL_ID);
     const list  = document.getElementById("shackademy-panel-list");
     if (!list || !panel) return;
@@ -296,12 +448,14 @@
     list.innerHTML = "";
 
     if (visibleFields.size === 0) {
-      panel.classList.add("hidden");
+      const empty = document.createElement("li");
+      empty.className = "shackademy-panel-empty";
+      empty.textContent = "No Shackademy fields detected on this page yet.";
+      list.appendChild(empty);
       return;
     }
 
-    // Panel never auto-opens — user must click the toggle
-    // (The toggle button animates to signal fields are available)
+    if (!userClosedPanel) panel.classList.remove("hidden");
 
     visibleFields.forEach(({ field }) => {
       const li = document.createElement("li");
@@ -318,17 +472,30 @@
         </button>
       `;
 
-      li.querySelector("button").addEventListener("click", () => {
+      li.querySelector(".shackademy-panel-field-btn").addEventListener("click", () => {
+        openModal(field);
         const entry = visibleFields.get(field.key);
         if (entry) {
           entry.el.scrollIntoView({ behavior: "smooth", block: "center" });
           entry.el.focus();
         }
-        openModal(field);
       });
 
       list.appendChild(li);
     });
+  }
+
+  // ---------------------------------------------------------------------------
+  // Nudge toggle animation
+  // ---------------------------------------------------------------------------
+
+  function nudgeToggle() {
+    const tab = document.getElementById("shackademy-panel-tab");
+    if (!tab || tab.classList.contains("shackademy-nudge")) return;
+    tab.classList.add("shackademy-nudge");
+    tab.addEventListener("animationend", () => {
+      tab.classList.remove("shackademy-nudge");
+    }, { once: true });
   }
 
   // ---------------------------------------------------------------------------
@@ -337,7 +504,7 @@
 
   function teardown() {
     closeModal();
-    document.getElementById(PANEL_ID)?.remove(); // panel-tab is inside panel, removed with it
+    document.getElementById(PANEL_ID)?.remove();
 
     document.querySelectorAll(`[${ENHANCED_ATTR}="true"]`).forEach((el) => {
       el.removeAttribute(ENHANCED_ATTR);
@@ -350,6 +517,8 @@
     });
 
     visibleFields.clear();
+    currentPageKey = null;
+    currentItemId  = null;
     window.__shackademyInitialised = false;
   }
 
@@ -362,15 +531,29 @@
   // ---------------------------------------------------------------------------
 
   function startObserver() {
+    let debounceTimer = null;
+
     const observer = new MutationObserver(() => {
-      runEnhancement(); // pick up any newly added fields
-      runCleanup();     // remove any fields that have left the DOM
+      // Debounce: wait for DOM to settle before running enhancement/cleanup
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => {
+        runEnhancement();
+        runCleanup();
+      }, 150);
     });
+
     observer.observe(document.body, { childList: true, subtree: true });
     window.__shackademyObserver = observer;
+
+    // Only re-detect page context when the URL hash actually changes
+    // (i.e. user navigates to a different Voyant section)
+    window.addEventListener("hashchange", () => {
+      detectPageContext();
+    });
   }
 
   createPanel();
   runEnhancement();
+  detectPageContext();
   startObserver();
 })();
