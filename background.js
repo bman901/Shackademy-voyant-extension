@@ -26,7 +26,7 @@ async function injectAll(tabId) {
   });
   await chrome.scripting.executeScript({
     target: { tabId },
-    files: ["fields.js", "glossary.js", "pages.js", "content.js"],
+    files: ["fields.js", "lessons.js", "sections.js", "content.js"],
   });
 }
 

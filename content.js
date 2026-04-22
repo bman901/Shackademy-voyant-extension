@@ -19,16 +19,16 @@
   // Data
   // ---------------------------------------------------------------------------
   const fieldMap  = new Map((window.SHACKADEMY_FIELDS  || []).map((f) => [f.key, f]));
-  const termMap   = window.SHACKADEMY_TERMS   || {};
-  const lessonMap = window.SHACKADEMY_LESSONS || {};
-  const pageMap   = window.SHACKADEMY_PAGES   || {};
+  const lessonMap   = window.SHACKADEMY_LESSONS  || {};
+  const sectionMap  = window.SHACKADEMY_SECTIONS || {};
 
   // ---------------------------------------------------------------------------
   // State
   // ---------------------------------------------------------------------------
   let userClosedPanel  = false;
-  let currentPageKey   = null; // the matched page context key
-  let currentItemId    = null; // itemId from URL hash — stable across tab switches
+  let currentSectionKey = null; // matched section key
+  let currentTabKey     = null; // current tab from URL hash
+  let currentItemId     = null; // itemId — stable across tab switches
   const visibleFields  = new Map(); // key -> { field, el }
 
   // ---------------------------------------------------------------------------
@@ -55,11 +55,14 @@
     } catch { return null; }
   }
 
-  // Extract the itemId (4th segment) from Voyant's hash URL
+  // Extract segments from Voyant's hash URL
   // Hash format: #/userId/planId/edit/itemId/tab
-  function getItemIdFromHash() {
+  function parseHash() {
     const parts = window.location.hash.split("/");
-    return parts.length >= 5 ? parts[4] : null;
+    return {
+      itemId: parts.length >= 5 ? parts[4] : null,
+      tab:    parts.length >= 6 ? parts[5].toLowerCase() : null,
+    };
   }
 
   // ---------------------------------------------------------------------------
@@ -67,28 +70,33 @@
   // ---------------------------------------------------------------------------
 
   function detectPageContext() {
-    const newItemId = getItemIdFromHash();
+    const { itemId: newItemId, tab: newTab } = parseHash();
 
-    // If itemId hasn't changed, keep the current context (user switched tabs)
-    if (newItemId && newItemId === currentItemId && currentPageKey) return;
+    // Tab changed within same item — update tab key and re-render, keep section
+    if (newItemId && newItemId === currentItemId && currentSectionKey) {
+      currentTabKey = newTab;
+      updateContextPanel();
+      return;
+    }
 
-    // ItemId changed — look for a new type indicator in the DOM
-    currentItemId  = newItemId;
-    currentPageKey = null;
+    // ItemId changed — scan DOM for a new type indicator
+    currentItemId    = newItemId;
+    currentTabKey    = newTab;
+    currentSectionKey = null;
 
-    for (const [pageKey, config] of Object.entries(pageMap)) {
+    for (const [sectionKey, config] of Object.entries(sectionMap)) {
       if (config.typeIndicator) {
         const el = document.querySelector(
           `label[for="${config.typeIndicator}"], label[id="${config.typeIndicator}"]`
         );
         if (el) {
-          currentPageKey = pageKey;
+          currentSectionKey = sectionKey;
           break;
         }
       }
     }
 
-    updateGlossaryPanel();
+    updateContextPanel();
   }
 
   // ---------------------------------------------------------------------------
@@ -338,24 +346,44 @@
   // Glossary panel
   // ---------------------------------------------------------------------------
 
-  function updateGlossaryPanel() {
+  function updateContextPanel() {
     const container = document.getElementById("shackademy-glossary-content");
     if (!container) return;
 
     container.innerHTML = "";
 
-    const pageConfig = currentPageKey ? pageMap[currentPageKey] : null;
+    const section = currentSectionKey ? sectionMap[currentSectionKey] : null;
 
-    if (!pageConfig) {
+    if (!section) {
       container.innerHTML = `
         <p class="shackademy-panel-empty">
-          Navigate to a Voyant section to see relevant glossary terms and lessons here.
+          Navigate to a Voyant section to see guidance and lessons here.
         </p>`;
       return;
     }
 
-    // Lessons section — shown first
-    const lessons = (pageConfig.lessons || [])
+    // Build tab title automatically from section name + capitalised tab key
+    const tabKey    = currentTabKey || "basics";
+    const tabConfig = section.tabs?.[tabKey] || section.tabs?.["basics"];
+    const tabLabel  = tabKey.charAt(0).toUpperCase() + tabKey.slice(1);
+    const title     = `${section.name} — ${tabLabel}`;
+
+    // Section title header
+    const titleEl = document.createElement("div");
+    titleEl.className = "shackademy-context-title";
+    titleEl.textContent = title;
+    container.appendChild(titleEl);
+
+    // Tab description
+    if (tabConfig?.description) {
+      const descEl = document.createElement("div");
+      descEl.className = "shackademy-context-description shackademy-help-content";
+      descEl.innerHTML = tabConfig.description;
+      container.appendChild(descEl);
+    }
+
+    // Lessons section
+    const lessons = (section.lessons || [])
       .map((k) => lessonMap[k])
       .filter(Boolean);
 
@@ -379,62 +407,6 @@
       });
 
       container.appendChild(lessonsSection);
-    }
-
-    // Terms section — shown second
-    const terms = (pageConfig.terms || [])
-      .map((k) => termMap[k])
-      .filter(Boolean);
-
-    if (terms.length > 0) {
-      const termsSection = document.createElement("div");
-      termsSection.className = "shackademy-glossary-section";
-      termsSection.innerHTML = `<div class="shackademy-glossary-section-title shackademy-section-title--glossary">Glossary</div>`;
-
-      terms.forEach((term) => {
-        const item = document.createElement("div");
-        item.className = "shackademy-glossary-item";
-
-        const legislativeNote = term.legislative ? `
-          <div class="shackademy-legislative-note">
-            ⚠️ References current legislation — subject to change.
-            Last reviewed ${term.lastReviewed}.
-          </div>` : "";
-
-        item.innerHTML = `
-          <button class="shackademy-glossary-term" aria-expanded="false">
-            <span>${term.term}</span>
-            <span class="shackademy-glossary-chevron">›</span>
-          </button>
-          <div class="shackademy-glossary-definition" hidden>
-            <div class="shackademy-help-content">${term.definition}</div>
-            ${legislativeNote}
-          </div>
-        `;
-
-        const btn = item.querySelector(".shackademy-glossary-term");
-        const def = item.querySelector(".shackademy-glossary-definition");
-
-        btn.addEventListener("click", () => {
-          const isOpen = !def.hidden;
-          container.querySelectorAll(".shackademy-glossary-definition").forEach((d) => {
-            d.hidden = true;
-          });
-          container.querySelectorAll(".shackademy-glossary-term").forEach((b) => {
-            b.setAttribute("aria-expanded", "false");
-            b.classList.remove("open");
-          });
-          if (!isOpen) {
-            def.hidden = false;
-            btn.setAttribute("aria-expanded", "true");
-            btn.classList.add("open");
-          }
-        });
-
-        termsSection.appendChild(item);
-      });
-
-      container.appendChild(termsSection);
     }
   }
 
@@ -519,8 +491,9 @@
     });
 
     visibleFields.clear();
-    currentPageKey = null;
-    currentItemId  = null;
+    currentSectionKey = null;
+    currentTabKey     = null;
+    currentItemId     = null;
     window.__shackademyInitialised = false;
   }
 

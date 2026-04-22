@@ -676,3 +676,53 @@
   color: #1fcb97;
   flex-shrink: 0;
 }
+
+
+
+/* ── Context panel (section description & title) ────────────────────────── */
+
+.shackademy-context-title {
+  padding: 12px 14px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #2B2E33;
+  border-bottom: 2px solid #1fcb97;
+  background: #f0fdf8;
+}
+
+.shackademy-context-description {
+  padding: 12px 14px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.shackademy-context-description p {
+  font-size: 12px;
+  line-height: 1.65;
+  color: #444;
+  margin: 0 0 8px;
+}
+
+.shackademy-context-description p:last-child {
+  margin-bottom: 0;
+}
+
+.shackademy-context-description ul {
+  margin: 6px 0 8px;
+  padding-left: 18px;
+}
+
+.shackademy-context-description li {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 3px;
+}
+
+.shackademy-context-description ul li::marker {
+  color: #1fcb97;
+}
+
+.shackademy-context-description strong {
+  font-weight: 700;
+  color: #2B2E33;
+}
