@@ -281,6 +281,11 @@
         <button id="shackademy-panel-close" aria-label="Close panel">&times;</button>
       </div>
 
+      <button id="shackademy-save-btn" aria-label="Save your data">
+        <span id="shackademy-save-icon">✓</span>
+        <span>Save — click Done in Voyant</span>
+      </button>
+
       <div id="shackademy-panel-nav">
         <button class="shackademy-panel-nav-btn active" data-view="guide">
           Guide
@@ -324,6 +329,21 @@
     panel.querySelector("#shackademy-panel-close")?.addEventListener("click", () => {
       userClosedPanel = true;
       panel.classList.add("hidden");
+    });
+
+    // Save button — clicks Voyant's real Done button
+    panel.querySelector("#shackademy-save-btn")?.addEventListener("click", () => {
+      const doneBtn = document.querySelector(
+        'button[data-test-model-save="true"], button[aria-label="Done"]'
+      );
+      if (doneBtn) {
+        doneBtn.click();
+      } else {
+        // No Done button found — flash the button to indicate nothing to save
+        const btn = panel.querySelector("#shackademy-save-btn");
+        btn?.classList.add("shackademy-save-unavailable");
+        setTimeout(() => btn?.classList.remove("shackademy-save-unavailable"), 1500);
+      }
     });
 
     // Panel nav (Glossary / Fields)
