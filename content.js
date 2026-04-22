@@ -354,7 +354,34 @@
       return;
     }
 
-    // Terms section
+    // Lessons section — shown first
+    const lessons = (pageConfig.lessons || [])
+      .map((k) => lessonMap[k])
+      .filter(Boolean);
+
+    if (lessons.length > 0) {
+      const lessonsSection = document.createElement("div");
+      lessonsSection.className = "shackademy-glossary-section";
+      lessonsSection.innerHTML = `<div class="shackademy-glossary-section-title shackademy-section-title--lessons">Shackademy Lessons</div>`;
+
+      lessons.forEach((lesson) => {
+        const link = document.createElement("a");
+        link.className = "shackademy-lesson-link";
+        link.href = lesson.url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.innerHTML = `
+          <span class="shackademy-lesson-icon">▶</span>
+          <span class="shackademy-lesson-title">${lesson.title}</span>
+          <span class="shackademy-lesson-arrow">↗</span>
+        `;
+        lessonsSection.appendChild(link);
+      });
+
+      container.appendChild(lessonsSection);
+    }
+
+    // Terms section — shown second
     const terms = (pageConfig.terms || [])
       .map((k) => termMap[k])
       .filter(Boolean);
@@ -362,7 +389,7 @@
     if (terms.length > 0) {
       const termsSection = document.createElement("div");
       termsSection.className = "shackademy-glossary-section";
-      termsSection.innerHTML = `<div class="shackademy-glossary-section-title">Glossary</div>`;
+      termsSection.innerHTML = `<div class="shackademy-glossary-section-title shackademy-section-title--glossary">Glossary</div>`;
 
       terms.forEach((term) => {
         const item = document.createElement("div");
@@ -390,7 +417,6 @@
 
         btn.addEventListener("click", () => {
           const isOpen = !def.hidden;
-          // Close all others
           container.querySelectorAll(".shackademy-glossary-definition").forEach((d) => {
             d.hidden = true;
           });
@@ -398,7 +424,6 @@
             b.setAttribute("aria-expanded", "false");
             b.classList.remove("open");
           });
-          // Toggle this one
           if (!isOpen) {
             def.hidden = false;
             btn.setAttribute("aria-expanded", "true");
@@ -410,29 +435,6 @@
       });
 
       container.appendChild(termsSection);
-    }
-
-    // Lessons section
-    const lessons = (pageConfig.lessons || [])
-      .map((k) => lessonMap[k])
-      .filter(Boolean);
-
-    if (lessons.length > 0) {
-      const lessonsSection = document.createElement("div");
-      lessonsSection.className = "shackademy-glossary-section";
-      lessonsSection.innerHTML = `<div class="shackademy-glossary-section-title">Shackademy Lessons</div>`;
-
-      lessons.forEach((lesson) => {
-        const link = document.createElement("a");
-        link.className = "shackademy-lesson-link";
-        link.href = lesson.url;
-        link.target = "_blank";
-        link.rel = "noopener noreferrer";
-        link.innerHTML = `<span>${lesson.title}</span><span class="shackademy-lesson-arrow">↗</span>`;
-        lessonsSection.appendChild(link);
-      });
-
-      container.appendChild(lessonsSection);
     }
   }
 
