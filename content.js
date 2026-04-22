@@ -1,6 +1,6 @@
 // content.js
 // Orchestrates field enhancement, modal, and side panel.
-// Depends on: fields.js, glossary.js, pages.js (must be injected first), styles.css
+// Depends on: fields.js, lessons.js, sections.js (must be injected first), styles.css
 
 (() => {
   if (window.__shackademyInitialised) return;
@@ -282,8 +282,8 @@
       </div>
 
       <div id="shackademy-panel-nav">
-        <button class="shackademy-panel-nav-btn active" data-view="glossary">
-          Glossary &amp; Lessons
+        <button class="shackademy-panel-nav-btn active" data-view="guide">
+          Guide
         </button>
         <button class="shackademy-panel-nav-btn" data-view="fields">
           Fields
@@ -291,8 +291,8 @@
       </div>
 
       <div id="shackademy-panel-views">
-        <div class="shackademy-panel-view active" data-view="glossary">
-          <div id="shackademy-glossary-content"></div>
+        <div class="shackademy-panel-view active" data-view="guide">
+          <div id="shackademy-guide-content"></div>
         </div>
         <div class="shackademy-panel-view" data-view="fields">
           <ul id="shackademy-panel-list" role="list"></ul>
@@ -347,7 +347,7 @@
   // ---------------------------------------------------------------------------
 
   function updateContextPanel() {
-    const container = document.getElementById("shackademy-glossary-content");
+    const container = document.getElementById("shackademy-guide-content");
     if (!container) return;
 
     container.innerHTML = "";
@@ -389,8 +389,8 @@
 
     if (lessons.length > 0) {
       const lessonsSection = document.createElement("div");
-      lessonsSection.className = "shackademy-glossary-section";
-      lessonsSection.innerHTML = `<div class="shackademy-glossary-section-title shackademy-section-title--lessons">Shackademy Lessons</div>`;
+      lessonsSection.className = "shackademy-guide-section";
+      lessonsSection.innerHTML = `<div class="shackademy-guide-section-title shackademy-section-title--lessons">Shackademy Lessons</div>`;
 
       lessons.forEach((lesson) => {
         const link = document.createElement("a");
