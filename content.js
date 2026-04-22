@@ -338,6 +338,8 @@
       );
       if (doneBtn) {
         doneBtn.click();
+        userClosedPanel = true;
+        panel.classList.add("hidden");
       } else {
         // No Done button found — flash the button to indicate nothing to save
         const btn = panel.querySelector("#shackademy-save-btn");
@@ -381,6 +383,10 @@
         </p>`;
       return;
     }
+
+    // Show or hide the save button depending on whether a section is detected
+    const saveBtn = document.getElementById("shackademy-save-btn");
+    if (saveBtn) saveBtn.hidden = !section;
 
     // Build tab title automatically from section name + capitalised tab key
     const tabKey    = currentTabKey || "basics";
