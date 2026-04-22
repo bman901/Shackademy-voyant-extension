@@ -281,7 +281,7 @@
         <button id="shackademy-panel-close" aria-label="Close panel">&times;</button>
       </div>
 
-      <button id="shackademy-save-btn" aria-label="Save your data">
+      <button id="shackademy-save-btn" aria-label="Save your data" hidden>
         <span id="shackademy-save-icon">✓</span>
         <span>Save — click Done in Voyant</span>
       </button>
