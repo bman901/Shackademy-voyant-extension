@@ -560,6 +560,22 @@
     window.addEventListener("hashchange", () => {
       detectPageContext();
     });
+
+    // Watch for Voyant's native Done button being clicked directly
+    // so we can hide the save button and clear context just as we do
+    // when the user clicks our panel save button
+    document.body.addEventListener("click", (e) => {
+      const btn = e.target.closest(
+        'button[data-test-model-save="true"], button[aria-label="Done"], button[data-test-model-cancel="true"], button[aria-label="Cancel"]'
+      );
+      if (btn) {
+        const saveBtn = document.getElementById("shackademy-save-btn");
+        if (saveBtn) saveBtn.hidden = true;
+        currentSectionKey = null;
+        currentItemId     = null;
+        currentTabKey     = null;
+      }
+    }, true); // capture phase so we catch it before Voyant's own handlers
   }
 
   createPanel();
