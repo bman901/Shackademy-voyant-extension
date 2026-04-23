@@ -16,7 +16,7 @@
 // If only lessonUrl is present, a button appears in the Details panel (no tabs).
 // If videoUrl is present, a Video tab appears alongside Details.
 //
-// EXAMPLES (remove // to activate):
+// EXAMPLES:
 //
 // Field with lesson but no video:
 // {
@@ -841,7 +841,6 @@ window.SHACKADEMY_FIELDS = [
       </ul>
     `,
   },
-  // TODO: Keep verifying
   {
     key: "ukSavingsInputBalance",
     label: "Balance",
@@ -858,7 +857,6 @@ window.SHACKADEMY_FIELDS = [
         <li><a href="https://shackademy.com/path-player?courseid=voyant&unit=68e5b24f932f5484590240fdUnit" target="_blank">Our lesson on how plan years are updated is here</a></li>
       </ul>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit"
   },
   {
     key: "growthInputGrowthType",
@@ -871,7 +869,6 @@ window.SHACKADEMY_FIELDS = [
         <li>Our suggestion is to use <strong>Entered Interest Rate</strong> for all accounts until you're familiar with the impact of changing to Portfolio/Holdings.</li>
       </ul>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit"
   },
   {
     key: "toggleGrowthRateInputRate",
@@ -880,7 +877,6 @@ window.SHACKADEMY_FIELDS = [
       <h3>What to enter</h3>
       <p>This is the amount the account will be assumed to grow by each year compounded if there are no withdrawals i.e. the Interest rate of the savings account.</p>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit"
   },
   {
     key: "contributionType",
@@ -889,7 +885,6 @@ window.SHACKADEMY_FIELDS = [
       <h3>What to enter</h3>
       <p>Select how you wish to calculate regular contributions, either as a fixed amount (with or without inflation) or as a percentage of income.</p>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit"
   },
   {
     key: "contributionAmount",
@@ -907,7 +902,6 @@ window.SHACKADEMY_FIELDS = [
         <li>You will also see contributions in the Year View > Expenses tab to see the contribution as an Expense</li>
       </ul>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit"
   },
   {
     key: "formContributionPresentFutureValue",
@@ -919,7 +913,6 @@ window.SHACKADEMY_FIELDS = [
         <li><strong>Future Value:</strong> If you want the expense to increase with inflation from <strong>the chosen start date (Timing tab)</strong>, choose this</li>
       </ul>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit"
   },
   {
     key: "contributionPercent",
@@ -928,7 +921,6 @@ window.SHACKADEMY_FIELDS = [
       <h3>What to enter</h3>
       <p>This will be relative to the <strong>gross</strong> salary of the owner chosen at the top of the page</p>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit",
   },
 
   // ── Tab: Withdrawal Limit ──────────────────────────────────────────────
@@ -954,7 +946,6 @@ window.SHACKADEMY_FIELDS = [
       </ul>
       <p>*Note: These payments are the maximum amount Voyant is allowed to take from the account. The withdrawals will not be used if, for example, there isn't a shortfall to be met by using savings.</p>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit",
   },
 
   // ------------------------------------------------------------
@@ -974,7 +965,6 @@ window.SHACKADEMY_FIELDS = [
         <li>Ownership defaults to the principal person. Check correct ownership for each product.</li>
       </ul>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit",
   },
   {
     key: "investmentInputName",
@@ -989,7 +979,6 @@ window.SHACKADEMY_FIELDS = [
         <li>Ensure you don't include any identifiable information like account numbers</li>
       </ul>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit"
   },
   {
     key: "investmentInputInvesmentType",
@@ -1019,7 +1008,6 @@ window.SHACKADEMY_FIELDS = [
       <sup>4</sup><a href="https://support.planwithvoyant.com/hc/en-us/articles/4406520094107-VCTs-How-to-enter-and-tax-treatment-of-Venture-Capital-Trusts-UK" target="_blank">This article</a> will explain how to enter an VCT and the tax treatment applicable;
       </p>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit",
   },
   {
     key: "investmentInputBalanceLabel",
@@ -1030,7 +1018,7 @@ window.SHACKADEMY_FIELDS = [
       <h3>Tips</h3>
       <ul>
         <li>The plan start date is 6th April each year</li>  
-        <li>This is updated to following tax year in October each year</li>
+        <li>This is updated to the following tax year in October each year</li>
         <li>This means there is only ever at maximum a 6 month differential in account balances</li>
         <li>You will spend 6 months of the year working in arrears, and 6 months working in advance</li>
         <li>The easiest way to approach this is to update your account balances in October and April each year</li>
@@ -1044,7 +1032,6 @@ window.SHACKADEMY_FIELDS = [
         <li><strong>Loan Trusts</strong> - Enter the current balance of the trust itself under Balance and the Balance of the Loan under Loan Balance.</li>
       </ul>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit",
   },
   {
     key: "InputIsExistingInvestment",
@@ -1186,7 +1173,6 @@ window.SHACKADEMY_FIELDS = [
       <h3>Tips</h3>
       <ul>
         <li>Use this where the gains are subject to a known fixed rate rather than the UK standard CGT rates - for example, where the investment is held in a foreign jurisdiction with its own tax treatment</li>
-        
       </ul>
     `,
   },
@@ -1269,7 +1255,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Toggle this on if the gains on this unwrapped investment qualify for Business Asset Disposal Relief (formerly known as Entrepreneur's Relief). This reduces the effective CGT rate on qualifying gains.</p>
       <h3>Tips</h3>
       <ul>
-        <li>The current lifetime limit for Business Asset Disposal Relief is £1 million - gains up to this limit are taxed at 10% rather than the standard CGT rate</li>
+        <li>Gains up to the lifetime limit are taxed at a discounted rate, rather than the standard CGT rate</li>
         <li>This relief typically applies to disposals of shares in personal trading companies, business assets, or qualifying partnership interests - not to passive investment portfolios</li>
         <li>Confirm eligibility with your tax adviser before toggling this on</li>
       </ul>
@@ -1283,7 +1269,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Select how withdrawals should be taken from this investment bond - either by <strong>encashing segments</strong> or by taking a <strong>partial withdrawal</strong> across all segments.</p>
       <h3>Options</h3>
       <ul>
-        <li><strong>Segment Encashment</strong> - whole segments are surrendered. Each segment has its own 5% per annum tax-deferred allowance and its own gain calculation. This approach can spread gains across tax years and is often more tax-efficient</li>
+        <li><strong>Segment Encashment</strong> - whole segments are surrendered. Each segment has its own 5% per annum tax-deferred allowance and its own gain calculation. This approach can spread gains across tax years</li>
         <li><strong>Partial Withdrawal</strong> - withdrawals are taken from across all segments proportionally. This draws down the tax-deferred 5% allowance across the whole policy simultaneously</li>
       </ul>
       <h3>Tips</h3>
@@ -1319,7 +1305,6 @@ window.SHACKADEMY_FIELDS = [
         <li>Our suggestion is to use <strong>Entered Growth Rate</strong> for all accounts until you're familiar with the impact of changing to Portfolio/Holdings.</li>
       </ul>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit",
   },
   {
     key: "rateInterestInputRate",
@@ -1362,7 +1347,7 @@ window.SHACKADEMY_FIELDS = [
       <br><br>
       By selecting No the yields will be paid out as an annual income.
       <br><br>
-      You will see these in Dashboard or Let's See > Year View > Cash Flow tab</p>
+      You will see these in Dashboard or Year View > Cash Flow tab</p>
     `,
   },
 
@@ -1382,7 +1367,7 @@ window.SHACKADEMY_FIELDS = [
       <ul>
         <li><strong>Main Residence</strong> - your primary home. Gains on disposal are fully exempt from CGT under PPR relief (subject to the final period exemption)</li>
         <li><strong>Buy to Let</strong> - a residential property held as an investment. Rental income is taxable and gains on disposal are subject to CGT at the residential property rate</li>
-        <li><strong>Second Home / Holiday Home</strong> - a secondary property that is not your main residence. Subject to CGT on disposal; PPR relief may apply partially if you have lived there</li>
+        <li><strong>Second Home / Holiday Home</strong> - a secondary property that is not your main residence. Subject to CGT on disposal</li>
         <li><strong>Commercial Property</strong> - a non-residential property. Subject to CGT at the standard (non-residential) rate on disposal</li>
         <li><strong>Land</strong> - undeveloped or agricultural land. Subject to CGT on disposal; APR may apply if farmed</li>
       </ul>
@@ -1481,7 +1466,7 @@ window.SHACKADEMY_FIELDS = [
       <ul>
         <li>The default growth rate can be found and changed in Dashboard > Plan Settings > Inflation/Growth</li>
         <li>Use a rate that reflects realistic long-term expectations for this type of property and location - past house price growth is not guaranteed to continue</li>
-        <li>You can model different rates for different properties - for example, a lower rate for a rural holiday home versus a city-centre flat</li>
+        <li>You can model different rates for different properties - for example, a different rate for a rural holiday home versus a city-centre flat</li>
       </ul>
     `,
   },
@@ -1491,9 +1476,8 @@ window.SHACKADEMY_FIELDS = [
     helpText: `
       <h3>What to enter</h3>
       <p>Toggle this on if this property qualifies for the Residence Nil-Rate Band (RNRB) - the additional IHT allowance available when a main residence is passed to direct descendants.</p>
-      <h3>Tips</h3>
+      <h3>Based on current rules (as at April 2026)</h3>
       <ul>
-        <li>The RNRB is currently up to £175,000 per person (2025/26), on top of the standard nil-rate band of £325,000</li>
         <li>To qualify, the property must have been the deceased's main home at some point and must be inherited by direct descendants (children, grandchildren, stepchildren etc.)</li>
         <li>The RNRB is tapered for estates above £2 million - Voyant will apply the taper automatically based on the total estate value</li>
         <li>Only toggle this on for the main residence - it cannot apply to buy-to-let or investment properties</li>
@@ -1518,7 +1502,6 @@ window.SHACKADEMY_FIELDS = [
       <h3>What to enter</h3>
       <p>Select the owner of the pension by expanding the menu and selecting / deselecting individuals by clicking on their names. You will see your selection in the owner window.</p>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773214bcbc96cfe9f04a018Unit",
   },
   {
     key: "ukMoneyPurchaseInputName",
@@ -1533,7 +1516,6 @@ window.SHACKADEMY_FIELDS = [
         <li>Ensure you don't include any identifiable information like account numbers</li>
       </ul>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773214bcbc96cfe9f04a018Unit",
   },
   {
     key: "ukMoneyPurchaseInputType",
@@ -1550,7 +1532,6 @@ window.SHACKADEMY_FIELDS = [
         <li>James explains the difference between 'net pay' and 'relief at source' pensions in <a href="https://shackademy.com/path-player?courseid=module-2&unit=6822ca51fae53e450e01914dUnit" target="_blank">this lesson.</a></li>
       </ul>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773214bcbc96cfe9f04a018Unit",
   },
   {
     key: "ukMoneyPurchaseInputBalanceLabel",
@@ -1561,14 +1542,13 @@ window.SHACKADEMY_FIELDS = [
       <h3>Tips</h3>
       <ul>
         <li>The plan start date is 6th April each year</li>  
-        <li>This is updated to following tax year in October each year</li>
+        <li>This is updated to the following tax year in October each year</li>
         <li>This means there is only ever at maximum a 6 month differential in account balances</li>
         <li>You will spend 6 months of the year working in arrears, and 6 months working in advance</li>
         <li>The easiest way to approach this is to update your account balances in October and April each year</li>
         <li><a href="https://shackademy.com/path-player?courseid=voyant&unit=68e5b24f932f5484590240fdUnit" target="_blank">Our lesson on how plan years are updated is here</a></li>
       </ul>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773214bcbc96cfe9f04a018Unit",
   },
   {
     key: "ieMoneyPurchaseEmployerContribution",
@@ -1577,7 +1557,6 @@ window.SHACKADEMY_FIELDS = [
       <h3>What to enter</h3>
       <p>Whenever employer contributions are being made these should always be entered as a gross amount and they will be identified by the software as an 'unscheduled' contribution.</p>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773214bcbc96cfe9f04a018Unit",
   },
   {
     key: "employerContributionType",
@@ -1586,7 +1565,6 @@ window.SHACKADEMY_FIELDS = [
       <h3>What to enter</h3>
       <p>Our suggestion is to use 'Fixed' and enter the gross amount rather than 'Matching'</p>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773214bcbc96cfe9f04a018Unit",
   },
   {
     key: "matchingPercentContribution",
@@ -1595,7 +1573,6 @@ window.SHACKADEMY_FIELDS = [
       <h3>What to enter</h3>
       <p>Specify the percentage of your contribution that your employer is willing to match. For example, enter 100% to indicate that one hundred per cent of your contributions are matched by your company.</p>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773214bcbc96cfe9f04a018Unit",
   },
   {
     key: "matchingPercentIncome",
@@ -1604,7 +1581,6 @@ window.SHACKADEMY_FIELDS = [
       <h3>What to enter</h3>
       <p>As a percentage of income, what is the maximum amount the employer is willing to match. For example, enter 10% to indicate that your employer would match up to a maximum of 10% your salary.</p>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773214bcbc96cfe9f04a018Unit",
   },
   {
     key: "fixedContributionType",
@@ -1613,7 +1589,6 @@ window.SHACKADEMY_FIELDS = [
       <h3>What to enter</h3>
       <p>Select how you wish to calculate regular contributions, either as a fixed amount (with or without inflation) or as a percentage of income.</p>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773214bcbc96cfe9f04a018Unit",
   },
   {
     key: "ukMoneyPurchaseInputEmployerRebatePercent",
@@ -1622,7 +1597,6 @@ window.SHACKADEMY_FIELDS = [
       <h3>What to enter</h3>
       <p>Specify the percentage of the employer's NI savings that will be rebated to you. Any rebated NI savings will be paid by the employer into the pension.</p>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773214bcbc96cfe9f04a018Unit",
   },
   {
     key: "ukMoneyPurchaseInputEmployerNicRateCode",
@@ -1631,7 +1605,6 @@ window.SHACKADEMY_FIELDS = [
       <h3>What to enter</h3>
       <p>Select your NI rate code. This code will be used to calculate the employer's NI savings that may then be rebated to you as an additional pension contribution, based on the percentage entered above.</p>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773214bcbc96cfe9f04a018Unit",
   },
   {
     key: "limitContributionsToAllowance",
@@ -1646,7 +1619,6 @@ window.SHACKADEMY_FIELDS = [
         <li>Voyant will still flag where contributions are on track to exceed the allowance in the Year View even if this is toggled off</li>
       </ul>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773214bcbc96cfe9f04a018Unit",
   },
   {
     key: "employmentId",
@@ -1660,7 +1632,6 @@ window.SHACKADEMY_FIELDS = [
         <li>If no employment is linked, employer contributions will still be modelled but will not automatically stop at retirement</li>
       </ul>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773214bcbc96cfe9f04a018Unit",
   },
   {
     key: "fixedContributionAmount",
@@ -1674,7 +1645,6 @@ window.SHACKADEMY_FIELDS = [
         <li>If the employer contribution is a percentage of salary rather than a fixed amount, use the Matching contribution type instead</li>
       </ul>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773214bcbc96cfe9f04a018Unit",
   },
   {
     key: "ukMoneyPurchaseSSApply",
@@ -1690,7 +1660,6 @@ window.SHACKADEMY_FIELDS = [
         <li>Note: salary sacrifice contributions count towards the Annual Allowance in the same way as other contributions</li>
       </ul>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773214bcbc96cfe9f04a018Unit",
   },
   {
     key: "ukAnnuityAnnuitizationTimingType",
@@ -1708,7 +1677,6 @@ window.SHACKADEMY_FIELDS = [
         <li>Using an Event gives you more flexibility to test different annuity purchase timings without changing the age field each time</li>
       </ul>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773214bcbc96cfe9f04a018Unit",
   },
 
     // ── Tab: Crystallisations ──────────────────────────────────────────────
@@ -1720,7 +1688,6 @@ window.SHACKADEMY_FIELDS = [
       <h3>What to enter</h3>
       <p>Crystallising a pension means moving it (or part of it) from uncrystallised to drawdown, which triggers access to your tax-free cash. This section is used primarily to model a one-off withdrawal or to take tax-free cash - refer to the lesson for a step-by-step walkthrough.</p>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=67ca5669ebbfa089ff0ceec9Unit",
   },
 
     // ── Tab: Planned Withdrawals ──────────────────────────────────────────────
@@ -1742,7 +1709,6 @@ window.SHACKADEMY_FIELDS = [
       <br><br>
       <strong>Note:</strong> The Pension Strategy window will not appear if only drawdown accounts are selected as there is no tax free element to them so all of the withdrawal is potentially taxable.</p>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=67ca5669ebbfa089ff0ceec9Unit",
   },
 
   // ── Tab: Beneficiaries ──────────────────────────────────────────────
@@ -1998,7 +1964,7 @@ window.SHACKADEMY_FIELDS = [
       <h3>Tips</h3>
       <ul>
         <li>Check your scheme booklet or annual benefit statement for the revaluation basis that applies to your scheme</li>
-        <li>Your CPI assumption can be found in Dashboard > Plan Settings > Inflation/Growth > CPI</li>
+        <li>Your RPI/CPI assumption can be found in Dashboard > Plan Settings > Inflation/Growth</li>
       </ul>
     `,
   },
@@ -2019,7 +1985,7 @@ window.SHACKADEMY_FIELDS = [
       <h3>Tips</h3>
       <ul>
         <li>Your scheme rules will specify the escalation basis - check your annual benefit statement or member booklet</li>
-        <li>Your CPI assumption can be found in Dashboard > Plan Settings > Inflation/Growth > CPI</li>
+        <li>Your RPI/CPI assumption can be found in Dashboard > Plan Settings > Inflation/Growth</li>
       </ul>
     `,
   },
@@ -2462,8 +2428,8 @@ window.SHACKADEMY_FIELDS = [
       <p>Select whether this is a <strong>Pension Annuity</strong> or a <strong>Purchase Life Annuity</strong>.</p>
       <h3>Options</h3>
       <ul>
-        <li><strong>Pension</strong> - an annuity purchased from a pension fund. Voyant treats this as a lifetime annuity - it will always run to death and cannot have a fixed term. The full income is taxable as pension income</li>
-        <li><strong>Purchase Life Annuity</strong> - an annuity purchased with non-pension money (e.g. savings or an inheritance). A portion of each payment is treated as a tax-free return of capital; only the interest element is taxable. You can set a fixed term if applicable</li>
+        <li><strong>Pension</strong> - an annuity purchased from a pension fund. The full income is taxable as pension income</li>
+        <li><strong>Non-Pension</strong> - an annuity purchased with non-pension money (e.g. savings or an inheritance). A portion of each payment is treated as a tax-free return of capital; only the interest element is taxable. You can set a fixed term if applicable</li>
       </ul>
     `,
   },
@@ -2475,7 +2441,6 @@ window.SHACKADEMY_FIELDS = [
       <p>Toggle this on if this is a capital-protected annuity - one that guarantees to pay back all or part of the original purchase price to the owner's estate if they die before the protection amount has been paid out.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Capital protection reduces the regular income payable compared to a standard annuity - it is a trade-off between income level and death benefit</li>
         <li>Once enabled, enter the protected amount in the field below</li>
         <li>In Voyant, the capital protection value is paid as a lump sum to the estate on death, visible in the Legacy screen</li>
       </ul>
@@ -2513,7 +2478,7 @@ window.SHACKADEMY_FIELDS = [
     label: "Capital Element",
     helpText: `
       <h3>What to enter</h3>
-      <p>For a Purchase Life Annuity, enter the proportion of each payment that represents a tax-free return of capital. This reduces the taxable portion of each payment.</p>
+      <p>For a Purchase Life Annuity (Non-Pension), enter the proportion of each payment that represents a tax-free return of capital. This reduces the taxable portion of each payment.</p>
       <h3>Tips</h3>
       <ul>
         <li>The capital element is calculated by HMRC and set at outset based on the annuitant's age and the purchase price - it does not change over the life of the annuity</li>
@@ -2546,10 +2511,6 @@ window.SHACKADEMY_FIELDS = [
         <li><strong>Single Life</strong> - income is paid only during the owner's lifetime. Payments stop at the owner's death (subject to any Years Certain guarantee)</li>
         <li><strong>Joint Life</strong> - income continues to a named beneficiary after the owner's death, at the Survivorship Percent you specify. The income typically reduces on first death</li>
       </ul>
-      <h3>Tips</h3>
-      <ul>
-        <li>Joint Life annuities pay a lower initial income than Single Life for the same purchase price - the trade-off is ongoing income for the surviving partner</li>
-      </ul>
     `,
   },
   {
@@ -2573,7 +2534,6 @@ window.SHACKADEMY_FIELDS = [
       <p>Select <strong>Yes</strong> if this annuity is payable for life (the most common type). Select <strong>No</strong> if it is a fixed-term annuity that pays for a set number of years only.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Pension annuities are always lifetime - this toggle is most relevant for Purchase Life Annuities</li>
         <li>If you select No, a Term field will appear where you can enter the number of years the annuity runs</li>
       </ul>
     `,
@@ -2588,7 +2548,6 @@ window.SHACKADEMY_FIELDS = [
       <ul>
         <li>For example, a 10-year guarantee means the full annuity income is paid for at least 10 years regardless of death - after which, for a Joint Life annuity, the beneficiary receives the survivor percentage</li>
         <li>If there is no guarantee period, enter 0</li>
-        <li>Guarantee periods reduce the income payable - they are a trade-off between protection and income level</li>
       </ul>
     `,
   },
@@ -2613,15 +2572,14 @@ window.SHACKADEMY_FIELDS = [
       <p>Select how the annuity income will increase each year once it is in payment.</p>
       <h3>Options</h3>
       <ul>
-        <li><strong>None</strong> - the annuity is level; the income does not increase. This provides the highest initial income but will be eroded by inflation over time</li>
-        <li><strong>RPI</strong> - increases in line with the Retail Prices Index each year</li>
+        <li><strong>None</strong> - the annuity is level; the income does not increase</li>
+        <li><strong>RPI</strong> - increases in line with the Retail Prices Index each year, using the rate set in your Plan Settings</li>
         <li><strong>LPI</strong> - increases in line with Limited Price Indexation, typically capped at 5% or 2.5%</li>
         <li><strong>CPI</strong> - increases in line with the Consumer Prices Index, using the rate set in your Plan Settings</li>
         <li><strong>Other</strong> - enter a fixed escalation rate of your choice</li>
       </ul>
       <h3>Tips</h3>
       <ul>
-        <li>Escalating annuities pay a lower starting income than level annuities - the trade-off is protection against inflation in later years</li>
         <li>Check the annuity policy for the escalation basis - this is fixed at the time of purchase and cannot be changed</li>
       </ul>
     `,
@@ -2660,7 +2618,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the underlying interest rate Voyant should use to derive the annuity rate. This typically reflects the yield on mid-dated UK gilts, which insurers use as a basis for pricing annuities.</p>
       <h3>Tips</h3>
       <ul>
-        <li>A higher rate produces a higher annuity income - gilt yields have risen significantly since 2022, so this assumption is worth reviewing regularly</li>
+        <li>A higher rate produces a higher annuity income</li>
         <li>If you have a quoted annuity rate from a provider, use the Specified Annuity Rate option instead for greater precision</li>
       </ul>
     `,
@@ -2803,7 +2761,7 @@ window.SHACKADEMY_FIELDS = [
     helpText: `
       <h3>What to enter</h3>
       <p>Enter the age at which the State Pension is due to start. This is typically the State Pension Age set by the government, but it can be deferred to a later age if the owner chooses to delay taking it.</p>
-      <h3>Tips</h3>
+      <h3>Tips (Based on current rules as at April 2026)</h3>
       <ul>
         <li>Deferring the State Pension increases the weekly amount received - for every 9 weeks deferred, the State Pension increases by 1%</li>
         <li>The current State Pension Age for both men and women is 66, rising to 67 between 2026 and 2028 - check the government's personal forecast at <a href="https://www.gov.uk/check-state-pension" target="_blank">gov.uk/check-state-pension</a> for the exact date</li>
@@ -2833,7 +2791,6 @@ window.SHACKADEMY_FIELDS = [
       <h3>Tips</h3>
       <ul>
         <li>The State Pension escalates automatically in Voyant using the Triple Lock - the higher of National Average Earnings, CPI, or 2.5% - using assumptions from your Plan Settings</li>
-        <li>The current full new State Pension is £11,502.40 per year (2025/26) - use the personal forecast for an individual's actual entitlement based on their National Insurance record</li>
         <li>Get the State Pension forecast at <a href="https://www.gov.uk/check-state-pension" target="_blank">gov.uk/check-state-pension</a></li>
       </ul>
     `,
@@ -2860,7 +2817,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter any Graduated State Pension entitlement. This is an older state pension element accrued between 1961 and 1975 under the Graduated Retirement Benefit scheme.</p>
       <h3>Tips</h3>
       <ul>
-        <li>This will only be relevant for older clients - anyone who worked and paid graduated NI contributions between 1961 and 1975 may have a small entitlement</li>
+        <li>This will only be relevant for older users - anyone who worked and paid graduated NI contributions between 1961 and 1975 may have a small entitlement</li>
         <li>The amount will appear on the State Pension forecast if it applies - if nothing is shown, leave this blank</li>
       </ul>
     `,
@@ -2875,7 +2832,7 @@ window.SHACKADEMY_FIELDS = [
       <ul>
         <li>By default, Voyant escalates the State Pension using the Triple Lock (the higher of NAE, CPI, or 2.5%) - this is the current government policy</li>
         <li>Toggle this on if you want to model a scenario where the Triple Lock is removed or changed - for example, using a flat 2.5% or CPI-only increase</li>
-        <li>This can be a useful stress-test for clients who are significantly reliant on the State Pension in retirement</li>
+        <li>This can be a useful stress-test for people who are significantly reliant on the State Pension in retirement</li>
       </ul>
     `,
   },
