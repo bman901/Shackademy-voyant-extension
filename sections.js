@@ -78,7 +78,7 @@ window.SHACKADEMY_SECTIONS = {
   "people": {
     name: "People",
     typeIndicator: "personInputTypeLabel",
-    lessons: ["people-basics"],
+    lessons: ["people-timeline"],
     tabs: {
       "basics": {
         description: `
@@ -97,7 +97,7 @@ window.SHACKADEMY_SECTIONS = {
   "employment-income": {
     name: "Employment Income",
     typeIndicator: "employmentInputEmploymentSource",
-    lessons: ["income-basics", "what-if-scenarios"],
+    lessons: ["income-expenses", "retiring-part-way"],
     tabs: {
       "basics": {
         description: `
@@ -126,7 +126,7 @@ window.SHACKADEMY_SECTIONS = {
   "other-income": {
     name: "Other Income",
     typeIndicator: "otherIncomeInputTaxationType",
-    lessons: ["other-income"],
+    lessons: ["income-expenses"],
     tabs: {
       "basics": {
         description: `
@@ -148,7 +148,7 @@ window.SHACKADEMY_SECTIONS = {
   "savings": {
     name: "Savings",
     typeIndicator: "ukSavingInputSavingType",
-    lessons: ["savings-basics", "contributions-guide", "liquidation-order"],
+    lessons: ["savings-investments", "lump-sums", "non-standard-assets", "managing-withdrawals"],
     tabs: {
       "basics": {
         description: `
@@ -174,7 +174,7 @@ window.SHACKADEMY_SECTIONS = {
   "investments": {
     name: "Investments",
     typeIndicator: "investmentInputInvesmentType",
-    lessons: ["investments-basics", "contributions-guide", "liquidation-order", "planned-withdrawals"],
+    lessons: ["savings-investments", "lump-sums", "non-standard-assets", "managing-withdrawals"],
     tabs: {
       "basics": {
         description: `
@@ -205,7 +205,7 @@ window.SHACKADEMY_SECTIONS = {
   "property": {
     name: "Property",
     typeIndicator: "propertyInputAssetType",
-    lessons: ["property-basics", "what-if-scenarios"],
+    lessons: ["property-basics", "what-if-downsizing"],
     tabs: {
       "basics": {
         description: `
@@ -242,7 +242,7 @@ window.SHACKADEMY_SECTIONS = {
   "pension-money-purchase": {
     name: "Money Purchase Pension",
     typeIndicator: "ukMoneyPurchaseInputType",
-    lessons: ["pension-basics", "contributions-guide", "what-if-scenarios"],
+    lessons: ["pension-basics", "lump-sums", "pension-withdrawals"],
     tabs: {
       "basics": {
         description: `
@@ -283,7 +283,7 @@ window.SHACKADEMY_SECTIONS = {
   "pension-defined-benefit": {
     name: "Final Salary Pension",
     typeIndicator: "ukFinalSalaryInputStatus",
-    lessons: ["db-pension-basics"],
+    lessons: ["pension-basics"],
     tabs: {
       "basics": {
         description: `

@@ -81,4 +81,9 @@ window.SHACKADEMY_LESSONS = {
     url: "https://shackademy.com/path-player?courseid=voyant&unit=67ca1b6a2376da39140e9395Unit",
   },
 
+  "what-if-downsizing": {
+    title: "What-if (Downsizing @ 11:05)",
+    url: "https://shackademy.com/path-player?courseid=voyant&unit=67562126bb11d632650d471aUnit",
+  },
+
 };
