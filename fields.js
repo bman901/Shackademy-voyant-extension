@@ -318,8 +318,8 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter a clear, descriptive name for this event. The name appears on the timeline and throughout the plan wherever this event is referenced.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Be specific — e.g. "Jane Retires", "Buy Holiday Home", "Children Leave Home" rather than just "Event 1"</li>
-        <li>Events are used to trigger changes in the plan — a well-named event makes it much easier to understand the plan at a glance</li>
+        <li>Be specific - e.g. "Jane Retires", "Buy Holiday Home", "Children Leave Home" rather than just "Event 1"</li>
+        <li>Events are used to trigger changes in the plan - a well-named event makes it much easier to understand the plan at a glance</li>
       </ul>
     `,
   },
@@ -331,8 +331,8 @@ window.SHACKADEMY_FIELDS = [
       <p>Select the person this event relates to. The owner determines which person's age Voyant uses when positioning the event on the timeline.</p>
       <h3>Tips</h3>
       <ul>
-        <li>For joint events (e.g. "Buy a property together"), select the person whose age is most relevant for timing — you can always adjust the year directly using the Year or Age fields</li>
-        <li>For events that don't relate to a specific person (e.g. a general financial milestone), select either person — the year will override the age calculation</li>
+        <li>For joint events (e.g. "Buy a property together"), select the person whose age is most relevant for timing - you can always adjust the year directly using the Year or Age fields</li>
+        <li>For events that don't relate to a specific person (e.g. a general financial milestone), select either person - the year will override the age calculation</li>
       </ul>
     `,
   },
@@ -344,8 +344,8 @@ window.SHACKADEMY_FIELDS = [
       <p>Toggle this to switch between setting the event by <strong>Age</strong> or by <strong>Year</strong>. When editing is enabled, the Year and Age fields below become active.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Use <strong>Age</strong> when the event is tied to a life milestone — e.g. retirement at age 60</li>
-        <li>Use <strong>Year</strong> when the event is tied to a specific calendar date — e.g. a property purchase in 2028</li>
+        <li>Use <strong>Age</strong> when the event is tied to a life milestone - e.g. retirement at age 60</li>
+        <li>Use <strong>Year</strong> when the event is tied to a specific calendar date - e.g. a property purchase in 2028</li>
         <li>Changing one will automatically update the other based on the owner's date of birth</li>
       </ul>
     `,
@@ -391,9 +391,9 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter a name for this stage. Stages appear as labelled bands on the timeline, helping to visually organise the plan into distinct life phases.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Common stage names include "Working Years", "Early Retirement", "Later Life", or "Children at Home" — use names that are meaningful for this plan</li>
-        <li>Stages are purely visual and organisational — they don't affect any calculations, but they make the plan much easier to read and discuss with the people in it</li>
-        <li>Stages are bounded by Events on the timeline — set up your Events first, then use Stages to label the periods between them</li>
+        <li>Common stage names include "Working Years", "Early Retirement", "Later Life", or "Children at Home" - use names that are meaningful for this plan</li>
+        <li>Stages are purely visual and organisational - they don't affect any calculations, but they make the plan much easier to read and discuss with the people in it</li>
+        <li>Stages are bounded by Events on the timeline - set up your Events first, then use Stages to label the periods between them</li>
       </ul>
     `,
   },
@@ -406,7 +406,7 @@ window.SHACKADEMY_FIELDS = [
       <h3>Tips</h3>
       <ul>
         <li>Using distinct colours for each stage makes the timeline much easier to read at a glance</li>
-        <li>Consider using a consistent colour scheme across plans — for example, always using green for working years and blue for retirement — to make plans feel familiar and consistent</li>
+        <li>Consider using a consistent colour scheme across plans - for example, always using green for working years and blue for retirement - to make plans feel familiar and consistent</li>
       </ul>
     `,
   },
@@ -426,7 +426,7 @@ window.SHACKADEMY_FIELDS = [
     label: "Owner",
     helpText: `
       <h3>What to enter</h3>
-      <p>Select the owner of this employment. Only one owner can be selected per employment entry — if both people in the plan are employed, set up a separate employment record for each.</p>
+      <p>Select the owner of this employment. Only one owner can be selected per employment entry - if both people in the plan are employed, set up a separate employment record for each.</p>
     `,
   },
   {
@@ -437,7 +437,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter a clear, recognisable name for this employment.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Including the owner's name and employer makes it easier to identify later — e.g. "Jane – Acme Ltd"</li>
+        <li>Including the owner's name and employer makes it easier to identify later - e.g. "Jane – Acme Ltd"</li>
         <li>If there are multiple employments for the same person, be specific so they're easy to distinguish</li>
       </ul>
     `,
@@ -450,9 +450,9 @@ window.SHACKADEMY_FIELDS = [
       <p>Select the employment type. This determines the tax treatment applied to the earnings and may unlock additional fields.</p>
       <h3>Options</h3>
       <ul>
-        <li><strong>Employed</strong> — standard PAYE employment. Income Tax and National Insurance are deducted via payroll</li>
-        <li><strong>Self-Employed</strong> — income from self-employment or sole trading. Tax is assessed via Self Assessment and Class 4 NI applies</li>
-        <li><strong>Company Owner</strong> — director or shareholder of a company. Unlocks the Dividend field and applies dividend tax treatment to any dividend income entered</li>
+        <li><strong>Employed</strong> - standard PAYE employment. Income Tax and National Insurance are deducted via payroll</li>
+        <li><strong>Self-Employed</strong> - income from self-employment or sole trading. Tax is assessed via Self Assessment and Class 4 NI applies</li>
+        <li><strong>Company Owner</strong> - director or shareholder of a company. Unlocks the Dividend field and applies dividend tax treatment to any dividend income entered</li>
       </ul>
     `,
   },
@@ -464,7 +464,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the gross annual salary before pension contributions and taxes. Voyant handles all the tax calculations for you.</p>
       <h3>Tips</h3>
       <ul>
-        <li>If the owner receives a net salary (e.g. after salary sacrifice), gross it up before entering — Voyant works in gross figures throughout</li>
+        <li>If the owner receives a net salary (e.g. after salary sacrifice), gross it up before entering - Voyant works in gross figures throughout</li>
         <li>For a salary that varies, use a realistic average or current year figure</li>
         <li>Salary growth can be set in the Growth Rate field below</li>
       </ul>
@@ -488,10 +488,10 @@ window.SHACKADEMY_FIELDS = [
     label: "Benefits in Kind",
     helpText: `
       <h3>What to enter</h3>
-      <p>Enter the annual value of any taxable benefits in kind received from the employer — such as a company car, private medical insurance, or interest-free loans above the HMRC threshold.</p>
+      <p>Enter the annual value of any taxable benefits in kind received from the employer - such as a company car, private medical insurance, or interest-free loans above the HMRC threshold.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Enter as an annual total — the P11D value is a good source for this figure</li>
+        <li>Enter as an annual total - the P11D value is a good source for this figure</li>
         <li>Benefits in Kind are subject to Income Tax but not National Insurance in most cases</li>
         <li>If no benefits are received, leave this field blank</li>
       </ul>
@@ -505,8 +505,8 @@ window.SHACKADEMY_FIELDS = [
       <p>Toggle this on if the owner would continue to receive this employment income even if a disability event occurs in the plan.</p>
       <h3>Tips</h3>
       <ul>
-        <li>By default, Voyant will stop employment income at a disability event — toggle this on if, for example, the owner has income protection insurance that would replace their salary, or if their employment contract includes long-term sick pay</li>
-        <li>This is a planning assumption only — it does not model the insurance policy itself</li>
+        <li>By default, Voyant will stop employment income at a disability event - toggle this on if, for example, the owner has income protection insurance that would replace their salary, or if their employment contract includes long-term sick pay</li>
+        <li>This is a planning assumption only - it does not model the insurance policy itself</li>
       </ul>
     `,
   },
@@ -519,7 +519,7 @@ window.SHACKADEMY_FIELDS = [
       <h3>Tips</h3>
       <ul>
         <li>This is relevant for contractors or sole traders who operate through an umbrella company or who have agreed to be taxed at source</li>
-        <li>If unsure, leave this off — most self-employed income is assessed via Self Assessment</li>
+        <li>If unsure, leave this off - most self-employed income is assessed via Self Assessment</li>
       </ul>
     `,
   },
@@ -531,8 +531,8 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the annual dividend income drawn from the company. Dividends are taxed at the dividend tax rates (rather than income tax rates) and are not subject to National Insurance.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Enter the gross annual dividend amount — the dividend allowance (currently £500 for 2025/26) is applied automatically by Voyant</li>
-        <li>Dividends are typically drawn in addition to a salary — make sure the salary is entered separately above</li>
+        <li>Enter the gross annual dividend amount - the dividend allowance (currently £500 for 2025/26) is applied automatically by Voyant</li>
+        <li>Dividends are typically drawn in addition to a salary - make sure the salary is entered separately above</li>
         <li>You can see the dividend income and associated tax in Year View > Cash Flow and > Tax</li>
       </ul>
     `,
@@ -546,7 +546,7 @@ window.SHACKADEMY_FIELDS = [
       <h3>Tips</h3>
       <ul>
         <li>The default assumption can be found in Dashboard > Plan Settings > Inflation/Growth > National Average Earnings</li>
-        <li>Override this if a specific salary progression is expected — for example, a known pay rise, promotion path, or incremental pay scale</li>
+        <li>Override this if a specific salary progression is expected - for example, a known pay rise, promotion path, or incremental pay scale</li>
         <li>You can also use Steps to model discrete salary changes at specific points in time</li>
       </ul>
     `,
@@ -557,8 +557,8 @@ window.SHACKADEMY_FIELDS = [
     helpText: `
       <h3>Tips</h3>
       <ul>
-        <li><strong>Present Value</strong> — the salary grows from today at the Growth Rate. Use this when entering today's salary figure</li>
-        <li><strong>Future Value</strong> — the salary is treated as already inflated to its value at the start date. Use this when entering a salary that applies at a future point and should not be further inflated from today</li>
+        <li><strong>Present Value</strong> - the salary grows from today at the Growth Rate. Use this when entering today's salary figure</li>
+        <li><strong>Future Value</strong> - the salary is treated as already inflated to its value at the start date. Use this when entering a salary that applies at a future point and should not be further inflated from today</li>
       </ul>
     `,
   },
@@ -578,7 +578,7 @@ window.SHACKADEMY_FIELDS = [
     label: "Owner",
     helpText: `
       <h3>What to enter</h3>
-      <p>Select the owner of this income. Only one owner can be selected per Other Income entry — if both people in the plan receive separate other incomes, set up a separate entry for each.</p>
+      <p>Select the owner of this income. Only one owner can be selected per Other Income entry - if both people in the plan receive separate other incomes, set up a separate entry for each.</p>
     `,
   },
   {
@@ -589,7 +589,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter a clear, recognisable name for this income source.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Be specific enough to distinguish it from other entries — e.g. "Rental Income – Leeds Flat" or "Trust Income – Family Settlement"</li>
+        <li>Be specific enough to distinguish it from other entries - e.g. "Rental Income – Leeds Flat" or "Trust Income – Family Settlement"</li>
       </ul>
     `,
   },
@@ -600,7 +600,7 @@ window.SHACKADEMY_FIELDS = [
       <h3>What to enter</h3>
       <p>Enter the gross annual amount of this Other Income.</p>
       <h3>What counts as Other Income?</h3>
-      <p>Other Income is used for any income that doesn't fit the Employment or Pension categories — for example: rental income, trust distributions, maintenance payments, freelance income not entered as employment, or overseas income. It can be set as taxable or non-taxable depending on its nature.</p>
+      <p>Other Income is used for any income that doesn't fit the Employment or Pension categories - for example: rental income, trust distributions, maintenance payments, freelance income not entered as employment, or overseas income. It can be set as taxable or non-taxable depending on its nature.</p>
       <h3>Tips</h3>
       <ul>
         <li>Unlike employment income, Other Income is not subject to National Insurance</li>
@@ -616,9 +616,9 @@ window.SHACKADEMY_FIELDS = [
       <p>If this income is taxable, select how it should be taxed.</p>
       <h3>Options</h3>
       <ul>
-        <li><strong>Income</strong> — taxed at the owner's marginal income tax rate</li>
-        <li><strong>Capital Gains</strong> — treated as a capital gain and taxed at the applicable CGT rate</li>
-        <li><strong>Dividends</strong> — taxed at dividend tax rates, with the annual dividend allowance applied first</li>
+        <li><strong>Income</strong> - taxed at the owner's marginal income tax rate</li>
+        <li><strong>Capital Gains</strong> - treated as a capital gain and taxed at the applicable CGT rate</li>
+        <li><strong>Dividends</strong> - taxed at dividend tax rates, with the annual dividend allowance applied first</li>
       </ul>
     `,
   },
@@ -630,8 +630,8 @@ window.SHACKADEMY_FIELDS = [
       <p>Select whether this income is <strong>Taxable</strong> or <strong>Non-Taxable</strong>.</p>
       <h3>Tips</h3>
       <ul>
-        <li>If set to Taxable, the tax is not deducted via PAYE — it is assessed via Self Assessment and shown as a tax liability in the Year View</li>
-        <li>Non-Taxable is appropriate for income that is genuinely exempt — for example, certain trust income, Child Benefit (if below the HICBC threshold), or tax-free maintenance payments</li>
+        <li>If set to Taxable, the tax is not deducted via PAYE - it is assessed via Self Assessment and shown as a tax liability in the Year View</li>
+        <li>Non-Taxable is appropriate for income that is genuinely exempt - for example, certain trust income, Child Benefit (if below the HICBC threshold), or tax-free maintenance payments</li>
         <li>If unsure of the tax status, check with a tax adviser before selecting Non-Taxable</li>
       </ul>
     `,
@@ -644,9 +644,9 @@ window.SHACKADEMY_FIELDS = [
       <p>Toggle this on if this income counts as <strong>earned income</strong> for pension contribution purposes.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Pension contributions can only be made up to 100% of earnings — earned income determines the maximum that can attract tax relief</li>
+        <li>Pension contributions can only be made up to 100% of earnings - earned income determines the maximum that can attract tax relief</li>
         <li>Toggle this on for income from self-employment, freelance work, or other trading activities where pension contributions are being made</li>
-        <li>Investment income, rental income, and trust distributions are generally not earned income — leave this off for these types</li>
+        <li>Investment income, rental income, and trust distributions are generally not earned income - leave this off for these types</li>
       </ul>
     `,
   },
@@ -669,8 +669,8 @@ window.SHACKADEMY_FIELDS = [
     helpText: `
       <h3>Tips</h3>
       <ul>
-        <li><strong>Present Value</strong> — the income grows from today at the Growth Rate. Use this when entering today's amount</li>
-        <li><strong>Future Value</strong> — the income is treated as already at its future value. Use this when the amount applies at a future start date and should not be further inflated from today</li>
+        <li><strong>Present Value</strong> - the income grows from today at the Growth Rate. Use this when entering today's amount</li>
+        <li><strong>Future Value</strong> - the income is treated as already at its future value. Use this when the amount applies at a future start date and should not be further inflated from today</li>
       </ul>
     `,
   },
@@ -679,11 +679,11 @@ window.SHACKADEMY_FIELDS = [
     label: "Income Survives Owner",
     helpText: `
       <h3>What to enter</h3>
-      <p>Toggle this on if this income would continue to be received after the owner's death — for example, a trust income that passes to a beneficiary, or a maintenance payment that continues to a surviving partner.</p>
+      <p>Toggle this on if this income would continue to be received after the owner's death - for example, a trust income that passes to a beneficiary, or a maintenance payment that continues to a surviving partner.</p>
       <h3>Tips</h3>
       <ul>
-        <li>By default, Voyant stops Other Income at the owner's mortality event — toggle this on if the income genuinely continues</li>
-        <li>This does not change the owner of the income in the plan — it simply instructs Voyant to keep paying it after the death event</li>
+        <li>By default, Voyant stops Other Income at the owner's mortality event - toggle this on if the income genuinely continues</li>
+        <li>This does not change the owner of the income in the plan - it simply instructs Voyant to keep paying it after the death event</li>
       </ul>
     `,
   },
@@ -703,7 +703,7 @@ window.SHACKADEMY_FIELDS = [
     label: "Owner",
     helpText: `
       <h3>What to enter</h3>
-      <p>Select the owner of this windfall. Only one owner can be selected per entry — if both people in the plan receive separate windfalls, set up a separate record for each.</p>
+      <p>Select the owner of this windfall. Only one owner can be selected per entry - if both people in the plan receive separate windfalls, set up a separate record for each.</p>
     `,
   },
   {
@@ -714,7 +714,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter a clear, recognisable name for this windfall.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Be descriptive — e.g. "Inheritance – Aunt Mary" or "Property Sale Proceeds 2027"</li>
+        <li>Be descriptive - e.g. "Inheritance – Aunt Mary" or "Property Sale Proceeds 2027"</li>
       </ul>
     `,
   },
@@ -723,7 +723,7 @@ window.SHACKADEMY_FIELDS = [
     label: "Type",
     helpText: `
       <h3>What to enter</h3>
-      <p>Select the category that best describes this windfall. This is for reference and labelling purposes rather than affecting the tax treatment directly — the tax treatment is controlled by the Taxation Type and Taxable fields below.</p>
+      <p>Select the category that best describes this windfall. This is for reference and labelling purposes rather than affecting the tax treatment directly - the tax treatment is controlled by the Taxation Type and Taxable fields below.</p>
       <h3>Tips</h3>
       <ul>
         <li>Common uses include: inheritances, property sale proceeds, business sale proceeds, insurance payouts, gifts, and lottery or competition winnings</li>
@@ -736,7 +736,7 @@ window.SHACKADEMY_FIELDS = [
     label: "Amount",
     helpText: `
       <h3>What to enter</h3>
-      <p>Enter the windfall amount. Windfalls are assumed to be received tax-free or net of any taxes — Voyant will not deduct further taxes from this figure unless you set the Taxable option below.</p>
+      <p>Enter the windfall amount. Windfalls are assumed to be received tax-free or net of any taxes - Voyant will not deduct further taxes from this figure unless you set the Taxable option below.</p>
       <h3>Tips</h3>
       <ul>
         <li>If the windfall is subject to tax (e.g. a capital gain on a property sale), enter the gross amount and set the Taxation Type and Taxable fields accordingly so Voyant can model the tax correctly</li>
@@ -752,12 +752,12 @@ window.SHACKADEMY_FIELDS = [
       <p>If this windfall is taxable, select how it should be taxed.</p>
       <h3>Options</h3>
       <ul>
-        <li><strong>Income</strong> — taxed at the owner's marginal income tax rate</li>
-        <li><strong>Capital Gains</strong> — treated as a capital gain and taxed at the applicable CGT rate</li>
+        <li><strong>Income</strong> - taxed at the owner's marginal income tax rate</li>
+        <li><strong>Capital Gains</strong> - treated as a capital gain and taxed at the applicable CGT rate</li>
       </ul>
       <h3>Tips</h3>
       <ul>
-        <li>Most inheritances and gifts are not taxable in the hands of the recipient — leave as Non-Taxable in these cases</li>
+        <li>Most inheritances and gifts are not taxable in the hands of the recipient - leave as Non-Taxable in these cases</li>
         <li>A property sale profit or business sale would typically be a Capital Gain</li>
       </ul>
     `,
@@ -770,7 +770,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Select whether this windfall is taxable or non-taxable in the hands of the owner.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Most inheritances, gifts, and insurance payouts received by the beneficiary are non-taxable — select Non-Taxable for these</li>
+        <li>Most inheritances, gifts, and insurance payouts received by the beneficiary are non-taxable - select Non-Taxable for these</li>
         <li>If there is a taxable element (e.g. a capital gain on an inherited asset that has since grown), set to Taxable and choose the appropriate Taxation Type above</li>
       </ul>
     `,
@@ -781,8 +781,8 @@ window.SHACKADEMY_FIELDS = [
     helpText: `
       <h3>Tips</h3>
       <ul>
-        <li><strong>Present Value</strong> — the amount is expressed in today's money and will be inflated to its value at the date it is received</li>
-        <li><strong>Future Value</strong> — the amount is already expressed in the money of the year it will be received, so no further inflation is applied</li>
+        <li><strong>Present Value</strong> - the amount is expressed in today's money and will be inflated to its value at the date it is received</li>
+        <li><strong>Future Value</strong> - the amount is already expressed in the money of the year it will be received, so no further inflation is applied</li>
       </ul>
       <h3>Which should I choose?</h3>
       <p>If you know the approximate amount in today's money, use Present Value. If you have a specific future figure (e.g. from a property sale estimate or a known inheritance amount), use Future Value.</p>
@@ -1073,7 +1073,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the original amount that was inherited into the Bypass Trust. Voyant uses this to calculate the IHT position on second death correctly.</p>
       <h3>Tips</h3>
       <ul>
-        <li>The Balance of a Bypass Trust is typically £0 — it is this Loan Amount field that records the original inheritance</li>
+        <li>The Balance of a Bypass Trust is typically £0 - it is this Loan Amount field that records the original inheritance</li>
         <li>The loan is repaid to the estate on second death and is not subject to IHT</li>
       </ul>
     `,
@@ -1191,7 +1191,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the Capital Gains Tax rate that applies to gains within this offshore taxable investment. This overrides Voyant's standard CGT calculation for this asset.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Use this where the gains are subject to a known fixed rate rather than the UK standard CGT rates — for example, where the investment is held in a foreign jurisdiction with its own tax treatment</li>
+        <li>Use this where the gains are subject to a known fixed rate rather than the UK standard CGT rates - for example, where the investment is held in a foreign jurisdiction with its own tax treatment</li>
         
       </ul>
     `,
@@ -1216,13 +1216,13 @@ window.SHACKADEMY_FIELDS = [
       <p>Select the legal structure of the trust. This determines how Voyant treats the assets for IHT and income tax purposes.</p>
       <h3>Options</h3>
       <ul>
-        <li><strong>Absolute / Bare Trust</strong> — the beneficiary has an immediate and irrevocable right to both the capital and income. The assets are treated as belonging to the beneficiary for tax purposes</li>
-        <li><strong>Discretionary Trust</strong> — the trustees have discretion over how income and capital are distributed among the beneficiaries. Subject to relevant property IHT charges</li>
-        <li><strong>Interest in Possession</strong> — a named beneficiary has the right to income from the trust but not capital. The capital passes to remainder beneficiaries on the life tenant's death</li>
+        <li><strong>Absolute / Bare Trust</strong> - the beneficiary has an immediate and irrevocable right to both the capital and income. The assets are treated as belonging to the beneficiary for tax purposes</li>
+        <li><strong>Discretionary Trust</strong> - the trustees have discretion over how income and capital are distributed among the beneficiaries. Subject to relevant property IHT charges</li>
+        <li><strong>Interest in Possession</strong> - a named beneficiary has the right to income from the trust but not capital. The capital passes to remainder beneficiaries on the life tenant's death</li>
       </ul>
       <h3>Tips</h3>
       <ul>
-        <li>The trust structure affects IHT treatment, including periodic and exit charges — confirm the structure with the trust deed before selecting</li>
+        <li>The trust structure affects IHT treatment, including periodic and exit charges - confirm the structure with the trust deed before selecting</li>
       </ul>
     `,
   },
@@ -1231,11 +1231,11 @@ window.SHACKADEMY_FIELDS = [
     label: "Discount Amount",
     helpText: `
       <h3>What to enter</h3>
-      <p>Enter the discounted amount — the portion of the initial DGT investment that HMRC treats as immediately outside your estate for IHT purposes. This is calculated by the provider at outset based on your age, health, and the income being withdrawn.</p>
+      <p>Enter the discounted amount - the portion of the initial DGT investment that HMRC treats as immediately outside your estate for IHT purposes. This is calculated by the provider at outset based on your age, health, and the income being withdrawn.</p>
       <h3>Tips</h3>
       <ul>
         <li>This figure should be shown on the DGT illustration or confirmation from the product provider</li>
-        <li>The discount is applied immediately on setup — the remainder of the investment falls outside your estate after seven years</li>
+        <li>The discount is applied immediately on setup - the remainder of the investment falls outside your estate after seven years</li>
         <li>If the discount amount is not known, the provider can recalculate it</li>
       </ul>
     `,
@@ -1248,7 +1248,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the annual income amount being drawn from the Discounted Gift Trust. This is the regular payment the settlor receives from the trust and is a key input for calculating the discount.</p>
       <h3>Tips</h3>
       <ul>
-        <li>The income from a DGT is technically a return of capital, not income — it is not subject to income tax</li>
+        <li>The income from a DGT is technically a return of capital, not income - it is not subject to income tax</li>
         <li>This amount cannot be changed once the trust is established, so it should match the figure set at outset</li>
         <li>Voyant will model this as a regular annual payment to the settlor within the plan's cash flow</li>
       </ul>
@@ -1262,7 +1262,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Toggle this on if this EIS or SEIS investment is also listed on the Alternative Investment Market (AIM).</p>
       <h3>Tips</h3>
       <ul>
-        <li>From April 2026, AIM-listed investments are subject to a 50% IHT relief under BPR rather than the previous full exemption — Voyant uses this toggle to apply the correct relief level</li>
+        <li>From April 2026, AIM-listed investments are subject to a 50% IHT relief under BPR rather than the previous full exemption - Voyant uses this toggle to apply the correct relief level</li>
         <li>Non-AIM EIS and SEIS investments are not affected by this change and continue to qualify for full BPR relief (subject to the two-year holding period)</li>
       </ul>
     `,
@@ -1275,8 +1275,8 @@ window.SHACKADEMY_FIELDS = [
       <p>Toggle this on if the gains on this unwrapped investment qualify for Business Asset Disposal Relief (formerly known as Entrepreneur's Relief). This reduces the effective CGT rate on qualifying gains.</p>
       <h3>Tips</h3>
       <ul>
-        <li>The current lifetime limit for Business Asset Disposal Relief is £1 million — gains up to this limit are taxed at 10% rather than the standard CGT rate</li>
-        <li>This relief typically applies to disposals of shares in personal trading companies, business assets, or qualifying partnership interests — not to passive investment portfolios</li>
+        <li>The current lifetime limit for Business Asset Disposal Relief is £1 million - gains up to this limit are taxed at 10% rather than the standard CGT rate</li>
+        <li>This relief typically applies to disposals of shares in personal trading companies, business assets, or qualifying partnership interests - not to passive investment portfolios</li>
         <li>Confirm eligibility with your tax adviser before toggling this on</li>
       </ul>
     `,
@@ -1286,15 +1286,15 @@ window.SHACKADEMY_FIELDS = [
     label: "Withdrawal Strategy",
     helpText: `
       <h3>What to enter</h3>
-      <p>Select how withdrawals should be taken from this investment bond — either by <strong>encashing segments</strong> or by taking a <strong>partial withdrawal</strong> across all segments.</p>
+      <p>Select how withdrawals should be taken from this investment bond - either by <strong>encashing segments</strong> or by taking a <strong>partial withdrawal</strong> across all segments.</p>
       <h3>Options</h3>
       <ul>
-        <li><strong>Segment Encashment</strong> — whole segments are surrendered. Each segment has its own 5% per annum tax-deferred allowance and its own gain calculation. This approach can spread gains across tax years and is often more tax-efficient</li>
-        <li><strong>Partial Withdrawal</strong> — withdrawals are taken from across all segments proportionally. This draws down the tax-deferred 5% allowance across the whole policy simultaneously</li>
+        <li><strong>Segment Encashment</strong> - whole segments are surrendered. Each segment has its own 5% per annum tax-deferred allowance and its own gain calculation. This approach can spread gains across tax years and is often more tax-efficient</li>
+        <li><strong>Partial Withdrawal</strong> - withdrawals are taken from across all segments proportionally. This draws down the tax-deferred 5% allowance across the whole policy simultaneously</li>
       </ul>
       <h3>Tips</h3>
       <ul>
-        <li>Segment encashment is generally more flexible for tax planning purposes — speak to a tax adviser if you're unsure which approach is appropriate</li>
+        <li>Segment encashment is generally more flexible for tax planning purposes - speak to a tax adviser if you're unsure which approach is appropriate</li>
       </ul>
     `,
   },
@@ -1307,7 +1307,7 @@ window.SHACKADEMY_FIELDS = [
       <h3>Tips</h3>
       <ul>
         <li>Voyant uses this alongside the Current Segments figure to determine how many segments have already been encashed and to calculate the remaining tax-deferred allowance correctly</li>
-        <li>If you are unsure, check your bond documentation or contact the provider — the system defaults to 1 if left blank</li>
+        <li>If you are unsure, check your bond documentation or contact the provider - the system defaults to 1 if left blank</li>
       </ul>
     `,
   },
@@ -1386,11 +1386,11 @@ window.SHACKADEMY_FIELDS = [
       <p>Select the category that best describes this property. Voyant uses this to apply the correct tax treatment, including whether Principal Private Residence (PPR) relief applies on disposal.</p>
       <h3>Options</h3>
       <ul>
-        <li><strong>Main Residence</strong> — your primary home. Gains on disposal are fully exempt from CGT under PPR relief (subject to the final period exemption)</li>
-        <li><strong>Buy to Let</strong> — a residential property held as an investment. Rental income is taxable and gains on disposal are subject to CGT at the residential property rate</li>
-        <li><strong>Second Home / Holiday Home</strong> — a secondary property that is not your main residence. Subject to CGT on disposal; PPR relief may apply partially if you have lived there</li>
-        <li><strong>Commercial Property</strong> — a non-residential property. Subject to CGT at the standard (non-residential) rate on disposal</li>
-        <li><strong>Land</strong> — undeveloped or agricultural land. Subject to CGT on disposal; APR may apply if farmed</li>
+        <li><strong>Main Residence</strong> - your primary home. Gains on disposal are fully exempt from CGT under PPR relief (subject to the final period exemption)</li>
+        <li><strong>Buy to Let</strong> - a residential property held as an investment. Rental income is taxable and gains on disposal are subject to CGT at the residential property rate</li>
+        <li><strong>Second Home / Holiday Home</strong> - a secondary property that is not your main residence. Subject to CGT on disposal; PPR relief may apply partially if you have lived there</li>
+        <li><strong>Commercial Property</strong> - a non-residential property. Subject to CGT at the standard (non-residential) rate on disposal</li>
+        <li><strong>Land</strong> - undeveloped or agricultural land. Subject to CGT on disposal; APR may apply if farmed</li>
       </ul>
     `,
   },
@@ -1402,8 +1402,8 @@ window.SHACKADEMY_FIELDS = [
       <p>Select the owner or owners of this property. Ownership affects how rental income is taxed and how any CGT liability is calculated on disposal.</p>
       <h3>Tips</h3>
       <ul>
-        <li>If the property is jointly owned, select all relevant owners — Voyant will split income and gains proportionally</li>
-        <li>Ownership defaults to the principal person — check this is correct before saving</li>
+        <li>If the property is jointly owned, select all relevant owners - Voyant will split income and gains proportionally</li>
+        <li>Ownership defaults to the principal person - check this is correct before saving</li>
       </ul>
     `,
   },
@@ -1415,7 +1415,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter a clear, recognisable name for this property.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Use the address or a short description — e.g. "Main Residence – Manchester" or "BTL Flat – Leeds"</li>
+        <li>Use the address or a short description - e.g. "Main Residence – Manchester" or "BTL Flat – Leeds"</li>
         <li>Avoid including sensitive information like mortgage account numbers</li>
       </ul>
     `,
@@ -1428,12 +1428,12 @@ window.SHACKADEMY_FIELDS = [
       <p>Select how this property is legally owned between the named owners.</p>
       <h3>Options</h3>
       <ul>
-        <li><strong>Joint Tenants</strong> — both owners hold the property equally and it passes automatically to the surviving owner on death, regardless of the will</li>
-        <li><strong>Tenants in Common</strong> — each owner holds a defined share which can be left to beneficiaries via their will. Shares do not have to be equal</li>
+        <li><strong>Joint Tenants</strong> - both owners hold the property equally and it passes automatically to the surviving owner on death, regardless of the will</li>
+        <li><strong>Tenants in Common</strong> - each owner holds a defined share which can be left to beneficiaries via their will. Shares do not have to be equal</li>
       </ul>
       <h3>Tips</h3>
       <ul>
-        <li>The distinction matters for IHT planning — Tenants in Common allows each owner to use their nil-rate band on their share, whereas Joint Tenants passes the full value to the survivor automatically</li>
+        <li>The distinction matters for IHT planning - Tenants in Common allows each owner to use their nil-rate band on their share, whereas Joint Tenants passes the full value to the survivor automatically</li>
         <li>Confirm the ownership structure with the title deeds or Land Registry if unsure</li>
       </ul>
     `,
@@ -1459,8 +1459,8 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the price originally paid for this property. Voyant uses this to calculate the capital gain on disposal for CGT purposes.</p>
       <h3>Tips</h3>
       <ul>
-        <li>If you've made capital improvements (e.g. extensions, renovations), you may be able to add these costs to the base cost — check with a tax adviser</li>
-        <li>For a property received as a gift or inheritance, the base cost is typically the market value at the date of acquisition — confirm with a tax adviser</li>
+        <li>If you've made capital improvements (e.g. extensions, renovations), you may be able to add these costs to the base cost - check with a tax adviser</li>
+        <li>For a property received as a gift or inheritance, the base cost is typically the market value at the date of acquisition - confirm with a tax adviser</li>
       </ul>
     `,
   },
@@ -1473,7 +1473,7 @@ window.SHACKADEMY_FIELDS = [
       <h3>Tips</h3>
       <ul>
         <li>When set to Yes, Voyant will treat the property as not yet owned and will model the purchase cost as an outgoing at the date specified in the Timing tab</li>
-        <li>The Market Value entered will be the purchase price — Voyant will grow this from the purchase date, not from today</li>
+        <li>The Market Value entered will be the purchase price - Voyant will grow this from the purchase date, not from today</li>
       </ul>
     `,
   },
@@ -1486,8 +1486,8 @@ window.SHACKADEMY_FIELDS = [
       <h3>Tips</h3>
       <ul>
         <li>The default growth rate can be found and changed in Dashboard > Plan Settings > Inflation/Growth</li>
-        <li>Use a rate that reflects realistic long-term expectations for this type of property and location — past house price growth is not guaranteed to continue</li>
-        <li>You can model different rates for different properties — for example, a lower rate for a rural holiday home versus a city-centre flat</li>
+        <li>Use a rate that reflects realistic long-term expectations for this type of property and location - past house price growth is not guaranteed to continue</li>
+        <li>You can model different rates for different properties - for example, a lower rate for a rural holiday home versus a city-centre flat</li>
       </ul>
     `,
   },
@@ -1496,13 +1496,13 @@ window.SHACKADEMY_FIELDS = [
     label: "Qualifies for Main Residence IHT Exemption",
     helpText: `
       <h3>What to enter</h3>
-      <p>Toggle this on if this property qualifies for the Residence Nil-Rate Band (RNRB) — the additional IHT allowance available when a main residence is passed to direct descendants.</p>
+      <p>Toggle this on if this property qualifies for the Residence Nil-Rate Band (RNRB) - the additional IHT allowance available when a main residence is passed to direct descendants.</p>
       <h3>Tips</h3>
       <ul>
         <li>The RNRB is currently up to £175,000 per person (2025/26), on top of the standard nil-rate band of £325,000</li>
         <li>To qualify, the property must have been the deceased's main home at some point and must be inherited by direct descendants (children, grandchildren, stepchildren etc.)</li>
-        <li>The RNRB is tapered for estates above £2 million — Voyant will apply the taper automatically based on the total estate value</li>
-        <li>Only toggle this on for the main residence — it cannot apply to buy-to-let or investment properties</li>
+        <li>The RNRB is tapered for estates above £2 million - Voyant will apply the taper automatically based on the total estate value</li>
+        <li>Only toggle this on for the main residence - it cannot apply to buy-to-let or investment properties</li>
       </ul>
     `,
   },
@@ -1662,7 +1662,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Link this pension to the relevant employment entry. Voyant uses this to ensure employer contributions are tied to the correct employment income and that contributions stop when that employment ends.</p>
       <h3>Tips</h3>
       <ul>
-        <li>This is especially important where there are multiple employments — make sure each pension is linked to the right one</li>
+        <li>This is especially important where there are multiple employments - make sure each pension is linked to the right one</li>
         <li>If no employment is linked, employer contributions will still be modelled but will not automatically stop at retirement</li>
       </ul>
     `,
@@ -1676,7 +1676,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the gross fixed employer contribution amount per year. This is added directly to the pension and Voyant treats it as an employer contribution for tax purposes.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Always enter as a gross annual amount — Voyant will handle the frequency conversion internally</li>
+        <li>Always enter as a gross annual amount - Voyant will handle the frequency conversion internally</li>
         <li>If the employer contribution is a percentage of salary rather than a fixed amount, use the Matching contribution type instead</li>
       </ul>
     `,
@@ -1690,9 +1690,9 @@ window.SHACKADEMY_FIELDS = [
       <p>Toggle this on if your pension contributions are made via a salary sacrifice arrangement rather than net pay or relief at source.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Under salary sacrifice, your gross salary is reduced by the contribution amount before tax and NI are calculated — meaning both you and your employer save on NI</li>
+        <li>Under salary sacrifice, your gross salary is reduced by the contribution amount before tax and NI are calculated - meaning both you and your employer save on NI</li>
         <li>Voyant will adjust the income and tax calculations accordingly when this is toggled on</li>
-        <li>Salary sacrifice is not available for all pension types — check with your employer or scheme provider if unsure</li>
+        <li>Salary sacrifice is not available for all pension types - check with your employer or scheme provider if unsure</li>
         <li>Note: salary sacrifice contributions count towards the Annual Allowance in the same way as other contributions</li>
       </ul>
     `,
@@ -1706,8 +1706,8 @@ window.SHACKADEMY_FIELDS = [
       <p>Select whether the annuity purchase is triggered by a specific <strong>age</strong> or by a <strong>timeline event</strong>.</p>
       <h3>Options</h3>
       <ul>
-        <li><strong>Age</strong> — the annuity is purchased when the owner reaches the age you enter in the Age field below</li>
-        <li><strong>Event</strong> — the annuity purchase is linked to a specific event on the timeline, which you can then move around to model different scenarios</li>
+        <li><strong>Age</strong> - the annuity is purchased when the owner reaches the age you enter in the Age field below</li>
+        <li><strong>Event</strong> - the annuity purchase is linked to a specific event on the timeline, which you can then move around to model different scenarios</li>
       </ul>
       <h3>Tips</h3>
       <ul>
@@ -2430,7 +2430,7 @@ window.SHACKADEMY_FIELDS = [
     label: "Owner",
     helpText: `
       <h3>What to enter</h3>
-      <p>Select the owner of this annuity. Ownership defaults to the principal person — check this is correct before saving.</p>
+      <p>Select the owner of this annuity. Ownership defaults to the principal person - check this is correct before saving.</p>
     `,
   },
   {
@@ -2441,7 +2441,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter a clear, recognisable name for this annuity.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Include the owner's name and provider if helpful — e.g. "Jane – Aviva Annuity"</li>
+        <li>Include the owner's name and provider if helpful - e.g. "Jane – Aviva Annuity"</li>
         <li>If there are multiple annuities for the same person, be specific so they're easy to distinguish</li>
       </ul>
     `,
@@ -2454,9 +2454,9 @@ window.SHACKADEMY_FIELDS = [
       <p>Select the status that best describes where this annuity currently stands.</p>
       <h3>Options</h3>
       <ul>
-        <li><strong>In Payment</strong> — the annuity is already paying income at the plan start date. Enter the current payment amount in the Payment Amount field</li>
-        <li><strong>Deferred</strong> — the annuity has been purchased but is not yet paying income. Enter the payment amount it will pay when it starts, and use the Timing tab to set when income begins</li>
-        <li><strong>Future</strong> — the annuity has not yet been purchased. Enter the expected purchase value and Voyant will model the purchase at the date you specify</li>
+        <li><strong>In Payment</strong> - the annuity is already paying income at the plan start date. Enter the current payment amount in the Payment Amount field</li>
+        <li><strong>Deferred</strong> - the annuity has been purchased but is not yet paying income. Enter the payment amount it will pay when it starts, and use the Timing tab to set when income begins</li>
+        <li><strong>Future</strong> - the annuity has not yet been purchased. Enter the expected purchase value and Voyant will model the purchase at the date you specify</li>
       </ul>
     `,
   },
@@ -2468,8 +2468,8 @@ window.SHACKADEMY_FIELDS = [
       <p>Select whether this is a <strong>Pension Annuity</strong> or a <strong>Purchase Life Annuity</strong>.</p>
       <h3>Options</h3>
       <ul>
-        <li><strong>Pension</strong> — an annuity purchased from a pension fund. Voyant treats this as a lifetime annuity — it will always run to death and cannot have a fixed term. The full income is taxable as pension income</li>
-        <li><strong>Purchase Life Annuity</strong> — an annuity purchased with non-pension money (e.g. savings or an inheritance). A portion of each payment is treated as a tax-free return of capital; only the interest element is taxable. You can set a fixed term if applicable</li>
+        <li><strong>Pension</strong> - an annuity purchased from a pension fund. Voyant treats this as a lifetime annuity - it will always run to death and cannot have a fixed term. The full income is taxable as pension income</li>
+        <li><strong>Purchase Life Annuity</strong> - an annuity purchased with non-pension money (e.g. savings or an inheritance). A portion of each payment is treated as a tax-free return of capital; only the interest element is taxable. You can set a fixed term if applicable</li>
       </ul>
     `,
   },
@@ -2478,10 +2478,10 @@ window.SHACKADEMY_FIELDS = [
     label: "Capital Protected",
     helpText: `
       <h3>What to enter</h3>
-      <p>Toggle this on if this is a capital-protected annuity — one that guarantees to pay back all or part of the original purchase price to the owner's estate if they die before the protection amount has been paid out.</p>
+      <p>Toggle this on if this is a capital-protected annuity - one that guarantees to pay back all or part of the original purchase price to the owner's estate if they die before the protection amount has been paid out.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Capital protection reduces the regular income payable compared to a standard annuity — it is a trade-off between income level and death benefit</li>
+        <li>Capital protection reduces the regular income payable compared to a standard annuity - it is a trade-off between income level and death benefit</li>
         <li>Once enabled, enter the protected amount in the field below</li>
         <li>In Voyant, the capital protection value is paid as a lump sum to the estate on death, visible in the Legacy screen</li>
       </ul>
@@ -2495,7 +2495,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the amount guaranteed to be returned to the estate if the owner dies before this value has been paid out in income.</p>
       <h3>Tips</h3>
       <ul>
-        <li>This is typically the original purchase price of the annuity, though some policies protect a different amount — check the annuity policy document</li>
+        <li>This is typically the original purchase price of the annuity, though some policies protect a different amount - check the annuity policy document</li>
         <li>Voyant will pay this as a lump sum on the owner's death in the Legacy screen, reduced by any income already received</li>
       </ul>
     `,
@@ -2509,7 +2509,7 @@ window.SHACKADEMY_FIELDS = [
       <h3>Tips</h3>
       <ul>
         <li>For an <strong>In Payment</strong> annuity, enter the current annual income (or the equivalent based on frequency)</li>
-        <li>For a <strong>Deferred</strong> annuity, enter the income it will pay when it eventually starts — check the annuity policy document for this figure</li>
+        <li>For a <strong>Deferred</strong> annuity, enter the income it will pay when it eventually starts - check the annuity policy document for this figure</li>
         <li>You can see this income in Year View > Cash Flow once the annuity is in payment</li>
       </ul>
     `,
@@ -2522,7 +2522,7 @@ window.SHACKADEMY_FIELDS = [
       <p>For a Purchase Life Annuity, enter the proportion of each payment that represents a tax-free return of capital. This reduces the taxable portion of each payment.</p>
       <h3>Tips</h3>
       <ul>
-        <li>The capital element is calculated by HMRC and set at outset based on the annuitant's age and the purchase price — it does not change over the life of the annuity</li>
+        <li>The capital element is calculated by HMRC and set at outset based on the annuitant's age and the purchase price - it does not change over the life of the annuity</li>
         <li>The provider will confirm the capital element at the time of purchase; it is also shown on the annuity policy document</li>
         <li>This field does not apply to Pension Annuities</li>
       </ul>
@@ -2536,7 +2536,7 @@ window.SHACKADEMY_FIELDS = [
       <p>For a <strong>Future</strong> annuity, enter the expected purchase price. Voyant will model this as a lump sum outgoing at the date you specify, and will calculate the resulting income based on the Annuity Rate Calculation settings below.</p>
       <h3>Tips</h3>
       <ul>
-        <li>If purchasing from pension funds, the purchase value should reflect the pension pot value at the point of purchase — you may want to link this to a pension drawdown event on the timeline</li>
+        <li>If purchasing from pension funds, the purchase value should reflect the pension pot value at the point of purchase - you may want to link this to a pension drawdown event on the timeline</li>
         <li>Voyant uses this figure along with the Assumed or Specified Annuity Rate to calculate the projected income</li>
       </ul>
     `,
@@ -2549,12 +2549,12 @@ window.SHACKADEMY_FIELDS = [
       <p>Select whether this is a <strong>Single Life</strong> or <strong>Joint Life</strong> annuity.</p>
       <h3>Options</h3>
       <ul>
-        <li><strong>Single Life</strong> — income is paid only during the owner's lifetime. Payments stop at the owner's death (subject to any Years Certain guarantee)</li>
-        <li><strong>Joint Life</strong> — income continues to a named beneficiary after the owner's death, at the Survivorship Percent you specify. The income typically reduces on first death</li>
+        <li><strong>Single Life</strong> - income is paid only during the owner's lifetime. Payments stop at the owner's death (subject to any Years Certain guarantee)</li>
+        <li><strong>Joint Life</strong> - income continues to a named beneficiary after the owner's death, at the Survivorship Percent you specify. The income typically reduces on first death</li>
       </ul>
       <h3>Tips</h3>
       <ul>
-        <li>Joint Life annuities pay a lower initial income than Single Life for the same purchase price — the trade-off is ongoing income for the surviving partner</li>
+        <li>Joint Life annuities pay a lower initial income than Single Life for the same purchase price - the trade-off is ongoing income for the surviving partner</li>
       </ul>
     `,
   },
@@ -2566,7 +2566,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the percentage of the annuity income that will continue to be paid to the surviving beneficiary after the owner's death.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Common percentages are 50% or 66.67% — check the annuity policy for the exact figure</li>
+        <li>Common percentages are 50% or 66.67% - check the annuity policy for the exact figure</li>
         <li>This percentage applies to the income in payment at the time of death, after any escalation has been applied</li>
       </ul>
     `,
@@ -2579,7 +2579,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Select <strong>Yes</strong> if this annuity is payable for life (the most common type). Select <strong>No</strong> if it is a fixed-term annuity that pays for a set number of years only.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Pension annuities are always lifetime — this toggle is most relevant for Purchase Life Annuities</li>
+        <li>Pension annuities are always lifetime - this toggle is most relevant for Purchase Life Annuities</li>
         <li>If you select No, a Term field will appear where you can enter the number of years the annuity runs</li>
       </ul>
     `,
@@ -2592,9 +2592,9 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the number of years for which income is guaranteed to be paid, even if the owner (or both owners on a Joint Life policy) dies within that period.</p>
       <h3>Tips</h3>
       <ul>
-        <li>For example, a 10-year guarantee means the full annuity income is paid for at least 10 years regardless of death — after which, for a Joint Life annuity, the beneficiary receives the survivor percentage</li>
+        <li>For example, a 10-year guarantee means the full annuity income is paid for at least 10 years regardless of death - after which, for a Joint Life annuity, the beneficiary receives the survivor percentage</li>
         <li>If there is no guarantee period, enter 0</li>
-        <li>Guarantee periods reduce the income payable — they are a trade-off between protection and income level</li>
+        <li>Guarantee periods reduce the income payable - they are a trade-off between protection and income level</li>
       </ul>
     `,
   },
@@ -2606,7 +2606,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the number of years this fixed-term annuity will pay income. After this period, payments stop regardless of whether the owner is still alive.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Fixed-term annuities are less common than lifetime annuities — check the policy document to confirm the term</li>
+        <li>Fixed-term annuities are less common than lifetime annuities - check the policy document to confirm the term</li>
         <li>This field only appears when Lifetime is set to No</li>
       </ul>
     `,
@@ -2619,16 +2619,16 @@ window.SHACKADEMY_FIELDS = [
       <p>Select how the annuity income will increase each year once it is in payment.</p>
       <h3>Options</h3>
       <ul>
-        <li><strong>None</strong> — the annuity is level; the income does not increase. This provides the highest initial income but will be eroded by inflation over time</li>
-        <li><strong>RPI</strong> — increases in line with the Retail Prices Index each year</li>
-        <li><strong>LPI</strong> — increases in line with Limited Price Indexation, typically capped at 5% or 2.5%</li>
-        <li><strong>CPI</strong> — increases in line with the Consumer Prices Index, using the rate set in your Plan Settings</li>
-        <li><strong>Other</strong> — enter a fixed escalation rate of your choice</li>
+        <li><strong>None</strong> - the annuity is level; the income does not increase. This provides the highest initial income but will be eroded by inflation over time</li>
+        <li><strong>RPI</strong> - increases in line with the Retail Prices Index each year</li>
+        <li><strong>LPI</strong> - increases in line with Limited Price Indexation, typically capped at 5% or 2.5%</li>
+        <li><strong>CPI</strong> - increases in line with the Consumer Prices Index, using the rate set in your Plan Settings</li>
+        <li><strong>Other</strong> - enter a fixed escalation rate of your choice</li>
       </ul>
       <h3>Tips</h3>
       <ul>
-        <li>Escalating annuities pay a lower starting income than level annuities — the trade-off is protection against inflation in later years</li>
-        <li>Check the annuity policy for the escalation basis — this is fixed at the time of purchase and cannot be changed</li>
+        <li>Escalating annuities pay a lower starting income than level annuities - the trade-off is protection against inflation in later years</li>
+        <li>Check the annuity policy for the escalation basis - this is fixed at the time of purchase and cannot be changed</li>
       </ul>
     `,
   },
@@ -2637,10 +2637,10 @@ window.SHACKADEMY_FIELDS = [
     label: "Beneficiary",
     helpText: `
       <h3>What to enter</h3>
-      <p>Select the person who will receive any death benefits from this annuity — for example, the surviving income under a Joint Life policy, or a capital protection payout.</p>
+      <p>Select the person who will receive any death benefits from this annuity - for example, the surviving income under a Joint Life policy, or a capital protection payout.</p>
       <h3>Tips</h3>
       <ul>
-        <li>The beneficiary must already exist as a person in the plan — add them in the People section first if needed</li>
+        <li>The beneficiary must already exist as a person in the plan - add them in the People section first if needed</li>
         <li>For a Single Life annuity with capital protection, the beneficiary is the person who receives the residual lump sum on death</li>
       </ul>
     `,
@@ -2653,8 +2653,8 @@ window.SHACKADEMY_FIELDS = [
       <p>Select how Voyant should calculate the income from a <strong>Future</strong> annuity purchase.</p>
       <h3>Options</h3>
       <ul>
-        <li><strong>Assumed Interest Rate</strong> — Voyant derives an annuity rate using an underlying interest rate assumption, similar to how an actuary would calculate it based on gilt yields. Use this when you don't have a specific market rate in mind</li>
-        <li><strong>Specified Annuity Rate</strong> — you enter the annuity conversion rate directly. For example, a rate of 5% on a £100,000 fund produces an income of £5,000 per year. Use this when you have a known or quoted rate</li>
+        <li><strong>Assumed Interest Rate</strong> - Voyant derives an annuity rate using an underlying interest rate assumption, similar to how an actuary would calculate it based on gilt yields. Use this when you don't have a specific market rate in mind</li>
+        <li><strong>Specified Annuity Rate</strong> - you enter the annuity conversion rate directly. For example, a rate of 5% on a £100,000 fund produces an income of £5,000 per year. Use this when you have a known or quoted rate</li>
       </ul>
     `,
   },
@@ -2666,7 +2666,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the underlying interest rate Voyant should use to derive the annuity rate. This typically reflects the yield on mid-dated UK gilts, which insurers use as a basis for pricing annuities.</p>
       <h3>Tips</h3>
       <ul>
-        <li>A higher rate produces a higher annuity income — gilt yields have risen significantly since 2022, so this assumption is worth reviewing regularly</li>
+        <li>A higher rate produces a higher annuity income - gilt yields have risen significantly since 2022, so this assumption is worth reviewing regularly</li>
         <li>If you have a quoted annuity rate from a provider, use the Specified Annuity Rate option instead for greater precision</li>
       </ul>
     `,
@@ -2676,12 +2676,12 @@ window.SHACKADEMY_FIELDS = [
     label: "Specified Annuity Rate",
     helpText: `
       <h3>What to enter</h3>
-      <p>Enter the annuity conversion rate — the percentage of the purchase fund that will be paid as annual income.</p>
+      <p>Enter the annuity conversion rate - the percentage of the purchase fund that will be paid as annual income.</p>
       <h3>Tips</h3>
       <ul>
         <li>For example, entering 5% on a £200,000 purchase fund produces an annual income of £10,000</li>
-        <li>Use a rate from a recent annuity quote or comparison tool — rates vary by age, health, escalation, and payout type</li>
-        <li>Remember that actual rates at the time of purchase may differ from today's rates — consider using a slightly conservative figure</li>
+        <li>Use a rate from a recent annuity quote or comparison tool - rates vary by age, health, escalation, and payout type</li>
+        <li>Remember that actual rates at the time of purchase may differ from today's rates - consider using a slightly conservative figure</li>
       </ul>
     `,
   },
@@ -2697,7 +2697,7 @@ window.SHACKADEMY_FIELDS = [
     label: "Owner",
     helpText: `
       <h3>What to enter</h3>
-      <p>Select the owner of this drawdown pension. Ownership defaults to the principal person — check this is correct before saving.</p>
+      <p>Select the owner of this drawdown pension. Ownership defaults to the principal person - check this is correct before saving.</p>
     `,
   },
   {
@@ -2708,12 +2708,12 @@ window.SHACKADEMY_FIELDS = [
       <p>Select whether this is an existing drawdown pension or an inherited drawdown pension.</p>
       <h3>Options</h3>
       <ul>
-        <li><strong>Existing Drawdown</strong> — a pension that has already been crystallised (moved into drawdown). This is where you enter a pot that is already in drawdown at the plan start date</li>
-        <li><strong>Inherited Drawdown</strong> — a drawdown pot inherited from a deceased pension holder. Inherited drawdown pots have different rules around income tax and withdrawal flexibility depending on the age at death of the original holder</li>
+        <li><strong>Existing Drawdown</strong> - a pension that has already been crystallised (moved into drawdown). This is where you enter a pot that is already in drawdown at the plan start date</li>
+        <li><strong>Inherited Drawdown</strong> - a drawdown pot inherited from a deceased pension holder. Inherited drawdown pots have different rules around income tax and withdrawal flexibility depending on the age at death of the original holder</li>
       </ul>
       <h3>Tips</h3>
       <ul>
-        <li>Any uncrystallised pensions that will be moved into drawdown during the plan should be entered as Money Purchase pensions — the drawdown pot will be created automatically by Voyant when crystallisation occurs</li>
+        <li>Any uncrystallised pensions that will be moved into drawdown during the plan should be entered as Money Purchase pensions - the drawdown pot will be created automatically by Voyant when crystallisation occurs</li>
       </ul>
     `,
   },
@@ -2725,8 +2725,8 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter a clear, recognisable name for this drawdown pension.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Including the owner's name and provider is helpful — e.g. "Jane – Fidelity Drawdown"</li>
-        <li>If this drawdown pot was created from a Money Purchase pension in the plan, Voyant will name it automatically — you only need to enter a name for drawdown pots that exist at the plan start date</li>
+        <li>Including the owner's name and provider is helpful - e.g. "Jane – Fidelity Drawdown"</li>
+        <li>If this drawdown pot was created from a Money Purchase pension in the plan, Voyant will name it automatically - you only need to enter a name for drawdown pots that exist at the plan start date</li>
       </ul>
     `,
   },
@@ -2738,8 +2738,8 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the current balance of the existing or inherited drawdown pot as at the plan start date.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Use the most recent valuation from the provider — pension statements or online accounts are usually the best source</li>
-        <li>The plan start date is 6th April each year — see our lesson on updating plan years if you need guidance on timing</li>
+        <li>Use the most recent valuation from the provider - pension statements or online accounts are usually the best source</li>
+        <li>The plan start date is 6th April each year - see our lesson on updating plan years if you need guidance on timing</li>
       </ul>
     `,
   },
@@ -2751,7 +2751,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the value of the drawdown pot at the time it was first crystallised (i.e. when it was first moved into drawdown). Voyant uses this to calculate any Lump Sum Death Benefit Allowance (LSDBA) charge on the growth of the pot.</p>
       <h3>Tips</h3>
       <ul>
-        <li>This is not the current balance — it is the historical value at the point of crystallisation</li>
+        <li>This is not the current balance - it is the historical value at the point of crystallisation</li>
         <li>For an inherited drawdown pot, enter the value at the date of inheritance</li>
         <li>If this figure is not known, use the original pension transfer value or check the crystallisation paperwork from the provider</li>
       </ul>
@@ -2762,16 +2762,16 @@ window.SHACKADEMY_FIELDS = [
     label: "Tax Status",
     helpText: `
       <h3>What to enter</h3>
-      <p>Select the tax status of this drawdown pot — specifically whether withdrawals are subject to income tax.</p>
+      <p>Select the tax status of this drawdown pot - specifically whether withdrawals are subject to income tax.</p>
       <h3>Options</h3>
       <ul>
-        <li><strong>Taxable</strong> — the standard status for a crystallised drawdown pot. All withdrawals are subject to income tax at the owner's marginal rate</li>
-        <li><strong>Tax Free</strong> — applicable in specific circumstances, such as a drawdown pot held within a certain type of trust structure or an inherited pot where the original holder died before age 75. Voyant will not apply income tax to withdrawals</li>
+        <li><strong>Taxable</strong> - the standard status for a crystallised drawdown pot. All withdrawals are subject to income tax at the owner's marginal rate</li>
+        <li><strong>Tax Free</strong> - applicable in specific circumstances, such as a drawdown pot held within a certain type of trust structure or an inherited pot where the original holder died before age 75. Voyant will not apply income tax to withdrawals</li>
       </ul>
       <h3>Tips</h3>
       <ul>
-        <li>The vast majority of drawdown pots are Taxable — only change this if you have confirmed the tax-free status applies</li>
-        <li>For inherited drawdown, whether it is taxable depends on the age at death of the original holder — confirm with the scheme or a tax adviser if unsure</li>
+        <li>The vast majority of drawdown pots are Taxable - only change this if you have confirmed the tax-free status applies</li>
+        <li>For inherited drawdown, whether it is taxable depends on the age at death of the original holder - confirm with the scheme or a tax adviser if unsure</li>
       </ul>
     `,
   },
@@ -2787,7 +2787,7 @@ window.SHACKADEMY_FIELDS = [
     label: "Owner",
     helpText: `
       <h3>What to enter</h3>
-      <p>Select the owner of this State Pension. Ownership defaults to the principal person — check this is correct before saving, particularly when entering a State Pension for a partner.</p>
+      <p>Select the owner of this State Pension. Ownership defaults to the principal person - check this is correct before saving, particularly when entering a State Pension for a partner.</p>
     `,
   },
   {
@@ -2811,8 +2811,8 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the age at which the State Pension is due to start. This is typically the State Pension Age set by the government, but it can be deferred to a later age if the owner chooses to delay taking it.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Deferring the State Pension increases the weekly amount received — for every 9 weeks deferred, the State Pension increases by 1%</li>
-        <li>The current State Pension Age for both men and women is 66, rising to 67 between 2026 and 2028 — check the government's personal forecast at <a href="https://www.gov.uk/check-state-pension" target="_blank">gov.uk/check-state-pension</a> for the exact date</li>
+        <li>Deferring the State Pension increases the weekly amount received - for every 9 weeks deferred, the State Pension increases by 1%</li>
+        <li>The current State Pension Age for both men and women is 66, rising to 67 between 2026 and 2028 - check the government's personal forecast at <a href="https://www.gov.uk/check-state-pension" target="_blank">gov.uk/check-state-pension</a> for the exact date</li>
         <li>The State Pension Age field below is separate and records the statutory age from the scheme rules</li>
       </ul>
     `,
@@ -2822,10 +2822,10 @@ window.SHACKADEMY_FIELDS = [
     label: "State Pension Age",
     helpText: `
       <h3>What to enter</h3>
-      <p>Enter the owner's statutory State Pension Age — the age at which they become eligible to claim their State Pension under current government rules.</p>
+      <p>Enter the owner's statutory State Pension Age - the age at which they become eligible to claim their State Pension under current government rules.</p>
       <h3>Tips</h3>
       <ul>
-        <li>This is separate from the Start Age — you might choose to start the pension later (deferring) even if you are eligible earlier</li>
+        <li>This is separate from the Start Age - you might choose to start the pension later (deferring) even if you are eligible earlier</li>
         <li>Check the exact State Pension Age at <a href="https://www.gov.uk/state-pension-age" target="_blank">gov.uk/state-pension-age</a>, as it depends on date of birth</li>
       </ul>
     `,
@@ -2838,8 +2838,8 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the annual State Pension amount. For a pension not yet in payment, enter the projected amount from the government's State Pension forecast.</p>
       <h3>Tips</h3>
       <ul>
-        <li>The State Pension escalates automatically in Voyant using the Triple Lock — the higher of National Average Earnings, CPI, or 2.5% — using assumptions from your Plan Settings</li>
-        <li>The current full new State Pension is £11,502.40 per year (2025/26) — use the personal forecast for an individual's actual entitlement based on their National Insurance record</li>
+        <li>The State Pension escalates automatically in Voyant using the Triple Lock - the higher of National Average Earnings, CPI, or 2.5% - using assumptions from your Plan Settings</li>
+        <li>The current full new State Pension is £11,502.40 per year (2025/26) - use the personal forecast for an individual's actual entitlement based on their National Insurance record</li>
         <li>Get the State Pension forecast at <a href="https://www.gov.uk/check-state-pension" target="_blank">gov.uk/check-state-pension</a></li>
       </ul>
     `,
@@ -2853,7 +2853,7 @@ window.SHACKADEMY_FIELDS = [
       <h3>Tips</h3>
       <ul>
         <li>This only applies to people who reached State Pension age before 6 April 2016, or who have a protected entitlement from the old system</li>
-        <li>The amount will be shown on the owner's State Pension forecast from the government — if none is shown, leave this blank</li>
+        <li>The amount will be shown on the owner's State Pension forecast from the government - if none is shown, leave this blank</li>
         <li>Under the new flat-rate State Pension (post-April 2016), most of the Additional State Pension is incorporated into the main figure</li>
       </ul>
     `,
@@ -2866,8 +2866,8 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter any Graduated State Pension entitlement. This is an older state pension element accrued between 1961 and 1975 under the Graduated Retirement Benefit scheme.</p>
       <h3>Tips</h3>
       <ul>
-        <li>This will only be relevant for older clients — anyone who worked and paid graduated NI contributions between 1961 and 1975 may have a small entitlement</li>
-        <li>The amount will appear on the State Pension forecast if it applies — if nothing is shown, leave this blank</li>
+        <li>This will only be relevant for older clients - anyone who worked and paid graduated NI contributions between 1961 and 1975 may have a small entitlement</li>
+        <li>The amount will appear on the State Pension forecast if it applies - if nothing is shown, leave this blank</li>
       </ul>
     `,
   },
@@ -2879,8 +2879,8 @@ window.SHACKADEMY_FIELDS = [
       <p>Toggle this on if you want to override Voyant's default Triple Lock escalation with a specific fixed rate of your choice.</p>
       <h3>Tips</h3>
       <ul>
-        <li>By default, Voyant escalates the State Pension using the Triple Lock (the higher of NAE, CPI, or 2.5%) — this is the current government policy</li>
-        <li>Toggle this on if you want to model a scenario where the Triple Lock is removed or changed — for example, using a flat 2.5% or CPI-only increase</li>
+        <li>By default, Voyant escalates the State Pension using the Triple Lock (the higher of NAE, CPI, or 2.5%) - this is the current government policy</li>
+        <li>Toggle this on if you want to model a scenario where the Triple Lock is removed or changed - for example, using a flat 2.5% or CPI-only increase</li>
         <li>This can be a useful stress-test for clients who are significantly reliant on the State Pension in retirement</li>
       </ul>
     `,
