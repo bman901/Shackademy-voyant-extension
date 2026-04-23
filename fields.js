@@ -341,12 +341,10 @@ window.SHACKADEMY_FIELDS = [
     label: "Edit Timing",
     helpText: `
       <h3>What to enter</h3>
-      <p>Toggle this to switch between setting the event by <strong>Age</strong> or by <strong>Year</strong>. When editing is enabled, the Year and Age fields below become active.</p>
+      <p>Drag this slider to select the appropriate timing for the event.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Use <strong>Age</strong> when the event is tied to a life milestone - e.g. retirement at age 60</li>
-        <li>Use <strong>Year</strong> when the event is tied to a specific calendar date - e.g. a property purchase in 2028</li>
-        <li>Changing one will automatically update the other based on the owner's date of birth</li>
+        <li>This will automatically update the 'Year' and 'Age' fields below, and will in turn be updated if you directly edit those fields.</li>
       </ul>
     `,
   },
@@ -355,11 +353,11 @@ window.SHACKADEMY_FIELDS = [
     label: "Year",
     helpText: `
       <h3>What to enter</h3>
-      <p>Enter the calendar year in which this event occurs. Voyant will position the event on the timeline at the start of this year.</p>
+      <p>Enter the tax year in which this event occurs. Voyant will position the event on the timeline at the start of this year.</p>
       <h3>Tips</h3>
       <ul>
+        <li>The Voyant 'Year' reflects the first of the calendar years in the tax year... e.g. 2034 = the 2034/35 tax year</li>  
         <li>Changing the year will automatically update the Age field based on the selected owner's date of birth</li>
-        <li>You can drag events directly on the timeline as an alternative to editing this field</li>
       </ul>
     `,
   },
@@ -368,11 +366,11 @@ window.SHACKADEMY_FIELDS = [
     label: "Age",
     helpText: `
       <h3>What to enter</h3>
-      <p>Enter the age of the selected owner at which this event occurs. Voyant converts this to a calendar year automatically.</p>
+      <p>Enter the age of the selected owner at which this event occurs. Voyant converts this to a tax year automatically.</p>
       <h3>Tips</h3>
       <ul>
         <li>Changing the age will automatically update the Year field based on the owner's date of birth</li>
-        <li>If the plan has two people and this event relates to the other person, make sure the correct owner is selected above so the age calculation is based on the right date of birth</li>
+        <li>If the plan has more than one person, make sure the correct owner is selected above so the age calculation is based on the right date of birth</li>
       </ul>
     `,
   },
@@ -406,7 +404,7 @@ window.SHACKADEMY_FIELDS = [
       <h3>Tips</h3>
       <ul>
         <li>Using distinct colours for each stage makes the timeline much easier to read at a glance</li>
-        <li>Consider using a consistent colour scheme across plans - for example, always using green for working years and blue for retirement - to make plans feel familiar and consistent</li>
+        <li>Consider using a consistent colour scheme across 'What if' scenarios - for example, always using green for working years and blue for retirement - to make plans feel familiar and consistent</li>
       </ul>
     `,
   },
@@ -437,7 +435,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter a clear, recognisable name for this employment.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Including the owner's name and employer makes it easier to identify later - e.g. "Jane – Acme Ltd"</li>
+        <li>Including the owner's name and employer makes it easier to identify later - e.g. "Jane - Acme Ltd"</li>
         <li>If there are multiple employments for the same person, be specific so they're easy to distinguish</li>
       </ul>
     `,
@@ -450,7 +448,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Select the employment type. This determines the tax treatment applied to the earnings and may unlock additional fields.</p>
       <h3>Options</h3>
       <ul>
-        <li><strong>Employed</strong> - standard PAYE employment. Income Tax and National Insurance are deducted via payroll</li>
+        <li><strong>Employed</strong> - standard PAYE employment. Income Tax and National Insurance are deducted via payroll in reality (though paid via Self Assessment in Voyant)</li>
         <li><strong>Self-Employed</strong> - income from self-employment or sole trading. Tax is assessed via Self Assessment and Class 4 NI applies</li>
         <li><strong>Company Owner</strong> - director or shareholder of a company. Unlocks the Dividend field and applies dividend tax treatment to any dividend income entered</li>
       </ul>
@@ -478,7 +476,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter an annual average total for any expected bonus or commission income. This is added to salary and taxed as earned income.</p>
       <h3>Tips</h3>
       <ul>
-        <li>If bonuses vary significantly year to year, use a conservative average rather than the best year</li>
+        <li>If bonuses vary significantly year to year, consider using a conservative average rather than the best year</li>
         <li>If bonuses are likely to stop at a certain point (e.g. when a role changes), you can use Steps to reduce or remove this amount at a future date</li>
       </ul>
     `,
@@ -502,11 +500,10 @@ window.SHACKADEMY_FIELDS = [
     label: "Continue to Receive Income While Disabled",
     helpText: `
       <h3>What to enter</h3>
-      <p>Toggle this on if the owner would continue to receive this employment income even if a disability event occurs in the plan.</p>
+      <p>Toggle this on if the person would continue to receive this employment income even if a disability event occurs in the plan.</p>
       <h3>Tips</h3>
       <ul>
-        <li>By default, Voyant will stop employment income at a disability event - toggle this on if, for example, the owner has income protection insurance that would replace their salary, or if their employment contract includes long-term sick pay</li>
-        <li>This is a planning assumption only - it does not model the insurance policy itself</li>
+        <li>By default, Voyant will stop employment income at a disability event - toggle this on if, for example, their employment contract includes long-term sick pay</li>
       </ul>
     `,
   },
@@ -531,9 +528,8 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the annual dividend income drawn from the company. Dividends are taxed at the dividend tax rates (rather than income tax rates) and are not subject to National Insurance.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Enter the gross annual dividend amount - the dividend allowance (currently £500 for 2025/26) is applied automatically by Voyant</li>
+        <li>Enter the gross annual dividend amount - the dividend allowance is applied automatically by Voyant</li>
         <li>Dividends are typically drawn in addition to a salary - make sure the salary is entered separately above</li>
-        <li>You can see the dividend income and associated tax in Year View > Cash Flow and > Tax</li>
       </ul>
     `,
   },
@@ -542,11 +538,10 @@ window.SHACKADEMY_FIELDS = [
     label: "Growth Rate",
     helpText: `
       <h3>What to enter</h3>
-      <p>Enter the annual rate at which this employment income is expected to grow. If left blank, Voyant uses the National Average Earnings assumption set in your Plan Settings.</p>
+      <p>Enter the annual rate at which this employment income is expected to grow. By default this is linked to the inflation figure entered in Plan Settings.</p>
       <h3>Tips</h3>
       <ul>
-        <li>The default assumption can be found in Dashboard > Plan Settings > Inflation/Growth > National Average Earnings</li>
-        <li>Override this if a specific salary progression is expected - for example, a known pay rise, promotion path, or incremental pay scale</li>
+        <li>Override this if a specific salary progression is expected at a defined % rate</li>
         <li>You can also use Steps to model discrete salary changes at specific points in time</li>
       </ul>
     `,
@@ -578,7 +573,11 @@ window.SHACKADEMY_FIELDS = [
     label: "Owner",
     helpText: `
       <h3>What to enter</h3>
-      <p>Select the owner of this income. Only one owner can be selected per Other Income entry - if both people in the plan receive separate other incomes, set up a separate entry for each.</p>
+      <p>Select the owner of this income.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Multiple owners can be selected, this will distribute the income evenly between each.</li>
+      </ul>
     `,
   },
   {
@@ -589,7 +588,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter a clear, recognisable name for this income source.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Be specific enough to distinguish it from other entries - e.g. "Rental Income – Leeds Flat" or "Trust Income – Family Settlement"</li>
+        <li>Be specific enough to distinguish it from other entries - e.g. "Rental Income - Leeds Flat" or "Trust Income - Family Settlement"</li>
       </ul>
     `,
   },
@@ -600,7 +599,7 @@ window.SHACKADEMY_FIELDS = [
       <h3>What to enter</h3>
       <p>Enter the gross annual amount of this Other Income.</p>
       <h3>What counts as Other Income?</h3>
-      <p>Other Income is used for any income that doesn't fit the Employment or Pension categories - for example: rental income, trust distributions, maintenance payments, freelance income not entered as employment, or overseas income. It can be set as taxable or non-taxable depending on its nature.</p>
+      <p>Other Income is used for any income that doesn't fit the Employment or Pension categories - for example: rental income (this can be linked to a property later), trust distributions, maintenance payments, freelance income not entered as employment, or overseas income. It can be set as taxable or non-taxable depending on its nature.</p>
       <h3>Tips</h3>
       <ul>
         <li>Unlike employment income, Other Income is not subject to National Insurance</li>
@@ -645,8 +644,7 @@ window.SHACKADEMY_FIELDS = [
       <h3>Tips</h3>
       <ul>
         <li>Pension contributions can only be made up to 100% of earnings - earned income determines the maximum that can attract tax relief</li>
-        <li>Toggle this on for income from self-employment, freelance work, or other trading activities where pension contributions are being made</li>
-        <li>Investment income, rental income, and trust distributions are generally not earned income - leave this off for these types</li>
+        <li>Investment income, rental income, and trust distributions are generally not earned income</li>
       </ul>
     `,
   },
@@ -655,7 +653,7 @@ window.SHACKADEMY_FIELDS = [
     label: "Growth Rate",
     helpText: `
       <h3>What to enter</h3>
-      <p>Enter the annual rate at which this income is expected to grow. If left blank, Voyant uses the National Average Earnings assumption from your Plan Settings.</p>
+      <p>Enter the annual rate at which this income is expected to grow. By default this is linked to the inflation figure entered in Plan Settings.</p>
       <h3>Tips</h3>
       <ul>
         <li>For income that is expected to remain flat (e.g. a fixed trust distribution), enter 0%</li>
@@ -714,7 +712,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter a clear, recognisable name for this windfall.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Be descriptive - e.g. "Inheritance – Aunt Mary" or "Property Sale Proceeds 2027"</li>
+        <li>Be descriptive - e.g. "Inheritance - Aunt Mary"</li>
       </ul>
     `,
   },
@@ -726,7 +724,6 @@ window.SHACKADEMY_FIELDS = [
       <p>Select the category that best describes this windfall. This is for reference and labelling purposes rather than affecting the tax treatment directly - the tax treatment is controlled by the Taxation Type and Taxable fields below.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Common uses include: inheritances, property sale proceeds, business sale proceeds, insurance payouts, gifts, and lottery or competition winnings</li>
         <li>If none of the options precisely match, select the closest category</li>
       </ul>
     `,
@@ -739,7 +736,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the windfall amount. Windfalls are assumed to be received tax-free or net of any taxes - Voyant will not deduct further taxes from this figure unless you set the Taxable option below.</p>
       <h3>Tips</h3>
       <ul>
-        <li>If the windfall is subject to tax (e.g. a capital gain on a property sale), enter the gross amount and set the Taxation Type and Taxable fields accordingly so Voyant can model the tax correctly</li>
+        <li>If the windfall is subject to tax, enter the gross amount and set the Taxation Type and Taxable fields accordingly so Voyant can model the tax correctly</li>
         <li>For an inheritance, enter the net amount expected after IHT has been settled from the estate</li>
       </ul>
     `,
@@ -757,8 +754,7 @@ window.SHACKADEMY_FIELDS = [
       </ul>
       <h3>Tips</h3>
       <ul>
-        <li>Most inheritances and gifts are not taxable in the hands of the recipient - leave as Non-Taxable in these cases</li>
-        <li>A property sale profit or business sale would typically be a Capital Gain</li>
+        <li>Most inheritances and gifts are not taxable in the hands of the recipient</li>
       </ul>
     `,
   },
@@ -770,7 +766,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Select whether this windfall is taxable or non-taxable in the hands of the owner.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Most inheritances, gifts, and insurance payouts received by the beneficiary are non-taxable - select Non-Taxable for these</li>
+        <li>Most inheritances, gifts, and insurance payouts received by the beneficiary are non-taxable</li>
         <li>If there is a taxable element (e.g. a capital gain on an inherited asset that has since grown), set to Taxable and choose the appropriate Taxation Type above</li>
       </ul>
     `,
@@ -785,7 +781,7 @@ window.SHACKADEMY_FIELDS = [
         <li><strong>Future Value</strong> - the amount is already expressed in the money of the year it will be received, so no further inflation is applied</li>
       </ul>
       <h3>Which should I choose?</h3>
-      <p>If you know the approximate amount in today's money, use Present Value. If you have a specific future figure (e.g. from a property sale estimate or a known inheritance amount), use Future Value.</p>
+      <p>If you know the approximate amount in today's money, use Present Value. If you have a specific future figure (e.g. a known inheritance amount), use Future Value.</p>
     `,
   },
 
@@ -810,7 +806,6 @@ window.SHACKADEMY_FIELDS = [
         <li>Ownership defaults to the principal person. Check correct ownership for each product.</li>
       </ul>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit"
   },
   {
     key: "ukSavingInputName",
@@ -825,7 +820,6 @@ window.SHACKADEMY_FIELDS = [
         <li>Ensure you don't include any identifiable information like account numbers</li>
       </ul>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit"
   },
   {
     key: "ukSavingInputSavingType",
@@ -846,8 +840,8 @@ window.SHACKADEMY_FIELDS = [
         <li><strong>National Savings Certificate</strong> - Treated as a Tax Free asset. Voyant sets no contribution limits on this type of account.</li>
       </ul>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit"
   },
+  // TODO: Keep verifying
   {
     key: "ukSavingsInputBalance",
     label: "Balance",
@@ -1415,7 +1409,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter a clear, recognisable name for this property.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Use the address or a short description - e.g. "Main Residence – Manchester" or "BTL Flat – Leeds"</li>
+        <li>Use the address or a short description - e.g. "Main Residence - Manchester" or "BTL Flat - Leeds"</li>
         <li>Avoid including sensitive information like mortgage account numbers</li>
       </ul>
     `,
@@ -2441,7 +2435,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter a clear, recognisable name for this annuity.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Include the owner's name and provider if helpful - e.g. "Jane – Aviva Annuity"</li>
+        <li>Include the owner's name and provider if helpful - e.g. "Jane - Aviva Annuity"</li>
         <li>If there are multiple annuities for the same person, be specific so they're easy to distinguish</li>
       </ul>
     `,
@@ -2725,7 +2719,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter a clear, recognisable name for this drawdown pension.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Including the owner's name and provider is helpful - e.g. "Jane – Fidelity Drawdown"</li>
+        <li>Including the owner's name and provider is helpful - e.g. "Jane - Fidelity Drawdown"</li>
         <li>If this drawdown pot was created from a Money Purchase pension in the plan, Voyant will name it automatically - you only need to enter a name for drawdown pots that exist at the plan start date</li>
       </ul>
     `,
