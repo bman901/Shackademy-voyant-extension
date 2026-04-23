@@ -86,4 +86,9 @@ window.SHACKADEMY_LESSONS = {
     url: "https://shackademy.com/path-player?courseid=voyant&unit=67562126bb11d632650d471aUnit",
   },
 
+  "what-if-upsizing": {
+    title: "Upsizing & Managing SDLT in Voyant",
+    url: "https://shackademy.com/path-player?courseid=voyant&unit=67c8df51d38965f7be05737eUnit",
+  },
+
 };

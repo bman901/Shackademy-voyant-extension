@@ -24,6 +24,32 @@
 // Override inline in a specific section's tabs entry if needed.
 // -----------------------------------------------------------------------------
 
+// -----------------------------------------------------------------------------
+// Tab display name overrides
+// Maps URL hash segments to human-readable tab names.
+// Any segment not listed here will be capitalised automatically.
+// -----------------------------------------------------------------------------
+
+window.TAB_LABELS = {
+  "basics":            "Basics",
+  "timing":            "Timing",
+  "growth":            "Growth",
+  "fees":              "Fees",
+  "steps":             "Steps",
+  "transfers":         "Transfers",
+  "drawdowns":         "Planned Withdrawals",
+  "liquidation-limits":"Withdrawal Limit",
+  "payment-sources":   "Payment Sources",
+  "expense-details":   "Details",
+  "crystallizations":  "Crystallisations",
+  "beneficiaries":     "Beneficiaries",
+  "annuity":           "Annuitization",
+  "linked-debts":      "Linked Debts",
+  "linked-expenses":   "Linked Expenses",
+  "linked-income":     "Linked Income",
+  "linked-reverse-mortgage":      "Linked Equity Release",
+};
+
 window.TAB_DESCRIPTIONS = {
 
   timing: `
@@ -54,16 +80,19 @@ window.TAB_DESCRIPTIONS = {
   `,
 
   transfers: `
-    <p>The Transfers tab lets you model <strong>product fees and advice fees</strong> associated with this account.</p>
+    <p>The Transfers tab is where you model <strong>one-off or regular movements of money between accounts</strong> already in your plan - for example, moving funds from a savings account into an ISA, or from one pension to another.</p>
+    <p>Transfers do not create new income or expenses - they simply redistribute existing assets within the plan. This is useful for modelling tax-efficient restructuring, such as ISA bed-and-ISA transactions or pension consolidations.</p>
     <ul>
-      <li><strong>Product fee</strong> - deducted from the gross growth rate.</li>
-      <li><strong>Ongoing advice fee</strong> - modelled as a withdrawal from the account. Will generate a tax event where applicable (e.g. Capital Gains Tax for unwrapped investments).</li>
+      <li>Both the source and destination accounts must already exist in the plan before setting up a transfer</li>
+      <li>Transfers are linked to timeline events so you can model them at a specific future date</li>
+      <li>Transfers can also be used to invest surplus income by selecting 'All Surplus' as the 'Transfer From' account</li>
+      <li>Check Year View after saving to confirm the source and destination balances move as expected</li>
     </ul>
-    <p>Ensure the entered growth rate factors in any account fees. For example, if using the default growth rate of 5% you may want to gross this up to offset the fee reduction.</p>
   `,
 
-  withdrawal: `
+  "liquidation-limits": `
     <p>The Withdrawal Limit tab controls <strong>how and when Voyant is allowed to access this account</strong> to meet expenses when other income falls short.</p>
+    <p>Ensure the timing reflects when you want to allow access to this account</p>
     <p>The default setting is <em>As Needed</em>, meaning Voyant will draw from this account according to the liquidation order. You can restrict this - for example, to ringfence an emergency fund or prevent access until a specific life event.</p>
     <p>Note: withdrawal limits control <em>ad hoc</em> access. To model a planned, scheduled withdrawal regardless of whether it is needed, use the Planned Withdrawals screen instead.</p>
   `,
@@ -276,10 +305,20 @@ window.SHACKADEMY_SECTIONS = {
           <p>When income falls short of expenses, Voyant draws on savings according to the liquidation order. Check Dashboard > Plan Settings > Liquidation Order to see and adjust this.</p>
         `,
       },
-      "timing":       { description: window.TAB_DESCRIPTIONS.timing       },
+      "timing": {
+        description: `
+          <p>The Timing tab controls <strong>when contributions are allowed</strong> in this plan. Voyant uses timeline events - milestones you define, like Retirement or a specific age - rather than fixed calendar dates, so your plan stays dynamic as assumptions change.</p>
+          <ul>
+            <li>It is imperative that this is set if you want the account to be able to receive contributions.</li>
+            <li>As a baseline, you can set the start to 'Plan Start' and end to 'Plan End' to allow contributions throughout.</li>
+          </ul>
+        `,
+      },
       "fees":         { description: window.TAB_DESCRIPTIONS.fees         },
       "steps":        { description: window.TAB_DESCRIPTIONS.steps        },
-      "withdrawal limit": { description: window.TAB_DESCRIPTIONS.withdrawal },
+      "transfers":        { description: window.TAB_DESCRIPTIONS.transfers        },
+      "drawdowns":           { description: window.TAB_DESCRIPTIONS.drawdowns          },
+      "liquidation-limits":  { description: window.TAB_DESCRIPTIONS["liquidation-limits"] },
     },
   },
 
@@ -307,10 +346,20 @@ window.SHACKADEMY_SECTIONS = {
       },
       "growth":       { description: window.TAB_DESCRIPTIONS.growth       },
       "contribution": { description: window.TAB_DESCRIPTIONS.contribution },
-      "timing":       { description: window.TAB_DESCRIPTIONS.timing       },
+      "timing": {
+        description: `
+          <p>The Timing tab controls <strong>when contributions are allowed</strong> in this plan. Voyant uses timeline events - milestones you define, like Retirement or a specific age - rather than fixed calendar dates, so your plan stays dynamic as assumptions change.</p>
+          <ul>
+            <li>It is imperative that this is set if you want the account to be able to receive contributions.</li>
+            <li>As a baseline, you can set the start to 'Plan Start' and end to 'Plan End' to allow contributions throughout.</li>
+          </ul>
+        `,
+      },
       "fees":         { description: window.TAB_DESCRIPTIONS.fees         },
       "steps":        { description: window.TAB_DESCRIPTIONS.steps        },
-      "withdrawal limit": { description: window.TAB_DESCRIPTIONS.withdrawal },
+      "transfers":        { description: window.TAB_DESCRIPTIONS.transfers        },
+      "drawdowns":           { description: window.TAB_DESCRIPTIONS.drawdowns          },
+      "liquidation-limits":  { description: window.TAB_DESCRIPTIONS["liquidation-limits"] },
     },
   },
 
@@ -321,7 +370,7 @@ window.SHACKADEMY_SECTIONS = {
   "property": {
     name: "Property",
     typeIndicator: "propertyInputAssetType",
-    lessons: ["property-basics", "what-if-downsizing"],
+    lessons: ["property-basics", "what-if-downsizing", "what-if-upsizing"],
     tabs: {
       "basics": {
         description: `
@@ -329,30 +378,51 @@ window.SHACKADEMY_SECTIONS = {
           <p>The Asset Type field is important for tax:</p>
           <ul>
             <li><strong>Main Residence</strong> - exempt from Capital Gains Tax on sale (Private Residence Relief)</li>
-            <li><strong>All other property</strong> - gains on sale are subject to CGT at 18% (basic rate) or 24% (higher rate)</li>
+            <li><strong>All other property</strong> - gains on sale are subject to CGT</li>
           </ul>
           <p>If the property has not yet been purchased, toggle <em>Is this a Future Purchase?</em> to Yes and use the Timing tab to set the buy and sell events.</p>
           <p>You can link associated debts (mortgages), expenses (maintenance), and income (rental) to the property so they appear and disappear in the plan alongside the property itself.</p>
+          <p>Only enter a business here if it has a material value that you will realise and you want this included in your plan.</p>
         `,
       },
       "timing": {
         description: `
           <p>The Timing tab for property sets the <strong>buy and sell events</strong> - the timeline milestones at which Voyant models the property being purchased and disposed of.</p>
-          <p>If you are modelling a property that is already owned and not being sold within the plan, you only need a buy event (or leave the start as the plan start date).</p>
+          <p>If you are modelling a property that is already owned and not being sold within the plan, leave the Buy Event as 'Plan Start' and the Sell Event as 'Plan End'.</p>
           <p>If you are modelling a future purchase or a planned sale - such as downsizing in retirement - set both events carefully. Voyant will model the purchase cost as an expense and any sale proceeds as an inflow, with CGT applied where applicable.</p>
+          <p>Check out the linked lesson to understand how to include Stamp Duty Land Tax.</p>
         `,
       },
-      "growth and inflation": {
+      "steps":        { description: window.TAB_DESCRIPTIONS.steps        },
+      "linked-debts": {
         description: `
-          <p>This tab sets the <strong>assumed annual growth rate for this property's value</strong>. The default is taken from Plan Settings (Dashboard > Plan Settings > Inflation/Growth > Property Growth/Depreciation Rate).</p>
-          <p>You can override the rate here for this specific property - useful if you believe a particular property will outperform or underperform the general market assumption.</p>
+          <p>The Linked Debts tab lets you link an existing debt or create a new one.</p>
+          <p>If the property is sold (Timing tab) then the linked debt will be repaid with the proceeds of the sale.</p>
+        `,
+      },
+      "linked-expenses": {
+        description: `
+          <p>The Linked Expenses tab lets you link existing expenses or create new ones e.g. ongoing maintenance costs.</p>
+          <p>If the property is sold (Timing tab) then the linked expenses will cease accordingly.</p>
+        `,
+      },
+      "linked-income": {
+        description: `
+          <p>The Linked Income tab lets you link existing income or add new ones e.g. rental income.</p>
+          <p>If the property is sold (Timing tab) then the linked income will cease accordingly.</p>
+        `,
+      },
+      "linked-reverse-mortgage": {
+        description: `
+          <p>The Linked Equity Release tab lets you link an existing equity release mortgage, or create a new one.</p>
+          <p>This is not something currently covered in the Shackademy lessons, but please get in touch if you would like help adding these details.</p>
         `,
       },
     },
   },
 
   // ============================================================
-  // Pensions
+  // Money Purchase Pension
   // ============================================================
 
   "pension-money-purchase": {
@@ -368,17 +438,22 @@ window.SHACKADEMY_SECTIONS = {
           <ul>
             <li>Enter contributions gross - Voyant applies tax relief automatically</li>
             <li>If employer contributions apply, toggle the Employer Contribution section and link to the relevant employment</li>
-            <li>The minimum pension access age is currently 55, rising to 57 in April 2028</li>
-            <li>Complete an expression of wishes with your pension provider to direct benefits on death - Voyant models this under Beneficiaries</li>
+            <li>Ensure the withdrawal limit tab reflects at least the minimum pension access age for your pension</li>
           </ul>
         `,
       },
-      "contribution": { description: window.TAB_DESCRIPTIONS.contribution },
       "growth":       { description: window.TAB_DESCRIPTIONS.growth       },
-      "timing":       { description: window.TAB_DESCRIPTIONS.timing       },
       "fees":         { description: window.TAB_DESCRIPTIONS.fees         },
+      "timing": {
+        description: `
+          <p>The Timing tab controls <strong>when contributions are allowed</strong> in this plan. Voyant uses timeline events - milestones you define, like Retirement or a specific age - rather than fixed calendar dates, so your plan stays dynamic as assumptions change.</p>
+          <ul>
+            <li>It is imperative that this is set if you want the account to be able to receive contributions.</li>
+            <li>As a baseline, you can set the start to 'Plan Start' and end to 'Plan End' to allow contributions throughout.</li>
+          </ul>
+        `,
+      },
       "steps":        { description: window.TAB_DESCRIPTIONS.steps        },
-      "withdrawal limit": { description: window.TAB_DESCRIPTIONS.withdrawal },
       "crystallisations": {
         description: `
           <p>The Crystallisations tab allows you to model <strong>specific pension crystallisation events</strong> - the point at which pension benefits are formally accessed and tax-free cash is taken.</p>
@@ -386,7 +461,16 @@ window.SHACKADEMY_SECTIONS = {
           <p>Use this tab if you need to model a specific partial crystallisation at a known future date or event.</p>
         `,
       },
-      "annuitization": {
+      "beneficiaries": {
+        description: `
+          <p>The Beneficiaries tab reflects what happens to your pension when you die.</p>
+          <p>Refer to the tooltip for more details on the options available.</p>
+        `,
+      },
+      "transfers":        { description: window.TAB_DESCRIPTIONS.transfers        },
+      "liquidation-limits":  { description: window.TAB_DESCRIPTIONS["liquidation-limits"] },
+      "drawdowns":           { description: window.TAB_DESCRIPTIONS.drawdowns          },
+      "annuity": {
         description: `
           <p>The Annuitization tab allows you to model the <strong>conversion of some or all of this pension pot into a guaranteed annuity income</strong> at a future point.</p>
           <p>You can specify the percentage of the fund to annuitise, the timing, escalation rate, and whether it pays on a single or joint life basis.</p>
@@ -396,6 +480,10 @@ window.SHACKADEMY_SECTIONS = {
     },
   },
 
+  // ============================================================
+  // DB Pension
+  // ============================================================
+
   "pension-defined-benefit": {
     name: "Final Salary Pension",
     typeIndicator: "ukFinalSalaryInputStatus",
@@ -403,7 +491,7 @@ window.SHACKADEMY_SECTIONS = {
     tabs: {
       "basics": {
         description: `
-          <p>This is where you enter a <strong>defined benefit (final salary or CARE) pension</strong> - common in the public sector (NHS, teachers, civil service, armed forces) and some older workplace schemes.</p>
+          <p>This is where you enter a <strong>defined benefit pension</strong> - common in the public sector (NHS, teachers, civil service, armed forces) and some older workplace schemes.</p>
           <p>Unlike defined contribution pensions, the benefit is a guaranteed income based on your salary and years of service - not a pot of money. The investment risk sits with the employer, not you.</p>
           <p>The Status field is critical:</p>
           <ul>
@@ -416,7 +504,7 @@ window.SHACKADEMY_SECTIONS = {
       },
       "timing": {
         description: `
-          <p>The Timing tab for a Final Salary pension sets <strong>when the pension income starts</strong> in the plan. This is typically your planned retirement date or a specific age event.</p>
+          <p>The Timing tab for a Final Salary pension sets <strong>when you intend to start drawing an income</strong> from the plan. This is typically your planned retirement date or a specific age event.</p>
           <p>If you start taking benefits before the scheme's Normal Retirement Age (entered in the Basics tab), Voyant will apply the actuarial reduction rate automatically - meaning a lower income to reflect early payment.</p>
           <p>Make sure the start event aligns with your realistic retirement plans rather than the scheme's default retirement age, unless those are the same.</p>
         `,
@@ -424,4 +512,93 @@ window.SHACKADEMY_SECTIONS = {
     },
   },
 
+  // ============================================================
+  // Annuity
+  // ============================================================
+ 
+  "annuity": {
+    name: "Annuity",
+    typeIndicator: "ukAnnuityInputStatus",
+    tabs: {
+      "basics": {
+        description: `
+          <p>This is where you enter an <strong>existing or future annuity</strong> - a financial product that converts a lump sum into a guaranteed income, either for life or a fixed term.</p>
+          <p>The Status field determines how Voyant models it:</p>
+          <ul>
+            <li><strong>In Payment</strong> - currently paying income; enter the annual amount</li>
+            <li><strong>Deferred</strong> - purchased but not yet paying; enter the future income amount and set the start date in Timing</li>
+            <li><strong>Future</strong> - not yet purchased; enter the expected purchase value and Voyant will calculate the projected income</li>
+          </ul>
+        `,
+      },
+      "timing": {
+        description: `
+          <p>The Timing tab for an annuity sets <strong>when you intend to start drawing an income</strong> from the plan.</p>
+        `,
+      },
+    },
+  },
+ 
+  // ============================================================
+  // Drawdown Pension
+  // ============================================================
+ 
+  "drawdown": {
+    name: "Drawdown Pension",
+    typeIndicator: "ukUnsecuredPensionInputDrawdownPensionType",
+    lessons: ["pension-basics", "pension-withdrawals"],
+    tabs: {
+      "basics": {
+        description: `
+          <p>This is where you enter an <strong>existing drawdown pension</strong> - a crystallised pension pot that is already in drawdown at the plan start date. If you are modelling a pension that will move into drawdown during the plan, enter it as a Money Purchase pension instead - Voyant will create the drawdown pot automatically.</p>
+          <ul>
+            <li>The Initial Balance field is needed for Voyant to correctly calculate the Lump Sum Death Benefit Allowance on growth</li>
+            <li>Use the Planned Withdrawals tab to set up a specific regular drawdown income strategy if you want to</li>
+            <li>Check the Tax Status carefully - inherited drawdown pots may be tax-free if the original holder died before age 75</li>
+          </ul>
+        `,
+      },
+      "growth":              { description: window.TAB_DESCRIPTIONS.growth             },
+      "fees":                { description: window.TAB_DESCRIPTIONS.fees               },
+      "beneficiaries": {
+        description: `
+          <p>The Beneficiaries tab reflects what happens to your pension when you die.</p>
+          <p>Refer to the tooltip for more details on the options available.</p>
+        `,
+      },
+      "steps":               { description: window.TAB_DESCRIPTIONS.steps             },
+      "liquidation-limits":  { description: window.TAB_DESCRIPTIONS["liquidation-limits"] },
+      "drawdowns":           { description: window.TAB_DESCRIPTIONS.drawdowns          },
+      "annuity": {
+        description: `
+          <p>The Annuitization tab allows you to model the <strong>conversion of some or all of this pension pot into a guaranteed annuity income</strong> at a future point.</p>
+          <p>You can specify the percentage of the fund to annuitise, the timing, escalation rate, and whether it pays on a single or joint life basis.</p>
+          <p>If you are not planning to purchase an annuity, you can leave this tab as default. Voyant will model the pension as remaining in drawdown.</p>
+        `,
+      },
+    },
+  },
+ 
+  // ============================================================
+  // State Pension
+  // ============================================================
+ 
+  "state-pension": {
+    name: "State Pension",
+    typeIndicator: "ukStatePensionInputOwnerLabel",
+    lessons: ["pension-basics"],
+    tabs: {
+      "basics": {
+        description: `
+          <p>This is where you enter the <strong>UK State Pension</strong> for each person in the plan.</p>
+          <p>Get the State Pension forecast for each person at <a href="https://www.gov.uk/check-state-pension" target="_blank" rel="noopener noreferrer">gov.uk/check-state-pension</a> - this gives you the projected amount and exact State Pension Age based on date of birth.</p>
+          <ul>
+            <li>Voyant escalates the State Pension automatically using the Triple Lock assumption from Plan Settings</li>
+            <li>You can model deferral by setting a Start Age later than the State Pension Age</li>
+          </ul>
+        `,
+      },
+    },
+  },
+ 
 };

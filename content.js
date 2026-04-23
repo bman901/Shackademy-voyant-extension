@@ -80,8 +80,8 @@
     }
 
     // ItemId changed - scan DOM for a new type indicator
-    currentItemId    = newItemId;
-    currentTabKey    = newTab;
+    currentItemId     = newItemId;
+    currentTabKey     = newTab;
     currentSectionKey = null;
 
     for (const [sectionKey, config] of Object.entries(sectionMap)) {
@@ -396,10 +396,11 @@
     const saveBtn = document.getElementById("shackademy-save-btn");
     if (saveBtn) saveBtn.hidden = !section;
 
-    // Build tab title automatically from section name + capitalised tab key
+    // Build tab title - use TAB_LABELS lookup, fall back to capitalised key
     const tabKey    = currentTabKey || "basics";
     const tabConfig = section.tabs?.[tabKey] || section.tabs?.["basics"];
-    const tabLabel  = tabKey.charAt(0).toUpperCase() + tabKey.slice(1);
+    const labelMap  = window.TAB_LABELS || {};
+    const tabLabel  = labelMap[tabKey] || (tabKey.charAt(0).toUpperCase() + tabKey.slice(1));
     const title     = `${section.name} - ${tabLabel}`;
 
     // Section title header
