@@ -851,7 +851,7 @@ window.SHACKADEMY_FIELDS = [
       <h3>Tips</h3>
       <ul>
         <li>The plan start date is 6th April each year</li>  
-        <li>This is updated to following tax year in October each year</li>
+        <li>This is updated to the following tax year in October each year</li>
         <li>This means there is only ever at maximum a 6 month differential in account balances</li>
         <li>You will spend 6 months of the year working in arrears, and 6 months working in advance</li>
         <li>The easiest way to approach this is to update your account balances in October and April each year</li>
