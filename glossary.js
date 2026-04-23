@@ -1,7 +1,7 @@
 // =============================================================================
-// SHACKADEMY — GLOSSARY & LESSONS CONFIGURATION
+// SHACKADEMY - GLOSSARY & LESSONS CONFIGURATION
 // =============================================================================
-// IMPORTANT — COMPLIANCE NOTICE:
+// IMPORTANT - COMPLIANCE NOTICE:
 // This glossary contains references to UK tax legislation, allowances, and
 // financial rules that are subject to change. Each term notes the date it was
 // last reviewed. Review and update this file at the start of each new tax year
@@ -18,10 +18,10 @@
 // -----------------------------------------------------------------------------
 // TERMS LIBRARY
 // Each term needs:
-//   term        — display name
-//   definition  — HTML string, plain English, beginner-friendly
-//   lastReviewed — "Month YYYY" — update whenever you check this entry
-//   legislative  — true if the entry references figures that may change
+//   term        - display name
+//   definition  - HTML string, plain English, beginner-friendly
+//   lastReviewed - "Month YYYY" - update whenever you check this entry
+//   legislative  - true if the entry references figures that may change
 // -----------------------------------------------------------------------------
 
 window.SHACKADEMY_TERMS = {
@@ -31,7 +31,7 @@ window.SHACKADEMY_TERMS = {
   "gross-income": {
     term: "Gross income",
     definition: `
-      <p>Your total income <strong>before</strong> any tax, National Insurance, or pension contributions are deducted. This is the figure Voyant uses as a starting point — it then calculates what you actually take home.</p>
+      <p>Your total income <strong>before</strong> any tax, National Insurance, or pension contributions are deducted. This is the figure Voyant uses as a starting point - it then calculates what you actually take home.</p>
       <p>For example, if your salary is £40,000 but you receive £33,000 in your bank account each year, your gross income is £40,000.</p>
     `,
     lastReviewed: "April 2026",
@@ -41,7 +41,7 @@ window.SHACKADEMY_TERMS = {
   "net-income": {
     term: "Net income",
     definition: `
-      <p>Your income <strong>after</strong> tax, National Insurance, and pension contributions have been deducted — sometimes called your "take-home pay". Voyant calculates net income automatically; you generally enter gross figures and let the software do the maths.</p>
+      <p>Your income <strong>after</strong> tax, National Insurance, and pension contributions have been deducted - sometimes called your "take-home pay". Voyant calculates net income automatically; you generally enter gross figures and let the software do the maths.</p>
     `,
     lastReviewed: "April 2026",
     legislative: false,
@@ -63,10 +63,10 @@ window.SHACKADEMY_TERMS = {
     definition: `
       <p>The rates at which income tax is charged in England, Wales, and Northern Ireland for 2025/26 and 2026/27:</p>
       <ul>
-        <li><strong>Personal allowance:</strong> £0–£12,570 — 0% tax</li>
-        <li><strong>Basic rate:</strong> £12,571–£50,270 — 20% tax</li>
-        <li><strong>Higher rate:</strong> £50,271–£125,140 — 40% tax</li>
-        <li><strong>Additional rate:</strong> Over £125,140 — 45% tax</li>
+        <li><strong>Personal allowance:</strong> £0–£12,570 - 0% tax</li>
+        <li><strong>Basic rate:</strong> £12,571–£50,270 - 20% tax</li>
+        <li><strong>Higher rate:</strong> £50,271–£125,140 - 40% tax</li>
+        <li><strong>Additional rate:</strong> Over £125,140 - 45% tax</li>
       </ul>
       <p>⚠️ <strong>Note:</strong> Scotland has its own income tax rates and bands, which differ from the rest of the UK. All thresholds are frozen until at least April 2028. Voyant applies the correct tax calculations automatically based on the information you enter.</p>
     `,
@@ -77,7 +77,7 @@ window.SHACKADEMY_TERMS = {
   "national-insurance": {
     term: "National Insurance (NI)",
     definition: `
-      <p>A tax paid by employees, employers, and the self-employed that funds the State Pension and certain benefits such as statutory sick pay. Your NI record determines your eligibility for the full State Pension — you need 35 qualifying years.</p>
+      <p>A tax paid by employees, employers, and the self-employed that funds the State Pension and certain benefits such as statutory sick pay. Your NI record determines your eligibility for the full State Pension - you need 35 qualifying years.</p>
       <p>For employees in 2026/27, the main rate is <strong>8%</strong> on earnings between £12,570 and £50,270, and <strong>2%</strong> above that. Voyant factors NI into its income calculations automatically.</p>
       <p>⚠️ <strong>Note:</strong> NI rates and thresholds are set by the government and can change with each Budget.</p>
     `,
@@ -88,7 +88,7 @@ window.SHACKADEMY_TERMS = {
   "marginal-rate": {
     term: "Marginal tax rate",
     definition: `
-      <p>The rate of tax you pay on your <em>next pound of income</em> — in other words, the tax band your income currently sits in. This matters in financial planning because it determines how tax-efficient different savings or investment strategies are for you personally.</p>
+      <p>The rate of tax you pay on your <em>next pound of income</em> - in other words, the tax band your income currently sits in. This matters in financial planning because it determines how tax-efficient different savings or investment strategies are for you personally.</p>
       <p>For example, a basic rate taxpayer pays 20% on additional earnings, while a higher rate taxpayer pays 40%. Voyant uses your marginal rate to model the tax impact of different decisions.</p>
     `,
     lastReviewed: "April 2026",
@@ -102,7 +102,7 @@ window.SHACKADEMY_TERMS = {
     definition: `
       <p>A pension where you (and usually your employer) pay contributions into a personal pot. The pot is invested, and what you receive in retirement depends on how much was paid in and how the investments performed. Also called a "money purchase" pension.</p>
       <p>This is the most common type of workplace pension today. In Voyant, these appear under the Money Purchase section.</p>
-      <p>The key risk with DC pensions is investment performance — unlike defined benefit pensions, there is no guaranteed income level.</p>
+      <p>The key risk with DC pensions is investment performance - unlike defined benefit pensions, there is no guaranteed income level.</p>
     `,
     lastReviewed: "April 2026",
     legislative: false,
@@ -137,7 +137,7 @@ window.SHACKADEMY_TERMS = {
     term: "Money Purchase Annual Allowance (MPAA)",
     definition: `
       <p>A reduced pension contribution limit of <strong>£10,000</strong> per year that applies once you have started flexibly accessing ("drawing down") your defined contribution pension. It replaces the standard £60,000 annual allowance for money purchase contributions.</p>
-      <p>This is designed to prevent people from recycling pension funds — drawing money out and paying it back in to get extra tax relief. If you trigger the MPAA, it applies for the rest of your life and cannot be undone.</p>
+      <p>This is designed to prevent people from recycling pension funds - drawing money out and paying it back in to get extra tax relief. If you trigger the MPAA, it applies for the rest of your life and cannot be undone.</p>
       <p>⚠️ <strong>Note:</strong> The MPAA is set by HMRC and subject to change. Last reviewed April 2026.</p>
     `,
     lastReviewed: "April 2026",
@@ -149,7 +149,7 @@ window.SHACKADEMY_TERMS = {
     definition: `
       <p>The maximum amount you can take as a <strong>tax-free lump sum</strong> from all your pension pots combined over your lifetime. From 6 April 2024, this replaced the old 25% tax-free lump sum rule.</p>
       <p>The LSA is currently <strong>£268,275</strong>. Any lump sum taken above this will be taxed at your marginal income tax rate.</p>
-      <p>You can still take more than this from your pension — but only the first £268,275 across all your pensions is tax-free. The rest is taxable income.</p>
+      <p>You can still take more than this from your pension - but only the first £268,275 across all your pensions is tax-free. The rest is taxable income.</p>
       <p>⚠️ <strong>Note:</strong> The LSA replaced the Lifetime Allowance (LTA), which was abolished from 6 April 2024. If you took pension benefits before that date, the amount of LTA you used affects your available LSA. Last reviewed April 2026.</p>
     `,
     lastReviewed: "April 2026",
@@ -160,7 +160,7 @@ window.SHACKADEMY_TERMS = {
     term: "State Pension",
     definition: `
       <p>A regular government payment paid to you when you reach State Pension Age, provided you have enough qualifying National Insurance years. You need <strong>35 qualifying years</strong> for the full New State Pension.</p>
-      <p>The full New State Pension for 2025/26 is <strong>£221.20 per week</strong> (approximately £11,502 per year). This increases each April under the "triple lock" — rising by whichever is highest: inflation, average earnings growth, or 2.5%.</p>
+      <p>The full New State Pension for 2025/26 is <strong>£221.20 per week</strong> (approximately £11,502 per year). This increases each April under the "triple lock" - rising by whichever is highest: inflation, average earnings growth, or 2.5%.</p>
       <p>⚠️ <strong>Note:</strong> The State Pension amount changes each April. The triple lock guarantee is government policy and subject to change. Last reviewed April 2026.</p>
     `,
     lastReviewed: "April 2026",
@@ -193,7 +193,7 @@ window.SHACKADEMY_TERMS = {
     term: "Annuity",
     definition: `
       <p>A financial product purchased from an insurance company that converts your pension pot into a guaranteed income for life (or a fixed period). Once bought, an annuity cannot be changed or reversed.</p>
-      <p>Annuities offer security — you know exactly what you'll receive each year — but they lack the flexibility of drawdown and you cannot pass the remaining value to beneficiaries (unless you have a joint life or guaranteed period annuity).</p>
+      <p>Annuities offer security - you know exactly what you'll receive each year - but they lack the flexibility of drawdown and you cannot pass the remaining value to beneficiaries (unless you have a joint life or guaranteed period annuity).</p>
     `,
     lastReviewed: "April 2026",
     legislative: false,
@@ -203,7 +203,7 @@ window.SHACKADEMY_TERMS = {
     term: "Carry forward",
     definition: `
       <p>A rule that allows you to use unused annual allowance from the previous <strong>three tax years</strong> to make a larger pension contribution in the current year without a tax charge. You must have been a member of a registered pension scheme in those years.</p>
-      <p>This can be useful if you want to make a large one-off contribution — for example, following the sale of a business or receipt of a bonus. Voyant can model carry forward in its pension contribution planning.</p>
+      <p>This can be useful if you want to make a large one-off contribution - for example, following the sale of a business or receipt of a bonus. Voyant can model carry forward in its pension contribution planning.</p>
       <p>⚠️ <strong>Note:</strong> Carry forward rules are set by HMRC and subject to change. Always verify with a financial adviser before using carry forward. Last reviewed April 2026.</p>
     `,
     lastReviewed: "April 2026",
@@ -225,15 +225,15 @@ window.SHACKADEMY_TERMS = {
   "isa": {
     term: "ISA (Individual Savings Account)",
     definition: `
-      <p>A tax-free savings or investment wrapper. Any interest, dividends, or capital gains earned inside an ISA are completely free from UK tax — both now and in the future.</p>
-      <p>The annual ISA allowance for 2025/26 and 2026/27 is <strong>£20,000</strong> per person. This is a "use it or lose it" allowance — any unused amount cannot be carried forward to the next tax year.</p>
+      <p>A tax-free savings or investment wrapper. Any interest, dividends, or capital gains earned inside an ISA are completely free from UK tax - both now and in the future.</p>
+      <p>The annual ISA allowance for 2025/26 and 2026/27 is <strong>£20,000</strong> per person. This is a "use it or lose it" allowance - any unused amount cannot be carried forward to the next tax year.</p>
       <p>Main types of ISA:</p>
       <ul>
-        <li><strong>Cash ISA</strong> — savings account with tax-free interest</li>
-        <li><strong>Stocks & Shares ISA</strong> — invest in funds, shares, and bonds tax-free</li>
-        <li><strong>Lifetime ISA (LISA)</strong> — for first home purchase or retirement; 25% government bonus up to £1,000/year; see the LISA entry for restrictions</li>
-        <li><strong>Innovative Finance ISA</strong> — peer-to-peer lending; higher risk</li>
-        <li><strong>Junior ISA (JISA)</strong> — for children under 18; separate £9,000 allowance</li>
+        <li><strong>Cash ISA</strong> - savings account with tax-free interest</li>
+        <li><strong>Stocks & Shares ISA</strong> - invest in funds, shares, and bonds tax-free</li>
+        <li><strong>Lifetime ISA (LISA)</strong> - for first home purchase or retirement; 25% government bonus up to £1,000/year; see the LISA entry for restrictions</li>
+        <li><strong>Innovative Finance ISA</strong> - peer-to-peer lending; higher risk</li>
+        <li><strong>Junior ISA (JISA)</strong> - for children under 18; separate £9,000 allowance</li>
       </ul>
       <p>⚠️ <strong>Upcoming change:</strong> From April 2027, savers under 65 will be limited to contributing £12,000 per year into a Cash ISA (the overall £20,000 limit remains). The full £20,000 can still be placed into a Stocks & Shares ISA. Last reviewed April 2026.</p>
     `,
@@ -244,14 +244,14 @@ window.SHACKADEMY_TERMS = {
   "lifetime-isa": {
     term: "Lifetime ISA (LISA)",
     definition: `
-      <p>A special ISA that pays a <strong>25% government bonus</strong> on contributions of up to £4,000 per year — a maximum bonus of £1,000 per year. Available to those aged <strong>18 to 39</strong> (you must open one before your 40th birthday).</p>
+      <p>A special ISA that pays a <strong>25% government bonus</strong> on contributions of up to £4,000 per year - a maximum bonus of £1,000 per year. Available to those aged <strong>18 to 39</strong> (you must open one before your 40th birthday).</p>
       <p>The money can only be withdrawn penalty-free for:</p>
       <ul>
         <li>Buying your first home (property must be £450,000 or under)</li>
         <li>After you turn 60</li>
         <li>If you are terminally ill</li>
       </ul>
-      <p>⚠️ <strong>Withdrawal penalty:</strong> Any other withdrawal incurs a 25% government charge — which effectively means you lose not just the bonus but some of your own contributions too. The LISA counts towards your overall £20,000 ISA allowance.</p>
+      <p>⚠️ <strong>Withdrawal penalty:</strong> Any other withdrawal incurs a 25% government charge - which effectively means you lose not just the bonus but some of your own contributions too. The LISA counts towards your overall £20,000 ISA allowance.</p>
       <p>⚠️ <strong>Note:</strong> LISA rules and the eligible property price cap are subject to government review. Last reviewed April 2026.</p>
     `,
     lastReviewed: "April 2026",
@@ -261,10 +261,10 @@ window.SHACKADEMY_TERMS = {
   "capital-gains-tax": {
     term: "Capital Gains Tax (CGT)",
     definition: `
-      <p>A tax on the <em>profit</em> you make when you sell (or give away) an asset that has increased in value — such as investments, a second property, or shares. You do not pay CGT on your main home or assets inside an ISA or pension.</p>
+      <p>A tax on the <em>profit</em> you make when you sell (or give away) an asset that has increased in value - such as investments, a second property, or shares. You do not pay CGT on your main home or assets inside an ISA or pension.</p>
       <p>For 2025/26 and 2026/27:</p>
       <ul>
-        <li><strong>Annual exempt amount:</strong> £3,000 per person — gains below this are tax-free</li>
+        <li><strong>Annual exempt amount:</strong> £3,000 per person - gains below this are tax-free</li>
         <li><strong>Basic rate taxpayers:</strong> 18% on most gains</li>
         <li><strong>Higher/additional rate taxpayers:</strong> 24% on most gains</li>
         <li><strong>Residential property:</strong> same rates as above (18%/24%)</li>
@@ -282,7 +282,7 @@ window.SHACKADEMY_TERMS = {
       <ul>
         <li><strong>Basic rate taxpayers:</strong> £1,000 tax-free interest per year</li>
         <li><strong>Higher rate taxpayers:</strong> £500 tax-free interest per year</li>
-        <li><strong>Additional rate taxpayers:</strong> £0 — no allowance</li>
+        <li><strong>Additional rate taxpayers:</strong> £0 - no allowance</li>
       </ul>
       <p>Interest above your PSA is taxed at your marginal income tax rate. This is why ISAs remain valuable even with the PSA in place, particularly for higher earners or those with significant savings.</p>
       <p>⚠️ <strong>Note:</strong> The PSA is set by the government and subject to change. Last reviewed April 2026.</p>
@@ -313,7 +313,7 @@ window.SHACKADEMY_TERMS = {
   "property-asset": {
     term: "Property (as an asset)",
     definition: `
-      <p>In Voyant, property refers to any real estate you own — your main home, a buy-to-let, a holiday home, or any other non-liquid property asset. Property is entered as an asset with a current value, and Voyant projects its growth over time.</p>
+      <p>In Voyant, property refers to any real estate you own - your main home, a buy-to-let, a holiday home, or any other non-liquid property asset. Property is entered as an asset with a current value, and Voyant projects its growth over time.</p>
       <p>Your main home is generally <strong>exempt from Capital Gains Tax</strong> when you sell it (known as Private Residence Relief). Investment properties are not exempt and any gain is subject to CGT.</p>
     `,
     lastReviewed: "April 2026",
@@ -382,8 +382,8 @@ window.SHACKADEMY_TERMS = {
   "critical-illness": {
     term: "Critical illness cover",
     definition: `
-      <p>A policy that pays a tax-free lump sum if you are diagnosed with a specified serious illness — typically including cancer, heart attack, stroke, and others listed in the policy terms. The money can be used however you choose.</p>
-      <p>⚠️ <strong>Important:</strong> Each policy covers a different list of conditions. Always check the policy's specific definitions carefully — not all versions of an illness will necessarily be covered.</p>
+      <p>A policy that pays a tax-free lump sum if you are diagnosed with a specified serious illness - typically including cancer, heart attack, stroke, and others listed in the policy terms. The money can be used however you choose.</p>
+      <p>⚠️ <strong>Important:</strong> Each policy covers a different list of conditions. Always check the policy's specific definitions carefully - not all versions of an illness will necessarily be covered.</p>
     `,
     lastReviewed: "April 2026",
     legislative: false,
@@ -407,11 +407,11 @@ window.SHACKADEMY_TERMS = {
       <p>A tax charged on the value of your estate (assets minus debts) when you die, if it exceeds certain thresholds. The standard rate is <strong>40%</strong> on the amount above the threshold.</p>
       <p>The main thresholds for 2025/26 and 2026/27:</p>
       <ul>
-        <li><strong>Nil-rate band (NRB):</strong> £325,000 — no IHT on the first £325,000</li>
-        <li><strong>Residence nil-rate band (RNRB):</strong> £175,000 — an additional threshold if you leave your main home to direct descendants (children, grandchildren)</li>
+        <li><strong>Nil-rate band (NRB):</strong> £325,000 - no IHT on the first £325,000</li>
+        <li><strong>Residence nil-rate band (RNRB):</strong> £175,000 - an additional threshold if you leave your main home to direct descendants (children, grandchildren)</li>
         <li><strong>Combined threshold:</strong> Up to £500,000 per person (or £1 million for a married couple, as unused allowances can be transferred to a surviving spouse)</li>
       </ul>
-      <p>⚠️ <strong>Note:</strong> The nil-rate bands are frozen until at least April 2031. From April 2026, IHT relief on business and agricultural property is restricted — assets above £2.5 million now only receive 50% relief rather than 100%. Pension pots are expected to become subject to IHT from April 2027 (subject to legislation). Last reviewed April 2026.</p>
+      <p>⚠️ <strong>Note:</strong> The nil-rate bands are frozen until at least April 2031. From April 2026, IHT relief on business and agricultural property is restricted - assets above £2.5 million now only receive 50% relief rather than 100%. Pension pots are expected to become subject to IHT from April 2027 (subject to legislation). Last reviewed April 2026.</p>
     `,
     lastReviewed: "April 2026",
     legislative: true,
@@ -430,7 +430,7 @@ window.SHACKADEMY_TERMS = {
   "annual-gift-exemption": {
     term: "Annual gift exemption",
     definition: `
-      <p>Each person can give away up to <strong>£3,000</strong> per tax year completely free of Inheritance Tax, regardless of whether they survive seven years. Any unused allowance from the previous year can be carried forward — but only for one year.</p>
+      <p>Each person can give away up to <strong>£3,000</strong> per tax year completely free of Inheritance Tax, regardless of whether they survive seven years. Any unused allowance from the previous year can be carried forward - but only for one year.</p>
       <p>Additional smaller exemptions exist for wedding gifts and gifts from normal income. Voyant models gifting as part of estate planning.</p>
       <p>⚠️ <strong>Note:</strong> The £3,000 annual exemption has not changed since 1981 and is not adjusted for inflation. Subject to future government changes. Last reviewed April 2026.</p>
     `,
@@ -443,7 +443,7 @@ window.SHACKADEMY_TERMS = {
   "cash-flow-modelling": {
     term: "Cash flow modelling",
     definition: `
-      <p>A financial planning technique that projects your income, expenditure, assets, and liabilities over time — typically to and through retirement — to show whether you are on track to meet your financial goals.</p>
+      <p>A financial planning technique that projects your income, expenditure, assets, and liabilities over time - typically to and through retirement - to show whether you are on track to meet your financial goals.</p>
       <p>Voyant is a cash flow modelling tool. It builds a picture of your financial life from today through to a future end date, helping you understand whether your money is likely to last and what changes might improve your outcome.</p>
     `,
     lastReviewed: "April 2026",
@@ -473,8 +473,8 @@ window.SHACKADEMY_TERMS = {
   "shortfall": {
     term: "Shortfall",
     definition: `
-      <p>In Voyant, a shortfall occurs when your projected expenditure exceeds your projected income and available assets at a point in time — shown visually as the plan going into the red on the chart.</p>
-      <p>A shortfall does not necessarily mean financial ruin — it is a signal to explore options, such as reducing expenditure, working longer, saving more, or adjusting investment strategies. This is exactly what Voyant's What If scenarios are designed to help you explore.</p>
+      <p>In Voyant, a shortfall occurs when your projected expenditure exceeds your projected income and available assets at a point in time - shown visually as the plan going into the red on the chart.</p>
+      <p>A shortfall does not necessarily mean financial ruin - it is a signal to explore options, such as reducing expenditure, working longer, saving more, or adjusting investment strategies. This is exactly what Voyant's What If scenarios are designed to help you explore.</p>
     `,
     lastReviewed: "April 2026",
     legislative: false,
@@ -494,7 +494,7 @@ window.SHACKADEMY_TERMS = {
     term: "What If scenario",
     definition: `
       <p>A copy of your base financial plan with one or more changes applied, allowing you to compare different futures side by side. For example: "What if I retire at 60 instead of 65?" or "What if I pay off my mortgage early?"</p>
-      <p>What If scenarios are one of Voyant's most powerful features. They do not affect your base plan — they are separate models you can create, adjust, and delete freely.</p>
+      <p>What If scenarios are one of Voyant's most powerful features. They do not affect your base plan - they are separate models you can create, adjust, and delete freely.</p>
     `,
     lastReviewed: "April 2026",
     legislative: false,
@@ -504,7 +504,7 @@ window.SHACKADEMY_TERMS = {
     term: "Triple lock",
     definition: `
       <p>The government guarantee that the State Pension rises each April by whichever is the highest of: <strong>inflation</strong> (CPI), <strong>average earnings growth</strong>, or <strong>2.5%</strong>. This protects the real value of the State Pension over time.</p>
-      <p>⚠️ <strong>Note:</strong> The triple lock is government policy and could be changed or suspended by a future government. Voyant's default assumptions include State Pension increases — check Plan Settings to see what rate is applied. Last reviewed April 2026.</p>
+      <p>⚠️ <strong>Note:</strong> The triple lock is government policy and could be changed or suspended by a future government. Voyant's default assumptions include State Pension increases - check Plan Settings to see what rate is applied. Last reviewed April 2026.</p>
     `,
     lastReviewed: "April 2026",
     legislative: true,
@@ -513,7 +513,7 @@ window.SHACKADEMY_TERMS = {
   "expression-of-wishes": {
     term: "Expression of wishes",
     definition: `
-      <p>A non-binding letter to your pension provider stating who you would like to receive your pension pot if you die. Because pensions are typically outside your estate for Inheritance Tax purposes, they are not automatically covered by your Will — an expression of wishes is how you direct where the money goes.</p>
+      <p>A non-binding letter to your pension provider stating who you would like to receive your pension pot if you die. Because pensions are typically outside your estate for Inheritance Tax purposes, they are not automatically covered by your Will - an expression of wishes is how you direct where the money goes.</p>
       <p>The pension provider does not have to follow your wishes (they have discretion), but most will. It is important to keep this document up to date, particularly after major life events such as marriage, divorce, or the birth of children.</p>
     `,
     lastReviewed: "April 2026",
@@ -526,13 +526,13 @@ window.SHACKADEMY_TERMS = {
 // -----------------------------------------------------------------------------
 // LESSONS LIBRARY
 // Each lesson needs:
-//   title  — display title
-//   url    — Shackademy lesson URL
+//   title  - display title
+//   url    - Shackademy lesson URL
 // -----------------------------------------------------------------------------
 
 window.SHACKADEMY_LESSONS = {
 
-  // ── Placeholder entries — replace URLs with real Shackademy lesson links ──
+  // ── Placeholder entries - replace URLs with real Shackademy lesson links ──
 
   "intro-to-voyant": {
     title: "Getting started with Voyant",

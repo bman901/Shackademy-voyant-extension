@@ -28,7 +28,7 @@
   let userClosedPanel  = false;
   let currentSectionKey = null; // matched section key
   let currentTabKey     = null; // current tab from URL hash
-  let currentItemId     = null; // itemId — stable across tab switches
+  let currentItemId     = null; // itemId - stable across tab switches
   const visibleFields  = new Map(); // key -> { field, el }
 
   // ---------------------------------------------------------------------------
@@ -72,14 +72,14 @@
   function detectPageContext() {
     const { itemId: newItemId, tab: newTab } = parseHash();
 
-    // Tab changed within same item — update tab key and re-render, keep section
+    // Tab changed within same item - update tab key and re-render, keep section
     if (newItemId && newItemId === currentItemId && currentSectionKey) {
       currentTabKey = newTab;
       updateContextPanel();
       return;
     }
 
-    // ItemId changed — scan DOM for a new type indicator
+    // ItemId changed - scan DOM for a new type indicator
     currentItemId    = newItemId;
     currentTabKey    = newTab;
     currentSectionKey = null;
@@ -283,7 +283,7 @@
 
       <button id="shackademy-save-btn" aria-label="Save your data" hidden>
         <span id="shackademy-save-icon">✓</span>
-        <span>Save — click Done in Voyant</span>
+        <span>Save - click Done in Voyant</span>
       </button>
 
       <div id="shackademy-panel-nav">
@@ -332,7 +332,7 @@
       panel.classList.add("hidden");
     });
 
-    // Save button — clicks Voyant's real Done button
+    // Save button - clicks Voyant's real Done button
     panel.querySelector("#shackademy-save-btn")?.addEventListener("click", () => {
       const doneBtn = document.querySelector(
         'button[data-test-model-save="true"], button[aria-label="Done"]'
@@ -341,7 +341,7 @@
         doneBtn.click();
         userClosedPanel = true;
         panel.classList.add("hidden");
-        // Hide save button and clear context immediately — 
+        // Hide save button and clear context immediately - 
         // don't wait for hashchange which may fire after panel reopens
         const saveBtn = document.getElementById("shackademy-save-btn");
         if (saveBtn) saveBtn.hidden = true;
@@ -349,7 +349,7 @@
         currentItemId     = null;
         currentTabKey     = null;
       } else {
-        // No Done button found — flash the button to indicate nothing to save
+        // No Done button found - flash the button to indicate nothing to save
         const btn = panel.querySelector("#shackademy-save-btn");
         btn?.classList.add("shackademy-save-unavailable");
         setTimeout(() => btn?.classList.remove("shackademy-save-unavailable"), 1500);
@@ -400,7 +400,7 @@
     const tabKey    = currentTabKey || "basics";
     const tabConfig = section.tabs?.[tabKey] || section.tabs?.["basics"];
     const tabLabel  = tabKey.charAt(0).toUpperCase() + tabKey.slice(1);
-    const title     = `${section.name} — ${tabLabel}`;
+    const title     = `${section.name} - ${tabLabel}`;
 
     // Section title header
     const titleEl = document.createElement("div");

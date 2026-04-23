@@ -1,4 +1,4 @@
-// background.js — service worker
+// background.js - service worker
 
 const SESSION_KEY = "shackademyEnabled";
 
@@ -14,8 +14,8 @@ async function setEnabled(value) {
 async function updateIcon(enabled) {
   await chrome.action.setTitle({
     title: enabled
-      ? "Shackademy help is ON — click to disable"
-      : "Shackademy help is OFF — click to enable",
+      ? "Shackademy help is ON - click to disable"
+      : "Shackademy help is OFF - click to enable",
   });
 }
 

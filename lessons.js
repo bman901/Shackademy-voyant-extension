@@ -1,12 +1,12 @@
 // =============================================================================
-// SHACKADEMY — LESSONS LIBRARY
+// SHACKADEMY - LESSONS LIBRARY
 // =============================================================================
 // Define every Shackademy lesson once here.
 // Reference lessons by key in sections.js.
 //
 // Each entry needs:
-//   title — display title shown in the panel
-//   url   — full Shackademy lesson URL
+//   title - display title shown in the panel
+//   url   - full Shackademy lesson URL
 // =============================================================================
 
 window.SHACKADEMY_LESSONS = {
