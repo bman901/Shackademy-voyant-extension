@@ -1479,7 +1479,7 @@ window.SHACKADEMY_FIELDS = [
       <h3>Based on current rules (as at April 2026)</h3>
       <ul>
         <li>To qualify, the property must have been the deceased's main home at some point and must be inherited by direct descendants (children, grandchildren, stepchildren etc.)</li>
-        <li>The RNRB is tapered for estates above £2 million - Voyant will apply the taper automatically based on the total estate value</li>
+        <li>The RNRB is tapered for large estates - Voyant will apply the taper automatically based on the total estate value</li>
         <li>Only toggle this on for the main residence - it cannot apply to buy-to-let or investment properties</li>
       </ul>
     `,
@@ -1614,7 +1614,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Toggle this on if you want Voyant to automatically cap total pension contributions at the Annual Allowance for each tax year, preventing modelling of an accidental breach.</p>
       <h3>Tips</h3>
       <ul>
-        <li>The standard Annual Allowance is currently £60,000 (2025/26), though it may be reduced by the Money Purchase Annual Allowance (MPAA) of £10,000 if you have flexibly accessed a pension</li>
+        <li>The standard Annual Allowance may be reduced to the Money Purchase Annual Allowance (MPAA) if you have flexibly accessed a pension</li>
         <li>If you are deliberately modelling a scenario where contributions exceed the allowance (e.g. to show a tax charge), toggle this off</li>
         <li>Voyant will still flag where contributions are on track to exceed the allowance in the Year View even if this is toggled off</li>
       </ul>
@@ -2718,7 +2718,7 @@ window.SHACKADEMY_FIELDS = [
       <h3>Options</h3>
       <ul>
         <li><strong>Taxable</strong> - the standard status for a crystallised drawdown pot. All withdrawals are subject to income tax at the owner's marginal rate</li>
-        <li><strong>Tax Free</strong> - applicable in specific circumstances, such as a drawdown pot held within a certain type of trust structure or an inherited pot where the original holder died before age 75. Voyant will not apply income tax to withdrawals</li>
+        <li><strong>Tax Free</strong> - applicable in specific circumstances, such as a drawdown pot held within a certain type of trust structure or an inherited pot where the original holder died before age 75 (correct as at April 2026). Voyant will not apply income tax to withdrawals</li>
       </ul>
       <h3>Tips</h3>
       <ul>
@@ -2763,8 +2763,8 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the age at which the State Pension is due to start. This is typically the State Pension Age set by the government, but it can be deferred to a later age if the owner chooses to delay taking it.</p>
       <h3>Tips (Based on current rules as at April 2026)</h3>
       <ul>
-        <li>Deferring the State Pension increases the weekly amount received - for every 9 weeks deferred, the State Pension increases by 1%</li>
-        <li>The current State Pension Age for both men and women is 66, rising to 67 between 2026 and 2028 - check the government's personal forecast at <a href="https://www.gov.uk/check-state-pension" target="_blank">gov.uk/check-state-pension</a> for the exact date</li>
+        <li>Deferring the State Pension increases the weekly amount received</li>
+        <li>Check the government's personal forecast at <a href="https://www.gov.uk/check-state-pension" target="_blank">gov.uk/check-state-pension</a> for the exact date</li>
         <li>The State Pension Age field below is separate and records the statutory age from the scheme rules</li>
       </ul>
     `,
