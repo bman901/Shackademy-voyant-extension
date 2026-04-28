@@ -1240,9 +1240,9 @@ window.SHACKADEMY_FIELDS = [
     helpText: `
       <h3>What to enter</h3>
       <p>Toggle this on if this EIS or SEIS investment is also listed on the Alternative Investment Market (AIM).</p>
-      <h3>Tips</h3>
+      <h3>Tips (as at April 2026)</h3>
       <ul>
-        <li>From April 2026, AIM-listed investments are subject to a 50% IHT relief under BPR rather than the previous full exemption - Voyant uses this toggle to apply the correct relief level</li>
+        <li>From April 2026, AIM-listed investments are subject to a reduced rate of IHT relief under BPR — check current HMRC guidance for the applicable rate. Voyant uses this toggle to apply the correct relief level</li>
         <li>Non-AIM EIS and SEIS investments are not affected by this change and continue to qualify for full BPR relief (subject to the two-year holding period)</li>
       </ul>
     `,
@@ -2790,7 +2790,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the annual State Pension amount. For a pension not yet in payment, enter the projected amount from the government's State Pension forecast.</p>
       <h3>Tips</h3>
       <ul>
-        <li>The State Pension escalates automatically in Voyant using the Triple Lock - the higher of National Average Earnings, CPI, or 2.5% - using assumptions from your Plan Settings</li>
+        <li>The State Pension escalates automatically in Voyant using the Triple Lock - the higher of National Average Earnings, CPI, or 2.5% under current government policy (April 2026) - using assumptions from your Plan Settings</li>
         <li>Get the State Pension forecast at <a href="https://www.gov.uk/check-state-pension" target="_blank">gov.uk/check-state-pension</a></li>
       </ul>
     `,
