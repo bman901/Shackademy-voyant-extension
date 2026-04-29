@@ -1292,6 +1292,56 @@ window.SHACKADEMY_FIELDS = [
     `,
   },
 
+{
+  key: "specialContributionType",
+  label: "Contribution Type",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>This section is allowing you to tell Voyant that your ISA would qualify to receive the inherited ISA allowance from your spouse if they passed away.</p>
+    <p>In the event of death, Voyant will follow the inputs here when allocating funds from your spouse's ISA (if relevant).</p>
+    <p>You can choose to either contribute a percentage of the allowance, or a set amount.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>For example, considering the following inputs:
+      <ul>
+        <li>If you leave the contribution type as 'Percentage'</li>
+        <li>Nominate 100% as the percentage in the next field</li>
+        <li>List the number of years as '1'</li>
+      </ul>
+      <li>In that case, in the event of your spouse's death, their ISA would be encashed and <strong>100%</strong> of the proceeds would be contributed to this ISA over the course of <strong>1 year</strong>, by default.</li>
+      <li>If you leave this as £0/0% then by default the ISA proceeds will be paid to cash upon your spouse's death.</li>
+    </ul>
+  `,
+},
+{
+  key: "percentOfSpecialAllowanceContribution",
+  label: "Percentage",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Enter the percentage of your spouse's ISA that should be contributed to this ISA by default upon their death</p>
+  `,
+},
+{
+  key: "fixedSpecialContributionAmount",
+  label: "",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Enter a specific amount of your spouse's ISA that should be contributed to this ISA by default upon their death</p>
+  `,
+},
+{
+  key: "specialContributionNumYears",
+  label: "Number of Years",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Over how many years will the contributions be made</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>Ensure this is in line with <a href="https://www.gov.uk/individual-savings-accounts/inheriting-an-isa-from-your-spouse-civil-partner" target="_blank">HMRC guidance</a></li>
+    </ul>
+  `,
+},
+
   // ── Tab: Growth ──────────────────────────────────────────────
 
   {
