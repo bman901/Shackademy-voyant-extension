@@ -15,10 +15,18 @@
       "128": "icons/icon128.png"
     }
   },
+  "content_scripts": [
+    {
+      "matches": ["https://www.planwithvoyant.co.uk/*"],
+      "js": ["fields.js", "lessons.js", "sections.js", "content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
   "web_accessible_resources": [
     {
       "resources": ["fields.js", "lessons.js", "sections.js"],
-      "matches": ["<all_urls>"]
+      "matches": ["https://www.planwithvoyant.co.uk/*"]
     }
   ]
 }

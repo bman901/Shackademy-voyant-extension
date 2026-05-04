@@ -1,10 +1,20 @@
 // content.js
 // Orchestrates field enhancement, modal, and side panel.
-// Depends on: fields.js, lessons.js, sections.js (must be injected first), styles.css
+// Loaded automatically on planwithvoyant.co.uk via content_scripts.
+// Checks chrome.storage.local on load to decide whether to activate.
 
 (() => {
   if (window.__shackademyInitialised) return;
   window.__shackademyInitialised = true;
+
+  const STORAGE_KEY = "shackademyEnabled";
+
+  // Check storage on load — activate immediately if enabled
+  chrome.storage.local.get(STORAGE_KEY, (result) => {
+    if (result[STORAGE_KEY] === true) {
+      init();
+    }
+  });
 
   // ---------------------------------------------------------------------------
   // Constants
@@ -528,10 +538,15 @@
     currentTabKey     = null;
     currentItemId     = null;
     window.__shackademyInitialised = false;
+    window.__shackademyRunning = false;
   }
 
   chrome.runtime.onMessage.addListener((message) => {
-    if (message.type === "SHACKADEMY_DISABLE") teardown();
+    if (message.type === "SHACKADEMY_DISABLE") {
+      teardown();
+    } else if (message.type === "SHACKADEMY_ENABLE") {
+      if (!window.__shackademyRunning) init();
+    }
   });
 
   // ---------------------------------------------------------------------------
@@ -576,8 +591,13 @@
     }, true); // capture phase so we catch it before Voyant's own handlers
   }
 
-  createPanel();
-  runEnhancement();
-  detectPageContext();
-  startObserver();
+  function init() {
+    if (window.__shackademyRunning) return;
+    window.__shackademyRunning = true;
+    createPanel();
+    runEnhancement();
+    detectPageContext();
+    startObserver();
+  }
+
 })();

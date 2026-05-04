@@ -1,6 +1,7 @@
 // background.js — service worker
-// Persists enabled state across browser sessions using chrome.storage.local.
-// Uses activeTab only — user must click the toolbar button while on Voyant.
+// Manages the enabled/disabled toggle.
+// Scripts are loaded automatically via content_scripts in manifest.json.
+// This just toggles the stored state and notifies the content script.
 
 const STORAGE_KEY = "shackademyEnabled";
 const VOYANT_DOMAIN = "planwithvoyant.co.uk";
@@ -30,18 +31,7 @@ async function updateTitle(enabled) {
   });
 }
 
-async function injectAll(tabId) {
-  await chrome.scripting.insertCSS({
-    target: { tabId },
-    files: ["styles.css"],
-  });
-  await chrome.scripting.executeScript({
-    target: { tabId },
-    files: ["fields.js", "lessons.js", "sections.js", "content.js"],
-  });
-}
-
-// Toolbar click — only activate on Voyant tabs
+// Toolbar click — toggle state and notify content script
 chrome.action.onClicked.addListener(async (tab) => {
   if (!tab.id || !isVoyantTab(tab.url)) return;
 
@@ -50,11 +40,10 @@ chrome.action.onClicked.addListener(async (tab) => {
   await setEnabled(next);
   await updateTitle(next);
 
-  if (next) {
-    await injectAll(tab.id);
-  } else {
-    chrome.tabs.sendMessage(tab.id, { type: "SHACKADEMY_DISABLE" }).catch(() => {});
-  }
+  // Tell the content script to activate or tear down
+  chrome.tabs.sendMessage(tab.id, {
+    type: next ? "SHACKADEMY_ENABLE" : "SHACKADEMY_DISABLE",
+  }).catch(() => {});
 });
 
 // Restore correct toolbar title on browser startup
