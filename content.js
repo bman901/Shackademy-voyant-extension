@@ -47,24 +47,23 @@
   // ---------------------------------------------------------------------------
 
   function applyPinned() {
-    const app = document.getElementById("voyantApp");
     const panel = document.getElementById(PANEL_ID);
-    if (!app || !panel) return;
-    app.style.marginRight = "260px";
+    if (!panel) return;
+    document.body.style.setProperty("margin-right", "260px", "important");
+    document.body.style.setProperty("overflow-x", "hidden", "important");
     panel.classList.add("shackademy-pinned");
     panel.classList.remove("shackademy-floating");
     isPinned = true;
-    // Update pin button icon
     const pinBtn = panel.querySelector("#shackademy-pin-btn");
     if (pinBtn) pinBtn.title = "Unpin panel";
     if (pinBtn) pinBtn.innerHTML = "📌";
   }
 
   function applyFloating() {
-    const app = document.getElementById("voyantApp");
     const panel = document.getElementById(PANEL_ID);
-    if (!app || !panel) return;
-    app.style.marginRight = "";
+    if (!panel) return;
+    document.body.style.removeProperty("margin-right");
+    document.body.style.removeProperty("overflow-x");
     panel.classList.remove("shackademy-pinned");
     panel.classList.add("shackademy-floating");
     isPinned = false;
@@ -74,8 +73,8 @@
   }
 
   function clearPinState() {
-    const app = document.getElementById("voyantApp");
-    if (app) app.style.marginRight = "";
+    document.body.style.removeProperty("margin-right");
+    document.body.style.removeProperty("overflow-x");
     isPinned = false;
   }
 
@@ -424,8 +423,6 @@
         </p>`;
       return;
     }
-    if (saveBtn) saveBtn.hidden = !section;
-
     // Build tab title - use TAB_LABELS lookup, fall back to capitalised key
     const tabKey    = currentTabKey || "basics";
     const tabConfig = section.tabs?.[tabKey] || section.tabs?.["basics"];
