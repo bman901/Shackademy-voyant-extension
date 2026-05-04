@@ -799,3 +799,35 @@
   background: #aaa;
   transform: none;
 }
+
+/* ── Pinned / floating panel states ─────────────────────────────────────── */
+
+#shackademy-panel.shackademy-pinned {
+  box-shadow: -2px 0 12px rgba(43, 46, 51, 0.08);
+}
+
+#shackademy-panel.shackademy-floating {
+  box-shadow: -4px 0 24px rgba(43, 46, 51, 0.18);
+}
+
+/* ── Pin button ──────────────────────────────────────────────────────────── */
+
+#shackademy-pin-btn {
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 13px;
+  width: 26px;
+  height: 26px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+  flex-shrink: 0;
+}
+
+#shackademy-pin-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}

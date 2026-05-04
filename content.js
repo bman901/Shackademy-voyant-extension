@@ -35,11 +35,49 @@
   // ---------------------------------------------------------------------------
   // State
   // ---------------------------------------------------------------------------
-  let userClosedPanel  = false;
-  let currentSectionKey = null; // matched section key
-  let currentTabKey     = null; // current tab from URL hash
-  let currentItemId     = null; // itemId - stable across tab switches
+  let userClosedPanel   = false;
+  let isPinned          = false;
+  let currentSectionKey = null;
+  let currentTabKey     = null;
+  let currentItemId     = null;
   const visibleFields  = new Map(); // key -> { field, el }
+
+  // ---------------------------------------------------------------------------
+  // Pin / unpin helpers
+  // ---------------------------------------------------------------------------
+
+  function applyPinned() {
+    const app = document.getElementById("voyantApp");
+    const panel = document.getElementById(PANEL_ID);
+    if (!app || !panel) return;
+    app.style.marginRight = "260px";
+    panel.classList.add("shackademy-pinned");
+    panel.classList.remove("shackademy-floating");
+    isPinned = true;
+    // Update pin button icon
+    const pinBtn = panel.querySelector("#shackademy-pin-btn");
+    if (pinBtn) pinBtn.title = "Unpin panel";
+    if (pinBtn) pinBtn.innerHTML = "📌";
+  }
+
+  function applyFloating() {
+    const app = document.getElementById("voyantApp");
+    const panel = document.getElementById(PANEL_ID);
+    if (!app || !panel) return;
+    app.style.marginRight = "";
+    panel.classList.remove("shackademy-pinned");
+    panel.classList.add("shackademy-floating");
+    isPinned = false;
+    const pinBtn = panel.querySelector("#shackademy-pin-btn");
+    if (pinBtn) pinBtn.title = "Pin panel";
+    if (pinBtn) pinBtn.innerHTML = "📍";
+  }
+
+  function clearPinState() {
+    const app = document.getElementById("voyantApp");
+    if (app) app.style.marginRight = "";
+    isPinned = false;
+  }
 
   // ---------------------------------------------------------------------------
   // Utilities
@@ -288,14 +326,11 @@
           <span id="shackademy-panel-logo-mark">S</span>
           <span>Shackademy</span>
         </div>
-        <button id="shackademy-panel-close" aria-label="Close panel">&times;</button>
+        <div style="display:flex;gap:6px;align-items:center;">
+          <button id="shackademy-pin-btn" aria-label="Pin panel" title="Pin panel">📍</button>
+          <button id="shackademy-panel-close" aria-label="Close panel">&times;</button>
+        </div>
       </div>
-
-      <button id="shackademy-save-btn" aria-label="Save your data" hidden>
-        <span id="shackademy-save-icon">✓</span>
-        <span>Save - click Done in Voyant</span>
-      </button>
-
       <div id="shackademy-panel-nav">
         <button class="shackademy-panel-nav-btn active" data-view="guide">
           Guide
@@ -330,8 +365,11 @@
         userClosedPanel = false;
         panel.classList.remove("hidden");
         updateContextPanel();
+        // Re-apply pin state if fields are present
+        if (visibleFields.size > 0) applyPinned();
       } else {
         userClosedPanel = true;
+        clearPinState();
         panel.classList.add("hidden");
       }
     });
@@ -339,34 +377,19 @@
     // Close button
     panel.querySelector("#shackademy-panel-close")?.addEventListener("click", () => {
       userClosedPanel = true;
+      clearPinState();
       panel.classList.add("hidden");
     });
 
-    // Save button - clicks Voyant's real Done button
-    panel.querySelector("#shackademy-save-btn")?.addEventListener("click", () => {
-      const doneBtn = document.querySelector(
-        'button[data-test-model-save="true"], button[aria-label="Done"]'
-      );
-      if (doneBtn) {
-        doneBtn.click();
-        userClosedPanel = true;
-        panel.classList.add("hidden");
-        // Hide save button and clear context immediately - 
-        // don't wait for hashchange which may fire after panel reopens
-        const saveBtn = document.getElementById("shackademy-save-btn");
-        if (saveBtn) saveBtn.hidden = true;
-        currentSectionKey = null;
-        currentItemId     = null;
-        currentTabKey     = null;
+    panel.querySelector("#shackademy-pin-btn")?.addEventListener("click", () => {
+      if (isPinned) {
+        applyFloating();
       } else {
-        // No Done button found - flash the button to indicate nothing to save
-        const btn = panel.querySelector("#shackademy-save-btn");
-        btn?.classList.add("shackademy-save-unavailable");
-        setTimeout(() => btn?.classList.remove("shackademy-save-unavailable"), 1500);
+        applyPinned();
       }
     });
 
-    // Panel nav (Glossary / Fields)
+    // Panel nav (Guide / Fields)
     panel.querySelectorAll(".shackademy-panel-nav-btn").forEach((btn) => {
       btn.addEventListener("click", () => {
         panel.querySelectorAll(".shackademy-panel-nav-btn").forEach((b) =>
@@ -401,9 +424,6 @@
         </p>`;
       return;
     }
-
-    // Show or hide the save button depending on whether a section is detected
-    const saveBtn = document.getElementById("shackademy-save-btn");
     if (saveBtn) saveBtn.hidden = !section;
 
     // Build tab title - use TAB_LABELS lookup, fall back to capitalised key
@@ -474,6 +494,13 @@
       return;
     }
 
+    // Pin when fields are present, float when not
+    if (visibleFields.size > 0 && !userClosedPanel) {
+      if (!panel.classList.contains("hidden")) applyPinned();
+    } else if (visibleFields.size === 0) {
+      applyFloating();
+    }
+
     visibleFields.forEach(({ field }) => {
       const li = document.createElement("li");
       li.className = "shackademy-panel-item";
@@ -537,6 +564,7 @@
     currentSectionKey = null;
     currentTabKey     = null;
     currentItemId     = null;
+    clearPinState();
     window.__shackademyInitialised = false;
     window.__shackademyRunning = false;
   }
@@ -574,21 +602,17 @@
       detectPageContext();
     });
 
-    // Watch for Voyant's native Done button being clicked directly
-    // so we can hide the save button and clear context just as we do
-    // when the user clicks our panel save button
+    // Watch for Voyant's Done/Cancel buttons to clear section context
     document.body.addEventListener("click", (e) => {
       const btn = e.target.closest(
         'button[data-test-model-save="true"], button[aria-label="Done"], button[data-test-model-cancel="true"], button[aria-label="Cancel"]'
       );
       if (btn) {
-        const saveBtn = document.getElementById("shackademy-save-btn");
-        if (saveBtn) saveBtn.hidden = true;
         currentSectionKey = null;
         currentItemId     = null;
         currentTabKey     = null;
       }
-    }, true); // capture phase so we catch it before Voyant's own handlers
+    }, true);
   }
 
   function init() {
