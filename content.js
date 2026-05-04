@@ -464,8 +464,6 @@
       return;
     }
 
-    if (!userClosedPanel) panel.classList.remove("hidden");
-
     visibleFields.forEach(({ field }) => {
       const li = document.createElement("li");
       li.className = "shackademy-panel-item";

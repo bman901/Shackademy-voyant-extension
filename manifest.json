@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Shackademy - Voyant Help",
-  "version": "0.4.0",
-  "description": "Adds Shackademy guidance to Voyant fields. Fully self-contained - no data leaves your browser.",
+  "name": "Shackademy — Voyant Help",
+  "version": "0.5.0",
+  "description": "Adds Shackademy guidance to Voyant fields. Fully self-contained — no data leaves your browser.",
   "permissions": ["activeTab", "scripting", "storage"],
   "background": {
     "service_worker": "background.js"
