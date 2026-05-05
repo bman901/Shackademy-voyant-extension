@@ -25,7 +25,7 @@
   const PANEL_ID       = "shackademy-panel";
   const BADGE_CLASS    = "shackademy-badge";
   const KEEP_PANEL_OPEN_WITHOUT_FIELDS_TABS = new Set([
-  "steps",
+  "steps","timing",
   ]);
 
   // ---------------------------------------------------------------------------
@@ -43,6 +43,7 @@
   let currentSectionKey = null;
   let currentTabKey     = null;
   let currentItemId     = null;
+  let userOpenedEmptyPanel = false;
   const visibleFields  = new Map(); // key -> { field, el }
 
   // ---------------------------------------------------------------------------
@@ -389,6 +390,7 @@
       const isHidden = panel.classList.contains("hidden");
       if (isHidden) {
         userClosedPanel = false;
+        userOpenedEmptyPanel = visibleFields.size === 0 && !keepPanelOpenWithoutFields();
         panel.classList.remove("hidden");
         updateContextPanel();
         applyPinned();
