@@ -170,6 +170,7 @@
 
   function closePanelAndClearPadding() {
     const panel = document.getElementById(PANEL_ID);
+    userOpenedEmptyPanel = false;
     clearPinState();
     panel?.classList.add("hidden");
   }
@@ -512,7 +513,7 @@
     list.innerHTML = "";
 
     if (visibleFields.size === 0) {
-      if (!keepPanelOpenWithoutFields()) {
+      if (!keepPanelOpenWithoutFields() && !userOpenedEmptyPanel) {
         closePanelAndClearPadding();
       }
       return;
@@ -621,6 +622,7 @@
 
     // Re-detect context and check for fields on every hash change
     window.addEventListener("hashchange", () => {
+      userOpenedEmptyPanel = false;
       detectPageContext();
 
       setTimeout(() => {
