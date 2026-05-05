@@ -364,8 +364,7 @@
         userClosedPanel = false;
         panel.classList.remove("hidden");
         updateContextPanel();
-        // Re-apply pin state if fields are present
-        if (visibleFields.size > 0) applyPinned();
+        applyPinned();
       } else {
         userClosedPanel = true;
         clearPinState();
@@ -490,12 +489,8 @@
       return;
     }
 
-    // Pin when fields are present, float when not
-    if (visibleFields.size > 0 && !userClosedPanel) {
-      if (!panel.classList.contains("hidden")) applyPinned();
-    } else if (visibleFields.size === 0) {
-      applyFloating();
-    }
+    // Pin when fields are present and panel is open
+    if (!panel.classList.contains("hidden")) applyPinned();
 
     visibleFields.forEach(({ field }) => {
       const li = document.createElement("li");
@@ -592,22 +587,22 @@
     observer.observe(document.body, { childList: true, subtree: true });
     window.__shackademyObserver = observer;
 
-    // Re-detect context and check for fields when URL hash changes
+    // Re-detect context and check for fields on every hash change
     window.addEventListener("hashchange", () => {
       detectPageContext();
-      // After a short delay, check if any registered fields are still visible
-      // If none are found, close the panel
+      // Always check after navigation whether any fields are present
+      // Close the panel if none found, regardless of previous state
       setTimeout(() => {
         const anyVisible = Array.from(document.querySelectorAll("label")).some((el) => {
           const key = el.getAttribute("for") || el.getAttribute("id");
           return key && fieldMap.has(key);
         });
-        if (!anyVisible && !panel.classList.contains("hidden")) {
+        if (!anyVisible) {
           clearPinState();
           panel.classList.add("hidden");
           visibleFields.clear();
         }
-      }, 400); // allow Voyant's SPA render to settle
+      }, 400);
     });
 
     // Watch for Voyant's Done/Cancel buttons to clear section context
