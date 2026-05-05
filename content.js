@@ -592,10 +592,22 @@
     observer.observe(document.body, { childList: true, subtree: true });
     window.__shackademyObserver = observer;
 
-    // Only re-detect page context when the URL hash actually changes
-    // (i.e. user navigates to a different Voyant section)
+    // Re-detect context and check for fields when URL hash changes
     window.addEventListener("hashchange", () => {
       detectPageContext();
+      // After a short delay, check if any registered fields are still visible
+      // If none are found, close the panel
+      setTimeout(() => {
+        const anyVisible = Array.from(document.querySelectorAll("label")).some((el) => {
+          const key = el.getAttribute("for") || el.getAttribute("id");
+          return key && fieldMap.has(key);
+        });
+        if (!anyVisible && !panel.classList.contains("hidden")) {
+          clearPinState();
+          panel.classList.add("hidden");
+          visibleFields.clear();
+        }
+      }, 400); // allow Voyant's SPA render to settle
     });
 
     // Watch for Voyant's Done/Cancel buttons to clear section context
