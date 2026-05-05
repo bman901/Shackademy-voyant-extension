@@ -617,15 +617,17 @@
     // Re-detect context and check for fields on every hash change
     window.addEventListener("hashchange", () => {
       detectPageContext();
-      // Always check after navigation whether any fields are present
-      // Close the panel if none found, regardless of previous state
+
       setTimeout(() => {
         visibleFields.clear();
 
         findTargets().forEach((labelEl) => {
           const key = getLabelKey(labelEl);
           const field = fieldMap.get(key);
-          if (field) visibleFields.set(key, { field, el: labelEl });
+
+          if (field) {
+            visibleFields.set(key, { field, el: labelEl });
+          }
         });
 
         updateFieldsPanel();
