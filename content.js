@@ -24,6 +24,9 @@
   const BACKDROP_ID    = "shackademy-backdrop";
   const PANEL_ID       = "shackademy-panel";
   const BADGE_CLASS    = "shackademy-badge";
+  const KEEP_PANEL_OPEN_WITHOUT_FIELDS_TABS = new Set([
+  "steps",
+]);
 
   // ---------------------------------------------------------------------------
   // Data
@@ -146,6 +149,30 @@
     updateContextPanel();
   }
 
+  function getCurrentTabConfig() {
+  const section = currentSectionKey ? sectionMap[currentSectionKey] : null;
+  if (!section) return null;
+
+  const tabKey = currentTabKey || "basics";
+  return section.tabs?.[tabKey] || section.tabs?.["basics"] || null;
+}
+
+  function keepPanelOpenWithoutFields() {
+    const section = currentSectionKey ? sectionMap[currentSectionKey] : null;
+    const tabConfig = getCurrentTabConfig();
+    const tabKey = currentTabKey || "basics";
+
+    return KEEP_PANEL_OPEN_WITHOUT_FIELDS_TABS.has(tabKey) ||
+      section?.keepPanelOpenWithoutFields === true ||
+      tabConfig?.keepPanelOpenWithoutFields === true;
+  }
+
+  function closePanelAndClearPadding() {
+    const panel = document.getElementById(PANEL_ID);
+    clearPinState();
+    panel?.classList.add("hidden");
+  }
+  
   // ---------------------------------------------------------------------------
   // Field enhancement
   // ---------------------------------------------------------------------------
@@ -483,9 +510,9 @@
     list.innerHTML = "";
 
     if (visibleFields.size === 0) {
-      // No fields on this page — close the panel and clear pin state
-      clearPinState();
-      panel.classList.add("hidden");
+      if (!keepPanelOpenWithoutFields()) {
+        closePanelAndClearPadding();
+      }
       return;
     }
 
@@ -593,15 +620,16 @@
       // Always check after navigation whether any fields are present
       // Close the panel if none found, regardless of previous state
       setTimeout(() => {
-        const anyVisible = Array.from(document.querySelectorAll("label")).some((el) => {
-          const key = el.getAttribute("for") || el.getAttribute("id");
-          return key && fieldMap.has(key);
+        visibleFields.clear();
+
+        findTargets().forEach((labelEl) => {
+          const key = getLabelKey(labelEl);
+          const field = fieldMap.get(key);
+          if (field) visibleFields.set(key, { field, el: labelEl });
         });
-        if (!anyVisible) {
-          clearPinState();
-          panel.classList.add("hidden");
-          visibleFields.clear();
-        }
+
+        updateFieldsPanel();
+        updateContextPanel();
       }, 400);
     });
 
