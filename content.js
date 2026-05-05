@@ -484,10 +484,9 @@
     list.innerHTML = "";
 
     if (visibleFields.size === 0) {
-      const empty = document.createElement("li");
-      empty.className = "shackademy-panel-empty";
-      empty.textContent = "No Shackademy fields detected on this page yet.";
-      list.appendChild(empty);
+      // No fields on this page — close the panel and clear pin state
+      clearPinState();
+      panel.classList.add("hidden");
       return;
     }
 
