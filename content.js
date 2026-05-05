@@ -26,7 +26,7 @@
   const BADGE_CLASS    = "shackademy-badge";
   const KEEP_PANEL_OPEN_WITHOUT_FIELDS_TABS = new Set([
   "steps",
-]);
+  ]);
 
   // ---------------------------------------------------------------------------
   // Data
@@ -606,8 +606,11 @@
       // Debounce: wait for DOM to settle before running enhancement/cleanup
       clearTimeout(debounceTimer);
       debounceTimer = setTimeout(() => {
+        detectPageContext();
         runEnhancement();
         runCleanup();
+        updateFieldsPanel();
+        updateContextPanel();
       }, 150);
     });
 
@@ -644,6 +647,9 @@
         currentSectionKey = null;
         currentItemId     = null;
         currentTabKey     = null;
+        visibleFields.clear();
+        updateFieldsPanel();
+        updateContextPanel();
       }
     }, true);
   }
