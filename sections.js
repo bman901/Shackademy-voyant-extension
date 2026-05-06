@@ -56,6 +56,7 @@ window.TAB_LABELS = {
   "onetime-payments":   "One Time Payments",
   "links":              "Linked Property",
   "debt-payouts":       "Debt Payouts",
+  "maturity":           "Term Maturity",
 };
 
 window.TAB_DESCRIPTIONS = {
@@ -948,7 +949,7 @@ window.SHACKADEMY_SECTIONS = {
   "term-endowment": {
     name: "Term & Endowment",
     typeIndicator: "ukTermProtectinInputOwnerLabel",
-    lessons: ["insurance"],
+    lessons: ["insurance", "modelling-illness"],
     tabs: {
       "basics": {
         description: `
@@ -957,7 +958,6 @@ window.SHACKADEMY_SECTIONS = {
           <ul>
             <li>Use <strong>Employee</strong> insurance where cover is linked to employment, such as death-in-service cover based on a salary multiple</li>
             <li>Use <strong>Personal</strong> insurance where you are entering a policy benefit directly</li>
-            <li>Use <strong>Regular Income</strong> for Family Income Benefit policies</li>
             <li>Check Year View or Life Needs Insight to confirm the policy pays out as expected</li>
           </ul>
         `,
@@ -994,7 +994,7 @@ window.SHACKADEMY_SECTIONS = {
           <p>The policy start event and the remaining term work together to determine whether a payout is made if the insured person dies during the plan.</p>
           <ul>
             <li>Set the Protection Starts event to match when cover begins</li>
-            <li>Use the term remaining to control how long the policy remains in force</li>
+            <li>Use the term remaining (Basics tab) to control how long the policy remains in force</li>
             <li>Once outside the policy term, no payout should be made</li>
             <li>Check Year View or Life Needs Insight to confirm the coverage period</li>
           </ul>

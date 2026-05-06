@@ -24,9 +24,9 @@
   const BACKDROP_ID    = "shackademy-backdrop";
   const PANEL_ID       = "shackademy-panel";
   const BADGE_CLASS    = "shackademy-badge";
-  const KEEP_PANEL_OPEN_WITHOUT_FIELDS_TABS = new Set([
-  "steps","timing","future-vesting","onetime-payments","links","drawdowns","beneficiaries",
-  ]);
+  const KEEP_PANEL_OPEN_WITHOUT_FIELDS_TABS = new Set(
+    Object.keys(window.TAB_LABELS || {})
+  );
 
   // ---------------------------------------------------------------------------
   // Data
