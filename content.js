@@ -160,6 +160,8 @@
 
   function keepPanelOpenWithoutFields() {
     const section = currentSectionKey ? sectionMap[currentSectionKey] : null;
+    if (!section) return false;
+
     const tabConfig = getCurrentTabConfig();
     const tabKey = currentTabKey || "basics";
 

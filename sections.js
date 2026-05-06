@@ -963,7 +963,7 @@ window.SHACKADEMY_SECTIONS = {
         `,
       },
 
-      "term-maturity": {
+      "maturity": {
         description: `
           <p>The Term Maturity tab is used where the policy has a <strong>maturity value or end-of-term payout</strong>.</p>
           <p>This may be relevant for endowment-style policies where the policy has an investment value as well as protection features.</p>
@@ -1008,7 +1008,6 @@ window.SHACKADEMY_SECTIONS = {
           <ul>
             <li>Use this where the payout should be limited to debts outstanding at death or maturity</li>
             <li>Make sure the relevant liabilities are entered correctly</li>
-            <li>Check the payout in Year View or Life Needs Insight to confirm it is limited as expected</li>
           </ul>
         `,
       },
@@ -1018,17 +1017,15 @@ window.SHACKADEMY_SECTIONS = {
   "whole-life": {
     name: "Whole Life",
     typeIndicator: "ukWholeLifeProtectionInputOwnerLabel",
-    lessons: ["insurance"],
+    lessons: ["insurance", "modelling-illness"],
     tabs: {
       "basics": {
         description: `
           <p>This is where you enter a <strong>whole life policy</strong> - cover designed to remain in force for life rather than for a fixed term.</p>
-          <p>Whole life policies are often used for estate planning, inheritance tax provision, or providing a guaranteed death benefit.</p>
           <ul>
             <li>Enter the policy owner, premium, and benefit amount</li>
             <li>Check whether the policy is single or joint</li>
             <li>Confirm whether the policy is held in trust</li>
-            <li>Review the payout in the estate, legacy, or Life Needs outputs if relevant</li>
           </ul>
         `,
       },
