@@ -91,4 +91,14 @@ window.SHACKADEMY_LESSONS = {
     url: "https://shackademy.com/path-player?courseid=voyant&unit=67c8df51d38965f7be05737eUnit",
   },
 
+  "overpayments": {
+    title: "Mortgage Overpayments",
+    url: "https://shackademy.com/path-player?courseid=voyant&unit=67c8e6b4ec0b07dcba08ec37Unit",
+  },
+  
+  "paydown-mortgage": {
+    title: "Paying Off Your Mortgage Early",
+    url: "https://shackademy.com/path-player?courseid=voyant&unit=67c8e55a712f13354c0ebb1cUnit",
+  },
+
 };

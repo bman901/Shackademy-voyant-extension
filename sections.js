@@ -741,7 +741,7 @@ window.SHACKADEMY_SECTIONS = {
   "debt": {
     name: "Debt",
     typeIndicator: "debtInputOwnerLabel",
-    lessons: [],
+    lessons: ["overpayment","paydown-mortgage"],
     tabs: {
       "basics": {
         description: `
@@ -798,7 +798,7 @@ window.SHACKADEMY_SECTIONS = {
   "line-of-credit": {
     name: "Line of Credit",
     typeIndicator: "lineOfCreditInputOwnerLabel",
-    lessons: [],
+    lessons: ["overpayment","paydown-mortgage"],
     tabs: {
       "basics": {
         description: `
