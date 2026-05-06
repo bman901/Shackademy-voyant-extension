@@ -3290,10 +3290,668 @@ window.SHACKADEMY_FIELDS = [
     `,
   },
 
-  //TODO: Debt
-  //TODO: Line of Credit
-  //TODO: Equity Release
-  //TODO: Loan
+  // ============================================================
+  // CATEGORY: Debts & Loans
+  // ============================================================
+
+  // ------------------------------------------------------------
+  // SUB-CATEGORY: Debt
+  // ------------------------------------------------------------
+
+  // ── Tab: Basics ──────────────────────────────────────────────
+
+  {
+    key: "debtInputOwnerLabel",
+    label: "Owner",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select the borrower or borrowers - the person or people who have borrowed the money and are responsible for paying it back.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This should usually match the person or people legally responsible for the debt.</li>
+        <li>If the debt is jointly held, select all relevant borrowers.</li>
+        <li>Ownership affects how the debt and repayments flow through the plan.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "otherDebtInputName",
+    label: "Name",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter a clear name for the debt so it is easy to identify later.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Use a name that distinguishes this debt from any others in the plan.</li>
+        <li>For example: "Main mortgage", "Car loan", "Credit card", or "Personal loan".</li>
+        <li>Avoid including sensitive information such as account numbers.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "debtType",
+    label: "Debt Type",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select the type of debt you are adding.</p>
+      <h3>Options</h3>
+      <ul>
+        <li><strong>Mortgage:</strong> a debt secured against a property.</li>
+        <li><strong>Loan:</strong> a standard loan or borrowing arrangement.</li>
+        <li><strong>Revolving / Credit Card:</strong> flexible borrowing where the balance may change over time.</li>
+        <li><strong>Other:</strong> use this where none of the other categories fit.</li>
+      </ul>
+      <h3>Tips</h3>
+      <ul>
+        <li>The debt type helps classify the debt in Voyant.</li>
+        <li>If the debt is linked to a property, check the 'Linked Property' tab to ensure this is reflected in Voyant.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "debtInputBalance",
+    label: "Balance",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the amount currently outstanding on the debt.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>If working in arrears i.e. entering data between April & October, you may want to enter the balance as at 6th April.</li>
+        <li>If working in advance, enter the current balance at the date you're adding the loan.</li>
+        <li>You can check how the debt changes over time in Year View.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "debtInputType",
+    label: "Payment Type",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select how the debt is repaid.</p>
+      <h3>Options</h3>
+      <ul>
+        <li><strong>Repayment:</strong> repayments reduce both the interest and the capital balance.</li>
+        <li><strong>Interest Only:</strong> repayments cover interest only, so the capital balance remains outstanding unless paid off separately.</li>
+      </ul>
+      <h3>Important</h3>
+      <p>An interest-only debt will, by default, continue until the end of the plan or until the sale of the linked property, if the debt is linked to one.</p>
+      <p>To repay the capital value of an interest-only debt earlier, go to <strong>One Time Payments</strong>, select <strong>Payoff</strong>, and choose when the repayment should occur in Timing.</p>
+    `,
+  },
+
+  {
+    key: "debtInputPaymentAmountUpdater",
+    label: "Payment Amount",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the regular payment amount for this debt.</p>
+      <h3>How to use this</h3>
+      <ul>
+        <li>If you know the payment amount, enter it here and leave the payment duration blank.</li>
+        <li>Voyant will then use the payment amount to pay the debt down over time.</li>
+        <li>If you are making regular overpayments, enter the total payment amount, including the overpayment, and leave duration blank.</li>
+      </ul>
+      <h3>Tips</h3>
+      <ul>
+        <li>Check Year View to confirm the debt is reducing as expected.</li>
+        <li>If the balance is not reducing as expected, review the interest rate, payment type, payment amount, and duration fields together.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "debtInputPaymentAmount",
+    label: "Payment Duration",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the payment duration if you want Voyant to calculate the regular payment amount automatically.</p>
+      <h3>How this works</h3>
+      <ul>
+        <li>If you enter a duration, Voyant will calculate the payment amount based on the debt balance, interest rate, and term.</li>
+        <li>If you already know the actual payment amount, use the Payment Amount field instead and leave duration blank.</li>
+        <li>Use 'Year View' to check the mortgage is repaid over the expected time period.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "receiveCredit",
+    label: "Receive Debt Amount as Cash",
+    helpText: `
+      <h3>What this does</h3>
+      <p>Select this if the borrowed money should be received into the plan as cash.</p>
+      <h3>When to use this</h3>
+      <ul>
+        <li>Use this where you take a loan and want the proceeds to be available in Voyant to spend, invest, or hold as cash.</li>
+        <li>For example, this may be relevant if borrowing is being used to fund a purchase or investment within the plan.</li>
+      </ul>
+      <h3>Tips</h3>
+      <ul>
+        <li>If the debt already exists and the money has already been spent, this may not be appropriate.</li>
+        <li>Check the cash flow after saving to ensure the loan proceeds appear in the way you expect.</li>
+      </ul>
+    `,
+  },
+
+  // ── Tab: One Time Payments ─────────────────────────────────────
+
+  {
+    key: "payoff",
+    label: "Type",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select what type of one-time payment you want to model.</p>
+      <h3>Options</h3>
+      <ul>
+        <li><strong>Specified Amount:</strong> enter a specific one-off payment amount.</li>
+        <li><strong>Payoff:</strong> repay the full outstanding balance at the selected time.</li>
+      </ul>
+      <h3>Tips</h3>
+      <ul>
+        <li>Use Payoff if you want to clear the debt completely at a particular event.</li>
+        <li>Use Specified Amount if you want to model a partial repayment.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "amount",
+    label: "Amount",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the amount of the one-time payment.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This is relevant when the one-time payment type is set to Specified Amount.</li>
+        <li>If you select Payoff, Voyant should use the outstanding balance at the selected time instead.</li>
+        <li>Check the debt balance after the payment to confirm the result.</li>
+      </ul>
+    `,
+  },
+
+  // ------------------------------------------------------------
+  // SUB-CATEGORY: Line of Credit
+  // ------------------------------------------------------------
+
+  // ── Tab: Basics ──────────────────────────────────────────────
+
+  {
+    key: "lineOfCreditInputOwnerLabel",
+    label: "Owner",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select the person or people responsible for the line of credit.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This should usually match the borrower or borrowers on the line of credit.</li>
+        <li>If the line of credit is linked to a property, make sure the linked property is also entered correctly.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "otherlineOfCreditInputName",
+    label: "Name",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter a clear name for the line of credit.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Use a name that makes it easy to recognise later.</li>
+        <li>For example: "Home equity line of credit", "Revolving facility", or "Investment credit line".</li>
+        <li>Avoid adding account numbers or sensitive details.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "lofCreditLimitType",
+    label: "Credit Limit Type",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select how the credit limit is calculated.</p>
+      <h3>Options</h3>
+      <ul>
+        <li><strong>Fixed:</strong> the limit is a fixed monetary amount. Once the balance reaches that amount, no further credit can be provided.</li>
+        <li><strong>Percent of Equity:</strong> the limit is calculated as a percentage of the equity in a linked asset. This will be based on the linked asset's value in each year of the plan.</li>
+      </ul>
+      <h3>Important</h3>
+      <ul>
+        <li>If using Percent of Equity, go to <strong>Linked Properties</strong> and link the relevant property to the line of credit.</li>
+        <li>Property values may change over time based on the Growth Rate applied to the property.</li>
+        <li>You can view property values in a particular year by going to <strong>Year View &gt; Property</strong> and moving to the relevant year.</li>
+      </ul>
+      <h3>Next steps</h3>
+      <ul>
+        <li>After entering the basic details, link the relevant property if Percent of Equity is selected.</li>
+        <li>Then go to <strong>Withdrawal Limit</strong>. This defaults to <strong>Do Not Allow</strong>, which means Voyant will not draw money from the line of credit.</li>
+        <li>To allow money to be drawn into the plan, change the Withdrawal Limit to <strong>As Needed</strong> or <strong>Scheduled Only</strong>.</li>
+        <li><strong>Scheduled Only</strong> means Voyant will only draw from the line of credit according to what you set up in Planned Withdrawals.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "lineOfCreditInputCreditLimit",
+    label: "Credit Limit",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the fixed credit limit for this line of credit.</p>
+      <h3>When this applies</h3>
+      <ul>
+        <li>This applies where Credit Limit Type is set to Fixed.</li>
+        <li>Once the balance reaches this limit, no further borrowing should be available.</li>
+      </ul>
+      <h3>Where to check it</h3>
+      <ul>
+        <li>You can see the balance in Let's See or Dashboard by selecting <strong>Year View &gt; Debts</strong>.</li>
+      </ul>
+      <h3>Next steps</h3>
+      <ul>
+        <li>If Percent of Equity is being used instead, link the relevant property in Linked Properties.</li>
+        <li>Go to Withdrawal Limit if you want the line of credit to be available for use in the plan.</li>
+        <li>The default Withdrawal Limit is Do Not Allow, which means the line of credit will not be drawn from unless changed.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "lineOfCreditInputBalance",
+    label: "Balance",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the current amount already borrowed on this line of credit.</p>
+      <h3>Example</h3>
+      <p>If the credit limit is £300,000 and the current balance is £200,000, only a further £100,000 is available to be used in the Voyant plan.</p>
+      <h3>Where to check it</h3>
+      <ul>
+        <li>You can see the line of credit balance in Let's See or Dashboard by selecting <strong>Year View &gt; Debts</strong>.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "lineOfCreditInputInterestRate",
+    label: "Interest Rate",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the annual interest rate applied to the line of credit.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This affects the cost of borrowing and the balance over time.</li>
+        <li>If the rate is variable, use a realistic planning assumption.</li>
+        <li>Check Year View: Debts to see how the interest affects the projected balance.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "locInterestOnly",
+    label: "Payment Type",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select how payments on the line of credit should be treated.</p>
+      <h3>Options</h3>
+      <ul>
+        <li><strong>Repayment:</strong> payments reduce the balance.</li>
+        <li><strong>Interest only:</strong> interest is paid, but the balance itself is not repaid.</li>
+      </ul>
+      <h3>Important</h3>
+      <ul>
+        <li>Selecting Repayment with a £0 payment amount may mean the interest rolls up into the amount owed.</li>
+        <li>Selecting Interest Only pays the interest each year but does not repay the capital balance.</li>
+      </ul>
+      <h3>Where to check it</h3>
+      <ul>
+        <li>Use Let's See or Dashboard, then go to <strong>Year View &gt; Debts</strong> to check the result.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "locPaymentAmount",
+    label: "Payment Amount",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>If a repayment line of credit is selected, enter the annual amount to be repaid here.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This field is used to specify how much of the line of credit is paid down each year.</li>
+        <li>If no repayment is entered, check whether interest is rolling up or whether the balance remains outstanding.</li>
+        <li>Use <strong>Year View: Debts</strong> to confirm the projected behaviour.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "locCreditLimitAsPercent",
+    label: "Percent of Available Equity in Linked Asset",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the percentage of available equity in the linked asset that can be used as the credit limit.</p>
+      <h3>When this applies</h3>
+      <ul>
+        <li>This applies when Credit Limit Type is set to Percent of Equity.</li>
+        <li>The credit limit will depend on the value of the linked asset in each year of the plan.</li>
+      </ul>
+      <h3>Important</h3>
+      <ul>
+        <li>Make sure the relevant property or asset is linked to the line of credit.</li>
+        <li>Property growth assumptions can affect the available equity and therefore the credit limit.</li>
+        <li>Check the result in Year View to ensure the available borrowing behaves as expected.</li>
+      </ul>
+    `,
+  },
+
+  // ------------------------------------------------------------
+  // SUB-CATEGORY: Equity Release
+  // ------------------------------------------------------------
+
+  // ── Tab: Basics ──────────────────────────────────────────────
+
+  {
+    key: "reverseMortgageOwnerLabel",
+    label: "Owner",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select the person or people who own, or are responsible for, the equity release arrangement.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This should usually match the property owner or owners.</li>
+        <li>If the equity release is linked to a property, check that the property details and ownership are also correct.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "reverseMortgageName",
+    label: "Name",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter a clear name for the equity release arrangement.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Use a recognisable name, such as "Main home equity release" or the provider name.</li>
+        <li>Avoid including sensitive account or reference numbers.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "existingHomeEquity",
+    label: "Is this a new equity release?",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select whether this is a new equity release arrangement or one that already exists.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>If the arrangement already exists, enter the current mortgage amount or outstanding balance.</li>
+        <li>If it is a new arrangement, ensure the 'Timing' tab reflects the timing for taking the borrowing.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "mortgageBalance",
+    label: "Mortgage Amount",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the mortgage amount or outstanding balance for the equity release arrangement.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>For an existing arrangement, this should usually be the current amount owed.</li>
+        <li>For a new arrangement, this may represent the initial amount being borrowed.</li>
+        <li>Check Year View: Debts to confirm how the balance grows or is repaid over time.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "reverseMortgageFees",
+    label: "Closing Fees",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter any fees associated with setting up or closing the equity release arrangement.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Include fees that are expected to be paid as part of the arrangement.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "interestRate",
+    label: "Interest Rate",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the annual interest rate for the equity release arrangement.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Equity release interest may roll up over time if not paid.</li>
+        <li>The interest rate can have a significant impact on the remaining equity in the property.</li>
+        <li>Check the projected debt balance and property value together to understand the long-term impact.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "lumpSumToTake",
+    label: "Lump Sum Amount",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the lump sum amount to be taken from the equity release arrangement.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This should reflect the amount being released as an upfront lump sum.</li>
+        <li>Check whether the lump sum appears in the cash flow as expected.</li>
+        <li>If further borrowing is expected over time, use the relevant annual advance or credit limit fields if appropriate.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "reverseMortgageAnnualAdvanceLabel",
+    label: "Annual Advance",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter any annual amount expected to be advanced from the equity release arrangement.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This may be used where funds are drawn gradually rather than all at once.</li>
+        <li>Check how the advances appear in cash flow and how they affect the debt balance over time to ensure this matches your expectations.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "reverseMortgageCreditLimit",
+    label: "Credit Limit",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the credit limit available under the equity release arrangement.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This may represent the maximum amount that can be borrowed or drawn under the facility.</li>
+        <li>If a credit limit growth rate is also entered, check how the available limit changes over time.</li>
+        <li>Review the plan output to confirm how much is actually drawn and when.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "creditLimitGrowthRate",
+    label: "Credit Limit Growth Rate",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the rate at which the available credit limit grows over time.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This affects the future borrowing capacity under the equity release arrangement.</li>
+        <li>Be cautious with this assumption, as it may materially affect the amount that can be drawn in later years.</li>
+        <li>Check the future credit limit and drawdowns in Year View.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "reverseMortgageClosePolicyAfterPayoff",
+    label: "Close Policy After Payoff",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select whether the equity release arrangement should be closed after it has been paid off.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>If the policy remains open, further advances or borrowing should remain available.</li>
+      </ul>
+    `,
+  },
+
+  // ------------------------------------------------------------
+  // SUB-CATEGORY: Loan
+  // ------------------------------------------------------------
+
+  // ── Tab: Basics ──────────────────────────────────────────────
+
+  {
+    key: "loanInputOwnerLabel",
+    label: "Lender",
+    helpText: `
+      <h3>What this means</h3>
+      <p>The lender is the person who initially paid out the money.</p>
+      <p>The borrower is the person who will be paying the money back to the lender through this loan.</p>
+      <h3>Example</h3>
+      <p>If Mr Smith lends money to his daughter and she pays him back over a number of years, Mr Smith is the lender and his daughter is the borrower.</p>
+      <h3>Where this appears</h3>
+      <ul>
+        <li>Money will come into the plan via Cash Flow as the loan is paid back.</li>
+        <li>In Dashboard or Let's See, click <strong>Year View</strong> and check the <strong>Cash Flow</strong> tab to see the loan repayments coming in.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "loanInputBorrowerLabel",
+    label: "Borrower",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select or enter the person who is borrowing the money and will be making repayments.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>The borrower is outside the plan if they are not one of the people being modelled.</li>
+        <li>The repayments from the borrower should appear as money coming into the plan.</li>
+        <li>Check Year View: Cash Flow to confirm repayments appear as expected.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "loanInputName",
+    label: "Name",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter a clear name for the loan.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Use a name that identifies who the loan is to or what it relates to.</li>
+        <li>For example: "Loan to daughter", "Family loan", or "Business loan repayment".</li>
+        <li>Avoid including sensitive account details.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "isExistingLoan",
+    label: "Type",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select whether the loan already exists or will start in the future.</p>
+      <h3>Options</h3>
+      <ul>
+        <li><strong>Existing Loan:</strong> use this if the loan is already in place at the start of the plan.</li>
+        <li><strong>Future Loan:</strong> use this if the loan will begin at a future date.</li>
+      </ul>
+      <h3>Important</h3>
+      <p>If you select Future Loan, the Timing tab should appear so you can select the event when the loan starts.</p>
+    `,
+  },
+
+  {
+    key: "existingLoanInitYear",
+    label: "Loan Start Year",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the year the loan started.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This is relevant for existing loans.</li>
+        <li>Use the original start year if known.</li>
+        <li>If the loan is future-dated, use the Timing tab to control when it starts.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "debtInputInterestRate",
+    label: "Interest Rate",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the annual interest rate charged on the loan.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This affects how quickly the debt reduces, or grows if repayments are not enough to cover interest.</li>
+        <li>If the current rate is temporary, such as a short fixed-rate mortgage deal, consider whether a longer-term assumption would be more appropriate.</li>  
+        <li>If the loan is interest-free, enter 0%.</li>
+        <li>Check the Cash Flow and Debt tabs in Year View to confirm the loan behaves as expected.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "loanPresentFutureValue",
+    label: "Loan Balance Entered As",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select how the loan balance should be interpreted.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This determines whether the balance is treated as a present value or future value.</li>
+        <li>Use Present Value where the balance is expressed in today's money and should be adjusted over time.</li>
+        <li>Use Future Value where the balance is already the value expected at the relevant future date.</li>
+      </ul>
+    `,
+  },
+
+  // ── Tab: One Time Payments ─────────────────────────────────────
+
+  {
+    key: "paymentTiming",
+    label: "Payment Timing",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select when the one-time payment should be made within the selected plan year.</p>
+      <h3>Options</h3>
+      <ul>
+        <li><strong>Start of Year:</strong> the payment is treated as happening at the start of the year.</li>
+        <li><strong>End of Year:</strong> the payment is treated as happening at the end of the year.</li>
+      </ul>
+      <h3>Tips</h3>
+      <ul>
+        <li>This timing can affect interest calculations and the cash flow shown in that year.</li>
+        <li>Use the option that best reflects when the payment is expected to be received or made (remember the Plan Year starts on 6th April).</li>
+        <li>Check Year View after saving to confirm the timing has the expected impact.</li>
+      </ul>
+    `,
+  },
+
+
+
+
+
+
   //TODO: Term & Endowment
   //TODO: Whole of Life
   //TODO: Income Protection

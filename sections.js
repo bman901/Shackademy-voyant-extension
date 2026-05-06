@@ -48,11 +48,13 @@ window.TAB_LABELS = {
   "linked-expenses":   "Linked Expenses",
   "linked-income":     "Linked Income",
   "linked-reverse-mortgage":      "Linked Equity Release",
-  "exercise":      "Exercise",
+  "exercise":           "Exercise",
   "vested-shares":      "Vested / Exercised Shares",
-  "future-vesting":      "Future Vesting",
-  "liquidation":      "Liquidation",
-  "future-grant":      "Future Grant",
+  "future-vesting":     "Future Vesting",
+  "liquidation":        "Liquidation",
+  "future-grant":       "Future Grant",
+  "onetime-payments":   "One Time Payments",
+  "links":              "Linked Property",
 };
 
 window.TAB_DESCRIPTIONS = {
