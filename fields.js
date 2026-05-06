@@ -3947,16 +3947,1019 @@ window.SHACKADEMY_FIELDS = [
     `,
   },
 
+// ============================================================
+// CATEGORY: Protection
+// ============================================================
+
+// ------------------------------------------------------------
+// SUB-CATEGORY: Term & Endowment
+// ------------------------------------------------------------
+
+// ── Tab: Basics ──────────────────────────────────────────────
+
+{
+  key: "ukTermProtectinInputOwnerLabel",
+  label: "Policy Owner",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Select the policy owner or owners.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>Select two owners if you are entering a joint policy.</li>
+      <li>The Policy Details field lets you specify whether the policy is single or joint.</li>
+      <li>If the policy is joint, use the payout option to confirm whether the benefit is paid on first death or second death.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "ukTermProtectionName",
+  label: "Policy Name",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Enter a clear name for the policy so it is easy to identify later.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>Use the provider name, policy type, or purpose of the cover.</li>
+      <li>For example: "Family Income Benefit", "Mortgage Protection", or "Employer Death in Service".</li>
+      <li>Avoid including sensitive policy numbers or reference details.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "insuredPersonsInputIsDifferent",
+  label: "Is Insured different than owner?",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Use this if the person insured under the policy is different from the policy owner.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>The policy owner is the person who owns the policy.</li>
+      <li>The insured person is the person whose death or illness triggers the benefit.</li>
+      <li>If the owner and insured person are the same, you should not need to use this option.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "investmentInputInsuranceType",
+  label: "Insurance Type",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Select the type of insurance being entered.</p>
+    <h3>Options</h3>
+    <ul>
+      <li><strong>Employee:</strong> use this for cover linked to employment, such as death-in-service benefits calculated as a multiple of salary.</li>
+      <li><strong>Personal:</strong> use this for personal insurance policies where you enter the benefit amount directly.</li>
+    </ul>
+    <h3>Tips</h3>
+    <ul>
+      <li>Select Employee if the cover is calculated as a multiple of salary.</li>
+      <li>Select Personal if you need to enter a lump sum, regular income, decreasing lump sum, or increasing lump sum benefit.</li>
+      <li>A Family Income Benefit policy would usually be entered as a Regular Income benefit under Personal insurance.</li>
+      <li>Different fields will appear depending on whether you select Employee or Personal.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "investmentInputLinkedEmployment",
+  label: "Linked Employment",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Link employee insurance to the relevant employment entry.</p>
+    <h3>Why this matters</h3>
+    <ul>
+      <li>Voyant uses the linked employment to determine policy benefits where cover is based on a salary multiplier.</li>
+      <li>The cover will only pay out while the person is in the linked employment.</li>
+      <li>Because of this, there is no separate Timing panel to complete for this type of employee cover.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "ukEmployeeTermProtectionSalaryMultiplier",
+  label: "Salary Multiplier",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Enter the multiple of salary used to calculate the benefit amount.</p>
+    <h3>Example</h3>
+    <p>If Sarah earns £20,000 and has death-in-service cover worth four times salary, enter <strong>4</strong>. Voyant will calculate the benefit as £20,000 × 4 = £80,000.</p>
+  `,
+},
+
+{
+  key: "ukTermProtectionIsJoint",
+  label: "Policy Details",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Select whether the term insurance is a single or joint policy.</p>
+    <h3>Options</h3>
+    <ul>
+      <li><strong>Single:</strong> the policy has one life insured.</li>
+      <li><strong>Joint:</strong> the policy has two lives insured.</li>
+    </ul>
+    <h3>Tips</h3>
+    <ul>
+      <li>If the policy is joint, use the Joint Payout Type field to choose whether the benefit is paid on first death or second death.</li>
+      <li>Make sure this matches the actual policy schedule.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "ukTermProtectionInTrust",
+  label: "Policy Held in Trust?",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Select Yes if the policy is held in trust.</p>
+  `,
+},
+
+{
+  key: "insuredPersonsInputPersonsLabel",
+  label: "Insured",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Select the person or people insured by the policy.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>This is the person whose death or other insured event would trigger the payout.</li>
+      <li>Check this carefully if the insured person is different from the policy owner.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "ukTermProtectionBenefitType",
+  label: "Benefit Type",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Select how the policy benefit is paid.</p>
+    <h3>Options</h3>
+    <ul>
+      <li><strong>Lump Sum:</strong> pays a one-off lump sum.</li>
+      <li><strong>Regular Income:</strong> pays an ongoing income. Use this for Family Income Benefit policies.</li>
+      <li><strong>Decreasing Lump Sum:</strong> pays a lump sum that reduces over time.</li>
+      <li><strong>Increasing Lump Sum:</strong> pays a lump sum that increases over time.</li>
+    </ul>
+    <h3>Tips</h3>
+    <ul>
+      <li>Choose Regular Income for Family Income Benefit policies.</li>
+      <li>The other options pay a one-off lump sum on the mortality of the selected person.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "ukTermProtectionInputTerm1",
+  label: "Term (Remaining)",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Enter the term of the policy.</p>
+    <h3>How to use this</h3>
+    <ul>
+      <li>If the policy is already in force at the start of the plan, enter the remaining term.</li>
+      <li>If the policy starts in the future, enter the full term for the future policy.</li>
+    </ul>
+    <h3>Example</h3>
+    <p>If a Family Income Benefit policy starts in 5 years and has a term of 10 years, and the policyholder's mortality event is 7 years from now, the income benefit would be paid for the remaining 8 years of the policy term.</p>
+  `,
+},
+
+{
+  key: "ukTermProtectionInputBenefitAmount",
+  label: "Benefit Amount",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Enter the benefit amount for the policy.</p>
+    <h3>How to use this</h3>
+    <ul>
+      <li>For level term insurance, this will usually be the sum assured.</li>
+      <li>For Family Income Benefit, enter the annual benefit amount.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "timingType",
+  label: "Begin Premiums at",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Select when premiums should begin.</p>
+    <h3>Options</h3>
+    <ul>
+      <li><strong>Event:</strong> premiums begin from the selected policy start event in the Timing tab.</li>
+      <li><strong>Age:</strong> premiums begin at the specified purchase age.</li>
+    </ul>
+    <h3>Tips</h3>
+    <ul>
+      <li>If using Event, make sure the policy start timing is set correctly.</li>
+      <li>Check Year View &gt; Expenses to confirm when premiums begin.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "purchaseAge",
+  label: "Purchase Age",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Enter the age at which premiums begin or the policy is purchased, if using age-based timing.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>This is relevant when Begin Premiums at is set to Age.</li>
+      <li>Check this against the intended policy start date.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "investmentInputPremiumAmount",
+  label: "Premium",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Enter the premium payable while the policy is in force.</p>
+    <h3>Important</h3>
+    <ul>
+      <li>Voyant automatically creates an expense for this premium.</li>
+      <li>Be careful not to double count the premium by also adding it manually as an expense.</li>
+    </ul>
+    <h3>Tips</h3>
+    <ul>
+      <li>The default frequency is annual, but this can be changed.</li>
+      <li>Check Year View after saving to confirm the premium is appearing correctly.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "escalation",
+  label: "Benefit Escalation",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Select whether the benefit increases over time.</p>
+    <h3>Options</h3>
+    <ul>
+      <li>None</li>
+      <li>RPI</li>
+      <li>LPI</li>
+      <li>CPI</li>
+      <li>Other</li>
+    </ul>
+    <h3>Tips</h3>
+    <ul>
+      <li>Use the option that matches the policy terms.</li>
+      <li>This can be important for Family Income Benefit or increasing lump sum policies.</li>
+      <li>If using Other, check how the escalation rate is entered and applied.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "premiumEscalation",
+  label: "Premium Escalation",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Select whether premiums increase over time.</p>
+    <h3>Options</h3>
+    <ul>
+      <li>None</li>
+      <li>RPI</li>
+      <li>LPI</li>
+      <li>CPI</li>
+      <li>Other</li>
+    </ul>
+    <h3>Tips</h3>
+    <ul>
+      <li>Use the option shown in the policy schedule.</li>
+      <li>Check Year View &gt; Expenses to confirm premiums are increasing as expected.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "investmentInputJointPayoutType",
+  label: "Joint Payout Type",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>If the policy is joint, select whether the benefit is paid on first death or second death.</p>
+    <h3>Important</h3>
+    <ul>
+      <li>If the joint policyholders are the primary client and spouse or partner, setting payout to Second Death may effectively remove the benefit from the main planning timeline.</li>
+      <li>For Family Income Benefit, a payout on second death may not show on Let's See charts if the planning timeline has ended.</li>
+    </ul>
+    <h3>Tips</h3>
+    <ul>
+      <li>Check the policy terms carefully before selecting first death or second death.</li>
+      <li>Use Year View or Life Needs Insight to confirm the policy is paying out as expected.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "decreasingBenefitRate",
+  label: "Decreasing Benefit Rate",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Enter the rate at which the benefit decreases over time.</p>
+    <h3>When this applies</h3>
+    <ul>
+      <li>This is relevant for Decreasing Lump Sum policies.</li>
+    </ul>
+    <h3>Tips</h3>
+    <ul>
+      <li>Use the rate shown in the policy documentation.</li>
+      <li>Check the payout in Year View or Life Needs Insight to confirm the decreasing benefit is being reflected correctly.</li>
+    </ul>
+  `,
+},
+
+// ── Tab: Term Maturity ───────────────────────────────────────
+
+{
+  key: "receivePayoutAtEndOfTerm",
+  label: "Receive Payout at end of term",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Select this if the policy pays a maturity value at the end of the term.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>This may be relevant for endowment-style policies.</li>
+      <li>Check the maturity value, taxation, growth, and fees settings if a payout is expected.</li>
+      <li>Review Year View to confirm the maturity payout appears at the expected time.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "currentMaturityBaseAmount",
+  label: "Current Maturity Value",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Enter the current maturity value of the policy.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>Use the latest statement or policy valuation if available.</li>
+      <li>This value may be grown forward depending on the growth settings used in this tab.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "receiveMaturityValueAtDeath",
+  label: "Use the Maturity Value as Death Benefit",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Select this if the maturity value should also be used as the death benefit.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>Use this only if it reflects the policy terms.</li>
+      <li>Check the payout under both maturity and death scenarios if this setting materially affects the plan.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "termProtectionMaturityPayoutTaxationType",
+  label: "Payout Taxation (If Before Death)",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Select how the maturity payout should be taxed if it is paid before death.</p>
+    <h3>Options</h3>
+    <ul>
+      <li>None</li>
+      <li>Tax at Income Rate</li>
+      <li>Tax at Capital Gains Rate</li>
+      <li>Tax at Dividends Rate</li>
+      <li>Tax based on Special Rules</li>
+    </ul>
+    <h3>Tips</h3>
+    <ul>
+      <li>The correct treatment depends on the type of policy and the circumstances.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "growthType",
+  label: "Grow Maturity Value By",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Select how the maturity value should be projected over time.</p>
+    <h3>Options</h3>
+    <ul>
+      <li>None</li>
+      <li>Growth Rate</li>
+      <li>Asset Allocations</li>
+    </ul>
+    <h3>Tips</h3>
+    <ul>
+      <li>Use None if the maturity value should not grow.</li>
+      <li>Use Growth Rate if you want to apply a specific annual growth assumption.</li>
+      <li>Use Asset Allocations only where that reflects how the policy value should be modelled.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "termProtectionMaturityCostBasis",
+  label: "Cost Basis",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Enter the cost basis for the policy maturity value.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>This may be relevant where a taxable gain needs to be calculated.</li>
+      <li>Use policy records or provider information if available.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "termProtectionMaturityGrowthRate",
+  label: "Maturity Growth Rate",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Enter the annual growth rate applied to the maturity value.</p>
+    <h3>When this applies</h3>
+    <ul>
+      <li>This is relevant where Grow Maturity Value By is set to Growth Rate.</li>
+      <li>Use a realistic assumption based on the policy type and underlying investment approach.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "termProtectionMaturityFeeRate",
+  label: "Annual Fees",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Enter the annual fee rate applied to the maturity value.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>Fees reduce the projected maturity value over time.</li>
+      <li>Use the policy documentation or latest statement if available.</li>
+      <li>Check the maturity projection after saving.</li>
+    </ul>
+  `,
+},
+
+// ── Tab: Debt Payouts ────────────────────────────────────────
+
+{
+  key: "limitBenefitToDebtAmount",
+  label: "Limit Insurance Payout to Total Amount of Liabilities at Death or Maturity",
+  helpText: `
+    <h3>What this does</h3>
+    <p>Select this if the insurance payout should be limited to the total amount of liabilities at death or maturity.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>This may be relevant for policies intended to clear debts rather than provide a wider surplus.</li>
+      <li>Check the payout amount in Year View or Life Needs Insight to confirm it is limited as expected.</li>
+      <li>Make sure the relevant liabilities are entered correctly in the plan.</li>
+      <li>Drag debts into the 'Payout these Debts first' column as appropriate.</li>
+    </ul>
+  `,
+},
+
+// ------------------------------------------------------------
+// SUB-CATEGORY: Whole Life
+// ------------------------------------------------------------
+
+{
+  key: "ukWholeLifeProtectionInputOwnerLabel",
+  label: "Owner",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Select the owner or owners of the whole life policy.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>This should reflect who owns the policy.</li>
+      <li>If the insured person is different from the owner, use the relevant insured person setting if available.</li>
+      <li>Ownership may affect how the policy is treated in the plan.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "ukWholeLifeProtectionInputName",
+  label: "Policy Name",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Enter a clear name for the whole life policy.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>Use the provider name, policy type, or planning purpose.</li>
+      <li>For example: "Whole of Life IHT Policy".</li>
+      <li>Avoid including policy numbers or sensitive details.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "ukWholeLifeProtectionInputPremiumAmount",
+  label: "Premium",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Enter the premium payable while the policy is in force.</p>
+    <h3>Important</h3>
+    <ul>
+      <li>Voyant automatically creates an expense for this premium.</li>
+      <li>Be careful not to double count the premium by also adding it manually as an expense.</li>
+    </ul>
+    <h3>Tips</h3>
+    <ul>
+      <li>The default frequency is annual, but this can be changed.</li>
+      <li>Check Year View after saving to confirm the premium is appearing correctly.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "ukWholeLifeProtectionInputBenefitAmount",
+  label: "Benefit Amount",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Enter the benefit amount payable under the whole life policy.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>This is usually the sum assured payable on death.</li>
+      <li>Use the policy schedule or latest documentation.</li>
+      <li>Check the payout in Year View or Life Needs Insight if the cover is material to the plan.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "ukWholeLifeProtectionIsJoint",
+  label: "Policy Details",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Use this to specify whether the policy is single or joint.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>If joint, check whether the policy pays on first death or second death.</li>
+      <li>This matters for when the benefit appears in the plan.</li>
+      <li>Make sure this matches the policy schedule.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "inTrust-radio1",
+  label: "In Trust?",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Select whether the whole life policy is held in trust.</p>
+  `,
+},
+
+// ------------------------------------------------------------
+// SUB-CATEGORY: Income Protection
+// ------------------------------------------------------------
+
+{
+  key: "ukIncomeProtectionInputOwnerLabel",
+  label: "Owner",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Select the owner of the income protection policy.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>This will usually be the person whose income is being protected.</li>
+      <li>If the policy is linked to employment, make sure the linked employment is correct.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "ukIncomeProtectionInputName",
+  label: "Policy Name",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Enter a clear name for the income protection policy.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>Use a name that makes the policy easy to identify.</li>
+      <li>For example: "Personal Income Protection" or "Employer Sick Pay Cover".</li>
+    </ul>
+  `,
+},
+
+{
+  key: "ukIncomeProtectionInputPremiumAmount",
+  label: "Premium Amount",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Enter the premium payable while the policy is in force.</p>
+    <h3>Important</h3>
+    <ul>
+      <li>Voyant automatically creates an expense for this premium.</li>
+      <li>Be careful not to double count the premium by also adding it manually as an expense.</li>
+    </ul>
+    <h3>Tips</h3>
+    <ul>
+      <li>The default frequency is annual, but this can be changed.</li>
+      <li>Check Year View after saving to confirm the premium is appearing correctly.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "premiumGrowthRateLabel",
+  label: "Premium Escalation Rate",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Enter the rate at which premiums increase over time.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>Use the policy schedule or provider documentation if premiums escalate contractually.</li>
+      <li>If premiums are level, use 0%.</li>
+      <li>Check Year View &gt; Expenses to confirm the premiums are showing correctly.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "ukIncomeProtectionInputType",
+  label: "Coverage Type",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Select how the income protection benefit is calculated.</p>
+    <h3>Options</h3>
+    <ul>
+      <li><strong>Fixed Amount:</strong> the policy pays a specified amount.</li>
+      <li><strong>Percent of Income:</strong> the policy benefit is based on a percentage of income.</li>
+    </ul>
+    <h3>Tips</h3>
+    <ul>
+      <li>Use the option that matches the policy terms.</li>
+      <li>If using Percent of Income, make sure the relevant income and employment details are accurate.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "ukIncomeProtectionInputCoverageAmount",
+  label: "Coverage Amount",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Enter the amount of income protection cover.</p>
+  `,
+},
+
+{
+  key: "growthRate",
+  label: "Coverage Inflation Rate",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Enter the rate at which the income protection benefit increases over time.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>Use this where the policy benefit is index-linked or expected to escalate.</li>
+      <li>If the benefit is level, use 0%.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "benefitDurationType",
+  label: "Benefit Duration",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Select how long the income protection benefit can be paid for.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>This should match the policy terms.</li>
+      <li>Use 'End of Linked Employment' if payments would continue so long as you remain employed.</li>
+      <li>Use 'Fixed Number of Years' where there is a set benefit duration e.g. 5 years.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "incomeProtectionMaxBenefitAge",
+  label: "Max Benefit Age",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Enter the maximum age to which the benefit can be paid.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>The policy will cancel itself beyond this age.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "ukIncomeProtectionPresentFutureValue",
+  label: "Premium/Coverage entered as",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Select whether premiums and cover are entered as present value or future value.</p>
+    <h3>Options</h3>
+    <ul>
+      <li><strong>Present Value:</strong> values are expressed in today's money and may be inflated over time.</li>
+      <li><strong>Future Value:</strong> values are already expressed in the value expected at the relevant future time.</li>
+    </ul>
+    <h3>Tips</h3>
+    <ul>
+      <li>Use Present Value when entering today's premium or benefit amount.</li>
+      <li>Use Future Value only where the amount already reflects the value at a future point.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "downsizeDebtInputYears2",
+  label: "Benefit Duration (years)",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Enter the number of years the income protection benefit can be paid for.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>This is relevant where the policy pays for a fixed benefit period.</li>
+      <li>Use the period shown in the policy terms.</li>
+    </ul>
+  `,
+},
+
+// ------------------------------------------------------------
+// SUB-CATEGORY: Critical Illness
+// ------------------------------------------------------------
+
+{
+  key: "ukCriticalIllnessProtectionInputOwnerLabel",
+  label: "Owner",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Select the owner of the critical illness policy.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>Voyant assumes the owner and life insured are the same.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "ukCriticalIllnessInputName",
+  label: "Policy Name",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Enter a clear name for the critical illness policy.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>Use the provider name or purpose of the policy.</li>
+      <li>For example: "Critical Illness Cover" or "Mortgage CI Policy".</li>
+    </ul>
+  `,
+},
+
+{
+  key: "ukCriticalIllnessProtectionInputPremiumAmount",
+  label: "Premium Amount",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Enter the premium payable while the policy is in force.</p>
+    <h3>Important</h3>
+    <ul>
+      <li>Voyant automatically creates an expense for this premium.</li>
+      <li>Be careful not to double count the premium by also adding it manually as an expense.</li>
+    </ul>
+    <h3>Tips</h3>
+    <ul>
+      <li>The default frequency is annual, but this can be changed.</li>
+      <li>Check Year View after saving to confirm the premium is appearing correctly.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "ukCriticalIllnessProtectionInputBenefitAmount",
+  label: "Benefit Amount",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Enter the amount paid by the policy if a valid critical illness claim is triggered.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>This should usually be the policy's sum assured.</li>
+      <li>Use the latest policy schedule or statement.</li>
+      <li>Check the plan output where a disability or illness event is modelled.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "ukCriticalIllnessInputTerm",
+  label: "Term (Remaining)",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Enter the remaining term of the critical illness policy.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>If the policy is already in force, enter the remaining term.</li>
+      <li>If the policy starts in the future, enter the term from the future start date.</li>
+      <li>Once outside the term, the policy should no longer provide cover.</li>
+    </ul>
+  `,
+},
+
+// ------------------------------------------------------------
+// SUB-CATEGORY: Long Term Care
+// ------------------------------------------------------------
+
+{
+  key: "ukLongTermCareProtectionInputOwnerLabel",
+  label: "Owner",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Select the owner of the long-term care policy.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>This will usually be the person whose care costs are being insured.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "ukLongTermCareInputName",
+  label: "Policy Name",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Enter a clear name for the long-term care policy.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>Use the provider name or a descriptive policy name.</li>
+      <li>For example: "Long Term Care Policy".</li>
+    </ul>
+  `,
+},
+
+{
+  key: "ukLongTermCareProtectionInputMonthlyBenefit",
+  label: "Benefit Amount",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Enter the benefit amount payable under the long-term care policy.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>Use the policy schedule or provider details.</li>
+      <li>Check the projected care-related cash flow after saving.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "ukLongTermCareUnlimitedBenefitPeriod",
+  label: "Lifetime Benefits",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Select whether benefits can continue for life.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>If the policy has unlimited lifetime benefits, select the relevant option.</li>
+      <li>If benefits are limited, use the Benefit Period field instead.</li>
+      <li>Check the policy schedule carefully as benefit periods can vary significantly.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "ukLongTermCareInputBenefitPeriod",
+  label: "Benefit Period",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Enter the period for which long-term care benefits can be paid.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>This is relevant where Lifetime Benefits do not apply.</li>
+      <li>Use the benefit period from the policy documentation.</li>
+      <li>Check how long benefits continue in the plan output.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "ukLongTermCareProtectionInputPremiumAmount",
+  label: "Premium Amount",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Enter the premium payable while the policy is in force.</p>
+    <h3>Important</h3>
+    <ul>
+      <li>Voyant automatically creates an expense for this premium.</li>
+      <li>Be careful not to double count the premium by also adding it manually as an expense.</li>
+    </ul>
+    <h3>Tips</h3>
+    <ul>
+      <li>The default frequency is annual, but this can be changed.</li>
+      <li>Check Year View after saving to confirm the premium is appearing correctly.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "longTermCareInsuranceWaiverOfPremiumRider",
+  label: "Waiver of Premium",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Select whether the policy includes a waiver of premium feature.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>A waiver of premium feature may stop premiums being payable after certain conditions are met.</li>
+      <li>Use the policy documentation to confirm whether this applies.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "ukLongTermCareProtectionInputLifetimePayments",
+  label: "Lifetime Payments",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Select whether premiums or payments continue for life.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>Use this if the policy requires lifetime payments.</li>
+      <li>If payments are limited to a fixed number of years, select 'No' and use Payment Option Years.</li>
+      <li>Check Year View &gt; Expenses to confirm the premium pattern.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "ukLongTermCareInputNumberOfYears",
+  label: "Payment Option Years",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Enter the number of years over which payments are made.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>This is relevant where payments are limited to a fixed period rather than payable for life.</li>
+      <li>Use the policy schedule to confirm the payment period.</li>
+      <li>Check the expense pattern after saving.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "insurancePresentFutureValue",
+  label: "Benefit and Premiums entered as",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Select whether benefit and premium values are entered as present value or future value.</p>
+    <h3>Options</h3>
+    <ul>
+      <li><strong>Present Value:</strong> values are expressed in today's money and may be inflated over time.</li>
+      <li><strong>Future Value:</strong> values are already expressed in the value expected at the relevant future time.</li>
+    </ul>
+    <h3>Tips</h3>
+    <ul>
+      <li>Use Present Value when entering today's benefit and premium amounts.</li>
+      <li>Use Future Value only where the figures already reflect the future amount.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "benefitInflationType",
+  label: "Benefit Inflation",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Select how the long-term care benefit increases over time.</p>
+    <h3>Options</h3>
+    <ul>
+      <li><strong>None:</strong> the benefit does not inflate.</li>
+      <li><strong>Compound:</strong> the benefit increases with compounding.</li>
+      <li><strong>Simple:</strong> the benefit increases using simple inflation.</li>
+    </ul>
+    <h3>Tips</h3>
+    <ul>
+      <li>Use the option that matches the policy terms.</li>
+      <li>Benefit inflation can materially affect long-term care projections.</li>
+    </ul>
+  `,
+},
+
+{
+  key: "benefitInflationRate",
+  label: "Inflation Rate",
+  helpText: `
+    <h3>What to enter</h3>
+    <p>Enter the rate used to increase the long-term care benefit over time.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>This applies where Benefit Inflation is set to Simple or Compound.</li>
+      <li>Use the policy schedule or provider documentation.</li>
+      <li>Check the projected benefit amount over time after saving.</li>
+    </ul>
+  `,
+},
 
 
 
 
-
-  //TODO: Term & Endowment
-  //TODO: Whole of Life
-  //TODO: Income Protection
-  //TODO: Critical Illness
-  //TODO: Long Term Care
   //TODO: Expenses??
   //TODO: Transfers
   //TODO: Planned Withdrawals
