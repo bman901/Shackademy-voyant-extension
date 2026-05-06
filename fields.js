@@ -73,7 +73,6 @@ window.SHACKADEMY_FIELDS = [
       <h3>What to enter</h3>
       <p>Select your relationship to this person. Voyant uses this to correctly apply tax allowances, pension rules, and income calculations for each person.</p>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773147e337de51fe604f62aUnit",
   },
   {
     key: "personInputFirstName",
@@ -82,7 +81,6 @@ window.SHACKADEMY_FIELDS = [
       <h3>What to enter</h3>
       <p>Enter the first name of the person you're adding. Voyant uses this throughout the plan to label charts, reports, and projections.</p>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773147e337de51fe604f62aUnit",
   },
   {
     key: "personInputLastName",
@@ -91,7 +89,6 @@ window.SHACKADEMY_FIELDS = [
       <h3>What to enter</h3>
       <p>Enter the last name of the person you're adding. This only flows through to Voyant reports, so if you prefer you can just use an initial.</p>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773147e337de51fe604f62aUnit",
   },
   {
     key: "alreadyRetiredDropdown",
@@ -107,7 +104,6 @@ window.SHACKADEMY_FIELDS = [
         <li>If you have any issues with this, please ask in the community or get in touch</li>
       </ul>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773147e337de51fe604f62aUnit",
   },
   {
     key: "retirementAge",
@@ -121,7 +117,6 @@ window.SHACKADEMY_FIELDS = [
         <li>You can adjust retirement timing later using the timeline</li>
       </ul>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773147e337de51fe604f62aUnit",
   },
 
   // ============================================================
@@ -141,8 +136,6 @@ window.SHACKADEMY_FIELDS = [
       <h3>What to enter</h3>
       <p>Select the owner/s of the goal by expanding the menu and selecting / deselecting individuals by clicking on their names. You will see your selection/s in the owner window.</p>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773147b8f48f0512d0bc578Unit",
-    videoUrl: "https://www.youtube.com/watch?v=npuErPiZtWU",
   },
   {
     key: "basicExpenseInputName",
@@ -156,8 +149,6 @@ window.SHACKADEMY_FIELDS = [
         <li>e.g. "John - MBA fees"</li>
       </ul>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773147b8f48f0512d0bc578Unit",
-    videoUrl: "https://www.youtube.com/watch?v=npuErPiZtWU",
   },
   {
     key: "basicExpenseInputAmountLabel",
@@ -171,8 +162,6 @@ window.SHACKADEMY_FIELDS = [
         <li>Check 'Expenses' in the 'Year View' to validate this entry</li>
       </ul>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773147b8f48f0512d0bc578Unit",
-    videoUrl: "https://www.youtube.com/watch?v=npuErPiZtWU",
   },
   {
     key: "interestTaxDeductible",
@@ -181,8 +170,6 @@ window.SHACKADEMY_FIELDS = [
       <h3>What to enter</h3>
       <p>If this expense is tax deductible please ensure this is ticked and the owner is correct</p>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773147b8f48f0512d0bc578Unit",
-    videoUrl: "https://www.youtube.com/watch?v=npuErPiZtWU",
   },
   {
     key: "basicExpenseGrowthLabel",
@@ -196,8 +183,6 @@ window.SHACKADEMY_FIELDS = [
         <li>Changing the default rate will only affect new plans created, you will need to manually change the rate for any existing plans</li>
       </ul>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773147b8f48f0512d0bc578Unit",
-    videoUrl: "https://www.youtube.com/watch?v=npuErPiZtWU",
   },
   {
     key: "basicExpensePresentFutureValue",
@@ -209,8 +194,6 @@ window.SHACKADEMY_FIELDS = [
         <li><strong>Future Value:</strong> If you want the expense to increase with inflation from <strong>the chosen start date (Timing tab)</strong>, choose this</li>
       </ul>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773147b8f48f0512d0bc578Unit",
-    videoUrl: "https://www.youtube.com/watch?v=npuErPiZtWU",
   },
 
   // ── Tab: Details ──────────────────────────────────────────────
@@ -226,8 +209,6 @@ window.SHACKADEMY_FIELDS = [
         <li>Whatever you enter in this section will overwrite the 'Basics' tab</li>
       </ul>
     `,
-    lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773147b8f48f0512d0bc578Unit",
-    videoUrl: "https://www.youtube.com/watch?v=npuErPiZtWU",
   },
   {
   key: "preRetirementExpenseGrowthLabel",
@@ -240,8 +221,6 @@ window.SHACKADEMY_FIELDS = [
       <li>Whatever you enter in this section will overwrite the 'Basics' tab</li>
     </ul>
   `,
-  lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773147b8f48f0512d0bc578Unit",
-  videoUrl: "https://www.youtube.com/watch?v=npuErPiZtWU",
   },
   {
   key: "goalsIncomeSlider",
@@ -254,8 +233,6 @@ window.SHACKADEMY_FIELDS = [
       <li>Whatever you enter in this section will overwrite the 'Basics' tab</li>
     </ul>
   `,
-  lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773147b8f48f0512d0bc578Unit",
-  videoUrl: "https://www.youtube.com/watch?v=npuErPiZtWU",
   },
 
   // ── Tab: Timing ──────────────────────────────────────────────
@@ -272,7 +249,6 @@ window.SHACKADEMY_FIELDS = [
       <li>Check out the lesson below for additional details.</li>
     </ul>
   `,
-  lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=67d09a17a12fc6a3b002401aUnit",
   },
   
   // ── Tab: Payment Sources ──────────────────────────────────────────────
@@ -301,7 +277,6 @@ window.SHACKADEMY_FIELDS = [
       <li><a href="https://support.planwithvoyant.com/hc/en-us/articles/15113841453083-How-to-set-up-a-Payment-Source-on-a-Expense-UK" target="_blank">Voyant's lesson on using Payment Sources</a></li>
     </ul>
   `,
-  lessonUrl: "https://shackademy.com/path-player?courseid=voyant&unit=6773147b8f48f0512d0bc578Unit",
   },
 
   // ============================================================
