@@ -940,4 +940,220 @@ window.SHACKADEMY_SECTIONS = {
     },
   },
  
+
+  // ============================================================
+  // Protection
+  // ============================================================
+
+  "term-endowment": {
+    name: "Term & Endowment",
+    typeIndicator: "ukTermProtectinInputOwnerLabel",
+    lessons: ["insurance"],
+    tabs: {
+      "basics": {
+        description: `
+          <p>This is where you enter <strong>term assurance, endowment-style policies, death-in-service cover, and family income benefit</strong>.</p>
+          <p>The key inputs determine who owns the policy, who is insured, what type of benefit is paid, how long the cover lasts, and how premiums are modelled.</p>
+          <ul>
+            <li>Use <strong>Employee</strong> insurance where cover is linked to employment, such as death-in-service cover based on a salary multiple</li>
+            <li>Use <strong>Personal</strong> insurance where you are entering a policy benefit directly</li>
+            <li>Use <strong>Regular Income</strong> for Family Income Benefit policies</li>
+            <li>Check Year View or Life Needs Insight to confirm the policy pays out as expected</li>
+          </ul>
+        `,
+      },
+
+      "term-maturity": {
+        description: `
+          <p>The Term Maturity tab is used where the policy has a <strong>maturity value or end-of-term payout</strong>.</p>
+          <p>This may be relevant for endowment-style policies where the policy has an investment value as well as protection features.</p>
+          <ul>
+            <li>Use <strong>Receive Payout at end of term</strong> if a maturity value is expected</li>
+            <li>Enter the current maturity value and choose how it should grow</li>
+            <li>Set the correct tax treatment if the payout happens before death</li>
+            <li>Check the maturity payout in Year View after saving</li>
+          </ul>
+        `,
+      },
+
+      "beneficiaries": {
+        description: `
+          <p>The Beneficiaries tab controls <strong>who receives the policy proceeds</strong> if the policy pays out.</p>
+          <p>This is especially important if the policy is held in trust, or if the payout should go somewhere other than the default beneficiary.</p>
+          <ul>
+            <li>Beneficiaries may include a spouse, estate, another person in the plan, someone outside the plan, or a charity</li>
+            <li>If the policy is held in trust, make sure the beneficiaries reflect the trust arrangement</li>
+            <li>Check the estate and legacy outputs if the beneficiary choice affects inheritance tax or estate planning</li>
+          </ul>
+        `,
+      },
+
+      "timing": {
+        description: `
+          <p>The Timing tab controls <strong>when the policy starts and ends</strong> in the plan.</p>
+          <p>The policy start event and the remaining term work together to determine whether a payout is made if the insured person dies during the plan.</p>
+          <ul>
+            <li>Set the Protection Starts event to match when cover begins</li>
+            <li>Use the term remaining to control how long the policy remains in force</li>
+            <li>Once outside the policy term, no payout should be made</li>
+            <li>Check Year View or Life Needs Insight to confirm the coverage period</li>
+          </ul>
+        `,
+      },
+
+      "debt-payouts": {
+        description: `
+          <p>The Debt Payouts tab lets you link the insurance payout to <strong>liabilities in the plan</strong>.</p>
+          <p>This is useful where the policy is intended to clear debts rather than provide a wider surplus to beneficiaries.</p>
+          <ul>
+            <li>Use this where the payout should be limited to debts outstanding at death or maturity</li>
+            <li>Make sure the relevant liabilities are entered correctly</li>
+            <li>Check the payout in Year View or Life Needs Insight to confirm it is limited as expected</li>
+          </ul>
+        `,
+      },
+    },
+  },
+
+  "whole-life": {
+    name: "Whole Life",
+    typeIndicator: "ukWholeLifeProtectionInputOwnerLabel",
+    lessons: ["insurance"],
+    tabs: {
+      "basics": {
+        description: `
+          <p>This is where you enter a <strong>whole life policy</strong> - cover designed to remain in force for life rather than for a fixed term.</p>
+          <p>Whole life policies are often used for estate planning, inheritance tax provision, or providing a guaranteed death benefit.</p>
+          <ul>
+            <li>Enter the policy owner, premium, and benefit amount</li>
+            <li>Check whether the policy is single or joint</li>
+            <li>Confirm whether the policy is held in trust</li>
+            <li>Review the payout in the estate, legacy, or Life Needs outputs if relevant</li>
+          </ul>
+        `,
+      },
+
+      "beneficiaries": {
+        description: `
+          <p>The Beneficiaries tab controls <strong>who receives the whole life policy proceeds</strong>.</p>
+          <p>This is particularly important where the policy is held in trust or intended to provide funds outside the estate.</p>
+          <ul>
+            <li>Make sure the beneficiaries reflect the actual policy or trust arrangement</li>
+            <li>Check whether proceeds are intended for a spouse, estate, other beneficiaries, or charity</li>
+            <li>Review estate and legacy outputs if the beneficiary choice affects inheritance tax planning</li>
+          </ul>
+        `,
+      },
+
+      "timing": {
+        description: `
+          <p>The Timing tab controls <strong>when the policy is introduced into the plan</strong>.</p>
+          <p>Whole life cover usually remains in force for life, but the start date and premium timing still need to be modelled correctly.</p>
+          <ul>
+            <li>Use the timing settings to control when premiums begin</li>
+            <li>Check Year View &gt; Expenses to confirm premiums appear when expected</li>
+            <li>Check the payout assumptions if the policy starts in the future</li>
+          </ul>
+        `,
+      },
+    },
+  },
+
+  "income-protection": {
+    name: "Income Protection",
+    typeIndicator: "ukIncomeProtectionInputOwnerLabel",
+    lessons: ["insurance"],
+    tabs: {
+      "basics": {
+        description: `
+          <p>This is where you enter an <strong>income protection policy</strong>, designed to replace income if the insured person cannot work because of illness or injury.</p>
+          <p>The key inputs determine the premium, coverage type, benefit amount, benefit duration, and how the cover increases over time.</p>
+          <ul>
+            <li>Use <strong>Fixed Amount</strong> where the policy pays a set benefit</li>
+            <li>Use <strong>Percent of Income</strong> where the benefit is linked to earnings</li>
+            <li>Link to employment where the cover is employment-related</li>
+            <li>Check the disability or cash flow outputs to confirm benefits appear as expected</li>
+          </ul>
+        `,
+      },
+
+      "timing": {
+        description: `
+          <p>The Timing tab controls <strong>when income protection cover and premiums apply</strong>.</p>
+          <p>This matters because the policy should only provide cover during the period it is active.</p>
+          <ul>
+            <li>Set the policy start and end timing to match the actual cover period</li>
+            <li>Check whether the benefit duration runs for a fixed period or to a maximum age</li>
+            <li>Review Year View to confirm premiums and benefits appear in the right years</li>
+          </ul>
+        `,
+      },
+    },
+  },
+
+  "critical-illness": {
+    name: "Critical Illness",
+    typeIndicator: "ukCriticalIllnessProtectionInputOwnerLabel",
+    lessons: ["insurance"],
+    tabs: {
+      "basics": {
+        description: `
+          <p>This is where you enter a <strong>critical illness policy</strong>, which pays a benefit if the insured person suffers a qualifying critical illness under the policy terms.</p>
+          <p>The key inputs are the policy owner, premium, benefit amount, and remaining term.</p>
+          <ul>
+            <li>Enter the benefit amount from the policy schedule</li>
+            <li>Enter the remaining policy term if the policy is already in force</li>
+            <li>Check whether the policy is intended to cover a mortgage, provide family protection, or support wider cashflow needs</li>
+            <li>Review the outputs if illness or disability events are modelled in the plan</li>
+          </ul>
+        `,
+      },
+
+      "timing": {
+        description: `
+          <p>The Timing tab controls <strong>when the critical illness policy is active</strong>.</p>
+          <p>The timing settings and remaining term determine whether the policy provides cover at different points in the plan.</p>
+          <ul>
+            <li>Set the start event to match when cover begins</li>
+            <li>Use the term remaining to reflect how long cover lasts</li>
+            <li>Once outside the term, no payout should be assumed</li>
+            <li>Check the relevant Year View output if the policy is important to the plan</li>
+          </ul>
+        `,
+      },
+    },
+  },
+
+  "long-term-care": {
+    name: "Long Term Care",
+    typeIndicator: "ukLongTermCareProtectionInputOwnerLabel",
+    lessons: ["insurance"],
+    tabs: {
+      "basics": {
+        description: `
+          <p>This is where you enter a <strong>long-term care insurance policy</strong>, designed to provide benefits if care is needed later in life.</p>
+          <p>The key inputs determine the benefit amount, benefit period, premiums, payment duration, and whether benefits increase over time.</p>
+          <ul>
+            <li>Check whether benefits are lifetime or limited to a fixed period</li>
+            <li>Enter premium details and whether payments continue for life or a fixed number of years</li>
+            <li>Use benefit inflation settings if the policy benefit increases over time</li>
+            <li>Check long-term cashflow outputs to confirm benefits and premiums are modelled as expected</li>
+          </ul>
+        `,
+      },
+
+      "timing": {
+        description: `
+          <p>The Timing tab controls <strong>when the long-term care policy is active</strong>.</p>
+          <p>This affects when premiums are paid and when benefits may be available in the plan.</p>
+          <ul>
+            <li>Set the policy start timing to match the actual or expected policy start date</li>
+            <li>Check whether premium payments are lifetime or for a fixed period</li>
+            <li>Review the timing of benefits if care events are modelled in the plan</li>
+            <li>Use Year View to confirm premiums and benefits appear in the expected years</li>
+          </ul>
+        `,
+      },
+    },
+  },
 };

@@ -100,5 +100,10 @@ window.SHACKADEMY_LESSONS = {
     title: "Paying Off Your Mortgage Early",
     url: "https://shackademy.com/path-player?courseid=voyant&unit=67c8e55a712f13354c0ebb1cUnit",
   },
+  
+  "modelling-illness": {
+    title: "Illness or Long-Term Sickness",
+    url: "https://shackademy.com/path-player?courseid=voyant&unit=67c8e5ba6e2bd3ccde01797fUnit",
+  },
 
 };
