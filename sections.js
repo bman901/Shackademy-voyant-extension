@@ -1037,7 +1037,6 @@ window.SHACKADEMY_SECTIONS = {
           <ul>
             <li>Make sure the beneficiaries reflect the actual policy or trust arrangement</li>
             <li>Check whether proceeds are intended for a spouse, estate, other beneficiaries, or charity</li>
-            <li>Review estate and legacy outputs if the beneficiary choice affects inheritance tax planning</li>
           </ul>
         `,
       },
@@ -1059,7 +1058,7 @@ window.SHACKADEMY_SECTIONS = {
   "income-protection": {
     name: "Income Protection",
     typeIndicator: "ukIncomeProtectionInputOwnerLabel",
-    lessons: ["insurance"],
+    lessons: ["insurance","modelling-illness"],
     tabs: {
       "basics": {
         description: `
@@ -1069,7 +1068,6 @@ window.SHACKADEMY_SECTIONS = {
             <li>Use <strong>Fixed Amount</strong> where the policy pays a set benefit</li>
             <li>Use <strong>Percent of Income</strong> where the benefit is linked to earnings</li>
             <li>Link to employment where the cover is employment-related</li>
-            <li>Check the disability or cash flow outputs to confirm benefits appear as expected</li>
           </ul>
         `,
       },
@@ -1091,7 +1089,7 @@ window.SHACKADEMY_SECTIONS = {
   "critical-illness": {
     name: "Critical Illness",
     typeIndicator: "ukCriticalIllnessProtectionInputOwnerLabel",
-    lessons: ["insurance"],
+    lessons: ["insurance","modelling-illness"],
     tabs: {
       "basics": {
         description: `
@@ -1124,7 +1122,7 @@ window.SHACKADEMY_SECTIONS = {
   "long-term-care": {
     name: "Long Term Care",
     typeIndicator: "ukLongTermCareProtectionInputOwnerLabel",
-    lessons: ["insurance"],
+    lessons: ["insurance", "modelling-illness", "aged-care"],
     tabs: {
       "basics": {
         description: `
@@ -1134,7 +1132,6 @@ window.SHACKADEMY_SECTIONS = {
             <li>Check whether benefits are lifetime or limited to a fixed period</li>
             <li>Enter premium details and whether payments continue for life or a fixed number of years</li>
             <li>Use benefit inflation settings if the policy benefit increases over time</li>
-            <li>Check long-term cashflow outputs to confirm benefits and premiums are modelled as expected</li>
           </ul>
         `,
       },

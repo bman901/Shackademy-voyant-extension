@@ -106,4 +106,9 @@ window.SHACKADEMY_LESSONS = {
     url: "https://shackademy.com/path-player?courseid=voyant&unit=67c8e5ba6e2bd3ccde01797fUnit",
   },
 
+  "aged-care": {
+    title: "Aged Care",
+    url: "https://shackademy.com/path-player?courseid=voyant&unit=67cf5bde70f0985195087f7aUnit",
+  },
+
 };
