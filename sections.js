@@ -733,5 +733,210 @@ window.SHACKADEMY_SECTIONS = {
 
     },
   },
+
+  // ============================================================
+  // Debts
+  // ============================================================
+
+  "debt": {
+    name: "Debt",
+    typeIndicator: "debtInputOwnerLabel",
+    lessons: [],
+    tabs: {
+      "basics": {
+        description: `
+          <p>This is where you enter a <strong>debt that needs to be repaid</strong>, such as a mortgage, loan, credit card, or other borrowing.</p>
+          <p>The key inputs are the current balance, interest rate, payment type, and payment amount or duration. Together, these determine how the debt changes over time in the plan.</p>
+          <ul>
+            <li>Use <strong>Repayment</strong> where payments reduce the capital balance over time</li>
+            <li>Use <strong>Interest Only</strong> where the capital balance remains outstanding unless repaid separately</li>
+            <li>Check Year View to confirm the debt reduces, remains level, or is paid off as expected</li>
+          </ul>
+        `,
+      },
+      "timing": {
+        description: window.TAB_DESCRIPTIONS.timing,
+      },
+      "steps": {
+        description: window.TAB_DESCRIPTIONS.steps,
+      },
+      "payment-sources": {
+        description: `
+          <p>The Payment Sources tab lets you control <strong>which accounts or assets are used to make debt payments</strong>.</p>
+          <p>By default, Voyant will normally fund payments from available income and assets according to the plan's wider funding logic. Use this tab if you need to direct payments from a specific source.</p>
+          <ul>
+            <li>Use cautiously, as restricting payment sources can create artificial shortfalls</li>
+            <li>Check Year View after saving to make sure payments are being funded as intended</li>
+          </ul>
+        `,
+      },
+      "onetime-payments": {
+        description: `
+          <p>The One Time Payments tab lets you model <strong>one-off repayments</strong> against the debt.</p>
+          <p>This is especially useful for lump sum repayments, clearing an interest-only mortgage, or paying off the full balance at a particular event.</p>
+          <ul>
+            <li><strong>Specified Amount</strong> lets you enter a partial one-off repayment</li>
+            <li><strong>Payoff</strong> clears the full outstanding balance at the selected time</li>
+            <li>Use the timing settings to control when the payment happens</li>
+          </ul>
+        `,
+      },
+      "links": {
+        description: `
+          <p>The Linked Property tab lets you connect this debt to a property in the plan.</p>
+          <p>This is typically relevant for mortgages or other debts secured against a property. Linking the debt helps Voyant treat the borrowing alongside the asset it relates to.</p>
+          <ul>
+            <li>If the linked property is sold, check whether the debt is repaid as expected</li>
+            <li>Make sure the property ownership and debt ownership are consistent</li>
+            <li>Use Year View to confirm the debt and property values behave correctly together</li>
+          </ul>
+        `,
+      },
+    },
+  },
+
+  "line-of-credit": {
+    name: "Line of Credit",
+    typeIndicator: "lineOfCreditInputOwnerLabel",
+    lessons: [],
+    tabs: {
+      "basics": {
+        description: `
+          <p>This is where you enter a <strong>line of credit</strong> - flexible borrowing that can be drawn from over time.</p>
+          <p>The credit limit can be entered as a fixed amount or based on a percentage of equity in a linked asset. The current balance reflects how much has already been borrowed.</p>
+          <ul>
+            <li>Use <strong>Fixed</strong> if the credit limit is a set amount</li>
+            <li>Use <strong>Percent of Equity</strong> if the available credit depends on the value of a linked property or asset</li>
+            <li>Check the Withdrawal Limit tab, as the default may prevent Voyant from drawing from the facility</li>
+          </ul>
+        `,
+      },
+      "timing": {
+        description: window.TAB_DESCRIPTIONS.timing,
+      },
+      "steps": {
+        description: window.TAB_DESCRIPTIONS.steps,
+      },
+      "payment-sources": {
+        description: `
+          <p>The Payment Sources tab lets you control <strong>which accounts or assets are used to make payments on the line of credit</strong>.</p>
+          <p>Use this if payments need to come from a particular account rather than the plan's usual funding order.</p>
+          <ul>
+            <li>Restricting payment sources can create shortfalls if the selected source is not sufficiently funded</li>
+            <li>Check Year View &gt; Debts to confirm the line of credit is being paid down or maintained as expected</li>
+          </ul>
+        `,
+      },
+      "onetime-payments": {
+        description: `
+          <p>The One Time Payments tab lets you model <strong>one-off repayments</strong> against the line of credit.</p>
+          <p>This can be useful if you expect to reduce or clear the balance at a future event.</p>
+          <ul>
+            <li>Use a specified amount for a partial repayment</li>
+            <li>Use payoff if the full balance is expected to be cleared</li>
+            <li>Check the debt balance after the payment in Year View</li>
+          </ul>
+        `,
+      },
+      "links": {
+        description: `
+          <p>The Linked Property tab lets you connect the line of credit to a property in the plan.</p>
+          <p>This is particularly important if the credit limit is based on a <strong>percentage of equity</strong>, because Voyant needs to know which property value to reference.</p>
+          <ul>
+            <li>Link the relevant property if using Percent of Equity</li>
+            <li>Remember that property growth assumptions may affect future borrowing capacity</li>
+            <li>Check Year View to confirm the credit limit and balance behave as expected</li>
+          </ul>
+        `,
+      },
+      "liquidation-limits": {
+        description: window.TAB_DESCRIPTIONS["liquidation-limits"],
+      },
+      "drawdowns": {
+        description: window.TAB_DESCRIPTIONS.drawdowns,
+      },
+    },
+  },
+
+  "equity-release": {
+    name: "Equity Release",
+    typeIndicator: "reverseMortgageOwnerLabel",
+    lessons: [],
+    tabs: {
+      "basics": {
+        description: `
+          <p>This is where you enter an <strong>equity release or reverse mortgage arrangement</strong>.</p>
+          <p>The key inputs include whether the arrangement is new or existing, the mortgage amount, interest rate, any lump sum taken, annual advances, credit limit, and credit limit growth rate.</p>
+          <ul>
+            <li>Check whether the arrangement should be linked to a property</li>
+            <li>Review how interest builds up over time, especially if it rolls up rather than being paid</li>
+            <li>Check Year View &gt; Debts and Cash Flow to confirm the arrangement behaves as expected</li>
+          </ul>
+        `,
+      },
+      "links": {
+        description: `
+          <p>The Linked Property tab connects the equity release arrangement to the property it relates to.</p>
+          <p>This is important because equity release is normally secured against a property, and the long-term impact depends on both the outstanding debt and the projected property value.</p>
+          <ul>
+            <li>Make sure the linked property is the correct one</li>
+            <li>Check ownership is consistent between the property and equity release arrangement</li>
+            <li>Review Year View to compare the projected property value and equity release balance over time</li>
+          </ul>
+        `,
+      },
+      "timing": {
+        description: window.TAB_DESCRIPTIONS.timing,
+      },
+      "onetime-payments": {
+        description: `
+          <p>The One Time Payments tab lets you model <strong>one-off payments</strong> against the equity release arrangement.</p>
+          <p>This may be useful if the arrangement is expected to be partly or fully repaid at a future event.</p>
+          <ul>
+            <li>Use a specified amount for a partial repayment</li>
+            <li>Use payoff if the full outstanding balance is expected to be cleared</li>
+            <li>Check whether the policy should remain open or close after payoff</li>
+          </ul>
+        `,
+      },
+    },
+  },
+
+  "loan": {
+    name: "Loan",
+    typeIndicator: "loanInputOwnerLabel",
+    lessons: [],
+    tabs: {
+      "basics": {
+        description: `
+          <p>This is where you enter a <strong>loan owed to someone in the plan</strong>.</p>
+          <p>In this section, the lender is the person in the plan who has lent the money, and the borrower is the person who will repay it. Repayments are treated as money coming back into the plan.</p>
+          <ul>
+            <li>Use <strong>Existing Loan</strong> if the loan is already in place at the start of the plan</li>
+            <li>Use <strong>Future Loan</strong> if the loan will begin later</li>
+            <li>Check Year View &gt; Cash Flow to see repayments coming into the plan</li>
+            <li>Check Year View &gt; Debt to see whether the loan is being paid off as expected</li>
+          </ul>
+        `,
+      },
+      "timing": {
+        description: window.TAB_DESCRIPTIONS.timing,
+      },
+      "steps": {
+        description: window.TAB_DESCRIPTIONS.steps,
+      },
+      "onetime-payments": {
+        description: `
+          <p>The One Time Payments tab lets you model <strong>one-off loan repayments</strong>.</p>
+          <p>This is useful where the borrower is expected to make an additional lump sum repayment or clear the loan at a particular time.</p>
+          <ul>
+            <li>Use the amount field for a specified one-off repayment</li>
+            <li>Use the payment timing field to choose whether the payment happens at the start or end of the year</li>
+            <li>Check Year View &gt; Cash Flow and Year View &gt; Debt after saving</li>
+          </ul>
+        `,
+      },
+    },
+  },
  
 };
