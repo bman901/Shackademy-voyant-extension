@@ -1401,15 +1401,433 @@ window.SHACKADEMY_FIELDS = [
     `,
   },
 
-  //TODO: Stock Grant
-
   // ------------------------------------------------------------
   // SUB-CATEGORY: Stock Grant
   // ------------------------------------------------------------
 
   // ── Tab: Basics ──────────────────────────────────────────────
 
-  
+  {
+    key: "stockGrantInputOwnerLabel",
+    label: "Owner",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select the person this stock grant belongs to.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This should usually match the person whose employment created the grant.</li>
+        <li>Ownership affects how the grant flows through the plan and how tax is attributed.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "stockGrantNameInput",
+    label: "Grant Name",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Give the grant a clear name so it is easy to identify later.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Use something recognisable, such as the employer name, grant year, or scheme type.</li>
+        <li>For example: "ABC Ltd RSU 2026" or "EMI Options 2025".</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "grantTypeInput",
+    label: "Grant Type",
+    helpText: `
+      <h3>Basics tab</h3>
+      <p>Select the type of stock grant you are entering. Voyant uses this to model the grant and apply the relevant tax treatment.</p>
+
+      <h3>Options</h3>
+      <ul>
+        <li><strong>Restricted Stock Unit:</strong> shares that vest over time. There is normally no exercise price.</li>
+        <li><strong>Company Share Option:</strong> an option to buy shares at a specified exercise price.</li>
+        <li><strong>Enterprise Management Incentive (EMI):</strong> a UK tax-advantaged share option scheme, subject to qualifying conditions.</li>
+        <li><strong>Non Tax Advantage Share Option:</strong> a share option without the EMI-style tax advantages.</li>
+      </ul>
+
+      <h3>Future Grant tab</h3>
+      <p>On the Future Grant tab, this same field may be used to describe how future grants are calculated rather than the legal/tax type of the original grant.</p>
+
+      <h3>Future Grant options</h3>
+      <ul>
+        <li><strong>Percent of Salary:</strong> future grants are calculated as a percentage of salary.</li>
+        <li><strong>Number of Shares Granted:</strong> future grants are modelled as a fixed number of shares.</li>
+        <li><strong>Fixed Amount:</strong> future grants are modelled as a fixed monetary amount.</li>
+      </ul>
+
+      <h3>Tips</h3>
+      <ul>
+        <li>If you are unsure how Voyant links future grants to employment or salary, test this in Year View before relying on the output.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "currentValueInput",
+    label: "Current Price",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the current share price for the company stock.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This is the starting value Voyant uses when projecting future share growth.</li>
+        <li>If the share price is volatile, consider using a cautious or recent average rather than a peak value.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "stockGrantEmploymentId",
+    label: "Linked Employment",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Link the stock grant to the relevant employment entry.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This will usually be the job or employer that awarded the grant.</li>
+        <li>Linking the grant to employment will help Voyant align the grant with salary and employment timing.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "strikePriceInput",
+    label: "Exercise Price",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the price at which the shares can be purchased under the option.</p>
+      <h3>When this applies</h3>
+      <ul>
+        <li>This is relevant for option-based grants.</li>
+        <li>It does not usually apply to Restricted Stock Units, as RSUs normally vest rather than being exercised at a strike price.</li>
+      </ul>
+      <h3>Tips</h3>
+      <ul>
+        <li>The exercise price is important because it affects the cost of acquiring the shares.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "expiryPeriodInput",
+    label: "Expiry Period",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the period for which the option remains available before it expires.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This is mainly relevant for share options rather than RSUs.</li>
+        <li>Check the scheme rules or grant paperwork for the expiry period.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "allowEarlyExerciseInput",
+    label: "Allow Early Exercise",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select whether the grant allows shares to be exercised before they would otherwise fully vest.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Only use this if the scheme rules allow early exercise.</li>
+        <li>This is generally more relevant for options than RSUs.</li>
+        <li>If early exercise materially changes the tax position, check the modelling carefully.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "capGainsReliefApplies",
+    label: "Gains Qualify for Business Asset Disposal Relief",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Toggle this on only if the gains are expected to qualify for Business Asset Disposal Relief.</p>
+      <h3>When this may apply</h3>
+      <ul>
+        <li>This may be relevant for Enterprise Management Incentive options.</li>
+        <li>It may also be relevant for some non-tax-advantaged share options, depending on the circumstances.</li>
+      </ul>
+      <h3>Tips</h3>
+      <ul>
+        <li>Business Asset Disposal Relief depends on specific qualifying conditions.</li>
+        <li>Do not assume it applies just because the grant is an EMI or company option.</li>
+        <li>Confirm the tax position before relying on it.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "numberOfShares",
+    label: "Number of Shares Remaining",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the number of shares that have not yet vested.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This should reflect the remaining unvested portion of the grant.</li>
+        <li>If some shares have already vested, enter those separately in the Vested / Exercised Shares section.</li>
+        <li>Check the total against the original grant paperwork so you do not double count shares.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "vestPeriod",
+    label: "Remaining Vesting Period",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the remaining period over which the shares will vest.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This should reflect the vesting schedule from today onwards, not necessarily the original vesting period from the grant date.</li>
+        <li>For example, if a four-year grant is already two years through vesting, the remaining vesting period may be two years.</li>
+        <li>Check the timing in Year View to make sure the vesting appears when expected.</li>
+      </ul>
+    `,
+  },
+
+  // ── Tab: Growth ──────────────────────────────────────────────
+
+  {
+    key: "growthRateType",
+    label: "Grow this account by",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select how Voyant should project the future value of the shares.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This should broadly align with how you use growth assumptions elsewhere in the plan.</li>
+        <li>If using an entered growth rate, complete the Stock Growth Rate field.</li>
+        <li>Our suggestion is to use an entered growth rate as a starting point.</li>
+        <li>For employer shares, be careful about using overly optimistic assumptions.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "rateCapitalInputGrowthRate",
+    label: "Stock Growth Rate",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the assumed annual growth rate for the underlying company shares.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This assumption affects the projected value of vested, exercised, and future shares.</li>
+        <li>A cautious assumption may be more useful for planning than a best-case estimate.</li>
+        <li>You can test more optimistic or pessimistic assumptions using What If scenarios.</li>
+      </ul>
+    `,
+  },
+
+  // ── Tab: Exercise ──────────────────────────────────────────────
+
+  {
+    key: "exerciseTimingInput",
+    label: "Exercise Shares",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select when options should be exercised.</p>
+      <h3>Options</h3>
+      <ul>
+        <li><strong>At Vested:</strong> options are exercised when they vest.</li>
+        <li><strong>At Event:</strong> options are exercised at a selected timeline event.</li>
+      </ul>
+      <h3>Tips</h3>
+      <ul>
+        <li>This is generally not relevant for RSUs.</li>
+        <li>If you select At Event, make sure the Exercise Event is set correctly.</li>
+        <li>Check the cash flow impact, as exercising options may require cash or another funding method.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "exerciseEvent",
+    label: "Exercise Event",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select the timeline event that will trigger the exercise of the shares.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This field is relevant where Exercise Shares is set to At Event.</li>
+        <li>Using an event allows the exercise timing to move dynamically if the event changes.</li>
+        <li>Check the event timing carefully, especially if options have an expiry period.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "fundingMethodInput",
+    label: "Funding Method",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select how the cost of exercising the options will be funded.</p>
+      <h3>Options</h3>
+      <ul>
+        <li><strong>Take out a loan:</strong> the exercise cost is funded by borrowing.</li>
+        <li><strong>Purchase:</strong> the exercise cost is paid from available funds.</li>
+        <li><strong>Sell % of shares to fund purchase:</strong> enough shares are sold to help cover the exercise cost.</li>
+      </ul>
+      <h3>Tips</h3>
+      <ul>
+        <li>The funding method can change the cash flow impact of exercising options.</li>
+        <li>Where the funding choice creates tax or debt consequences, validate the result before relying on it.</li>
+      </ul>
+    `,
+  },
+
+  // ── Tab: Vested / Exercised Shares ──────────────────────────────────────────────
+
+  {
+    key: "numberOfSharesInput0",
+    label: "Number of Shares Vested",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the number of shares that have already vested.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Use this section for shares that are already vested or exercised at the start of the plan.</li>
+        <li>Do not include the same shares again in the future vesting schedule.</li>
+        <li>If there are multiple tranches, ensure these are added separately.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "vestedInput0",
+    label: "Vested?",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select whether this tranche of shares has vested.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Use Yes for shares where the vesting conditions have already been met.</li>
+        <li>Use No if the shares are listed here but have not yet vested.</li>
+        <li>Make sure this is consistent with the fair market value you enter for vesting.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "marketValueInput0",
+    label: "Fair Market Value",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the fair market value of the shares at vesting.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This is relevant for the vested shares shown in this row.</li>
+        <li>Use the value from the vesting date if known.</li>
+        <li>If the shares vested and were exercised at the same time, this may be the same as the exercise fair market value.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "exercisedInput0",
+    label: "Exercised?",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select whether this tranche of vested shares has already been exercised.</p>
+    `,
+  },
+
+  {
+    key: "exercisedValueInput0",
+    label: "Fair Market Value",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the fair market value of the shares at exercise.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This may be the same as the vesting fair market value if vesting and exercise happened at the same time.</li>
+        <li>If exercise happened later, you may need to use the value at the exercise date.</li>
+        <li>This value is important because it may affect the gain calculated on exercise.</li>
+      </ul>
+    `,
+  },
+
+  // ── Tab: Liquidation ──────────────────────────────────────────────
+
+  {
+    key: "liquidationTypeInput",
+    label: "Liquidation Type",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select how Voyant should sell or retain the shares once they are available.</p>
+      <h3>Options</h3>
+      <ul>
+        <li><strong>All available:</strong> sells all available shares according to the selected timing.</li>
+        <li><strong>Fixed amount (recurring):</strong> sells enough shares to generate a specified recurring cash amount.</li>
+        <li><strong>Number of shares remaining (recurring):</strong> sells a specified number of shares on a recurring basis.</li>
+        <li><strong>None:</strong> no planned liquidation is entered.</li>
+      </ul>
+      <h3>Tips</h3>
+      <ul>
+        <li>Use this to model whether shares are retained or sold over time.</li>
+        <li>If shares are retained, the plan may become more exposed to the employer share price.</li>
+        <li>Check Year View to confirm sales are appearing as expected.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "liquidationDollarsAmount",
+    label: "Amount",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the recurring cash amount to be generated from selling shares.</p>
+      <h3>When this applies</h3>
+      <ul>
+        <li>This applies when Liquidation Type is set to Fixed Amount (Recurring).</li>
+      </ul>
+      <h3>Tips</h3>
+      <ul>
+        <li>Voyant will need to sell enough shares to produce this amount, subject to the shares available.</li>
+        <li>Check the projected sales to make sure the account is not being depleted sooner than intended.</li>
+      </ul>
+    `,
+  },
+
+  {
+    key: "liquidationAmountInput",
+    label: "Shares",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the number of shares to sell on a recurring basis.</p>
+      <h3>When this applies</h3>
+      <ul>
+        <li>This applies when Liquidation Type is set to sell a recurring number of shares.</li>
+      </ul>
+      <h3>Tips</h3>
+      <ul>
+        <li>The cash generated will depend on the projected share price at each sale point.</li>
+        <li>Check the remaining share balance over time so the sales pattern matches your intention.</li>
+      </ul>
+    `,
+  },
+
+  // ── Tab: Future Grant ──────────────────────────────────────────────
+
+  {
+    key: "hasSubsequentGrants",
+    label: "Subsequent Grant Applies",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Toggle this on if further stock grants are expected in future years.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Use this for ongoing awards rather than the existing grant already entered above.</li>
+        <li>Future grants may be modelled as a percentage of salary, a number of shares, or a fixed amount depending on the option selected.</li>
+      </ul>
+    `,
+  },
 
   // ------------------------------------------------------------
   // SUB-CATEGORY: Property
