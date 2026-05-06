@@ -48,6 +48,11 @@ window.TAB_LABELS = {
   "linked-expenses":   "Linked Expenses",
   "linked-income":     "Linked Income",
   "linked-reverse-mortgage":      "Linked Equity Release",
+  "exercise":      "Exercise",
+  "vested-shares":      "Vested / Exercised Shares",
+  "future-vesting":      "Future Vesting",
+  "liquidation":      "Liquidation",
+  "future-grant":      "Future Grant",
 };
 
 window.TAB_DESCRIPTIONS = {
@@ -176,10 +181,8 @@ window.SHACKADEMY_SECTIONS = {
           <p>Use the "Only Use Preferred Sources" option very sparingly as it can create artificial shortfalls if the nominated account is insufficient.</p>
         `,
       },
-      "steps":  { description: `
-    <p>Steps allow you to model <strong>changes to this item at a future point in time</strong></p>
-    <p>Each step is triggered by a timeline event. You can add as many steps as needed to reflect how this item is expected to change throughout the plan.</p>
-  `  },
+      "steps":  { 
+        description: window.TAB_DESCRIPTIONS.steps,  },
     },
   },
  
@@ -238,14 +241,8 @@ window.SHACKADEMY_SECTIONS = {
           <p>This is where you enter <strong>income from employment</strong> - salary, bonuses, commissions, and benefits in kind. All figures should be entered <strong>gross</strong> (before tax and National Insurance). Voyant calculates the tax for you.</p>
         `,
       },
-      "timing": { description: `
-    <p>The Timing tab controls <strong>when this item starts and ends</strong> in your plan. Voyant uses timeline events - milestones you define, like Retirement or a specific age - rather than fixed calendar dates, so your plan stays dynamic as assumptions change.</p>
-    <p>Make sure the start and end events reflect your real expectations as accurately as possible, as they have a significant impact on your projections.</p>
-  ` },
-      "steps":  { description: `
-    <p>Steps allow you to model <strong>changes to this item at a future point in time</strong></p>
-    <p>Each step is triggered by a timeline event. You can add as many steps as needed to reflect how this item is expected to change throughout the plan.</p>
-  `  },
+      "timing": { description: window.TAB_DESCRIPTIONS.timing },
+      "steps":  { description: window.TAB_DESCRIPTIONS.steps,  },
     },
   },
 
@@ -265,14 +262,8 @@ window.SHACKADEMY_SECTIONS = {
           <p>Use the Taxation Type field to tell Voyant how to tax this income - as income, property income, capital gains, or dividends.</p>
         `,
       },
-      "timing":  { description: `
-    <p>The Timing tab controls <strong>when this item starts and ends</strong> in your plan. Voyant uses timeline events - milestones you define, like Retirement or a specific age - rather than fixed calendar dates, so your plan stays dynamic as assumptions change.</p>
-    <p>Make sure the start and end events reflect your real expectations as accurately as possible, as they have a significant impact on your projections.</p>
-  `  },
-      "steps":   { description: `
-    <p>Steps allow you to model <strong>changes to this item at a future point in time</strong></p>
-    <p>Each step is triggered by a timeline event. You can add as many steps as needed to reflect how this item is expected to change throughout the plan.</p>
-  `   },
+      "timing": { description: window.TAB_DESCRIPTIONS.timing },
+      "steps":   { description: window.TAB_DESCRIPTIONS.steps,   },
     },
   },
 
@@ -295,10 +286,7 @@ window.SHACKADEMY_SECTIONS = {
           </ul>
         `,
       },
-      "timing": { description: `
-    <p>The Timing tab controls <strong>when this item starts and ends</strong> in your plan. Voyant uses timeline events - milestones you define, like Retirement or a specific age - rather than fixed calendar dates, so your plan stays dynamic as assumptions change.</p>
-    <p>Make sure the start and end events reflect your real expectations as accurately as possible, as they have a significant impact on your projections.</p>
-  ` },
+      "timing": { description: window.TAB_DESCRIPTIONS.timing },
     },
   },
 
@@ -332,43 +320,11 @@ window.SHACKADEMY_SECTIONS = {
           </ul>
         `,
       },
-      "fees":         { description: `
-    <p>The Fees tab lets you model <strong>product fees and advice fees</strong> associated with this account.</p>
-    <ul>
-      <li><strong>Product fee</strong> - deducted from the gross growth rate.</li>
-      <li><strong>Ongoing advice fee</strong> - modelled as a withdrawal from the account. Will generate a tax event where applicable (e.g. Capital Gains Tax for unwrapped investments).</li>
-    </ul>
-    <p>Ensure the entered growth rate factors in any account fees. For example, if using the default growth rate of 5% you may want to gross this up to offset the fee reduction.</p>
-  `         },
-      "steps":        { description: `
-    <p>Steps allow you to model <strong>changes to this item at a future point in time</strong></p>
-    <p>Each step is triggered by a timeline event. You can add as many steps as needed to reflect how this item is expected to change throughout the plan.</p>
-  `        },
-      "transfers":        { description: `
-    <p>The Transfers tab is where you model <strong>one-off or regular movements of money between accounts</strong> already in your plan - for example, moving funds from a savings account into an ISA, or from one pension to another.</p>
-    <p>Transfers do not create new income or expenses - they simply redistribute existing assets within the plan. This is useful for modelling tax-efficient restructuring, such as ISA bed-and-ISA transactions or pension consolidations.</p>
-    <ul>
-      <li>Both the source and destination accounts must already exist in the plan before setting up a transfer</li>
-      <li>Transfers are linked to timeline events so you can model them at a specific future date</li>
-      <li>Transfers can also be used to invest surplus income by selecting 'All Surplus' as the 'Transfer From' account</li>
-      <li>Check Year View after saving to confirm the source and destination balances move as expected</li>
-    </ul>
-  `        },
-      "drawdowns":           { description: `
-    <p>Planned Withdrawals are <strong>scheduled withdrawals from a specific account</strong> that happen regardless of whether there is a shortfall to meet. This is different from the Withdrawal Limit tab, which only controls ad hoc access when income falls short.</p>
-    <p>Use Planned Withdrawals when you want to model a deliberate strategy - for example, drawing a fixed annual income from a drawdown pension, or systematically running down an investment account over a set period.</p>
-    <ul>
-      <li>The 'Selected Account' will default to the plan you were in when you chose to add a planned withdrawal</li>
-      <li>For pension planned withdrawals, the Pension Strategy field on the pension entry determines whether withdrawals are UFPLS or Flexible Access Drawdown</li>
-      <li>Check Year View > Cash Flow to confirm the withdrawal is appearing correctly</li>
-    </ul>
-  `          },
-      "liquidation-limits":  { description: `
-    <p>The Withdrawal Limit tab controls <strong>how and when Voyant is allowed to access this account</strong> to meet expenses when other income falls short.</p>
-    <p>Ensure the timing reflects when you want to allow access to this account</p>
-    <p>The default setting is <em>As Needed</em>, meaning Voyant will draw from this account according to the liquidation order. You can restrict this - for example, to ringfence an emergency fund or prevent access until a specific life event.</p>
-    <p>Note: withdrawal limits control <em>ad hoc</em> access. To model a planned, scheduled withdrawal regardless of whether it is needed, use the Planned Withdrawals screen instead.</p>
-  ` },
+      "fees": { description: window.TAB_DESCRIPTIONS.fees },
+      "steps":        { description: window.TAB_DESCRIPTIONS.steps,  },
+      "transfers": { description: window.TAB_DESCRIPTIONS.transfers },
+      "drawdowns": { description: window.TAB_DESCRIPTIONS.drawdowns },
+      "liquidation-limits": { description: window.TAB_DESCRIPTIONS["liquidation-limits"] },
     },
   },
 
@@ -394,13 +350,7 @@ window.SHACKADEMY_SECTIONS = {
           <p>For investment bonds, make sure you enter the Purchase Value and Year Purchased accurately as these affect tax calculations.</p>
         `,
       },
-      "growth":       { description: `
-    <p>The Growth tab sets the <strong>assumed annual rate of return</strong> for this item. Voyant uses this to project its future value over time.</p>
-    <p>If left unchanged, Voyant uses the default growth assumption from Plan Settings. You can override it here for this specific item.</p>
-    <p>Please note, once a plan is created this is the only place to update growth sessions - the Plan Settings will only impact <strong>new</strong> plans created.</p>
-    <p>Consider using a cautious assumption as your base case, and model a more optimistic scenario using a What If scenario to understand the range of possible outcomes.</p>
-    <p>Our suggestion is to leave this on the default Entered Growth Rate until you're comfortable with Voyant.</p>
-  `       },
+      "growth": { description: window.TAB_DESCRIPTIONS.growth },
       "contribution": { description: `
         <p>The Contribution tab is where you set up <strong>regular or one-off payments into this account</strong>. Contributions come from surplus income in the plan — money left over after expenses have been met.</p>
         <p>You can enter contributions as a fixed amount, an amount that rises with inflation, or as a percentage of income. Check Year View > Expenses to verify contributions are being modelled correctly.</p>
@@ -414,43 +364,11 @@ window.SHACKADEMY_SECTIONS = {
           </ul>
         `,
       },
-      "fees":         { description: `
-    <p>The Fees tab lets you model <strong>product fees and advice fees</strong> associated with this account.</p>
-    <ul>
-      <li><strong>Product fee</strong> - deducted from the gross growth rate.</li>
-      <li><strong>Ongoing advice fee</strong> - modelled as a withdrawal from the account. Will generate a tax event where applicable (e.g. Capital Gains Tax for unwrapped investments).</li>
-    </ul>
-    <p>Ensure the entered growth rate factors in any account fees. For example, if using the default growth rate of 5% you may want to gross this up to offset the fee reduction.</p>
-  `         },
-      "steps":        { description: `
-    <p>Steps allow you to model <strong>changes to this item at a future point in time</strong></p>
-    <p>Each step is triggered by a timeline event. You can add as many steps as needed to reflect how this item is expected to change throughout the plan.</p>
-  `        },
-      "transfers":        { description: `
-    <p>The Transfers tab is where you model <strong>one-off or regular movements of money between accounts</strong> already in your plan - for example, moving funds from a savings account into an ISA, or from one pension to another.</p>
-    <p>Transfers do not create new income or expenses - they simply redistribute existing assets within the plan. This is useful for modelling tax-efficient restructuring, such as ISA bed-and-ISA transactions or pension consolidations.</p>
-    <ul>
-      <li>Both the source and destination accounts must already exist in the plan before setting up a transfer</li>
-      <li>Transfers are linked to timeline events so you can model them at a specific future date</li>
-      <li>Transfers can also be used to invest surplus income by selecting 'All Surplus' as the 'Transfer From' account</li>
-      <li>Check Year View after saving to confirm the source and destination balances move as expected</li>
-    </ul>
-  `        },
-      "drawdowns":           { description: `
-    <p>Planned Withdrawals are <strong>scheduled withdrawals from a specific account</strong> that happen regardless of whether there is a shortfall to meet. This is different from the Withdrawal Limit tab, which only controls ad hoc access when income falls short.</p>
-    <p>Use Planned Withdrawals when you want to model a deliberate strategy - for example, drawing a fixed annual income from a drawdown pension, or systematically running down an investment account over a set period.</p>
-    <ul>
-      <li>The 'Selected Account' will default to the plan you were in when you chose to add a planned withdrawal</li>
-      <li>For pension planned withdrawals, the Pension Strategy field on the pension entry determines whether withdrawals are UFPLS or Flexible Access Drawdown</li>
-      <li>Check Year View > Cash Flow to confirm the withdrawal is appearing correctly</li>
-    </ul>
-  `          },
-      "liquidation-limits":  { description: `
-    <p>The Withdrawal Limit tab controls <strong>how and when Voyant is allowed to access this account</strong> to meet expenses when other income falls short.</p>
-    <p>Ensure the timing reflects when you want to allow access to this account</p>
-    <p>The default setting is <em>As Needed</em>, meaning Voyant will draw from this account according to the liquidation order. You can restrict this - for example, to ringfence an emergency fund or prevent access until a specific life event.</p>
-    <p>Note: withdrawal limits control <em>ad hoc</em> access. To model a planned, scheduled withdrawal regardless of whether it is needed, use the Planned Withdrawals screen instead.</p>
-  ` },
+      "fees": { description: window.TAB_DESCRIPTIONS.fees },
+      "steps":        { description: window.TAB_DESCRIPTIONS.steps,   },
+      "transfers": { description: window.TAB_DESCRIPTIONS.transfers },
+      "drawdowns": { description: window.TAB_DESCRIPTIONS.drawdowns },
+      "liquidation-limits": { description: window.TAB_DESCRIPTIONS["liquidation-limits"] },
     },
   },
 
@@ -484,10 +402,7 @@ window.SHACKADEMY_SECTIONS = {
           <p>Check out the linked lesson to understand how to include Stamp Duty Land Tax.</p>
         `,
       },
-      "steps":        { description: `
-    <p>Steps allow you to model <strong>changes to this item at a future point in time</strong></p>
-    <p>Each step is triggered by a timeline event. You can add as many steps as needed to reflect how this item is expected to change throughout the plan.</p>
-  `        },
+      "steps":        { description: window.TAB_DESCRIPTIONS.steps,     },
       "linked-debts": {
         description: `
           <p>The Linked Debts tab lets you link an existing debt or create a new one.</p>
@@ -536,21 +451,8 @@ window.SHACKADEMY_SECTIONS = {
           </ul>
         `,
       },
-      "growth":       { description: `
-    <p>The Growth tab sets the <strong>assumed annual rate of return</strong> for this item. Voyant uses this to project its future value over time.</p>
-    <p>If left unchanged, Voyant uses the default growth assumption from Plan Settings. You can override it here for this specific item.</p>
-    <p>Please note, once a plan is created this is the only place to update growth sessions - the Plan Settings will only impact <strong>new</strong> plans created.</p>
-    <p>Consider using a cautious assumption as your base case, and model a more optimistic scenario using a What If scenario to understand the range of possible outcomes.</p>
-    <p>Our suggestion is to leave this on the default Entered Growth Rate until you're comfortable with Voyant.</p>
-  `       },
-      "fees":         { description: `
-    <p>The Fees tab lets you model <strong>product fees and advice fees</strong> associated with this account.</p>
-    <ul>
-      <li><strong>Product fee</strong> - deducted from the gross growth rate.</li>
-      <li><strong>Ongoing advice fee</strong> - modelled as a withdrawal from the account. Will generate a tax event where applicable (e.g. Capital Gains Tax for unwrapped investments).</li>
-    </ul>
-    <p>Ensure the entered growth rate factors in any account fees. For example, if using the default growth rate of 5% you may want to gross this up to offset the fee reduction.</p>
-  `         },
+      "growth": { description: window.TAB_DESCRIPTIONS.growth },
+      "fees": { description: window.TAB_DESCRIPTIONS.fees },
       "timing": {
         description: `
           <p>The Timing tab controls <strong>when contributions are allowed</strong> in this plan. Voyant uses timeline events - milestones you define, like Retirement or a specific age - rather than fixed calendar dates, so your plan stays dynamic as assumptions change.</p>
@@ -560,10 +462,7 @@ window.SHACKADEMY_SECTIONS = {
           </ul>
         `,
       },
-      "steps":        { description: `
-    <p>Steps allow you to model <strong>changes to this item at a future point in time</strong></p>
-    <p>Each step is triggered by a timeline event. You can add as many steps as needed to reflect how this item is expected to change throughout the plan.</p>
-  `        },
+      "steps":        { description: window.TAB_DESCRIPTIONS.steps,    },
       "crystallisations": {
         description: `
           <p>The Crystallisations tab allows you to model <strong>specific pension crystallisation events</strong> - the point at which pension benefits are formally accessed and tax-free cash is taken.</p>
@@ -577,31 +476,9 @@ window.SHACKADEMY_SECTIONS = {
           <p>Refer to the tooltip for more details on the options available.</p>
         `,
       },
-      "transfers":        { description: `
-    <p>The Transfers tab is where you model <strong>one-off or regular movements of money between accounts</strong> already in your plan - for example, moving funds from a savings account into an ISA, or from one pension to another.</p>
-    <p>Transfers do not create new income or expenses - they simply redistribute existing assets within the plan. This is useful for modelling tax-efficient restructuring, such as ISA bed-and-ISA transactions or pension consolidations.</p>
-    <ul>
-      <li>Both the source and destination accounts must already exist in the plan before setting up a transfer</li>
-      <li>Transfers are linked to timeline events so you can model them at a specific future date</li>
-      <li>Transfers can also be used to invest surplus income by selecting 'All Surplus' as the 'Transfer From' account</li>
-      <li>Check Year View after saving to confirm the source and destination balances move as expected</li>
-    </ul>
-  `        },
-      "liquidation-limits":  { description: `
-    <p>The Withdrawal Limit tab controls <strong>how and when Voyant is allowed to access this account</strong> to meet expenses when other income falls short.</p>
-    <p>Ensure the timing reflects when you want to allow access to this account</p>
-    <p>The default setting is <em>As Needed</em>, meaning Voyant will draw from this account according to the liquidation order. You can restrict this - for example, to ringfence an emergency fund or prevent access until a specific life event.</p>
-    <p>Note: withdrawal limits control <em>ad hoc</em> access. To model a planned, scheduled withdrawal regardless of whether it is needed, use the Planned Withdrawals screen instead.</p>
-  ` },
-      "drawdowns":           { description: `
-    <p>Planned Withdrawals are <strong>scheduled withdrawals from a specific account</strong> that happen regardless of whether there is a shortfall to meet. This is different from the Withdrawal Limit tab, which only controls ad hoc access when income falls short.</p>
-    <p>Use Planned Withdrawals when you want to model a deliberate strategy - for example, drawing a fixed annual income from a drawdown pension, or systematically running down an investment account over a set period.</p>
-    <ul>
-      <li>The 'Selected Account' will default to the plan you were in when you chose to add a planned withdrawal</li>
-      <li>For pension planned withdrawals, the Pension Strategy field on the pension entry determines whether withdrawals are UFPLS or Flexible Access Drawdown</li>
-      <li>Check Year View > Cash Flow to confirm the withdrawal is appearing correctly</li>
-    </ul>
-  `          },
+      "transfers": { description: window.TAB_DESCRIPTIONS.transfers },
+      "liquidation-limits": { description: window.TAB_DESCRIPTIONS["liquidation-limits"] },
+      "drawdowns": { description: window.TAB_DESCRIPTIONS.drawdowns },
       "annuity": {
         description: `
           <p>The Annuitization tab allows you to model the <strong>conversion of some or all of this pension pot into a guaranteed annuity income</strong> at a future point.</p>
@@ -690,46 +567,17 @@ window.SHACKADEMY_SECTIONS = {
           </ul>
         `,
       },
-      "growth":              { description: `
-    <p>The Growth tab sets the <strong>assumed annual rate of return</strong> for this item. Voyant uses this to project its future value over time.</p>
-    <p>If left unchanged, Voyant uses the default growth assumption from Plan Settings. You can override it here for this specific item.</p>
-    <p>Please note, once a plan is created this is the only place to update growth sessions - the Plan Settings will only impact <strong>new</strong> plans created.</p>
-    <p>Consider using a cautious assumption as your base case, and model a more optimistic scenario using a What If scenario to understand the range of possible outcomes.</p>
-    <p>Our suggestion is to leave this on the default Entered Growth Rate until you're comfortable with Voyant.</p>
-  `             },
-      "fees":                { description: `
-    <p>The Fees tab lets you model <strong>product fees and advice fees</strong> associated with this account.</p>
-    <ul>
-      <li><strong>Product fee</strong> - deducted from the gross growth rate.</li>
-      <li><strong>Ongoing advice fee</strong> - modelled as a withdrawal from the account. Will generate a tax event where applicable (e.g. Capital Gains Tax for unwrapped investments).</li>
-    </ul>
-    <p>Ensure the entered growth rate factors in any account fees. For example, if using the default growth rate of 5% you may want to gross this up to offset the fee reduction.</p>
-  `               },
+      "growth": { description: window.TAB_DESCRIPTIONS.growth },
+      "fees": { description: window.TAB_DESCRIPTIONS.fees },
       "beneficiaries": {
         description: `
           <p>The Beneficiaries tab reflects what happens to your pension when you die.</p>
           <p>Refer to the tooltip for more details on the options available.</p>
         `,
       },
-      "steps":               { description: `
-    <p>Steps allow you to model <strong>changes to this item at a future point in time</strong></p>
-    <p>Each step is triggered by a timeline event. You can add as many steps as needed to reflect how this item is expected to change throughout the plan.</p>
-  `             },
-      "liquidation-limits":  { description: `
-    <p>The Withdrawal Limit tab controls <strong>how and when Voyant is allowed to access this account</strong> to meet expenses when other income falls short.</p>
-    <p>Ensure the timing reflects when you want to allow access to this account</p>
-    <p>The default setting is <em>As Needed</em>, meaning Voyant will draw from this account according to the liquidation order. You can restrict this - for example, to ringfence an emergency fund or prevent access until a specific life event.</p>
-    <p>Note: withdrawal limits control <em>ad hoc</em> access. To model a planned, scheduled withdrawal regardless of whether it is needed, use the Planned Withdrawals screen instead.</p>
-  ` },
-      "drawdowns":           { description: `
-    <p>Planned Withdrawals are <strong>scheduled withdrawals from a specific account</strong> that happen regardless of whether there is a shortfall to meet. This is different from the Withdrawal Limit tab, which only controls ad hoc access when income falls short.</p>
-    <p>Use Planned Withdrawals when you want to model a deliberate strategy - for example, drawing a fixed annual income from a drawdown pension, or systematically running down an investment account over a set period.</p>
-    <ul>
-      <li>The 'Selected Account' will default to the plan you were in when you chose to add a planned withdrawal</li>
-      <li>For pension planned withdrawals, the Pension Strategy field on the pension entry determines whether withdrawals are UFPLS or Flexible Access Drawdown</li>
-      <li>Check Year View > Cash Flow to confirm the withdrawal is appearing correctly</li>
-    </ul>
-  `          },
+      "steps":               { description: window.TAB_DESCRIPTIONS.steps,    },
+      "liquidation-limits": { description: window.TAB_DESCRIPTIONS["liquidation-limits"] },
+      "drawdowns": { description: window.TAB_DESCRIPTIONS.drawdowns },
       "annuity": {
         description: `
           <p>The Annuitization tab allows you to model the <strong>conversion of some or all of this pension pot into a guaranteed annuity income</strong> at a future point.</p>
@@ -759,6 +607,128 @@ window.SHACKADEMY_SECTIONS = {
           </ul>
         `,
       },
+    },
+  },
+
+  // ============================================================
+  // Stock Grant
+  // ============================================================
+
+  "stock-grant": {
+    name: "Stock Grant",
+    typeIndicator: "stockGrantInputOwnerLabel",
+    lessons: [],
+
+    tabs: {
+
+      "basics": {
+        description: `
+          <p>This is where you model <strong>share-based compensation</strong> such as Restricted Stock Units (RSUs) and share options.</p>
+
+          <p>The key inputs here determine <strong>how the grant behaves over time</strong> - including how it vests, whether it can be exercised, and how it links to your employment.</p>
+
+          <ul>
+            <li><strong>Grant Type</strong> affects how the grant is treated and whether an exercise price applies</li>
+            <li><strong>Current Price</strong> and <strong>Growth</strong> assumptions drive the future value of the shares</li>
+            <li><strong>Linked Employment</strong> helps align the grant with your working timeline</li>
+          </ul>
+
+          <p>Stock grants can be complex, particularly where tax treatment differs between grant types. Use cautious assumptions and check outputs carefully in Year View.</p>
+        `,
+      },
+
+      "growth": {
+        description: `
+          <p>The Growth tab controls <strong>how the underlying share price is projected over time</strong>.</p>
+
+          <p>This has a direct impact on the value of both vested and unvested shares, and therefore on your overall financial position.</p>
+
+          <ul>
+            <li><strong>Growth Rate Type</strong> determines how returns are applied</li>
+            <li><strong>Stock Growth Rate</strong> sets the assumed annual increase in share value</li>
+          </ul>
+
+          <p>Be cautious when setting growth assumptions for employer shares. These are often <strong>highly concentrated and volatile</strong>, so using conservative estimates can give a more realistic planning outcome.</p>
+        `,
+      },
+
+      "exercise": {
+        description: `
+          <p>The Exercise tab applies to <strong>option-based grants</strong> and controls when and how shares are exercised.</p>
+
+          <p>Exercising an option means purchasing shares at the exercise price. This can create both a <strong>cashflow requirement</strong> and a <strong>taxable event</strong>, depending on the scheme.</p>
+
+          <ul>
+            <li><strong>Exercise Timing</strong> determines whether options are exercised at vesting or at a chosen event</li>
+            <li><strong>Funding Method</strong> controls how the cost of exercise is covered</li>
+          </ul>
+
+          <p>If exercise timing or funding has a material impact, check the results in Year View to confirm the behaviour matches your expectations.</p>
+        `,
+      },
+
+      "vested-shares": {
+        description: `
+          <p>This section captures <strong>shares that have already vested or been exercised</strong> at the start of the plan.</p>
+
+          <p>This allows you to reflect your current position accurately before modelling future vesting and exercise.</p>
+
+          <ul>
+            <li>Enter shares that are already <strong>vested</strong> or <strong>exercised</strong></li>
+            <li>Include the <strong>fair market value</strong> at vesting or exercise where relevant</li>
+          </ul>
+
+          <p>Make sure these shares are not duplicated in the Future Vesting Schedule, as this would overstate your holdings.</p>
+        `,
+      },
+
+      "future-vesting": {
+        description: `
+          <p>The Future Vesting Schedule models <strong>how unvested shares become available over time</strong>.</p>
+
+          <p>Vesting determines when shares move from being conditional to being fully owned. Until shares vest, they are typically not accessible or realisable.</p>
+
+          <ul>
+            <li><strong>Number of Shares Remaining</strong> in the 'Basics' tab reflects the unvested portion of the grant</li>
+            <li><strong>Remaining Vesting Period</strong> in the 'Basics' tab spreads vesting across future years</li>
+            <li>You can use <strong>Estimate Schedule</strong> to provide a starting point</li>
+          </ul>
+
+          <p>Voyant uses this information to introduce shares into your plan gradually. Check the timing carefully to ensure vesting aligns with your expectations.</p>
+        `,
+      },
+
+      "liquidation": {
+        description: `
+          <p>The Liquidation tab controls <strong>how and when shares are sold</strong> once they are available.</p>
+
+          <p>This determines whether shares are retained for growth or converted into cash to support spending.</p>
+
+          <ul>
+            <li><strong>Sell all available</strong> will realise all shares at a chosen event</li>
+            <li><strong>Recurring strategies</strong> allow you to model ongoing income from share sales</li>
+            <li><strong>None</strong> means shares are retained unless accessed elsewhere</li>
+          </ul>
+
+          <p>Check the impact in Year View to ensure sales occur at the expected times and that the remaining share balance behaves as intended.</p>
+        `,
+      },
+
+      "future-grant": {
+        description: `
+          <p>The Future Grant tab allows you to model <strong>ongoing or additional stock awards</strong> beyond the current grant.</p>
+
+          <p>This is useful where stock-based compensation is expected to continue, such as annual RSU awards or recurring option grants.</p>
+
+          <ul>
+            <li>Grants can be modelled as a <strong>percentage of salary</strong>, a <strong>fixed number of shares</strong>, or a <strong>fixed value</strong></li>
+            <li>This helps project how future compensation may build over time</li>
+          </ul>
+        `,
+      },
+
+      "steps": { description: window.TAB_DESCRIPTIONS.steps },
+
     },
   },
  
