@@ -55,6 +55,7 @@ window.TAB_LABELS = {
   "future-grant":       "Future Grant",
   "onetime-payments":   "One Time Payments",
   "links":              "Linked Property",
+  "debt-payouts":       "Debt Payouts",
 };
 
 window.TAB_DESCRIPTIONS = {
