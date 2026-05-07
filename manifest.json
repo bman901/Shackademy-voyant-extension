@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "Adds field-level guidance and Shackademy lesson links to Voyant financial planning software. For Shackademy members only.",
   "homepage_url": "https://shackademy.com/privacy",
-  "permissions": ["activeTab", "scripting", "storage"],
+  "permissions": ["activeTab", "storage"],
   "background": {
     "service_worker": "background.js"
   },
