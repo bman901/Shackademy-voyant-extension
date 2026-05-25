@@ -357,7 +357,7 @@
           <span>Shackademy</span>
         </div>
         <div style="display:flex;gap:6px;align-items:center;">
-          <button id="shackademy-pin-btn" aria-label="Pin panel" title="Pin panel">📍</button>
+          <button id="shackademy-pin-btn" aria-label="Pin panel" title="Pin panel">📌</button>
           <button id="shackademy-panel-close" aria-label="Close panel">&times;</button>
         </div>
       </div>

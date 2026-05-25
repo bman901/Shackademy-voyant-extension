@@ -309,7 +309,7 @@ window.SHACKADEMY_SECTIONS = {
           <p>The account type matters for tax purposes:</p>
           <ul>
             <li><strong>Current/savings accounts</strong> - interest is taxable</li>
-            <li><strong>Cash ISA</strong> - tax-free; contributions limited to the annual ISA allowance (£20,000 for 2025/26)</li>
+            <li><strong>Cash ISA</strong> - tax-free; contributions limited to the annual ISA allowance</li>
             <li><strong>National Savings Certificate</strong> - tax-free; Voyant applies no contribution limit</li>
           </ul>
           <p>When income falls short of expenses, Voyant draws on savings according to the liquidation order. Check Dashboard > Plan Settings > Liquidation Order to see and adjust this.</p>
