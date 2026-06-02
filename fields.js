@@ -999,7 +999,6 @@ window.SHACKADEMY_FIELDS = [
         <li>The easiest way to approach this is to update your account balances in October and April each year</li>
         <li><a href="https://shackademy.com/path-player?courseid=voyant&unit=68e5b24f932f5484590240fdUnit" target="_blank">Our lesson on how plan years are updated is here</a></li>
       </ul>
-      <br>
       <h3>Additional Notes</h3>
       <ul>
         <li><strong>VCT/EIS</strong> - Enter the balance as at the start of the plan if the investment is an existing investment. For new purchases leave the balance at £0</li>
