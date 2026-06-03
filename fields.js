@@ -1088,7 +1088,7 @@ window.SHACKADEMY_FIELDS = [
     `,
   },
   {
-    key: "investmentIhtExemptionApplies",
+    key: "ihtExemptionApplies",
     label: "Qualifies for IHT Relief (BPR/APR)",
     helpText: `
       <h3>What to enter</h3>
@@ -1909,7 +1909,7 @@ window.SHACKADEMY_FIELDS = [
     `,
   },
   {
-    key: "propertyInputGrowthRate",
+    key: "propertyGrowthLabel",
     label: "Growth Rate",
     helpText: `
       <h3>What to enter</h3>
@@ -1923,7 +1923,22 @@ window.SHACKADEMY_FIELDS = [
     `,
   },
   {
-    key: "propertyInputQualifiesForMainResidenceIht",
+    key: "propertyPresentFutureValue",
+    label: "Market Value entered as",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select how the property purchase should be reflected.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>If this is an <strong>existing property</strong>, you can <strong>ignore this field</strong> - just leave it as 'present value'</li>  
+        <li>For a <strong>future purchase</strong>, this determines whether the purchase price is treated as a present value or future value.</li>
+        <li>Use Present Value where the purchase price is expressed in today's money and should be adjusted over time.</li>
+        <li>Use Future Value where the purchase price is already the value expected at the relevant future date.</li>
+      </ul>
+    `,
+  },
+  {
+    key: "mainResidenceIhtExemptionApplies",
     label: "Qualifies for Main Residence IHT Exemption",
     helpText: `
       <h3>What to enter</h3>
