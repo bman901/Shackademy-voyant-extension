@@ -1896,7 +1896,7 @@ window.SHACKADEMY_FIELDS = [
     `,
   },
   {
-    key: "propertyInputIsFuturePurchase",
+    key: "propertyInputNewPurchase",
     label: "Is this a Future Purchase?",
     helpText: `
       <h3>What to enter</h3>

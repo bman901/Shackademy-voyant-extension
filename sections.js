@@ -69,7 +69,7 @@ window.TAB_DESCRIPTIONS = {
   growth: `
     <p>The Growth tab sets the <strong>assumed annual rate of return</strong> for this item. Voyant uses this to project its future value over time.</p>
     <p>If left unchanged, Voyant uses the default growth assumption from Plan Settings. You can override it here for this specific item.</p>
-    <p>Please note, once a plan is created this is the only place to update growth sessions - the Plan Settings will only impact <strong>new</strong> plans created.</p>
+    <p>Please note, once a plan is created this is the only place to update growth assumptions - the Plan Settings will only impact <strong>new</strong> plans created.</p>
     <p>Consider using a cautious assumption as your base case, and model a more optimistic scenario using a What If scenario to understand the range of possible outcomes.</p>
     <p>Our suggestion is to leave this on the default Entered Growth Rate until you're comfortable with Voyant.</p>
   `,
@@ -90,7 +90,7 @@ window.TAB_DESCRIPTIONS = {
 
   transfers: `
     <p>The Transfers tab is where you model <strong>one-off or regular movements of money between accounts</strong> already in your plan - for example, moving funds from a savings account into an ISA, or from one pension to another.</p>
-    <p>Transfers do not create new income or expenses - they simply redistribute existing assets within the plan. This is useful for modelling tax-efficient restructuring, such as ISA bed-and-ISA transactions or pension consolidations.</p>
+    <p>Transfers do not create new income or expenses - they simply redistribute existing assets within the plan.</p>
     <ul>
       <li>Both the source and destination accounts must already exist in the plan before setting up a transfer</li>
       <li>Transfers are linked to timeline events so you can model them at a specific future date</li>
@@ -135,7 +135,8 @@ window.SHACKADEMY_SECTIONS = {
       "basics": {
         description: `
           <p>This is where you set up the <strong>people in your financial plan</strong>. Every plan needs at least one person - the plan owner - and you can add a partner or spouse as a second person.</p>
-          <p>Getting the basics right here is important as Voyant uses this information - particularly date of birth and retirement age - throughout all projections. Tax allowances, State Pension timing, and pension access ages are all calculated from these details.</p>
+          <p>Getting the basics right here is important as Voyant uses this information - particularly date of birth and retirement age - throughout all projections.</p>
+          <p>Information such as tax allowances, State Pension timing and pension access ages may be modelled using these details.</p>
           <p>If you are planning for yourself, you are the plan owner. Add your partner as a second person if you want to model your finances jointly.</p>
         `,
       },
@@ -155,7 +156,7 @@ window.SHACKADEMY_SECTIONS = {
       "basics": {
         description: `
           <p>Goals are how you model <strong>expenses and financial objectives</strong> in your plan - anything from school fees and holidays to home renovations or retirement spending. Each goal is an expense that Voyant will try to meet from your income and assets.</p>
-          <p>Enter goals with a realistic annual amount and let Voyant show you whether your plan can afford them. If a goal creates a shortfall, you can explore alternatives using What If scenarios.</p>
+          <p>Enter an annual amount and use the model to assess the impact on your plan. If a goal creates a shortfall, you can explore alternatives using What If scenarios.</p>
           <ul>
             <li>Use a name that's meaningful to you - it will appear on the timeline and in reports</li>
             <li>Check Year View > Expenses after saving to confirm the goal is appearing correctly</li>
@@ -180,7 +181,7 @@ window.SHACKADEMY_SECTIONS = {
       },
       "payment sources": {
         description: `
-          <p>The Payment Sources tab lets you specify <strong>which account or asset Voyant should use to pay for this goal</strong>. By default, Voyant will use whatever is available according to the liquidation order.</p>
+          <p>The Payment Sources tab lets you specify <strong>which account or asset Voyant should use to pay for this goal</strong>. By default, Voyant will use whatever is available according to the liquidation order specified in plan settings.</p>
           <p>Use this tab if you want a specific account to fund a specific goal - for example, using a dedicated savings account for school fees.</p>
           <p>Use the "Only Use Preferred Sources" option very sparingly as it can create artificial shortfalls if the nominated account is insufficient.</p>
         `,
@@ -202,7 +203,7 @@ window.SHACKADEMY_SECTIONS = {
       "basics": {
         description: `
           <p>Events are <strong>milestones on your timeline</strong> - named points in time that Voyant uses to trigger changes in your plan. Retirement, buying a property, children leaving home, or starting a business are all examples of events.</p>
-          <p>Rather than working with fixed calendar dates, Voyant links items in your plan to events. This means if you change when an event happens, everything connected to it updates automatically - making it much easier to model "what if I retire two years earlier?"</p>
+          <p>Rather than working with fixed calendar dates, Voyant links items in your plan to events. This means if you change when an event happens, everything connected to it updates automatically - making it much easier to model scenarios like "what if I retire two years earlier?"</p>
           <ul>
             <li>Use descriptive names - "Jane Retires" is much clearer than "Event 1"</li>
             <li>Events can be positioned by year or by the owner's age - both update each other automatically</li>
@@ -220,7 +221,7 @@ window.SHACKADEMY_SECTIONS = {
       "basics": {
         description: `
           <p>Stages are <strong>labelled bands on your timeline</strong> that visually organise your plan into distinct life phases - such as "Working Years", "Early Retirement", or "Later Life".</p>
-          <p>Stages are purely visual and don't affect any calculations, but they make your plan much easier to read and discuss. They are bounded by Events on the timeline, so set up your Events first and use Stages to label the periods between them.</p>
+          <p>Stages are purely visual and don't affect any calculations, but they can make your plan easier to read and discuss. They are bounded by Events on the timeline, so set up your Events first and use Stages to label the periods between them.</p>
           <ul>
             <li>Use consistent colour schemes across What If scenarios to keep plans easy to compare</li>
             <li>Common stage names: Working Years, Pre-Retirement, Early Retirement, Later Life, Children at Home</li>
@@ -242,7 +243,7 @@ window.SHACKADEMY_SECTIONS = {
     tabs: {
       "basics": {
         description: `
-          <p>This is where you enter <strong>income from employment</strong> - salary, bonuses, commissions, and benefits in kind. All figures should be entered <strong>gross</strong> (before tax and National Insurance). Voyant calculates the tax for you.</p>
+          <p>This is where you enter <strong>income from employment</strong> - salary, bonuses, commissions, and benefits in kind. All figures should be entered <strong>gross</strong> (before tax and National Insurance).</p>
         `,
       },
       "timing": { description: window.TAB_DESCRIPTIONS.timing },
@@ -283,10 +284,10 @@ window.SHACKADEMY_SECTIONS = {
       "basics": {
         description: `
           <p>A windfall is a <strong>one-off lump sum received at a specific point in the plan</strong> - such as an inheritance.</p>
-          <p>Voyant treats windfalls as a cash inflow at the date you specify. Set the Taxable field and Taxation Type carefully to ensure Voyant applies the correct tax treatment - most inheritances and gifts are non-taxable in the hands of the recipient, but always check.</p>
+          <p>Voyant treats windfalls as a cash inflow at the date you specify. Set the Taxable field and Taxation Type carefully to ensure Voyant applies the correct tax treatment.</p>
           <ul>
-            <li>Use the Timing tab to set when the windfall is received</li>
-            <li>For inheritances, enter the net amount expected after any IHT has been settled from the estate</li>
+            <li>Use the Timing tab to set when the windfall is received.</li>
+            <li>For inheritances, enter the net amount expected after any inheritance tax, estate liabilities, funeral costs, and any other deductions have been settled from the estate.</li>
           </ul>
         `,
       },
@@ -305,8 +306,8 @@ window.SHACKADEMY_SECTIONS = {
     tabs: {
       "basics": {
         description: `
-          <p>This is where you enter <strong>cash savings accounts</strong> - current accounts, savings accounts, Cash ISAs, and National Savings Certificates. Enter the current balance as at the plan start date.</p>
-          <p>The account type matters for tax purposes:</p>
+          <p>This is where you enter <strong>cash savings accounts</strong> - current accounts, savings accounts, Cash ISAs, and National Savings Certificates.</p>
+          <p>The account type matters for tax purposes. Voyant treats accounts as follows:</p>
           <ul>
             <li><strong>Current/savings accounts</strong> - interest is taxable</li>
             <li><strong>Cash ISA</strong> - tax-free; contributions limited to the annual ISA allowance</li>
@@ -343,22 +344,18 @@ window.SHACKADEMY_SECTIONS = {
     tabs: {
       "basics": {
         description: `
-          <p>This is where you enter <strong>investment accounts and wrappers</strong> - Stocks & Shares ISAs, Lifetime ISAs, onshore and offshore bonds, unwrapped investments, trusts, EIS, SEIS, VCTs, and more. Enter the current balance as at the plan start date.</p>
-          <p>The Type field is critical - it determines the tax treatment and whether Voyant will access the account automatically or only via planned withdrawals:</p>
+          <p>This is where you enter <strong>investment accounts and wrappers</strong> - Stocks & Shares ISAs, Lifetime ISAs, onshore and offshore bonds, unwrapped investments, trusts, EIS, SEIS, VCTs, and more.</p>
+          <p>The Type field is critical - it determines Voyant's tax treatment and whether Voyant will access the account automatically or only via planned withdrawals. Voyant treats accounts as follows:</p>
           <ul>
             <li><strong>Stocks & Shares ISA / Lifetime ISA</strong> - tax-free growth and withdrawals</li>
             <li><strong>Unwrapped investments</strong> - subject to Capital Gains Tax on gains</li>
-            <li><strong>Onshore/Offshore bonds</strong> - tax-deferred; 5% annual withdrawal allowance</li>
+            <li><strong>Onshore/Offshore bonds</strong> - tax-deferred; 5% tax deferred annual withdrawal allowance based on the original investment amount for each policy year</li>
             <li><strong>Trusts, EIS, SEIS, VCTs</strong> - not accessed automatically; require planned withdrawals</li>
           </ul>
-          <p>For investment bonds, make sure you enter the Purchase Value and Year Purchased accurately as these affect tax calculations.</p>
+          <p>For investment bonds, make sure you enter the Purchase Value and Year Purchased accurately as these affect Voyant's tax calculations.</p>
         `,
       },
       "growth": { description: window.TAB_DESCRIPTIONS.growth },
-      "contribution": { description: `
-        <p>The Contribution tab is where you set up <strong>regular or one-off payments into this account</strong>. Contributions come from surplus income in the plan — money left over after expenses have been met.</p>
-        <p>You can enter contributions as a fixed amount, an amount that rises with inflation, or as a percentage of income. Check Year View > Expenses to verify contributions are being modelled correctly.</p>
-      ` },
       "timing": {
         description: `
           <p>The Timing tab controls <strong>when contributions are allowed</strong> in this plan. Voyant uses timeline events - milestones you define, like Retirement or a specific age - rather than fixed calendar dates, so your plan stays dynamic as assumptions change.</p>
@@ -388,9 +385,9 @@ window.SHACKADEMY_SECTIONS = {
       "basics": {
         description: `
           <p>This is where you enter <strong>property and other physical assets</strong> - your main home, buy-to-let properties, holiday homes, vehicles, collectables, or business property. Enter the current market value.</p>
-          <p>The Asset Type field is important for tax:</p>
+          <p>The Asset Type field is important for tax. Voyant assesses this as follows:</p>
           <ul>
-            <li><strong>Main Residence</strong> - exempt from Capital Gains Tax on sale (Private Residence Relief)</li>
+            <li><strong>Main Residence</strong> - exempt from Capital Gains Tax on sale (if toggled on)</li>
             <li><strong>All other property</strong> - gains on sale are subject to CGT</li>
           </ul>
           <p>If the property has not yet been purchased, toggle <em>Is this a Future Purchase?</em> to Yes and use the Timing tab to set the buy and sell events.</p>
@@ -407,10 +404,20 @@ window.SHACKADEMY_SECTIONS = {
         `,
       },
       "steps":        { description: window.TAB_DESCRIPTIONS.steps,     },
+      "payment-sources": {
+        description: `
+          <p>The Payment Sources tab lets you control <strong>which accounts or assets are used to fund a future property purchase</strong>.</p>
+          <p>By default, Voyant will normally fund payments from available income and assets according to the liquidation order, set in 'Plan Settings'. Use this tab if you need to direct payments from a specific source.</p>
+          <ul>
+            <li>Use cautiously, as restricting payment sources can create artificial shortfalls</li>
+            <li>Check Year View after saving to make sure payments are being funded as intended</li>
+          </ul>
+        `,
+      },
       "linked-debts": {
         description: `
           <p>The Linked Debts tab lets you link an existing debt or create a new one.</p>
-          <p>If the property is sold (Timing tab) then the linked debt will be repaid with the proceeds of the sale.</p>
+          <p>If the property is sold (Timing tab) then the linked debt will be paid down with the proceeds of the sale.</p>
         `,
       },
       "linked-expenses": {
@@ -445,7 +452,7 @@ window.SHACKADEMY_SECTIONS = {
     tabs: {
       "basics": {
         description: `
-          <p>This is where you enter a <strong>defined contribution (money purchase) pension</strong> - including personal pensions, SIPPs, workplace pensions, and GPPs. Enter the current fund value as at the plan start date.</p>
+          <p>This is where you enter a <strong>defined contribution (money purchase) pension</strong> - including personal pensions, SIPPs, workplace pensions, and GPPs.</p>
           <p>The pension Type field is largely informational, but there is one important distinction: personal pensions (PPP/GPP/SIPP) and occupational schemes have different rules for how tax relief on contributions is applied.</p>
           <p>Key things to check:</p>
           <ul>
@@ -470,8 +477,9 @@ window.SHACKADEMY_SECTIONS = {
       "crystallisations": {
         description: `
           <p>The Crystallisations tab allows you to model <strong>specific pension crystallisation events</strong> - the point at which pension benefits are formally accessed and tax-free cash is taken.</p>
-          <p>For most straightforward plans you will not need to use this tab. Voyant handles crystallisation automatically when the pension begins drawdown according to the Timing settings.</p>
+          <p>For regular income in retirement, Voyant handles crystallisation automatically when the pension begins drawdown according to the Timing settings.</p>
           <p>Use this tab if you need to model a specific partial crystallisation at a known future date or event.</p>
+          <p>If you want to model regular, consistent crystallisation events then it may be easier to manage that using the 'Planned Withdrawals' tab.</p>
         `,
       },
       "beneficiaries": {
@@ -505,8 +513,8 @@ window.SHACKADEMY_SECTIONS = {
       "basics": {
         description: `
           <p>This is where you enter a <strong>defined benefit pension</strong> - common in the public sector (NHS, teachers, civil service, armed forces) and some older workplace schemes.</p>
-          <p>Unlike defined contribution pensions, the benefit is a guaranteed income based on your salary and years of service - not a pot of money. The investment risk sits with the employer, not you.</p>
-          <p>The Status field is critical:</p>
+          <p>Unlike defined contribution pensions, the benefit is a guaranteed income based on your salary and years of service - not a pot of money.</p>
+          <p>The Status field is critical as it will determind how Voyant treats the plan:</p>
           <ul>
             <li><strong>Active</strong> - you are still building up benefits; link to your employment entry</li>
             <li><strong>Deferred</strong> - you have left the scheme but not yet started taking benefits; enter the known deferred benefit amount</li>
@@ -518,8 +526,7 @@ window.SHACKADEMY_SECTIONS = {
       "timing": {
         description: `
           <p>The Timing tab for a Final Salary pension sets <strong>when you intend to start drawing an income</strong> from the plan. This is typically your planned retirement date or a specific age event.</p>
-          <p>If you start taking benefits before the scheme's Normal Retirement Age (entered in the Basics tab), Voyant will apply the actuarial reduction rate automatically - meaning a lower income to reflect early payment.</p>
-          <p>Make sure the start event aligns with your realistic retirement plans rather than the scheme's default retirement age, unless those are the same.</p>
+          <p>If you start taking benefits before the scheme's Normal Retirement Age (entered in the Basics tab), Voyant will apply the actuarial reduction rate automatically.</p>
         `,
       },
     },
@@ -549,6 +556,16 @@ window.SHACKADEMY_SECTIONS = {
           <p>The Timing tab for an annuity sets <strong>when you intend to start drawing an income</strong> from the plan.</p>
         `,
       },
+      "payment-sources": {
+        description: `
+          <p>The Payment Sources tab lets you control <strong>which accounts or assets are used to fund a future annuity purchase</strong>.</p>
+          <p>By default, Voyant will normally fund payments from available income and assets according to the liquidation order, set in 'Plan Settings'. Use this tab if you need to direct payments from a specific source.</p>
+          <ul>
+            <li>Use cautiously, as restricting payment sources can create artificial shortfalls</li>
+            <li>Check Year View after saving to make sure payments are being funded as intended</li>
+          </ul>
+        `,
+      },      
     },
   },
  
@@ -566,8 +583,7 @@ window.SHACKADEMY_SECTIONS = {
           <p>This is where you enter an <strong>existing drawdown pension</strong> - a crystallised pension pot that is already in drawdown at the plan start date. If you are modelling a pension that will move into drawdown during the plan, enter it as a Money Purchase pension instead - Voyant will create the drawdown pot automatically.</p>
           <ul>
             <li>The Initial Balance field is needed for Voyant to correctly calculate the Lump Sum Death Benefit Allowance on growth</li>
-            <li>Use the Planned Withdrawals tab to set up a specific regular drawdown income strategy if you want to</li>
-            <li>Check the Tax Status carefully - inherited drawdown pots may be tax-free if the original holder died before age 75</li>
+            <li>Check the Type and Tax Status (if relevant) carefully</li>
           </ul>
         `,
       },
@@ -607,7 +623,7 @@ window.SHACKADEMY_SECTIONS = {
           <p>Get the State Pension forecast for each person at <a href="https://www.gov.uk/check-state-pension" target="_blank" rel="noopener noreferrer">gov.uk/check-state-pension</a> - this gives you the projected amount and exact State Pension Age based on date of birth.</p>
           <ul>
             <li>Voyant escalates the State Pension automatically using the Triple Lock assumption from Plan Settings</li>
-            <li>You can model deferral by setting a Start Age later than the State Pension Age</li>
+            <li>You can model deferral by setting a Start Age later than the specified State Pension Age</li>
           </ul>
         `,
       },
@@ -628,76 +644,60 @@ window.SHACKADEMY_SECTIONS = {
       "basics": {
         description: `
           <p>This is where you model <strong>share-based compensation</strong> such as Restricted Stock Units (RSUs) and share options.</p>
-
-          <p>The key inputs here determine <strong>how the grant behaves over time</strong> - including how it vests, whether it can be exercised, and how it links to your employment.</p>
-
+          <p>The key inputs here determine <strong>how the grant behaves over time</strong> within Voyant - including how it vests, whether it can be exercised, and how it links to your employment.</p>
           <ul>
             <li><strong>Grant Type</strong> affects how the grant is treated and whether an exercise price applies</li>
             <li><strong>Current Price</strong> and <strong>Growth</strong> assumptions drive the future value of the shares</li>
             <li><strong>Linked Employment</strong> helps align the grant with your working timeline</li>
           </ul>
-
-          <p>Stock grants can be complex, particularly where tax treatment differs between grant types. Use cautious assumptions and check outputs carefully in Year View.</p>
+          <p>Stock grants can be complex, particularly where tax treatment differs between grant types. Check outputs carefully in Year View.</p>
         `,
       },
 
       "growth": {
         description: `
           <p>The Growth tab controls <strong>how the underlying share price is projected over time</strong>.</p>
-
-          <p>This has a direct impact on the value of both vested and unvested shares, and therefore on your overall financial position.</p>
-
+          <p>This has a direct impact on the value of both vested and unvested shares.</p>
           <ul>
             <li><strong>Growth Rate Type</strong> determines how returns are applied</li>
             <li><strong>Stock Growth Rate</strong> sets the assumed annual increase in share value</li>
           </ul>
-
-          <p>Be cautious when setting growth assumptions for employer shares. These are often <strong>highly concentrated and volatile</strong>, so using conservative estimates can give a more realistic planning outcome.</p>
         `,
       },
 
       "exercise": {
         description: `
           <p>The Exercise tab applies to <strong>option-based grants</strong> and controls when and how shares are exercised.</p>
-
           <p>Exercising an option means purchasing shares at the exercise price. This can create both a <strong>cashflow requirement</strong> and a <strong>taxable event</strong>, depending on the scheme.</p>
-
           <ul>
             <li><strong>Exercise Timing</strong> determines whether options are exercised at vesting or at a chosen event</li>
             <li><strong>Funding Method</strong> controls how the cost of exercise is covered</li>
           </ul>
-
-          <p>If exercise timing or funding has a material impact, check the results in Year View to confirm the behaviour matches your expectations.</p>
+          <p>Check the results in Year View to confirm the behaviour matches your expectations.</p>
         `,
       },
 
       "vested-shares": {
         description: `
           <p>This section captures <strong>shares that have already vested or been exercised</strong> at the start of the plan.</p>
-
           <p>This allows you to reflect your current position accurately before modelling future vesting and exercise.</p>
-
           <ul>
             <li>Enter shares that are already <strong>vested</strong> or <strong>exercised</strong></li>
             <li>Include the <strong>fair market value</strong> at vesting or exercise where relevant</li>
           </ul>
-
-          <p>Make sure these shares are not duplicated in the Future Vesting Schedule, as this would overstate your holdings.</p>
+          <p>Make sure these shares are not duplicated in the Future Vesting Schedule, as this may overstate your holdings.</p>
         `,
       },
 
       "future-vesting": {
         description: `
           <p>The Future Vesting Schedule models <strong>how unvested shares become available over time</strong>.</p>
-
-          <p>Vesting determines when shares move from being conditional to being fully owned. Until shares vest, they are typically not accessible or realisable.</p>
-
+          <p>Within Voyant, vesting determines when shares move from being conditional to being fully owned. Until shares vest, they are typically not accessible or realisable.</p>
           <ul>
             <li><strong>Number of Shares Remaining</strong> in the 'Basics' tab reflects the unvested portion of the grant</li>
             <li><strong>Remaining Vesting Period</strong> in the 'Basics' tab spreads vesting across future years</li>
             <li>You can use <strong>Estimate Schedule</strong> to provide a starting point</li>
           </ul>
-
           <p>Voyant uses this information to introduce shares into your plan gradually. Check the timing carefully to ensure vesting aligns with your expectations.</p>
         `,
       },
@@ -705,15 +705,12 @@ window.SHACKADEMY_SECTIONS = {
       "liquidation": {
         description: `
           <p>The Liquidation tab controls <strong>how and when shares are sold</strong> once they are available.</p>
-
           <p>This determines whether shares are retained for growth or converted into cash to support spending.</p>
-
           <ul>
             <li><strong>Sell all available</strong> will realise all shares at a chosen event</li>
             <li><strong>Recurring strategies</strong> allow you to model ongoing income from share sales</li>
             <li><strong>None</strong> means shares are retained unless accessed elsewhere</li>
           </ul>
-
           <p>Check the impact in Year View to ensure sales occur at the expected times and that the remaining share balance behaves as intended.</p>
         `,
       },
@@ -721,9 +718,7 @@ window.SHACKADEMY_SECTIONS = {
       "future-grant": {
         description: `
           <p>The Future Grant tab allows you to model <strong>ongoing or additional stock awards</strong> beyond the current grant.</p>
-
           <p>This is useful where stock-based compensation is expected to continue, such as annual RSU awards or recurring option grants.</p>
-
           <ul>
             <li>Grants can be modelled as a <strong>percentage of salary</strong>, a <strong>fixed number of shares</strong>, or a <strong>fixed value</strong></li>
             <li>This helps project how future compensation may build over time</li>
@@ -748,7 +743,7 @@ window.SHACKADEMY_SECTIONS = {
       "basics": {
         description: `
           <p>This is where you enter a <strong>debt that needs to be repaid</strong>, such as a mortgage, loan, credit card, or other borrowing.</p>
-          <p>The key inputs are the current balance, interest rate, payment type, and payment amount or duration. Together, these determine how the debt changes over time in the plan.</p>
+          <p>The key inputs are the current balance, interest rate, payment type, and payment amount or duration. Together, these determine how the debt changes over time in Voyant.</p>
           <ul>
             <li>Use <strong>Repayment</strong> where payments reduce the capital balance over time</li>
             <li>Use <strong>Interest Only</strong> where the capital balance remains outstanding unless repaid separately</li>
@@ -765,7 +760,7 @@ window.SHACKADEMY_SECTIONS = {
       "payment-sources": {
         description: `
           <p>The Payment Sources tab lets you control <strong>which accounts or assets are used to make debt payments</strong>.</p>
-          <p>By default, Voyant will normally fund payments from available income and assets according to the plan's wider funding logic. Use this tab if you need to direct payments from a specific source.</p>
+          <p>By default, Voyant will normally fund payments from available income and assets according to the liquidation order, set in 'Plan Settings'. Use this tab if you need to direct payments from a specific source.</p>
           <ul>
             <li>Use cautiously, as restricting payment sources can create artificial shortfalls</li>
             <li>Check Year View after saving to make sure payments are being funded as intended</li>
@@ -776,6 +771,7 @@ window.SHACKADEMY_SECTIONS = {
         description: `
           <p>The One Time Payments tab lets you model <strong>one-off repayments</strong> against the debt.</p>
           <p>This is especially useful for lump sum repayments, clearing an interest-only mortgage, or paying off the full balance at a particular event.</p>
+          <p>If the debt is linked to a property (Linked Property tab) then the sale of the linked property will automatically pay down the debt.</p>
           <ul>
             <li><strong>Specified Amount</strong> lets you enter a partial one-off repayment</li>
             <li><strong>Payoff</strong> clears the full outstanding balance at the selected time</li>
@@ -788,9 +784,7 @@ window.SHACKADEMY_SECTIONS = {
           <p>The Linked Property tab lets you connect this debt to a property in the plan.</p>
           <p>This is typically relevant for mortgages or other debts secured against a property. Linking the debt helps Voyant treat the borrowing alongside the asset it relates to.</p>
           <ul>
-            <li>If the linked property is sold, check whether the debt is repaid as expected</li>
-            <li>Make sure the property ownership and debt ownership are consistent</li>
-            <li>Use Year View to confirm the debt and property values behave correctly together</li>
+            <li>If the linked property is sold, you can use Year View to check whether the debt is repaid as expected</li>
           </ul>
         `,
       },
@@ -833,6 +827,7 @@ window.SHACKADEMY_SECTIONS = {
         description: `
           <p>The One Time Payments tab lets you model <strong>one-off repayments</strong> against the line of credit.</p>
           <p>This can be useful if you expect to reduce or clear the balance at a future event.</p>
+          <p>If the debt is linked to a property (Linked Property tab) then the sale of the linked property will automatically pay down the debt.</p>
           <ul>
             <li>Use a specified amount for a partial repayment</li>
             <li>Use payoff if the full balance is expected to be cleared</li>
@@ -870,8 +865,7 @@ window.SHACKADEMY_SECTIONS = {
           <p>This is where you enter an <strong>equity release or reverse mortgage arrangement</strong>.</p>
           <p>The key inputs include whether the arrangement is new or existing, the mortgage amount, interest rate, any lump sum taken, annual advances, credit limit, and credit limit growth rate.</p>
           <ul>
-            <li>Check whether the arrangement should be linked to a property</li>
-            <li>Review how interest builds up over time, especially if it rolls up rather than being paid</li>
+            <li>This type of borrowing requires a linked property in Voyant</li>
             <li>Check Year View &gt; Debts and Cash Flow to confirm the arrangement behaves as expected</li>
           </ul>
         `,
@@ -879,11 +873,10 @@ window.SHACKADEMY_SECTIONS = {
       "links": {
         description: `
           <p>The Linked Property tab connects the equity release arrangement to the property it relates to.</p>
-          <p>This is important because equity release is normally secured against a property, and the long-term impact depends on both the outstanding debt and the projected property value.</p>
           <ul>
             <li>Make sure the linked property is the correct one</li>
-            <li>Check ownership is consistent between the property and equity release arrangement</li>
-            <li>Review Year View to compare the projected property value and equity release balance over time</li>
+            <li>Check ownership is consistent between the property and equity release arrangement (this should automatically filter through to the Basics tab)</li>
+            <li>Review Year View to compare the projected property value and equity release balance over time and ensure this behaves as expected</li>
           </ul>
         `,
       },
@@ -897,7 +890,6 @@ window.SHACKADEMY_SECTIONS = {
           <ul>
             <li>Use a specified amount for a partial repayment</li>
             <li>Use payoff if the full outstanding balance is expected to be cleared</li>
-            <li>Check whether the policy should remain open or close after payoff</li>
           </ul>
         `,
       },
@@ -979,11 +971,9 @@ window.SHACKADEMY_SECTIONS = {
       "beneficiaries": {
         description: `
           <p>The Beneficiaries tab controls <strong>who receives the policy proceeds</strong> if the policy pays out.</p>
-          <p>This is especially important if the policy is held in trust, or if the payout should go somewhere other than the default beneficiary.</p>
           <ul>
             <li>Beneficiaries may include a spouse, estate, another person in the plan, someone outside the plan, or a charity</li>
             <li>If the policy is held in trust, make sure the beneficiaries reflect the trust arrangement</li>
-            <li>Check the estate and legacy outputs if the beneficiary choice affects inheritance tax or estate planning</li>
           </ul>
         `,
       },
@@ -993,10 +983,9 @@ window.SHACKADEMY_SECTIONS = {
           <p>The Timing tab controls <strong>when the policy starts and ends</strong> in the plan.</p>
           <p>The policy start event and the remaining term work together to determine whether a payout is made if the insured person dies during the plan.</p>
           <ul>
-            <li>Set the Protection Starts event to match when cover begins</li>
+            <li>Set the Protection Starts event to match when cover begins. Use 'Plan Start' if the policy is already in force</li>
             <li>Use the term remaining (Basics tab) to control how long the policy remains in force</li>
-            <li>Once outside the policy term, no payout should be made</li>
-            <li>Check Year View or Life Needs Insight to confirm the coverage period</li>
+            <li>Once outside the policy term, Voyant won't make a payout</li>
           </ul>
         `,
       },
@@ -1033,7 +1022,6 @@ window.SHACKADEMY_SECTIONS = {
       "beneficiaries": {
         description: `
           <p>The Beneficiaries tab controls <strong>who receives the whole life policy proceeds</strong>.</p>
-          <p>This is particularly important where the policy is held in trust or intended to provide funds outside the estate.</p>
           <ul>
             <li>Make sure the beneficiaries reflect the actual policy or trust arrangement</li>
             <li>Check whether proceeds are intended for a spouse, estate, other beneficiaries, or charity</li>
@@ -1078,7 +1066,6 @@ window.SHACKADEMY_SECTIONS = {
           <p>This matters because the policy should only provide cover during the period it is active.</p>
           <ul>
             <li>Set the policy start and end timing to match the actual cover period</li>
-            <li>Check whether the benefit duration runs for a fixed period or to a maximum age</li>
             <li>Review Year View to confirm premiums and benefits appear in the right years</li>
           </ul>
         `,
@@ -1095,12 +1082,6 @@ window.SHACKADEMY_SECTIONS = {
         description: `
           <p>This is where you enter a <strong>critical illness policy</strong>, which pays a benefit if the insured person suffers a qualifying critical illness under the policy terms.</p>
           <p>The key inputs are the policy owner, premium, benefit amount, and remaining term.</p>
-          <ul>
-            <li>Enter the benefit amount from the policy schedule</li>
-            <li>Enter the remaining policy term if the policy is already in force</li>
-            <li>Check whether the policy is intended to cover a mortgage, provide family protection, or support wider cashflow needs</li>
-            <li>Review the outputs if illness or disability events are modelled in the plan</li>
-          </ul>
         `,
       },
 
@@ -1110,9 +1091,7 @@ window.SHACKADEMY_SECTIONS = {
           <p>The timing settings and remaining term determine whether the policy provides cover at different points in the plan.</p>
           <ul>
             <li>Set the start event to match when cover begins</li>
-            <li>Use the term remaining to reflect how long cover lasts</li>
-            <li>Once outside the term, no payout should be assumed</li>
-            <li>Check the relevant Year View output if the policy is important to the plan</li>
+            <li>If the policy is already in force, leave this as 'Plan Start'</li>
           </ul>
         `,
       },
@@ -1143,7 +1122,6 @@ window.SHACKADEMY_SECTIONS = {
           <ul>
             <li>Set the policy start timing to match the actual or expected policy start date</li>
             <li>Check whether premium payments are lifetime or for a fixed period</li>
-            <li>Review the timing of benefits if care events are modelled in the plan</li>
             <li>Use Year View to confirm premiums and benefits appear in the expected years</li>
           </ul>
         `,
