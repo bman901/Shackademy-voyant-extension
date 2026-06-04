@@ -71,7 +71,7 @@ window.SHACKADEMY_FIELDS = [
     label: "Person type",
     helpText: `
       <h3>What to enter</h3>
-      <p>Select your relationship to this person. Voyant uses this to correctly apply tax allowances, pension rules, and income calculations for each person.</p>
+      <p>Select your relationship to this person. Voyant uses this information to model applicable tax allowances, pension rules, and income calculations for each person.</p>
     `,
   },
   {
@@ -246,7 +246,7 @@ window.SHACKADEMY_FIELDS = [
     <h3>Tips</h3>
     <ul>
       <li>For example, enter '2' for a biennial expense. The amount you entered will apply for each occurrence.</li>
-      <li>Check out the lesson below for additional details.</li>
+      <li>Check out the lesson in the sidebar for additional details.</li>
     </ul>
   `,
   },
@@ -259,17 +259,17 @@ window.SHACKADEMY_FIELDS = [
   helpText: `
     <h3>What to enter</h3>
     <p>If setting a preferred payment source, use the "Only Use Preferred Sources" to Pay the Expense very sparingly, if at all.
-    <br><br>
+    <br>
     When ticked, this setting can create artificial shortfalls if the preferred source is inadequately funded to pay the linked expense. These artificial shortfalls can prevent the software’s need analysers from returning results.
-    <br><br>
+    <br>
     <strong>When might you tick the “Only Use…”option? </strong>
     <br>
     In most cases, we recommend only using this setting in a what-if scenario.
-    <br><br>
+    <br>
     For example, suppose you are saving for your children’s university fees and you want to run a test to determine if you are saving enough to a particular account.
-    <br><br>
+    <br>
     Even if the account is set as a preferred payment source, income and other assets sources will be used if the account does not have the funds to meet the linked expense.
-    <br><br>
+    <br>
     However, by selecting the “Only Use Preferred Payment Sources” option, you could, in this scenario, test the account for adequate funding.
     </p>
     <h3>Tips</h3>
@@ -465,7 +465,6 @@ window.SHACKADEMY_FIELDS = [
       <h3>Tips</h3>
       <ul>
         <li>Enter as an annual total - the P11D value is a good source for this figure</li>
-        <li>Benefits in Kind are subject to Income Tax but not National Insurance in most cases</li>
         <li>If no benefits are received, leave this field blank</li>
       </ul>
     `,
@@ -490,8 +489,8 @@ window.SHACKADEMY_FIELDS = [
       <p>Toggle this on if, despite being self-employed, the owner's income is taxed through PAYE rather than Self Assessment.</p>
       <h3>Tips</h3>
       <ul>
-        <li>This is relevant for contractors or sole traders who operate through an umbrella company or who have agreed to be taxed at source</li>
-        <li>If unsure, leave this off - most self-employed income is assessed via Self Assessment</li>
+        <li>This is generally relevant for contractors or sole traders who operate through an umbrella company or who have agreed to be taxed at source</li>
+        <li>If unsure, leave this off - self-employed income is generally reported via Self Assessment</li>
       </ul>
     `,
   },
@@ -500,7 +499,7 @@ window.SHACKADEMY_FIELDS = [
     label: "Dividend",
     helpText: `
       <h3>What to enter</h3>
-      <p>Enter the annual dividend income drawn from the company. Dividends are taxed at the dividend tax rates (rather than income tax rates) and are not subject to National Insurance.</p>
+      <p>Enter the annual dividend income drawn from the company.</p>
       <h3>Tips</h3>
       <ul>
         <li>Enter the gross annual dividend amount - the dividend allowance is applied automatically by Voyant</li>
@@ -577,7 +576,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Other Income is used for any income that doesn't fit the Employment or Pension categories - for example: rental income (this can be linked to a property later), trust distributions, maintenance payments, freelance income not entered as employment, or overseas income. It can be set as taxable or non-taxable depending on its nature.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Unlike employment income, Other Income is not subject to National Insurance</li>
+        <li>Unlike employment income, within Voyant, 'Other Income' is not subject to National Insurance</li>
         <li>Set the Tax Status below to match how this income is actually taxed</li>
       </ul>
     `,
@@ -587,7 +586,7 @@ window.SHACKADEMY_FIELDS = [
     label: "Taxation Type",
     helpText: `
       <h3>What to enter</h3>
-      <p>If this income is taxable, select how it should be taxed.</p>
+      <p>If this income is taxable, select how it should be taxed. If the income is non-taxable, change the 'Tax Status' field and you can ignore this section.</p>
       <h3>Options</h3>
       <ul>
         <li><strong>Income</strong> - taxed at the owner's marginal income tax rate</li>
@@ -605,7 +604,6 @@ window.SHACKADEMY_FIELDS = [
       <h3>Tips</h3>
       <ul>
         <li>If set to Taxable, the tax is not deducted via PAYE - it is assessed via Self Assessment and shown as a tax liability in the Year View</li>
-        <li>Non-Taxable is appropriate for income that is genuinely exempt - for example, certain trust income, Child Benefit (if below the HICBC threshold), or tax-free maintenance payments</li>
         <li>If unsure of the tax status, check with a tax adviser before selecting Non-Taxable</li>
       </ul>
     `,
@@ -618,7 +616,6 @@ window.SHACKADEMY_FIELDS = [
       <p>Toggle this on if this income counts as <strong>earned income</strong> for pension contribution purposes.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Pension contributions can only be made up to 100% of earnings - earned income determines the maximum that can attract tax relief</li>
         <li>Investment income, rental income, and trust distributions are generally not earned income</li>
       </ul>
     `,
@@ -631,6 +628,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the annual rate at which this income is expected to grow. By default this is linked to the inflation figure entered in Plan Settings.</p>
       <h3>Tips</h3>
       <ul>
+        <li>Changing the default rate in Plan Settings will only affect new plans created, you will need to manually change the rate for any existing income</li>
         <li>For income that is expected to remain flat (e.g. a fixed trust distribution), enter 0%</li>
         <li>For rental income, consider using an assumption that reflects realistic long-term rental growth rather than the earnings default</li>
       </ul>
@@ -708,11 +706,12 @@ window.SHACKADEMY_FIELDS = [
     label: "Amount",
     helpText: `
       <h3>What to enter</h3>
-      <p>Enter the windfall amount. Windfalls are assumed to be received tax-free or net of any taxes - Voyant will not deduct further taxes from this figure unless you set the Taxable option below.</p>
+      <p>Enter the windfall amount. Windfalls are assumed to be received tax-free or net of any taxes and costs - Voyant will not deduct further taxes from this figure unless you set the Taxable option below.</p>
       <h3>Tips</h3>
       <ul>
         <li>If the windfall is subject to tax, enter the gross amount and set the Taxation Type and Taxable fields accordingly so Voyant can model the tax correctly</li>
-        <li>For an inheritance, enter the net amount expected after IHT has been settled from the estate</li>
+        <li>For an inheritance, enter the net amount expected after IHT and other costs have been settled from the estate</li>
+        <li>Be cautious when entering future inheritances or other uncertain windfalls. Consider only including amounts that are reasonably expected to be received</li>
       </ul>
     `,
   },
@@ -727,10 +726,6 @@ window.SHACKADEMY_FIELDS = [
         <li><strong>Income</strong> - taxed at the owner's marginal income tax rate</li>
         <li><strong>Capital Gains</strong> - treated as a capital gain and taxed at the applicable CGT rate</li>
       </ul>
-      <h3>Tips</h3>
-      <ul>
-        <li>Most inheritances and gifts are not taxable in the hands of the recipient</li>
-      </ul>
     `,
   },
   {
@@ -741,8 +736,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Select whether this windfall is taxable or non-taxable in the hands of the owner.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Most inheritances, gifts, and insurance payouts received by the beneficiary are non-taxable</li>
-        <li>If there is a taxable element (e.g. a capital gain on an inherited asset that has since grown), set to Taxable and choose the appropriate Taxation Type above</li>
+        <li>If the windfall is taxable, ensure you choose the appropriate Taxation Type above</li>
       </ul>
     `,
   },
@@ -756,7 +750,7 @@ window.SHACKADEMY_FIELDS = [
         <li><strong>Future Value</strong> - the amount is already expressed in the money of the year it will be received, so no further inflation is applied</li>
       </ul>
       <h3>Which should I choose?</h3>
-      <p>If you know the approximate amount in today's money, use Present Value. If you have a specific future figure (e.g. a known inheritance amount), use Future Value.</p>
+      <p>If you know the approximate amount in today's money and expect this to increase in line with inflation, use Present Value. If you have a specific future figure (e.g. a known inheritance amount) or you don't want inflation applied, use Future Value.</p>
     `,
   },
 
@@ -802,12 +796,12 @@ window.SHACKADEMY_FIELDS = [
     helpText: `
       <h3>What to enter</h3>
       <p>Select the type of savings account you wish to enter. This is for tax and contribution rules purposes.
-      <br><br>
+      <br>
       The account type also determines when these assets will be accessed if needed in the plan.
-      <br><br>
+      <br>
       <a href="https://shackademy.com/path-player?courseid=voyant&unit=67734dec1c6b5ca11b094f0cUnit" target="_blank">Learn more about the default selldown order here</a>
       </p>
-      <h3>Account types</h3>
+      <h3>Account types & tax treatment within Voyant</h3>
       <ul>
         <li><strong>Current accounts</strong> - A Cash Account - Interest is taxable.</li>
         <li><strong>Savings accounts</strong> - A Cash Account - Interest is taxable.</li>
@@ -824,7 +818,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the balance of the account as at today</p>
       <h3>Tips</h3>
       <ul>
-        <li>The plan start date is 6th April each year</li>  
+        <li>The plan start date is 6th April each year</li>
         <li>This is updated to the following tax year in October each year</li>
         <li>This means there is only ever at maximum a 6 month differential in account balances</li>
         <li>You will spend 6 months of the year working in arrears, and 6 months working in advance</li>
@@ -874,7 +868,7 @@ window.SHACKADEMY_FIELDS = [
       <h3>Where can I see these contributions after I've set them up?</h3>
       <ul>
         <li>Contributions are included in the black line of the Let's See chart, so setting up contributions when you didn't have them previously will push the black line up higher</li>
-        <li>You will also see contributions in the Year View > Expenses tab to see the contribution as an Expense</li>
+        <li>You will also see contributions in the Year View > Expenses tab</li>
       </ul>
     `,
   },
@@ -906,7 +900,7 @@ window.SHACKADEMY_FIELDS = [
     helpText: `
       <h3>What to enter</h3>
       <p>Withdrawal types allow you to specify the limit up to which withdrawals may be made.
-      <br><br>
+      <br>
       If you would like a set amount to be withdrawn from the account each year, regardless of whether Voyant classes it 'As Needed', set this up in the Planned Withdrawals screen.</p>
       <h3>Options</h3>
       <ul>
@@ -1025,11 +1019,11 @@ window.SHACKADEMY_FIELDS = [
     label: "Loan Amount",
     helpText: `
       <h3>What to enter</h3>
-      <p>Enter the original amount that was inherited into the Bypass Trust. Voyant uses this to calculate the IHT position on second death correctly.</p>
+      <p>Enter the original amount that was inherited into the Bypass Trust. Voyant uses this to calculate the IHT position on second death.</p>
       <h3>Tips</h3>
       <ul>
         <li>The Balance of a Bypass Trust is typically £0 - it is this Loan Amount field that records the original inheritance</li>
-        <li>The loan is repaid to the estate on second death and is not subject to IHT</li>
+        <li>Within Voyant, the loan is repaid to the estate on second death and is not subject to IHT</li>
       </ul>
     `,
   },
@@ -1071,19 +1065,19 @@ window.SHACKADEMY_FIELDS = [
     helpText: `
       <h3>What to enter</h3>  
       <p><strong>Existing Investments</strong>
-      <br><br>
+      <br>
       The date in the 'Qualifies for IHT Relief' only applies to existing investments. This field is not relevant to Transfers and New/Regular contributions into a BPR/APR investment.
-      <br><br>
+      <br>
       'Year Qualifying for IHT Exemption' this is the date that the relief will be given i.e. after the 2 year qualifying period.
-      <br><br>
+      <br>
       <strong>New Investments</strong>
-      <br><br>
+      <br>
       For new investments, IHT relief occurs 2 years after the transfer or contribution made into the investment. The 'Year Qualifying for IHT Exemption' field will be left blank in this instance and the software will determine the correct year in which IHT relief will apply.
-      <br><br>
+      <br>
       If you are entering multiple transfers into a new investment, these would be best entered as separate investments to allow the software to start the 2 year clock after each investment.
-      <br><br>
+      <br>
       Please bear in mind that in the software, mortality is assumed to occur at the start of the year, whereas transfers occur at the end of the year.
-      <br><br>
+      <br>
       This means that for an investment set up by a transfer in 2024, IHT relief will apply from the end of 2026 (2 years) i.e. showing on the software at the start of 2027. We would expect to see the BPR relief from 2027 onwards."</p>
     `,
   },
@@ -1118,15 +1112,15 @@ window.SHACKADEMY_FIELDS = [
     helpText: `
       <h3>What to enter</h3>
       <p>This is the total remaining value of all invested principal, i.e. original investment, plus any top-ups, less tax-deferred withdrawals.
-      <br><br>
+      <br>
       This value should reflect the 'cost basis' of the asset as at the plan start date.
-      <br><br>
+      <br>
       For example:
       <br>
       If there have been no previous withdrawals or top ups then this field will be the same as the Purchase Value.
-      <br><br>
+      <br>
       If there has been 5% withdrawals prior to the start of the plan, this value should show the lower remaining principal/cost basis, so Voyant knows how many further 5% tax deferred withdrawals are allowed within the plan.
-      <br><br>
+      <br>
       You may find this article useful when you are entering an existing Investment Bond: <a href="https://support.planwithvoyant.com/hc/en-us/articles/15359426508443-Enter-an-existing-Investment-Bond-Life-Fund-Segments-Previous-Withdrawals-Top-Ups" target="_blank">Entering an Existing Investment Bond</a></p>
       `,
   },
@@ -1368,9 +1362,9 @@ window.SHACKADEMY_FIELDS = [
     helpText: `
       <h3>What to enter</h3>
       <p>If you would like Voyant to reinvest yields back into the investment then select Yes.
-      <br><br>
+      <br>
       By selecting No the yields will be paid out as an annual income.
-      <br><br>
+      <br>
       You will see these in Dashboard or Year View > Cash Flow tab</p>
     `,
   },
@@ -2165,15 +2159,15 @@ window.SHACKADEMY_FIELDS = [
     helpText: `
       <h3>What to enter</h3>
       <p>Two options are available to set how incomes will be taken from money purchases. These are UFPLS and Flexi (Flexible Access Drawdown) and they determine whether an element of taxable income will be included in each withdrawal or if withdrawals are to be taken entirely from the pension owner’s tax-free cash allowance if available.
-      <br><br>
+      <br>
       <strong>Flexible Access Drawdown</strong> = Allows scheduled withdrawals from money purchase pensions to be taken from the owner's tax-free cash allowance first. The total withdrawal amount specified will be tax free. With each amount withdrawn tax free, an additional 75% is crystallised and moved into a linked drawdown account, which the software creates automatically.
-      <br><br>
+      <br>
       <strong>Please Note</strong> - The Flexible Access Drawdown option can only work if the amount you are withdrawing is less than the pension’s overall tax-free cash allowance, which is normally 25% of the pension’s balance. For example, if you were to schedule a withdrawal of 50% or 100% of a pension’s total balance, the software will withdraw this amount. It will not limit withdrawals to only the tax-free allowance since the amount scheduled clearly exceeds it. You will receive a combination of taxable and tax-free cash, effectively an UFPLS withdrawal, even if you have the Flexible Access Withdrawal selected as the withdrawal strategy.
-      <br><br>
+      <br>
       With the Flexi option, when the tax free cash runs out there is still likely to be pension money available in the drawdown pot. You will need to set up another planned withdrawal from the Drawdown - MP pension to liquidate these funds.
-      <br><br>
+      <br>
       <strong>UFPLS</strong> = Withdrawals the Amount as 25% tax free and 75% potentially taxable. This is also the software’s default for 'as needed' withdrawals taken from money purchase pensions.
-      <br><br>
+      <br>
       <strong>Note:</strong> The Pension Strategy window will not appear if only drawdown accounts are selected as there is no tax free element to them so all of the withdrawal is potentially taxable.</p>
     `,
   },
@@ -2186,7 +2180,7 @@ window.SHACKADEMY_FIELDS = [
     helpText: `
       <h3>What to enter</h3>
       <p>Choose between 'Lump Sum' and 'Move to Beneficiary Drawdown Pension'
-      <br><br>
+      <br>
       <strong>Lump Sum</strong> - the remaining pension fund is paid as a cash lump sum to the nominated beneficiary on death.
       <br>
       <strong>Move to Beneficiary Drawdown Pension</strong> - the fund is moved into a drawdown pension in the beneficiary's name, where it can be drawn down over time, potentially more tax-efficiently.</p>
@@ -2289,19 +2283,19 @@ window.SHACKADEMY_FIELDS = [
     helpText: `
       <h3>What to enter</h3>
       <p>Set an Assumed Interest Rate or Specified Annuity Rate
-      <br><br>
+      <br>
       <strong>Assumed Interest Rate</strong>
       <br>
       The software's default option allows the software to 'derive' an annuity rate by using an Assumed Interest Rate.
-      <br><br>
+      <br>
       The Assumed Interest Rate on an annuity is the underlying interest rate assumption on which the annuity calculation is based (or would be based, by an actuary). It would ordinarily reflect an assumed yield on mid-dated UK Sovereign debt (Gilt Yield).
-      <br><br>
+      <br>
       <a href="https://support.planwithvoyant.com/hc/en-us/articles/20098166624923-Annuity-Rates-Options-for-calculating-future-annuity-payments-UK" target="_blank">Explained further here</a>
-      <br><br>
+      <br>
       <strong>Specified Annuity Rate</strong>
       <br>
       Where you have a reasonable idea of the applicable market (annuity) rate, taking account of the expected age and circumstances, etc, you can change the Annuity Rate Calculation option to Specified Annuity Rate.
-      <br><br>
+      <br>
       If chosen, the % entered is the straightforward 'Conversion Rate, i.e. the rate at which a lump sum converts into an annuity
       <br>
       e.g. a fund of £100,000 (after tax free cash) with a specified annuity rate of 5% will produce an annuity income of £5,000.</p>
@@ -2313,9 +2307,9 @@ window.SHACKADEMY_FIELDS = [
     helpText: `
       <h3>What to enter</h3>
       <p>The software's default option allows the software to 'derive' an annuity rate by using an Assumed Interest Rate.
-      <br><br>
+      <br>
       The Assumed Interest Rate on an annuity is the underlying interest rate assumption on which the annuity calculation is based (or would be based, by an actuary). It would ordinarily reflect an assumed yield on mid-dated UK Sovereign debt (Gilt Yield).
-      <br><br>
+      <br>
       It may be preferable to use Specified Annuity Rate if you wish to have more control over the level of income being received.</p>
     `,
   },
@@ -2325,7 +2319,7 @@ window.SHACKADEMY_FIELDS = [
     helpText: `
       <h3>What to enter</h3>
       <p>Where you have a reasonable idea of the applicable market (annuity) rate, taking account of the expected age and circumstances, etc, you can change the Annuity Rate Calculation option to Specified Annuity Rate.
-      <br><br>
+      <br>
       If chosen, the % entered is the straightforward 'Conversion Rate, i.e. the rate at which a lump sum converts into an annuity
       <br>
       e.g. a fund of £100,000 (after tax free cash) with a specified annuity rate of 5% will produce an annuity income of £5,000.</p>
@@ -2604,7 +2598,7 @@ window.SHACKADEMY_FIELDS = [
       <h3>Tips</h3>
       <ul>
         <li>Many older final salary schemes (e.g. 1/80th) include a separate automatic lump sum - check whether yours does before selecting Commutation</li>
-        <li>CARE and newer public sector schemes typically do not include an automatic lump sum - commutation is the most common option for these</li>
+        <li>CARE and newer public sector schemes typically do not include an automatic lump sum - commutation is a common option for these, but check with your provider</li>
       </ul>
     `,
   },
@@ -2998,7 +2992,7 @@ window.SHACKADEMY_FIELDS = [
     label: "Lifetime",
     helpText: `
       <h3>What to enter</h3>
-      <p>Select <strong>Yes</strong> if this annuity is payable for life (the most common type). Select <strong>No</strong> if it is a fixed-term annuity that pays for a set number of years only.</p>
+      <p>Select <strong>Yes</strong> if this annuity is payable for life. Select <strong>No</strong> if it is a fixed-term annuity that pays for a set number of years only.</p>
       <h3>Tips</h3>
       <ul>
         <li>If you select No, a Term field will appear where you can enter the number of years the annuity runs</li>
@@ -3157,7 +3151,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the current balance of the existing or inherited drawdown pot as at the plan start date.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Use the most recent valuation from the provider - pension statements or online accounts are usually the best source</li>
+        <li>Use the most recent valuation from the provider - pension statements or online accounts are usually a good source</li>
         <li>The plan start date is 6th April each year - see our lesson on updating plan years if you need guidance on timing</li>
       </ul>
     `,
@@ -4978,5 +4972,6 @@ window.SHACKADEMY_FIELDS = [
   //TODO: Transfers
   //TODO: Planned Withdrawals
   //TODO: Estate Plans
+  //TODO: Plan Settings
 
 ];
