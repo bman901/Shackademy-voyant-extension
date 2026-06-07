@@ -19,32 +19,35 @@
   // ---------------------------------------------------------------------------
   // Constants
   // ---------------------------------------------------------------------------
-  const ENHANCED_ATTR  = "data-shackademy-enhanced";
-  const MODAL_ID       = "shackademy-modal";
-  const BACKDROP_ID    = "shackademy-backdrop";
-  const PANEL_ID       = "shackademy-panel";
-  const BADGE_CLASS    = "shackademy-badge";
+  const ENHANCED_ATTR = "data-shackademy-enhanced";
+  const MODAL_ID = "shackademy-modal";
+  const BACKDROP_ID = "shackademy-backdrop";
+  const PANEL_ID = "shackademy-panel";
+  const BADGE_CLASS = "shackademy-badge";
   const KEEP_PANEL_OPEN_WITHOUT_FIELDS_TABS = new Set(
-    Object.keys(window.TAB_LABELS || {})
+    Object.keys(window.TAB_LABELS || {}),
   );
 
   // ---------------------------------------------------------------------------
   // Data
   // ---------------------------------------------------------------------------
-  const fieldMap  = new Map((window.SHACKADEMY_FIELDS  || []).map((f) => [f.key, f]));
-  const lessonMap   = window.SHACKADEMY_LESSONS  || {};
-  const sectionMap  = window.SHACKADEMY_SECTIONS || {};
+  const fieldMap = new Map(
+    (window.SHACKADEMY_FIELDS || []).map((f) => [f.key, f]),
+  );
+  const lessonMap = window.SHACKADEMY_LESSONS || {};
+  const sectionMap = window.SHACKADEMY_SECTIONS || {};
 
   // ---------------------------------------------------------------------------
   // State
   // ---------------------------------------------------------------------------
-  let userClosedPanel   = false;
-  let isPinned          = false;
+  let userClosedPanel = false;
+  let isPinned = false;
+  let disclaimerShownOnce = false; // tracks if shown at least once this session
   let currentSectionKey = null;
-  let currentTabKey     = null;
-  let currentItemId     = null;
+  let currentTabKey = null;
+  let currentItemId = null;
   let userOpenedEmptyPanel = false;
-  const visibleFields  = new Map(); // key -> { field, el }
+  const visibleFields = new Map(); // key -> { field, el }
 
   // ---------------------------------------------------------------------------
   // Pin / unpin helpers
@@ -61,6 +64,10 @@
     const pinBtn = panel.querySelector("#shackademy-pin-btn");
     if (pinBtn) pinBtn.title = "Unpin panel";
     if (pinBtn) pinBtn.innerHTML = "📌";
+    // Adjust footer to not overlap sidebar
+    document
+      .getElementById(DISCLAIMER_ID)
+      ?.classList.add("shackademy-disclaimer--pinned");
   }
 
   function applyFloating() {
@@ -74,12 +81,80 @@
     const pinBtn = panel.querySelector("#shackademy-pin-btn");
     if (pinBtn) pinBtn.title = "Pin panel";
     if (pinBtn) pinBtn.innerHTML = "📍";
+    // Restore footer to full width
+    document
+      .getElementById(DISCLAIMER_ID)
+      ?.classList.remove("shackademy-disclaimer--pinned");
   }
 
   function clearPinState() {
     document.body.style.removeProperty("margin-right");
     document.body.style.removeProperty("overflow-x");
+    document
+      .getElementById(DISCLAIMER_ID)
+      ?.classList.remove("shackademy-disclaimer--pinned");
     isPinned = false;
+  }
+
+  // ---------------------------------------------------------------------------
+  // Disclaimer footer
+  // ---------------------------------------------------------------------------
+
+  const DISCLAIMER_ID = "shackademy-disclaimer";
+  const DISCLAIMER_PARA =
+    "Shackademy accepts no responsibility for the accuracy of any tax calculations, assumptions, or models produced by Voyant. All tips, guides, and content within the Shackademy extension are provided for information purposes only and do not constitute personal financial advice. Prevailing tax rates and reliefs depend on individual circumstances and may change. Shackademy does not provide tax advice. <strong>Capital at risk.</strong>";
+  const DISCLAIMER_POINTS = [
+    "Shackademy accepts no responsibility for the accuracy of any tax calculations, assumptions, or models produced by Voyant. All tips, guides, and content within the Shackademy extension are provided for information purposes only and do not constitute personal financial advice.",
+    "Prevailing tax rates and reliefs depend on individual circumstances and may change. Shackademy does not provide tax advice.",
+    "<strong>Capital at risk.</strong>",
+  ];
+
+  function createDisclaimerFooter() {
+    if (document.getElementById(DISCLAIMER_ID)) return;
+
+    const footer = document.createElement("div");
+    footer.id = DISCLAIMER_ID;
+    footer.className = "shackademy-disclaimer";
+    footer.innerHTML = `
+      <div class="shackademy-disclaimer-full">
+        <div class="shackademy-disclaimer-text">${DISCLAIMER_PARA}</div>
+      </div>
+    `;
+
+    document.body.appendChild(footer);
+    updateBodyPadding();
+  }
+
+  function showDisclaimerFooter() {
+    const footer = document.getElementById(DISCLAIMER_ID);
+    if (!footer) {
+      createDisclaimerFooter();
+      return;
+    }
+    footer.hidden = false;
+    updateBodyPadding();
+  }
+
+  function hideDisclaimerFooter() {
+    const footer = document.getElementById(DISCLAIMER_ID);
+    if (footer) {
+      footer.hidden = true;
+      updateBodyPadding();
+    }
+  }
+
+  function updateBodyPadding() {
+    const footer = document.getElementById(DISCLAIMER_ID);
+    if (!footer || footer.hidden) {
+      document.body.style.removeProperty("padding-bottom");
+      return;
+    }
+    const height = footer.offsetHeight;
+    document.body.style.setProperty(
+      "padding-bottom",
+      height + "px",
+      "important",
+    );
   }
 
   // ---------------------------------------------------------------------------
@@ -103,7 +178,9 @@
         id = u.searchParams.get("v");
       }
       return id ? `https://www.youtube.com/embed/${id}` : null;
-    } catch { return null; }
+    } catch {
+      return null;
+    }
   }
 
   // Extract segments from Voyant's hash URL
@@ -112,7 +189,7 @@
     const parts = window.location.hash.split("/");
     return {
       itemId: parts.length >= 5 ? parts[4] : null,
-      tab:    parts.length >= 6 ? parts[5].toLowerCase() : null,
+      tab: parts.length >= 6 ? parts[5].toLowerCase() : null,
     };
   }
 
@@ -131,14 +208,14 @@
     }
 
     // ItemId changed - scan DOM for a new type indicator
-    currentItemId     = newItemId;
-    currentTabKey     = newTab;
+    currentItemId = newItemId;
+    currentTabKey = newTab;
     currentSectionKey = null;
 
     for (const [sectionKey, config] of Object.entries(sectionMap)) {
       if (config.typeIndicator) {
         const el = document.querySelector(
-          `label[for="${config.typeIndicator}"], label[id="${config.typeIndicator}"]`
+          `label[for="${config.typeIndicator}"], label[id="${config.typeIndicator}"]`,
         );
         if (el) {
           currentSectionKey = sectionKey;
@@ -151,12 +228,12 @@
   }
 
   function getCurrentTabConfig() {
-  const section = currentSectionKey ? sectionMap[currentSectionKey] : null;
-  if (!section) return null;
+    const section = currentSectionKey ? sectionMap[currentSectionKey] : null;
+    if (!section) return null;
 
-  const tabKey = currentTabKey || "basics";
-  return section.tabs?.[tabKey] || section.tabs?.["basics"] || null;
-}
+    const tabKey = currentTabKey || "basics";
+    return section.tabs?.[tabKey] || section.tabs?.["basics"] || null;
+  }
 
   function keepPanelOpenWithoutFields() {
     const section = currentSectionKey ? sectionMap[currentSectionKey] : null;
@@ -165,9 +242,11 @@
     const tabConfig = getCurrentTabConfig();
     const tabKey = currentTabKey || "basics";
 
-    return KEEP_PANEL_OPEN_WITHOUT_FIELDS_TABS.has(tabKey) ||
+    return (
+      KEEP_PANEL_OPEN_WITHOUT_FIELDS_TABS.has(tabKey) ||
       section?.keepPanelOpenWithoutFields === true ||
-      tabConfig?.keepPanelOpenWithoutFields === true;
+      tabConfig?.keepPanelOpenWithoutFields === true
+    );
   }
 
   function closePanelAndClearPadding() {
@@ -175,8 +254,9 @@
     userOpenedEmptyPanel = false;
     clearPinState();
     panel?.classList.add("hidden");
+    hideDisclaimerFooter();
   }
-  
+
   // ---------------------------------------------------------------------------
   // Field enhancement
   // ---------------------------------------------------------------------------
@@ -191,7 +271,7 @@
   function enhanceTarget(labelEl) {
     if (labelEl.getAttribute(ENHANCED_ATTR) === "true") return;
 
-    const key   = getLabelKey(labelEl);
+    const key = getLabelKey(labelEl);
     const field = fieldMap.get(key);
     if (!field) return;
 
@@ -200,7 +280,10 @@
     labelEl.setAttribute("role", "button");
     labelEl.setAttribute("tabindex", "0");
     labelEl.setAttribute("aria-haspopup", "dialog");
-    labelEl.setAttribute("aria-label", `Open Shackademy help for ${field.label}`);
+    labelEl.setAttribute(
+      "aria-label",
+      `Open Shackademy help for ${field.label}`,
+    );
 
     if (!labelEl.querySelector(`.${BADGE_CLASS}`)) {
       const badge = document.createElement("span");
@@ -224,12 +307,16 @@
     });
 
     visibleFields.set(key, { field, el: labelEl });
-    updateFieldsPanel();
-    nudgeToggle();
+    return true;
   }
 
   function runEnhancement() {
-    findTargets().forEach(enhanceTarget);
+    const anyNew = findTargets().map(enhanceTarget).some(Boolean);
+    if (anyNew) {
+      updateFieldsPanel();
+      updateContextPanel();
+      nudgeToggle();
+    }
   }
 
   function runCleanup() {
@@ -271,30 +358,36 @@
     if (document.getElementById(MODAL_ID)) closeModal();
 
     const hasLesson = !!field.lessonUrl;
-    const embedUrl  = toEmbedUrl(field.videoUrl);
-    const hasVideo  = !!embedUrl;
+    const embedUrl = toEmbedUrl(field.videoUrl);
+    const hasVideo = !!embedUrl;
 
-    const lessonButtonHTML = hasLesson ? `
+    const lessonButtonHTML = hasLesson
+      ? `
       <div class="shackademy-links">
         <a href="${field.lessonUrl}" target="_blank" rel="noopener noreferrer">
           Open full lesson on Shackademy ↗
         </a>
-      </div>` : "";
+      </div>`
+      : "";
 
-    const tabsHTML = hasVideo ? `
+    const tabsHTML = hasVideo
+      ? `
       <div id="shackademy-tabs" role="tablist">
         <button class="shackademy-tab active" data-tab="details"
           role="tab" aria-selected="true">Details</button>
         <button class="shackademy-tab" data-tab="video"
           role="tab" aria-selected="false">Video</button>
-      </div>` : "";
+      </div>`
+      : "";
 
-    const videoPanelHTML = hasVideo ? `
+    const videoPanelHTML = hasVideo
+      ? `
       <div class="shackademy-panel" data-panel="video" role="tabpanel">
         <iframe src="${embedUrl}" title="${field.label} help video"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen></iframe>
-      </div>` : "";
+      </div>`
+      : "";
 
     const backdrop = document.createElement("div");
     backdrop.id = BACKDROP_ID;
@@ -320,18 +413,26 @@
         </div>
         ${videoPanelHTML}
       </div>
+      <div id="shackademy-modal-disclaimer">
+        <ul>${DISCLAIMER_POINTS.map((p) => `<li>${p}</li>`).join("")}</ul>
+      </div>
     `;
 
     document.body.appendChild(backdrop);
     document.body.appendChild(modal);
 
-    modal.querySelector("#shackademy-modal-close")?.addEventListener("click", closeModal);
+    modal
+      .querySelector("#shackademy-modal-close")
+      ?.addEventListener("click", closeModal);
     modal.querySelectorAll(".shackademy-tab").forEach((tab) => {
       tab.addEventListener("click", () => switchTab(tab.dataset.tab, modal));
     });
 
     document.addEventListener("keydown", onEscape);
-    setTimeout(() => modal.querySelector("#shackademy-modal-close")?.focus(), 50);
+    setTimeout(
+      () => modal.querySelector("#shackademy-modal-close")?.focus(),
+      50,
+    );
   }
 
   // ---------------------------------------------------------------------------
@@ -357,7 +458,7 @@
           <span>Shackademy</span>
         </div>
         <div style="display:flex;gap:6px;align-items:center;">
-          <button id="shackademy-pin-btn" aria-label="Pin panel" title="Pin panel">📌</button>
+          <button id="shackademy-pin-btn" aria-label="Unpin panel" title="Unpin panel">📌</button>
           <button id="shackademy-panel-close" aria-label="Close panel">&times;</button>
         </div>
       </div>
@@ -389,47 +490,60 @@
     document.body.appendChild(panel);
 
     // Tab toggle
-    panel.querySelector("#shackademy-panel-tab")?.addEventListener("click", () => {
-      const isHidden = panel.classList.contains("hidden");
-      if (isHidden) {
-        userClosedPanel = false;
-        userOpenedEmptyPanel = visibleFields.size === 0 && !keepPanelOpenWithoutFields();
-        panel.classList.remove("hidden");
-        updateContextPanel();
-        applyPinned();
-      } else {
+    panel
+      .querySelector("#shackademy-panel-tab")
+      ?.addEventListener("click", () => {
+        const isHidden = panel.classList.contains("hidden");
+        if (isHidden) {
+          userClosedPanel = false;
+          userOpenedEmptyPanel =
+            visibleFields.size === 0 && !keepPanelOpenWithoutFields();
+          panel.classList.remove("hidden");
+          updateContextPanel();
+          applyPinned();
+          showDisclaimerFooter();
+        } else {
+          userClosedPanel = true;
+          clearPinState();
+          panel.classList.add("hidden");
+          hideDisclaimerFooter();
+        }
+      });
+
+    // Close button
+    panel
+      .querySelector("#shackademy-panel-close")
+      ?.addEventListener("click", () => {
         userClosedPanel = true;
         clearPinState();
         panel.classList.add("hidden");
-      }
-    });
+        hideDisclaimerFooter();
+      });
 
-    // Close button
-    panel.querySelector("#shackademy-panel-close")?.addEventListener("click", () => {
-      userClosedPanel = true;
-      clearPinState();
-      panel.classList.add("hidden");
-    });
-
-    panel.querySelector("#shackademy-pin-btn")?.addEventListener("click", () => {
-      if (isPinned) {
-        applyFloating();
-      } else {
-        applyPinned();
-      }
-    });
+    panel
+      .querySelector("#shackademy-pin-btn")
+      ?.addEventListener("click", () => {
+        if (isPinned) {
+          applyFloating();
+        } else {
+          applyPinned();
+        }
+      });
 
     // Panel nav (Guide / Fields)
     panel.querySelectorAll(".shackademy-panel-nav-btn").forEach((btn) => {
       btn.addEventListener("click", () => {
-        panel.querySelectorAll(".shackademy-panel-nav-btn").forEach((b) =>
-          b.classList.remove("active")
-        );
-        panel.querySelectorAll(".shackademy-panel-view").forEach((v) =>
-          v.classList.remove("active")
-        );
+        panel
+          .querySelectorAll(".shackademy-panel-nav-btn")
+          .forEach((b) => b.classList.remove("active"));
+        panel
+          .querySelectorAll(".shackademy-panel-view")
+          .forEach((v) => v.classList.remove("active"));
         btn.classList.add("active");
-        panel.querySelector(`.shackademy-panel-view[data-view="${btn.dataset.view}"]`)
+        panel
+          .querySelector(
+            `.shackademy-panel-view[data-view="${btn.dataset.view}"]`,
+          )
           ?.classList.add("active");
       });
     });
@@ -455,11 +569,12 @@
       return;
     }
     // Build tab title - use TAB_LABELS lookup, fall back to capitalised key
-    const tabKey    = currentTabKey || "basics";
+    const tabKey = currentTabKey || "basics";
     const tabConfig = section.tabs?.[tabKey] || section.tabs?.["basics"];
-    const labelMap  = window.TAB_LABELS || {};
-    const tabLabel  = labelMap[tabKey] || (tabKey.charAt(0).toUpperCase() + tabKey.slice(1));
-    const title     = `${section.name} - ${tabLabel}`;
+    const labelMap = window.TAB_LABELS || {};
+    const tabLabel =
+      labelMap[tabKey] || tabKey.charAt(0).toUpperCase() + tabKey.slice(1);
+    const title = `${section.name} - ${tabLabel}`;
 
     // Section title header
     const titleEl = document.createElement("div");
@@ -470,7 +585,8 @@
     // Tab description
     if (tabConfig?.description) {
       const descEl = document.createElement("div");
-      descEl.className = "shackademy-context-description shackademy-help-content";
+      descEl.className =
+        "shackademy-context-description shackademy-help-content";
       descEl.innerHTML = tabConfig.description;
       container.appendChild(descEl);
     }
@@ -509,7 +625,7 @@
 
   function updateFieldsPanel() {
     const panel = document.getElementById(PANEL_ID);
-    const list  = document.getElementById("shackademy-panel-list");
+    const list = document.getElementById("shackademy-panel-list");
     if (!list || !panel) return;
 
     list.innerHTML = "";
@@ -534,19 +650,22 @@
           <span class="shackademy-panel-field-name">${field.label}</span>
           <span class="shackademy-panel-field-badges">
             ${field.lessonUrl ? '<span class="spf-badge spf-badge--lesson">Lesson</span>' : ""}
-            ${field.videoUrl  ? '<span class="spf-badge spf-badge--video">Video</span>'   : ""}
+            ${field.videoUrl ? '<span class="spf-badge spf-badge--video">Video</span>' : ""}
           </span>
         </button>
       `;
 
-      li.querySelector(".shackademy-panel-field-btn").addEventListener("click", () => {
-        openModal(field);
-        const entry = visibleFields.get(field.key);
-        if (entry) {
-          entry.el.scrollIntoView({ behavior: "smooth", block: "center" });
-          entry.el.focus();
-        }
-      });
+      li.querySelector(".shackademy-panel-field-btn").addEventListener(
+        "click",
+        () => {
+          openModal(field);
+          const entry = visibleFields.get(field.key);
+          if (entry) {
+            entry.el.scrollIntoView({ behavior: "smooth", block: "center" });
+            entry.el.focus();
+          }
+        },
+      );
 
       list.appendChild(li);
     });
@@ -560,9 +679,13 @@
     const tab = document.getElementById("shackademy-panel-tab");
     if (!tab || tab.classList.contains("shackademy-nudge")) return;
     tab.classList.add("shackademy-nudge");
-    tab.addEventListener("animationend", () => {
-      tab.classList.remove("shackademy-nudge");
-    }, { once: true });
+    tab.addEventListener(
+      "animationend",
+      () => {
+        tab.classList.remove("shackademy-nudge");
+      },
+      { once: true },
+    );
   }
 
   // ---------------------------------------------------------------------------
@@ -585,9 +708,12 @@
 
     visibleFields.clear();
     currentSectionKey = null;
-    currentTabKey     = null;
-    currentItemId     = null;
+    currentTabKey = null;
+    currentItemId = null;
     clearPinState();
+    hideDisclaimerFooter();
+    document.getElementById(DISCLAIMER_ID)?.remove();
+    document.body.style.removeProperty("padding-bottom");
     window.__shackademyInitialised = false;
     window.__shackademyRunning = false;
   }
@@ -611,11 +737,8 @@
       // Debounce: wait for DOM to settle before running enhancement/cleanup
       clearTimeout(debounceTimer);
       debounceTimer = setTimeout(() => {
-        detectPageContext();
         runEnhancement();
         runCleanup();
-        updateFieldsPanel();
-        updateContextPanel();
       }, 150);
     });
 
@@ -645,19 +768,23 @@
     });
 
     // Watch for Voyant's Done/Cancel buttons to clear section context
-    document.body.addEventListener("click", (e) => {
-      const btn = e.target.closest(
-        'button[data-test-model-save="true"], button[aria-label="Done"], button[data-test-model-cancel="true"], button[aria-label="Cancel"]'
-      );
-      if (btn) {
-        currentSectionKey = null;
-        currentItemId     = null;
-        currentTabKey     = null;
-        visibleFields.clear();
-        updateFieldsPanel();
-        updateContextPanel();
-      }
-    }, true);
+    document.body.addEventListener(
+      "click",
+      (e) => {
+        const btn = e.target.closest(
+          'button[data-test-model-save="true"], button[aria-label="Done"], button[data-test-model-cancel="true"], button[aria-label="Cancel"]',
+        );
+        if (btn) {
+          currentSectionKey = null;
+          currentItemId = null;
+          currentTabKey = null;
+          visibleFields.clear();
+          updateFieldsPanel();
+          updateContextPanel();
+        }
+      },
+      true,
+    );
   }
 
   function init() {
@@ -668,5 +795,4 @@
     detectPageContext();
     startObserver();
   }
-
 })();

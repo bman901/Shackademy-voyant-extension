@@ -831,3 +831,76 @@
 #shackademy-pin-btn:hover {
   background: rgba(255, 255, 255, 0.2);
 }
+/* ── Modal max-height and scroll ────────────────────────────────────────── */
+
+#shackademy-modal {
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#shackademy-modal-body {
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+}
+
+/* ── Modal disclaimer ───────────────────────────────────────────────────── */
+
+#shackademy-modal-disclaimer {
+  flex-shrink: 0;
+  background: #f4fdf9;
+  border-top: 2px solid #1fcb97;
+  padding: 10px 16px;
+}
+
+#shackademy-modal-disclaimer ul {
+  margin: 0;
+  padding-left: 16px;
+}
+
+#shackademy-modal-disclaimer li {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #2b2e33;
+  margin-bottom: 4px;
+}
+
+#shackademy-modal-disclaimer li:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Page footer disclaimer ─────────────────────────────────────────────── */
+
+#shackademy-disclaimer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2147483643;
+  background: #2b2e33;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  transition: right 0.22s ease;
+}
+
+#shackademy-disclaimer.shackademy-disclaimer--pinned {
+  right: 260px;
+}
+
+.shackademy-disclaimer-full {
+  padding: 10px 16px;
+}
+
+.shackademy-disclaimer-text {
+  font-size: 10px;
+  line-height: 1.6;
+  color: #ccc;
+  flex: 1;
+}
+
+.shackademy-disclaimer-text strong,
+#shackademy-modal-disclaimer strong {
+  font-weight: 700;
+  color: inherit;
+}
