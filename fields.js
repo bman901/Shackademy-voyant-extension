@@ -55,7 +55,6 @@
 // =============================================================================
 
 window.SHACKADEMY_FIELDS = [
-
   // ============================================================
   // CATEGORY: People
   // ============================================================
@@ -211,9 +210,9 @@ window.SHACKADEMY_FIELDS = [
     `,
   },
   {
-  key: "preRetirementExpenseGrowthLabel",
-  label: "Inflation Rate",
-  helpText: `
+    key: "preRetirementExpenseGrowthLabel",
+    label: "Inflation Rate",
+    helpText: `
     <h3>What to enter</h3>
     <p>If you entered an inflation rate you're happy with in the 'Basics' tab, you don't have to enter anything here</p>
     <h3>Tips</h3>
@@ -223,9 +222,9 @@ window.SHACKADEMY_FIELDS = [
   `,
   },
   {
-  key: "goalsIncomeSlider",
-  label: "Percentage of Income",
-  helpText: `
+    key: "goalsIncomeSlider",
+    label: "Percentage of Income",
+    helpText: `
     <h3>What to enter</h3>
     <p>Depending on who you select in the Owner field the relevant income/s will be shown above. You can choose to create this expenses as a percentage of these income/s.</p>
     <h3>Tips</h3>
@@ -238,9 +237,9 @@ window.SHACKADEMY_FIELDS = [
   // ── Tab: Timing ──────────────────────────────────────────────
 
   {
-  key: "expenseFrequency",
-  label: "Expense Frequency",
-  helpText: `
+    key: "expenseFrequency",
+    label: "Expense Frequency",
+    helpText: `
     <h3>What to enter</h3>
     <p>This is where you can change the goal so it occurs on a less frequent basis</p>
     <h3>Tips</h3>
@@ -250,13 +249,13 @@ window.SHACKADEMY_FIELDS = [
     </ul>
   `,
   },
-  
+
   // ── Tab: Payment Sources ──────────────────────────────────────────────
 
   {
-  key: "usePreferredFundingItemOnly",
-  label: "Preferred Payment Sources",
-  helpText: `
+    key: "usePreferredFundingItemOnly",
+    label: "Preferred Payment Sources",
+    helpText: `
     <h3>What to enter</h3>
     <p>If setting a preferred payment source, use the "Only Use Preferred Sources" to Pay the Expense very sparingly, if at all.
     <br>
@@ -282,9 +281,9 @@ window.SHACKADEMY_FIELDS = [
   // ============================================================
   // CATEGORY: Events
   // ============================================================
- 
+
   // ── Tab: Basics ──────────────────────────────────────────────
- 
+
   {
     key: "eventName",
     label: "Event Name",
@@ -349,13 +348,13 @@ window.SHACKADEMY_FIELDS = [
       </ul>
     `,
   },
- 
+
   // ============================================================
   // CATEGORY: Stages
   // ============================================================
- 
+
   // ── Tab: Basics ──────────────────────────────────────────────
- 
+
   {
     key: "stageInputName",
     label: "Stage Name",
@@ -1260,10 +1259,10 @@ window.SHACKADEMY_FIELDS = [
     `,
   },
 
-{
-  key: "specialContributionType",
-  label: "Contribution Type",
-  helpText: `
+  {
+    key: "specialContributionType",
+    label: "Contribution Type",
+    helpText: `
     <h3>What to enter</h3>
     <p>This section is allowing you to tell Voyant that your ISA would qualify to receive the inherited ISA allowance from your spouse if they passed away.</p>
     <p>In the event of death, Voyant will follow the inputs here when allocating funds from your spouse's ISA (if relevant).</p>
@@ -1280,27 +1279,27 @@ window.SHACKADEMY_FIELDS = [
       <li>If you leave this as £0/0% then by default the ISA proceeds will be paid to cash upon your spouse's death.</li>
     </ul>
   `,
-},
-{
-  key: "percentOfSpecialAllowanceContribution",
-  label: "Percentage",
-  helpText: `
+  },
+  {
+    key: "percentOfSpecialAllowanceContribution",
+    label: "Percentage",
+    helpText: `
     <h3>What to enter</h3>
     <p>Enter the percentage of your spouse's ISA that should be contributed to this ISA by default upon their death</p>
   `,
-},
-{
-  key: "fixedSpecialContributionAmount",
-  label: "",
-  helpText: `
+  },
+  {
+    key: "fixedSpecialContributionAmount",
+    label: "",
+    helpText: `
     <h3>What to enter</h3>
     <p>Enter a specific amount of your spouse's ISA that should be contributed to this ISA by default upon their death</p>
   `,
-},
-{
-  key: "specialContributionNumYears",
-  label: "Number of Years",
-  helpText: `
+  },
+  {
+    key: "specialContributionNumYears",
+    label: "Number of Years",
+    helpText: `
     <h3>What to enter</h3>
     <p>Over how many years will the contributions be made</p>
     <h3>Tips</h3>
@@ -1308,7 +1307,7 @@ window.SHACKADEMY_FIELDS = [
       <li>Ensure this is in line with <a href="https://www.gov.uk/individual-savings-accounts/inheriting-an-isa-from-your-spouse-civil-partner" target="_blank">HMRC guidance</a></li>
     </ul>
   `,
-},
+  },
 
   // ── Tab: Growth ──────────────────────────────────────────────
 
@@ -2140,7 +2139,7 @@ window.SHACKADEMY_FIELDS = [
     `,
   },
 
-    // ── Tab: Crystallisations ──────────────────────────────────────────────
+  // ── Tab: Crystallisations ──────────────────────────────────────────────
 
   {
     key: "crystallisationApplies",
@@ -2151,7 +2150,7 @@ window.SHACKADEMY_FIELDS = [
     `,
   },
 
-    // ── Tab: Planned Withdrawals ──────────────────────────────────────────────
+  // ── Tab: Planned Withdrawals ──────────────────────────────────────────────
 
   {
     key: "drawdownUspWithdrawStrategy",
@@ -2324,7 +2323,7 @@ window.SHACKADEMY_FIELDS = [
       <br>
       e.g. a fund of £100,000 (after tax free cash) with a specified annuity rate of 5% will produce an annuity income of £5,000.</p>
     `,
-  },  
+  },
 
   // ------------------------------------------------------------
   // SUB-CATEGORY: Final Salary / CARE Pension
@@ -3955,20 +3954,20 @@ window.SHACKADEMY_FIELDS = [
     `,
   },
 
-// ============================================================
-// CATEGORY: Protection
-// ============================================================
+  // ============================================================
+  // CATEGORY: Protection
+  // ============================================================
 
-// ------------------------------------------------------------
-// SUB-CATEGORY: Term & Endowment
-// ------------------------------------------------------------
+  // ------------------------------------------------------------
+  // SUB-CATEGORY: Term & Endowment
+  // ------------------------------------------------------------
 
-// ── Tab: Basics ──────────────────────────────────────────────
+  // ── Tab: Basics ──────────────────────────────────────────────
 
-{
-  key: "ukTermProtectinInputOwnerLabel",
-  label: "Policy Owner",
-  helpText: `
+  {
+    key: "ukTermProtectinInputOwnerLabel",
+    label: "Policy Owner",
+    helpText: `
     <h3>What to enter</h3>
     <p>Select the policy owner or owners.</p>
     <h3>Tips</h3>
@@ -3978,12 +3977,12 @@ window.SHACKADEMY_FIELDS = [
       <li>If the policy is joint, use the payout option to confirm whether the benefit is paid on first death or second death.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "ukTermProtectionName",
-  label: "Policy Name",
-  helpText: `
+  {
+    key: "ukTermProtectionName",
+    label: "Policy Name",
+    helpText: `
     <h3>What to enter</h3>
     <p>Enter a clear name for the policy so it is easy to identify later.</p>
     <h3>Tips</h3>
@@ -3993,12 +3992,12 @@ window.SHACKADEMY_FIELDS = [
       <li>Avoid including sensitive policy numbers or reference details.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "insuredPersonsInputIsDifferent",
-  label: "Is Insured different than owner?",
-  helpText: `
+  {
+    key: "insuredPersonsInputIsDifferent",
+    label: "Is Insured different than owner?",
+    helpText: `
     <h3>What to enter</h3>
     <p>Use this if the person insured under the policy is different from the policy owner.</p>
     <h3>Tips</h3>
@@ -4008,12 +4007,12 @@ window.SHACKADEMY_FIELDS = [
       <li>If the owner and insured person are the same, you should not need to use this option.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "investmentInputInsuranceType",
-  label: "Insurance Type",
-  helpText: `
+  {
+    key: "investmentInputInsuranceType",
+    label: "Insurance Type",
+    helpText: `
     <h3>What to enter</h3>
     <p>Select the type of insurance being entered.</p>
     <h3>Options</h3>
@@ -4029,12 +4028,12 @@ window.SHACKADEMY_FIELDS = [
       <li>Different fields will appear depending on whether you select Employee or Personal.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "investmentInputLinkedEmployment",
-  label: "Linked Employment",
-  helpText: `
+  {
+    key: "investmentInputLinkedEmployment",
+    label: "Linked Employment",
+    helpText: `
     <h3>What to enter</h3>
     <p>Link employee insurance to the relevant employment entry.</p>
     <h3>Why this matters</h3>
@@ -4044,23 +4043,23 @@ window.SHACKADEMY_FIELDS = [
       <li>Because of this, there is no separate Timing panel to complete for this type of employee cover.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "ukEmployeeTermProtectionSalaryMultiplier",
-  label: "Salary Multiplier",
-  helpText: `
+  {
+    key: "ukEmployeeTermProtectionSalaryMultiplier",
+    label: "Salary Multiplier",
+    helpText: `
     <h3>What to enter</h3>
     <p>Enter the multiple of salary used to calculate the benefit amount.</p>
     <h3>Example</h3>
     <p>If Sarah earns £20,000 and has death-in-service cover worth four times salary, enter <strong>4</strong>. Voyant will calculate the benefit as £20,000 × 4 = £80,000.</p>
   `,
-},
+  },
 
-{
-  key: "ukTermProtectionIsJoint",
-  label: "Policy Details",
-  helpText: `
+  {
+    key: "ukTermProtectionIsJoint",
+    label: "Policy Details",
+    helpText: `
     <h3>What to enter</h3>
     <p>Select whether the term insurance is a single or joint policy.</p>
     <h3>Options</h3>
@@ -4074,21 +4073,21 @@ window.SHACKADEMY_FIELDS = [
       <li>Make sure this matches the actual policy schedule.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "ukTermProtectionInTrust",
-  label: "Policy Held in Trust?",
-  helpText: `
+  {
+    key: "ukTermProtectionInTrust",
+    label: "Policy Held in Trust?",
+    helpText: `
     <h3>What to enter</h3>
     <p>Select Yes if the policy is held in trust.</p>
   `,
-},
+  },
 
-{
-  key: "insuredPersonsInputPersonsLabel",
-  label: "Insured",
-  helpText: `
+  {
+    key: "insuredPersonsInputPersonsLabel",
+    label: "Insured",
+    helpText: `
     <h3>What to enter</h3>
     <p>Select the person or people insured by the policy.</p>
     <h3>Tips</h3>
@@ -4097,12 +4096,12 @@ window.SHACKADEMY_FIELDS = [
       <li>Check this carefully if the insured person is different from the policy owner.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "ukTermProtectionBenefitType",
-  label: "Benefit Type",
-  helpText: `
+  {
+    key: "ukTermProtectionBenefitType",
+    label: "Benefit Type",
+    helpText: `
     <h3>What to enter</h3>
     <p>Select how the policy benefit is paid.</p>
     <h3>Options</h3>
@@ -4118,12 +4117,12 @@ window.SHACKADEMY_FIELDS = [
       <li>The other options pay a one-off lump sum on the mortality of the selected person.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "ukTermProtectionInputTerm1",
-  label: "Term (Remaining)",
-  helpText: `
+  {
+    key: "ukTermProtectionInputTerm1",
+    label: "Term (Remaining)",
+    helpText: `
     <h3>What to enter</h3>
     <p>Enter the term of the policy.</p>
     <h3>How to use this</h3>
@@ -4134,12 +4133,12 @@ window.SHACKADEMY_FIELDS = [
     <h3>Example</h3>
     <p>If a Family Income Benefit policy starts in 5 years and has a term of 10 years, and the policyholder's mortality event is 7 years from now, the income benefit would be paid for the remaining 8 years of the policy term.</p>
   `,
-},
+  },
 
-{
-  key: "ukTermProtectionInputBenefitAmount",
-  label: "Benefit Amount",
-  helpText: `
+  {
+    key: "ukTermProtectionInputBenefitAmount",
+    label: "Benefit Amount",
+    helpText: `
     <h3>What to enter</h3>
     <p>Enter the benefit amount for the policy.</p>
     <h3>How to use this</h3>
@@ -4148,12 +4147,12 @@ window.SHACKADEMY_FIELDS = [
       <li>For Family Income Benefit, enter the annual benefit amount.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "timingType",
-  label: "Begin Premiums at",
-  helpText: `
+  {
+    key: "timingType",
+    label: "Begin Premiums at",
+    helpText: `
     <h3>What to enter</h3>
     <p>Select when premiums should begin.</p>
     <h3>Options</h3>
@@ -4167,12 +4166,12 @@ window.SHACKADEMY_FIELDS = [
       <li>Check Year View &gt; Expenses to confirm when premiums begin.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "purchaseAge",
-  label: "Purchase Age",
-  helpText: `
+  {
+    key: "purchaseAge",
+    label: "Purchase Age",
+    helpText: `
     <h3>What to enter</h3>
     <p>Enter the age at which premiums begin or the policy is purchased, if using age-based timing.</p>
     <h3>Tips</h3>
@@ -4181,12 +4180,12 @@ window.SHACKADEMY_FIELDS = [
       <li>Check this against the intended policy start date.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "investmentInputPremiumAmount",
-  label: "Premium",
-  helpText: `
+  {
+    key: "investmentInputPremiumAmount",
+    label: "Premium",
+    helpText: `
     <h3>What to enter</h3>
     <p>Enter the premium payable while the policy is in force.</p>
     <h3>Important</h3>
@@ -4200,12 +4199,12 @@ window.SHACKADEMY_FIELDS = [
       <li>Check Year View after saving to confirm the premium is appearing correctly.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "escalation",
-  label: "Benefit Escalation",
-  helpText: `
+  {
+    key: "escalation",
+    label: "Benefit Escalation",
+    helpText: `
     <h3>What to enter</h3>
     <p>Select whether the benefit increases over time.</p>
     <h3>Options</h3>
@@ -4223,12 +4222,12 @@ window.SHACKADEMY_FIELDS = [
       <li>If using Other, check how the escalation rate is entered and applied.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "premiumEscalation",
-  label: "Premium Escalation",
-  helpText: `
+  {
+    key: "premiumEscalation",
+    label: "Premium Escalation",
+    helpText: `
     <h3>What to enter</h3>
     <p>Select whether premiums increase over time.</p>
     <h3>Options</h3>
@@ -4245,12 +4244,12 @@ window.SHACKADEMY_FIELDS = [
       <li>Check Year View &gt; Expenses to confirm premiums are increasing as expected.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "investmentInputJointPayoutType",
-  label: "Joint Payout Type",
-  helpText: `
+  {
+    key: "investmentInputJointPayoutType",
+    label: "Joint Payout Type",
+    helpText: `
     <h3>What to enter</h3>
     <p>If the policy is joint, select whether the benefit is paid on first death or second death.</p>
     <h3>Important</h3>
@@ -4264,12 +4263,12 @@ window.SHACKADEMY_FIELDS = [
       <li>Use Year View or Life Needs Insight to confirm the policy is paying out as expected.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "decreasingBenefitRate",
-  label: "Decreasing Benefit Rate",
-  helpText: `
+  {
+    key: "decreasingBenefitRate",
+    label: "Decreasing Benefit Rate",
+    helpText: `
     <h3>What to enter</h3>
     <p>Enter the rate at which the benefit decreases over time.</p>
     <h3>When this applies</h3>
@@ -4282,14 +4281,14 @@ window.SHACKADEMY_FIELDS = [
       <li>Check the payout in Year View or Life Needs Insight to confirm the decreasing benefit is being reflected correctly.</li>
     </ul>
   `,
-},
+  },
 
-// ── Tab: Term Maturity ───────────────────────────────────────
+  // ── Tab: Term Maturity ───────────────────────────────────────
 
-{
-  key: "receivePayoutAtEndOfTerm",
-  label: "Receive Payout at end of term",
-  helpText: `
+  {
+    key: "receivePayoutAtEndOfTerm",
+    label: "Receive Payout at end of term",
+    helpText: `
     <h3>What to enter</h3>
     <p>Select this if the policy pays a maturity value at the end of the term.</p>
     <h3>Tips</h3>
@@ -4299,12 +4298,12 @@ window.SHACKADEMY_FIELDS = [
       <li>Review Year View to confirm the maturity payout appears at the expected time.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "currentMaturityBaseAmount",
-  label: "Current Maturity Value",
-  helpText: `
+  {
+    key: "currentMaturityBaseAmount",
+    label: "Current Maturity Value",
+    helpText: `
     <h3>What to enter</h3>
     <p>Enter the current maturity value of the policy.</p>
     <h3>Tips</h3>
@@ -4313,12 +4312,12 @@ window.SHACKADEMY_FIELDS = [
       <li>This value may be grown forward depending on the growth settings used in this tab.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "receiveMaturityValueAtDeath",
-  label: "Use the Maturity Value as Death Benefit",
-  helpText: `
+  {
+    key: "receiveMaturityValueAtDeath",
+    label: "Use the Maturity Value as Death Benefit",
+    helpText: `
     <h3>What to enter</h3>
     <p>Select this if the maturity value should also be used as the death benefit.</p>
     <h3>Tips</h3>
@@ -4327,12 +4326,12 @@ window.SHACKADEMY_FIELDS = [
       <li>Check the payout under both maturity and death scenarios if this setting materially affects the plan.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "termProtectionMaturityPayoutTaxationType",
-  label: "Payout Taxation (If Before Death)",
-  helpText: `
+  {
+    key: "termProtectionMaturityPayoutTaxationType",
+    label: "Payout Taxation (If Before Death)",
+    helpText: `
     <h3>What to enter</h3>
     <p>Select how the maturity payout should be taxed if it is paid before death.</p>
     <h3>Options</h3>
@@ -4348,12 +4347,12 @@ window.SHACKADEMY_FIELDS = [
       <li>The correct treatment depends on the type of policy and the circumstances.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "growthType",
-  label: "Grow Maturity Value By",
-  helpText: `
+  {
+    key: "growthType",
+    label: "Grow Maturity Value By",
+    helpText: `
     <h3>What to enter</h3>
     <p>Select how the maturity value should be projected over time.</p>
     <h3>Options</h3>
@@ -4369,12 +4368,12 @@ window.SHACKADEMY_FIELDS = [
       <li>Use Asset Allocations only where that reflects how the policy value should be modelled.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "termProtectionMaturityCostBasis",
-  label: "Cost Basis",
-  helpText: `
+  {
+    key: "termProtectionMaturityCostBasis",
+    label: "Cost Basis",
+    helpText: `
     <h3>What to enter</h3>
     <p>Enter the cost basis for the policy maturity value.</p>
     <h3>Tips</h3>
@@ -4383,12 +4382,12 @@ window.SHACKADEMY_FIELDS = [
       <li>Use policy records or provider information if available.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "termProtectionMaturityGrowthRate",
-  label: "Maturity Growth Rate",
-  helpText: `
+  {
+    key: "termProtectionMaturityGrowthRate",
+    label: "Maturity Growth Rate",
+    helpText: `
     <h3>What to enter</h3>
     <p>Enter the annual growth rate applied to the maturity value.</p>
     <h3>When this applies</h3>
@@ -4397,12 +4396,12 @@ window.SHACKADEMY_FIELDS = [
       <li>Use a realistic assumption based on the policy type and underlying investment approach.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "termProtectionMaturityFeeRate",
-  label: "Annual Fees",
-  helpText: `
+  {
+    key: "termProtectionMaturityFeeRate",
+    label: "Annual Fees",
+    helpText: `
     <h3>What to enter</h3>
     <p>Enter the annual fee rate applied to the maturity value.</p>
     <h3>Tips</h3>
@@ -4412,14 +4411,15 @@ window.SHACKADEMY_FIELDS = [
       <li>Check the maturity projection after saving.</li>
     </ul>
   `,
-},
+  },
 
-// ── Tab: Debt Payouts ────────────────────────────────────────
+  // ── Tab: Debt Payouts ────────────────────────────────────────
 
-{
-  key: "limitBenefitToDebtAmount",
-  label: "Limit Insurance Payout to Total Amount of Liabilities at Death or Maturity",
-  helpText: `
+  {
+    key: "limitBenefitToDebtAmount",
+    label:
+      "Limit Insurance Payout to Total Amount of Liabilities at Death or Maturity",
+    helpText: `
     <h3>What this does</h3>
     <p>Select this if the insurance payout should be limited to the total amount of liabilities at death or maturity.</p>
     <h3>Tips</h3>
@@ -4430,16 +4430,16 @@ window.SHACKADEMY_FIELDS = [
       <li>Drag debts into the 'Payout these Debts first' column as appropriate.</li>
     </ul>
   `,
-},
+  },
 
-// ------------------------------------------------------------
-// SUB-CATEGORY: Whole Life
-// ------------------------------------------------------------
+  // ------------------------------------------------------------
+  // SUB-CATEGORY: Whole Life
+  // ------------------------------------------------------------
 
-{
-  key: "ukWholeLifeProtectionInputOwnerLabel",
-  label: "Owner",
-  helpText: `
+  {
+    key: "ukWholeLifeProtectionInputOwnerLabel",
+    label: "Owner",
+    helpText: `
     <h3>What to enter</h3>
     <p>Select the owner or owners of the whole life policy.</p>
     <h3>Tips</h3>
@@ -4449,12 +4449,12 @@ window.SHACKADEMY_FIELDS = [
       <li>Ownership may affect how the policy is treated in the plan.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "ukWholeLifeProtectionInputName",
-  label: "Policy Name",
-  helpText: `
+  {
+    key: "ukWholeLifeProtectionInputName",
+    label: "Policy Name",
+    helpText: `
     <h3>What to enter</h3>
     <p>Enter a clear name for the whole life policy.</p>
     <h3>Tips</h3>
@@ -4464,12 +4464,12 @@ window.SHACKADEMY_FIELDS = [
       <li>Avoid including policy numbers or sensitive details.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "ukWholeLifeProtectionInputPremiumAmount",
-  label: "Premium",
-  helpText: `
+  {
+    key: "ukWholeLifeProtectionInputPremiumAmount",
+    label: "Premium",
+    helpText: `
     <h3>What to enter</h3>
     <p>Enter the premium payable while the policy is in force.</p>
     <h3>Important</h3>
@@ -4483,12 +4483,12 @@ window.SHACKADEMY_FIELDS = [
       <li>Check Year View after saving to confirm the premium is appearing correctly.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "ukWholeLifeProtectionInputBenefitAmount",
-  label: "Benefit Amount",
-  helpText: `
+  {
+    key: "ukWholeLifeProtectionInputBenefitAmount",
+    label: "Benefit Amount",
+    helpText: `
     <h3>What to enter</h3>
     <p>Enter the benefit amount payable under the whole life policy.</p>
     <h3>Tips</h3>
@@ -4498,12 +4498,12 @@ window.SHACKADEMY_FIELDS = [
       <li>Check the payout in Year View or Life Needs Insight if the cover is material to the plan.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "ukWholeLifeProtectionIsJoint",
-  label: "Policy Details",
-  helpText: `
+  {
+    key: "ukWholeLifeProtectionIsJoint",
+    label: "Policy Details",
+    helpText: `
     <h3>What to enter</h3>
     <p>Use this to specify whether the policy is single or joint.</p>
     <h3>Tips</h3>
@@ -4513,25 +4513,25 @@ window.SHACKADEMY_FIELDS = [
       <li>Make sure this matches the policy schedule.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "inTrust-radio1",
-  label: "In Trust?",
-  helpText: `
+  {
+    key: "inTrust-radio1",
+    label: "In Trust?",
+    helpText: `
     <h3>What to enter</h3>
     <p>Select whether the whole life policy is held in trust.</p>
   `,
-},
+  },
 
-// ------------------------------------------------------------
-// SUB-CATEGORY: Income Protection
-// ------------------------------------------------------------
+  // ------------------------------------------------------------
+  // SUB-CATEGORY: Income Protection
+  // ------------------------------------------------------------
 
-{
-  key: "ukIncomeProtectionInputOwnerLabel",
-  label: "Owner",
-  helpText: `
+  {
+    key: "ukIncomeProtectionInputOwnerLabel",
+    label: "Owner",
+    helpText: `
     <h3>What to enter</h3>
     <p>Select the owner of the income protection policy.</p>
     <h3>Tips</h3>
@@ -4540,12 +4540,12 @@ window.SHACKADEMY_FIELDS = [
       <li>If the policy is linked to employment, make sure the linked employment is correct.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "ukIncomeProtectionInputName",
-  label: "Policy Name",
-  helpText: `
+  {
+    key: "ukIncomeProtectionInputName",
+    label: "Policy Name",
+    helpText: `
     <h3>What to enter</h3>
     <p>Enter a clear name for the income protection policy.</p>
     <h3>Tips</h3>
@@ -4554,12 +4554,12 @@ window.SHACKADEMY_FIELDS = [
       <li>For example: "Personal Income Protection" or "Employer Sick Pay Cover".</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "ukIncomeProtectionInputPremiumAmount",
-  label: "Premium Amount",
-  helpText: `
+  {
+    key: "ukIncomeProtectionInputPremiumAmount",
+    label: "Premium Amount",
+    helpText: `
     <h3>What to enter</h3>
     <p>Enter the premium payable while the policy is in force.</p>
     <h3>Important</h3>
@@ -4573,12 +4573,12 @@ window.SHACKADEMY_FIELDS = [
       <li>Check Year View after saving to confirm the premium is appearing correctly.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "premiumGrowthRateLabel",
-  label: "Premium Escalation Rate",
-  helpText: `
+  {
+    key: "premiumGrowthRateLabel",
+    label: "Premium Escalation Rate",
+    helpText: `
     <h3>What to enter</h3>
     <p>Enter the rate at which premiums increase over time.</p>
     <h3>Tips</h3>
@@ -4588,12 +4588,12 @@ window.SHACKADEMY_FIELDS = [
       <li>Check Year View &gt; Expenses to confirm the premiums are showing correctly.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "ukIncomeProtectionInputType",
-  label: "Coverage Type",
-  helpText: `
+  {
+    key: "ukIncomeProtectionInputType",
+    label: "Coverage Type",
+    helpText: `
     <h3>What to enter</h3>
     <p>Select how the income protection benefit is calculated.</p>
     <h3>Options</h3>
@@ -4607,21 +4607,21 @@ window.SHACKADEMY_FIELDS = [
       <li>If using Percent of Income, make sure the relevant income and employment details are accurate.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "ukIncomeProtectionInputCoverageAmount",
-  label: "Coverage Amount",
-  helpText: `
+  {
+    key: "ukIncomeProtectionInputCoverageAmount",
+    label: "Coverage Amount",
+    helpText: `
     <h3>What to enter</h3>
     <p>Enter the amount of income protection cover.</p>
   `,
-},
+  },
 
-{
-  key: "growthRate",
-  label: "Coverage Inflation Rate",
-  helpText: `
+  {
+    key: "growthRate",
+    label: "Coverage Inflation Rate",
+    helpText: `
     <h3>What to enter</h3>
     <p>Enter the rate at which the income protection benefit increases over time.</p>
     <h3>Tips</h3>
@@ -4630,12 +4630,12 @@ window.SHACKADEMY_FIELDS = [
       <li>If the benefit is level, use 0%.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "benefitDurationType",
-  label: "Benefit Duration",
-  helpText: `
+  {
+    key: "benefitDurationType",
+    label: "Benefit Duration",
+    helpText: `
     <h3>What to enter</h3>
     <p>Select how long the income protection benefit can be paid for.</p>
     <h3>Tips</h3>
@@ -4645,12 +4645,12 @@ window.SHACKADEMY_FIELDS = [
       <li>Use 'Fixed Number of Years' where there is a set benefit duration e.g. 5 years.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "incomeProtectionMaxBenefitAge",
-  label: "Max Benefit Age",
-  helpText: `
+  {
+    key: "incomeProtectionMaxBenefitAge",
+    label: "Max Benefit Age",
+    helpText: `
     <h3>What to enter</h3>
     <p>Enter the maximum age to which the benefit can be paid.</p>
     <h3>Tips</h3>
@@ -4658,12 +4658,12 @@ window.SHACKADEMY_FIELDS = [
       <li>The policy will cancel itself beyond this age.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "ukIncomeProtectionPresentFutureValue",
-  label: "Premium/Coverage entered as",
-  helpText: `
+  {
+    key: "ukIncomeProtectionPresentFutureValue",
+    label: "Premium/Coverage entered as",
+    helpText: `
     <h3>What to enter</h3>
     <p>Select whether premiums and cover are entered as present value or future value.</p>
     <h3>Options</h3>
@@ -4677,12 +4677,12 @@ window.SHACKADEMY_FIELDS = [
       <li>Use Future Value only where the amount already reflects the value at a future point.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "downsizeDebtInputYears2",
-  label: "Benefit Duration (years)",
-  helpText: `
+  {
+    key: "downsizeDebtInputYears2",
+    label: "Benefit Duration (years)",
+    helpText: `
     <h3>What to enter</h3>
     <p>Enter the number of years the income protection benefit can be paid for.</p>
     <h3>Tips</h3>
@@ -4691,16 +4691,16 @@ window.SHACKADEMY_FIELDS = [
       <li>Use the period shown in the policy terms.</li>
     </ul>
   `,
-},
+  },
 
-// ------------------------------------------------------------
-// SUB-CATEGORY: Critical Illness
-// ------------------------------------------------------------
+  // ------------------------------------------------------------
+  // SUB-CATEGORY: Critical Illness
+  // ------------------------------------------------------------
 
-{
-  key: "ukCriticalIllnessProtectionInputOwnerLabel",
-  label: "Owner",
-  helpText: `
+  {
+    key: "ukCriticalIllnessProtectionInputOwnerLabel",
+    label: "Owner",
+    helpText: `
     <h3>What to enter</h3>
     <p>Select the owner of the critical illness policy.</p>
     <h3>Tips</h3>
@@ -4708,12 +4708,12 @@ window.SHACKADEMY_FIELDS = [
       <li>Voyant assumes the owner and life insured are the same.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "ukCriticalIllnessInputName",
-  label: "Policy Name",
-  helpText: `
+  {
+    key: "ukCriticalIllnessInputName",
+    label: "Policy Name",
+    helpText: `
     <h3>What to enter</h3>
     <p>Enter a clear name for the critical illness policy.</p>
     <h3>Tips</h3>
@@ -4722,12 +4722,12 @@ window.SHACKADEMY_FIELDS = [
       <li>For example: "Critical Illness Cover" or "Mortgage CI Policy".</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "ukCriticalIllnessProtectionInputPremiumAmount",
-  label: "Premium Amount",
-  helpText: `
+  {
+    key: "ukCriticalIllnessProtectionInputPremiumAmount",
+    label: "Premium Amount",
+    helpText: `
     <h3>What to enter</h3>
     <p>Enter the premium payable while the policy is in force.</p>
     <h3>Important</h3>
@@ -4741,12 +4741,12 @@ window.SHACKADEMY_FIELDS = [
       <li>Check Year View after saving to confirm the premium is appearing correctly.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "ukCriticalIllnessProtectionInputBenefitAmount",
-  label: "Benefit Amount",
-  helpText: `
+  {
+    key: "ukCriticalIllnessProtectionInputBenefitAmount",
+    label: "Benefit Amount",
+    helpText: `
     <h3>What to enter</h3>
     <p>Enter the amount paid by the policy if a valid critical illness claim is triggered.</p>
     <h3>Tips</h3>
@@ -4756,12 +4756,12 @@ window.SHACKADEMY_FIELDS = [
       <li>Check the plan output where a disability or illness event is modelled.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "ukCriticalIllnessInputTerm",
-  label: "Term (Remaining)",
-  helpText: `
+  {
+    key: "ukCriticalIllnessInputTerm",
+    label: "Term (Remaining)",
+    helpText: `
     <h3>What to enter</h3>
     <p>Enter the remaining term of the critical illness policy.</p>
     <h3>Tips</h3>
@@ -4771,16 +4771,16 @@ window.SHACKADEMY_FIELDS = [
       <li>Once outside the term, the policy should no longer provide cover.</li>
     </ul>
   `,
-},
+  },
 
-// ------------------------------------------------------------
-// SUB-CATEGORY: Long Term Care
-// ------------------------------------------------------------
+  // ------------------------------------------------------------
+  // SUB-CATEGORY: Long Term Care
+  // ------------------------------------------------------------
 
-{
-  key: "ukLongTermCareProtectionInputOwnerLabel",
-  label: "Owner",
-  helpText: `
+  {
+    key: "ukLongTermCareProtectionInputOwnerLabel",
+    label: "Owner",
+    helpText: `
     <h3>What to enter</h3>
     <p>Select the owner of the long-term care policy.</p>
     <h3>Tips</h3>
@@ -4788,12 +4788,12 @@ window.SHACKADEMY_FIELDS = [
       <li>This will usually be the person whose care costs are being insured.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "ukLongTermCareInputName",
-  label: "Policy Name",
-  helpText: `
+  {
+    key: "ukLongTermCareInputName",
+    label: "Policy Name",
+    helpText: `
     <h3>What to enter</h3>
     <p>Enter a clear name for the long-term care policy.</p>
     <h3>Tips</h3>
@@ -4802,12 +4802,12 @@ window.SHACKADEMY_FIELDS = [
       <li>For example: "Long Term Care Policy".</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "ukLongTermCareProtectionInputMonthlyBenefit",
-  label: "Benefit Amount",
-  helpText: `
+  {
+    key: "ukLongTermCareProtectionInputMonthlyBenefit",
+    label: "Benefit Amount",
+    helpText: `
     <h3>What to enter</h3>
     <p>Enter the benefit amount payable under the long-term care policy.</p>
     <h3>Tips</h3>
@@ -4816,12 +4816,12 @@ window.SHACKADEMY_FIELDS = [
       <li>Check the projected care-related cash flow after saving.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "ukLongTermCareUnlimitedBenefitPeriod",
-  label: "Lifetime Benefits",
-  helpText: `
+  {
+    key: "ukLongTermCareUnlimitedBenefitPeriod",
+    label: "Lifetime Benefits",
+    helpText: `
     <h3>What to enter</h3>
     <p>Select whether benefits can continue for life.</p>
     <h3>Tips</h3>
@@ -4831,12 +4831,12 @@ window.SHACKADEMY_FIELDS = [
       <li>Check the policy schedule carefully as benefit periods can vary significantly.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "ukLongTermCareInputBenefitPeriod",
-  label: "Benefit Period",
-  helpText: `
+  {
+    key: "ukLongTermCareInputBenefitPeriod",
+    label: "Benefit Period",
+    helpText: `
     <h3>What to enter</h3>
     <p>Enter the period for which long-term care benefits can be paid.</p>
     <h3>Tips</h3>
@@ -4846,12 +4846,12 @@ window.SHACKADEMY_FIELDS = [
       <li>Check how long benefits continue in the plan output.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "ukLongTermCareProtectionInputPremiumAmount",
-  label: "Premium Amount",
-  helpText: `
+  {
+    key: "ukLongTermCareProtectionInputPremiumAmount",
+    label: "Premium Amount",
+    helpText: `
     <h3>What to enter</h3>
     <p>Enter the premium payable while the policy is in force.</p>
     <h3>Important</h3>
@@ -4865,12 +4865,12 @@ window.SHACKADEMY_FIELDS = [
       <li>Check Year View after saving to confirm the premium is appearing correctly.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "longTermCareInsuranceWaiverOfPremiumRider",
-  label: "Waiver of Premium",
-  helpText: `
+  {
+    key: "longTermCareInsuranceWaiverOfPremiumRider",
+    label: "Waiver of Premium",
+    helpText: `
     <h3>What to enter</h3>
     <p>Select whether the policy includes a waiver of premium feature.</p>
     <h3>Tips</h3>
@@ -4879,12 +4879,12 @@ window.SHACKADEMY_FIELDS = [
       <li>Use the policy documentation to confirm whether this applies.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "ukLongTermCareProtectionInputLifetimePayments",
-  label: "Lifetime Payments",
-  helpText: `
+  {
+    key: "ukLongTermCareProtectionInputLifetimePayments",
+    label: "Lifetime Payments",
+    helpText: `
     <h3>What to enter</h3>
     <p>Select whether premiums or payments continue for life.</p>
     <h3>Tips</h3>
@@ -4894,12 +4894,12 @@ window.SHACKADEMY_FIELDS = [
       <li>Check Year View &gt; Expenses to confirm the premium pattern.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "ukLongTermCareInputNumberOfYears",
-  label: "Payment Option Years",
-  helpText: `
+  {
+    key: "ukLongTermCareInputNumberOfYears",
+    label: "Payment Option Years",
+    helpText: `
     <h3>What to enter</h3>
     <p>Enter the number of years over which payments are made.</p>
     <h3>Tips</h3>
@@ -4909,12 +4909,12 @@ window.SHACKADEMY_FIELDS = [
       <li>Check the expense pattern after saving.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "insurancePresentFutureValue",
-  label: "Benefit and Premiums entered as",
-  helpText: `
+  {
+    key: "insurancePresentFutureValue",
+    label: "Benefit and Premiums entered as",
+    helpText: `
     <h3>What to enter</h3>
     <p>Select whether benefit and premium values are entered as present value or future value.</p>
     <h3>Options</h3>
@@ -4928,12 +4928,12 @@ window.SHACKADEMY_FIELDS = [
       <li>Use Future Value only where the figures already reflect the future amount.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "benefitInflationType",
-  label: "Benefit Inflation",
-  helpText: `
+  {
+    key: "benefitInflationType",
+    label: "Benefit Inflation",
+    helpText: `
     <h3>What to enter</h3>
     <p>Select how the long-term care benefit increases over time.</p>
     <h3>Options</h3>
@@ -4948,12 +4948,12 @@ window.SHACKADEMY_FIELDS = [
       <li>Benefit inflation can materially affect long-term care projections.</li>
     </ul>
   `,
-},
+  },
 
-{
-  key: "benefitInflationRate",
-  label: "Inflation Rate",
-  helpText: `
+  {
+    key: "benefitInflationRate",
+    label: "Inflation Rate",
+    helpText: `
     <h3>What to enter</h3>
     <p>Enter the rate used to increase the long-term care benefit over time.</p>
     <h3>Tips</h3>
@@ -4963,15 +4963,11 @@ window.SHACKADEMY_FIELDS = [
       <li>Check the projected benefit amount over time after saving.</li>
     </ul>
   `,
-},
-
-
-
+  },
 
   //TODO: Expenses??
   //TODO: Transfers
   //TODO: Planned Withdrawals
   //TODO: Estate Plans
   //TODO: Plan Settings
-
 ];
