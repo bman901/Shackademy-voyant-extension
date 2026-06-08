@@ -31,36 +31,35 @@
 // -----------------------------------------------------------------------------
 
 window.TAB_LABELS = {
-  "basics":            "Basics",
-  "timing":            "Timing",
-  "growth":            "Growth",
-  "fees":              "Fees",
-  "steps":             "Steps",
-  "transfers":         "Transfers",
-  "drawdowns":         "Planned Withdrawals",
-  "liquidation-limits":"Withdrawal Limit",
-  "payment-sources":   "Payment Sources",
-  "expense-details":   "Details",
-  "crystallizations":  "Crystallisations",
-  "beneficiaries":     "Beneficiaries",
-  "annuity":           "Annuitization",
-  "linked-debts":      "Linked Debts",
-  "linked-expenses":   "Linked Expenses",
-  "linked-income":     "Linked Income",
-  "linked-reverse-mortgage":      "Linked Equity Release",
-  "exercise":           "Exercise",
-  "vested-shares":      "Vested / Exercised Shares",
-  "future-vesting":     "Future Vesting",
-  "liquidation":        "Liquidation",
-  "future-grant":       "Future Grant",
-  "onetime-payments":   "One Time Payments",
-  "links":              "Linked Property",
-  "debt-payouts":       "Debt Payouts",
-  "maturity":           "Term Maturity",
+  basics: "Basics",
+  timing: "Timing",
+  growth: "Growth",
+  fees: "Fees",
+  steps: "Steps",
+  transfers: "Transfers",
+  drawdowns: "Planned Withdrawals",
+  "liquidation-limits": "Withdrawal Limit",
+  "payment-sources": "Payment Sources",
+  "expense-details": "Details",
+  crystallizations: "Crystallisations",
+  beneficiaries: "Beneficiaries",
+  annuity: "Annuitization",
+  "linked-debts": "Linked Debts",
+  "linked-expenses": "Linked Expenses",
+  "linked-income": "Linked Income",
+  "linked-reverse-mortgage": "Linked Equity Release",
+  exercise: "Exercise",
+  "vested-shares": "Vested / Exercised Shares",
+  "future-vesting": "Future Vesting",
+  liquidation: "Liquidation",
+  "future-grant": "Future Grant",
+  "onetime-payments": "One Time Payments",
+  links: "Linked Property",
+  "debt-payouts": "Debt Payouts",
+  maturity: "Term Maturity",
 };
 
 window.TAB_DESCRIPTIONS = {
-
   timing: `
     <p>The Timing tab controls <strong>when this item starts and ends</strong> in your plan. Voyant uses timeline events - milestones you define, like Retirement or a specific age - rather than fixed calendar dates, so your plan stays dynamic as assumptions change.</p>
     <p>Make sure the start and end events reflect your real expectations as accurately as possible, as they have a significant impact on your projections.</p>
@@ -122,17 +121,16 @@ window.TAB_DESCRIPTIONS = {
 // -----------------------------------------------------------------------------
 
 window.SHACKADEMY_SECTIONS = {
-
   // ============================================================
   // People
   // ============================================================
 
-  "people": {
+  people: {
     name: "People",
     typeIndicator: "personInputTypeLabel",
     lessons: ["people-timeline"],
     tabs: {
-      "basics": {
+      basics: {
         description: `
           <p>This is where you set up the <strong>people in your financial plan</strong>. Every plan needs at least one person - the plan owner - and you can add a partner or spouse as a second person.</p>
           <p>Getting the basics right here is important as Voyant uses this information - particularly date of birth and retirement age - throughout all projections.</p>
@@ -143,17 +141,16 @@ window.SHACKADEMY_SECTIONS = {
     },
   },
 
-
   // ============================================================
   // Goals
   // ============================================================
- 
-  "goals": {
+
+  goals: {
     name: "Goals",
     typeIndicator: "basicExpenseInputOwnerLabel",
     lessons: ["income-expenses", "occassional-expenditure"],
     tabs: {
-      "basics": {
+      basics: {
         description: `
           <p>Goals are how you model <strong>expenses and financial objectives</strong> in your plan - anything from school fees and holidays to home renovations or retirement spending. Each goal is an expense that Voyant will try to meet from your income and assets.</p>
           <p>Enter an annual amount and use the model to assess the impact on your plan. If a goal creates a shortfall, you can explore alternatives using What If scenarios.</p>
@@ -169,7 +166,7 @@ window.SHACKADEMY_SECTIONS = {
           <p>Anything entered here will override what you entered in the Basics tab, so only use this tab if you need more precise control than the Basics tab allows.</p>
         `,
       },
-      "timing": {
+      timing: {
         description: `
           <p>The Timing tab controls <strong>when this goal starts and ends</strong> in your plan, and how frequently it occurs.</p>
           <p>Goals are linked to timeline events - so if your retirement date changes, any goals tied to it will move automatically. You can also set a goal to repeat less frequently than annually - for example, every two years for a biennial expense.</p>
@@ -186,21 +183,22 @@ window.SHACKADEMY_SECTIONS = {
           <p>Use the "Only Use Preferred Sources" option very sparingly as it can create artificial shortfalls if the nominated account is insufficient.</p>
         `,
       },
-      "steps":  { 
-        description: window.TAB_DESCRIPTIONS.steps,  },
+      steps: {
+        description: window.TAB_DESCRIPTIONS.steps,
+      },
     },
   },
- 
+
   // ============================================================
   // Events & Stages
   // ============================================================
- 
-  "events": {
+
+  events: {
     name: "Events",
     typeIndicator: "eventName",
     lessons: ["people-timeline"],
     tabs: {
-      "basics": {
+      basics: {
         description: `
           <p>Events are <strong>milestones on your timeline</strong> - named points in time that Voyant uses to trigger changes in your plan. Retirement, buying a property, children leaving home, or starting a business are all examples of events.</p>
           <p>Rather than working with fixed calendar dates, Voyant links items in your plan to events. This means if you change when an event happens, everything connected to it updates automatically - making it much easier to model scenarios like "what if I retire two years earlier?"</p>
@@ -212,13 +210,13 @@ window.SHACKADEMY_SECTIONS = {
       },
     },
   },
- 
-  "stages": {
+
+  stages: {
     name: "Stages",
     typeIndicator: "stageInputName",
     lessons: ["people-timeline"],
     tabs: {
-      "basics": {
+      basics: {
         description: `
           <p>Stages are <strong>labelled bands on your timeline</strong> that visually organise your plan into distinct life phases - such as "Working Years", "Early Retirement", or "Later Life".</p>
           <p>Stages are purely visual and don't affect any calculations, but they can make your plan easier to read and discuss. They are bounded by Events on the timeline, so set up your Events first and use Stages to label the periods between them.</p>
@@ -231,7 +229,6 @@ window.SHACKADEMY_SECTIONS = {
     },
   },
 
-
   // ============================================================
   // Employment Income
   // ============================================================
@@ -241,13 +238,13 @@ window.SHACKADEMY_SECTIONS = {
     typeIndicator: "employmentInputEmploymentSource",
     lessons: ["income-expenses", "retiring-part-way"],
     tabs: {
-      "basics": {
+      basics: {
         description: `
           <p>This is where you enter <strong>income from employment</strong> - salary, bonuses, commissions, and benefits in kind. All figures should be entered <strong>gross</strong> (before tax and National Insurance).</p>
         `,
       },
-      "timing": { description: window.TAB_DESCRIPTIONS.timing },
-      "steps":  { description: window.TAB_DESCRIPTIONS.steps,  },
+      timing: { description: window.TAB_DESCRIPTIONS.timing },
+      steps: { description: window.TAB_DESCRIPTIONS.steps },
     },
   },
 
@@ -260,28 +257,28 @@ window.SHACKADEMY_SECTIONS = {
     typeIndicator: "otherIncomeInputTaxationType",
     lessons: ["income-expenses"],
     tabs: {
-      "basics": {
+      basics: {
         description: `
           <p>Other Income covers <strong>income that is not subject to National Insurance</strong> - including rental income, royalties, maintenance payments, or overseas income. It is also used for employment earnings not subject to standard UK income tax.</p>
           <p>Voyant assesses other income at the end of each plan year and applies tax as an expense in the following year.</p>
           <p>Use the Taxation Type field to tell Voyant how to tax this income - as income, property income, capital gains, or dividends.</p>
         `,
       },
-      "timing": { description: window.TAB_DESCRIPTIONS.timing },
-      "steps":   { description: window.TAB_DESCRIPTIONS.steps,   },
+      timing: { description: window.TAB_DESCRIPTIONS.timing },
+      steps: { description: window.TAB_DESCRIPTIONS.steps },
     },
   },
 
   // ============================================================
   // Windfall
   // ============================================================
- 
-  "windfall": {
+
+  windfall: {
     name: "Windfall",
     typeIndicator: "windfallInputType",
     lessons: ["income-expenses"],
     tabs: {
-      "basics": {
+      basics: {
         description: `
           <p>A windfall is a <strong>one-off lump sum received at a specific point in the plan</strong> - such as an inheritance.</p>
           <p>Voyant treats windfalls as a cash inflow at the date you specify. Set the Taxable field and Taxation Type carefully to ensure Voyant applies the correct tax treatment.</p>
@@ -291,7 +288,7 @@ window.SHACKADEMY_SECTIONS = {
           </ul>
         `,
       },
-      "timing": { description: window.TAB_DESCRIPTIONS.timing },
+      timing: { description: window.TAB_DESCRIPTIONS.timing },
     },
   },
 
@@ -299,12 +296,17 @@ window.SHACKADEMY_SECTIONS = {
   // Savings & Investments - Savings
   // ============================================================
 
-  "savings": {
+  savings: {
     name: "Savings",
     typeIndicator: "ukSavingInputSavingType",
-    lessons: ["savings-investments", "lump-sums", "non-standard-assets", "managing-withdrawals"],
+    lessons: [
+      "savings-investments",
+      "lump-sums",
+      "non-standard-assets",
+      "managing-withdrawals",
+    ],
     tabs: {
-      "basics": {
+      basics: {
         description: `
           <p>This is where you enter <strong>cash savings accounts</strong> - current accounts, savings accounts, Cash ISAs, and National Savings Certificates.</p>
           <p>The account type matters for tax purposes. Voyant treats accounts as follows:</p>
@@ -316,7 +318,7 @@ window.SHACKADEMY_SECTIONS = {
           <p>When income falls short of expenses, Voyant draws on savings according to the liquidation order. Check Dashboard > Plan Settings > Liquidation Order to see and adjust this.</p>
         `,
       },
-      "timing": {
+      timing: {
         description: `
           <p>The Timing tab controls <strong>when contributions are allowed</strong> in this plan. Voyant uses timeline events - milestones you define, like Retirement or a specific age - rather than fixed calendar dates, so your plan stays dynamic as assumptions change.</p>
           <ul>
@@ -325,11 +327,13 @@ window.SHACKADEMY_SECTIONS = {
           </ul>
         `,
       },
-      "fees": { description: window.TAB_DESCRIPTIONS.fees },
-      "steps":        { description: window.TAB_DESCRIPTIONS.steps,  },
-      "transfers": { description: window.TAB_DESCRIPTIONS.transfers },
-      "drawdowns": { description: window.TAB_DESCRIPTIONS.drawdowns },
-      "liquidation-limits": { description: window.TAB_DESCRIPTIONS["liquidation-limits"] },
+      fees: { description: window.TAB_DESCRIPTIONS.fees },
+      steps: { description: window.TAB_DESCRIPTIONS.steps },
+      transfers: { description: window.TAB_DESCRIPTIONS.transfers },
+      drawdowns: { description: window.TAB_DESCRIPTIONS.drawdowns },
+      "liquidation-limits": {
+        description: window.TAB_DESCRIPTIONS["liquidation-limits"],
+      },
     },
   },
 
@@ -337,12 +341,17 @@ window.SHACKADEMY_SECTIONS = {
   // Savings & Investments - Investments
   // ============================================================
 
-  "investments": {
+  investments: {
     name: "Investments",
     typeIndicator: "investmentInputInvesmentType",
-    lessons: ["savings-investments", "lump-sums", "non-standard-assets", "managing-withdrawals"],
+    lessons: [
+      "savings-investments",
+      "lump-sums",
+      "non-standard-assets",
+      "managing-withdrawals",
+    ],
     tabs: {
-      "basics": {
+      basics: {
         description: `
           <p>This is where you enter <strong>investment accounts and wrappers</strong> - Stocks & Shares ISAs, Lifetime ISAs, onshore and offshore bonds, unwrapped investments, trusts, EIS, SEIS, VCTs, and more.</p>
           <p>The Type field is critical - it determines Voyant's tax treatment and whether Voyant will access the account automatically or only via planned withdrawals. Voyant treats accounts as follows:</p>
@@ -355,8 +364,8 @@ window.SHACKADEMY_SECTIONS = {
           <p>For investment bonds, make sure you enter the Purchase Value and Year Purchased accurately as these affect Voyant's tax calculations.</p>
         `,
       },
-      "growth": { description: window.TAB_DESCRIPTIONS.growth },
-      "timing": {
+      growth: { description: window.TAB_DESCRIPTIONS.growth },
+      timing: {
         description: `
           <p>The Timing tab controls <strong>when contributions are allowed</strong> in this plan. Voyant uses timeline events - milestones you define, like Retirement or a specific age - rather than fixed calendar dates, so your plan stays dynamic as assumptions change.</p>
           <ul>
@@ -365,11 +374,13 @@ window.SHACKADEMY_SECTIONS = {
           </ul>
         `,
       },
-      "fees": { description: window.TAB_DESCRIPTIONS.fees },
-      "steps":        { description: window.TAB_DESCRIPTIONS.steps,   },
-      "transfers": { description: window.TAB_DESCRIPTIONS.transfers },
-      "drawdowns": { description: window.TAB_DESCRIPTIONS.drawdowns },
-      "liquidation-limits": { description: window.TAB_DESCRIPTIONS["liquidation-limits"] },
+      fees: { description: window.TAB_DESCRIPTIONS.fees },
+      steps: { description: window.TAB_DESCRIPTIONS.steps },
+      transfers: { description: window.TAB_DESCRIPTIONS.transfers },
+      drawdowns: { description: window.TAB_DESCRIPTIONS.drawdowns },
+      "liquidation-limits": {
+        description: window.TAB_DESCRIPTIONS["liquidation-limits"],
+      },
     },
   },
 
@@ -377,12 +388,12 @@ window.SHACKADEMY_SECTIONS = {
   // Property
   // ============================================================
 
-  "property": {
+  property: {
     name: "Property",
     typeIndicator: "propertyInputAssetType",
     lessons: ["property-basics", "what-if-downsizing", "what-if-upsizing"],
     tabs: {
-      "basics": {
+      basics: {
         description: `
           <p>This is where you enter <strong>property and other physical assets</strong> - your main home, buy-to-let properties, holiday homes, vehicles, collectables, or business property. Enter the current market value.</p>
           <p>The Asset Type field is important for tax. Voyant assesses this as follows:</p>
@@ -395,7 +406,7 @@ window.SHACKADEMY_SECTIONS = {
           <p>Only enter a business here if it has a material value that you will realise and you want this included in your plan.</p>
         `,
       },
-      "timing": {
+      timing: {
         description: `
           <p>The Timing tab for property sets the <strong>buy and sell events</strong> - the timeline milestones at which Voyant models the property being purchased and disposed of.</p>
           <p>If you are modelling a property that is already owned and not being sold within the plan, leave the Buy Event as 'Plan Start' and the Sell Event as 'Plan End'.</p>
@@ -403,7 +414,7 @@ window.SHACKADEMY_SECTIONS = {
           <p>Check out the linked lesson to understand how to include Stamp Duty Land Tax.</p>
         `,
       },
-      "steps":        { description: window.TAB_DESCRIPTIONS.steps,     },
+      steps: { description: window.TAB_DESCRIPTIONS.steps },
       "payment-sources": {
         description: `
           <p>The Payment Sources tab lets you control <strong>which accounts or assets are used to fund a future property purchase</strong>.</p>
@@ -450,7 +461,7 @@ window.SHACKADEMY_SECTIONS = {
     typeIndicator: "ukMoneyPurchaseInputType",
     lessons: ["pension-basics", "lump-sums", "pension-withdrawals"],
     tabs: {
-      "basics": {
+      basics: {
         description: `
           <p>This is where you enter a <strong>defined contribution (money purchase) pension</strong> - including personal pensions, SIPPs, workplace pensions, and GPPs.</p>
           <p>The pension Type field is largely informational, but there is one important distinction: personal pensions (PPP/GPP/SIPP) and occupational schemes have different rules for how tax relief on contributions is applied.</p>
@@ -462,9 +473,9 @@ window.SHACKADEMY_SECTIONS = {
           </ul>
         `,
       },
-      "growth": { description: window.TAB_DESCRIPTIONS.growth },
-      "fees": { description: window.TAB_DESCRIPTIONS.fees },
-      "timing": {
+      growth: { description: window.TAB_DESCRIPTIONS.growth },
+      fees: { description: window.TAB_DESCRIPTIONS.fees },
+      timing: {
         description: `
           <p>The Timing tab controls <strong>when contributions are allowed</strong> in this plan. Voyant uses timeline events - milestones you define, like Retirement or a specific age - rather than fixed calendar dates, so your plan stays dynamic as assumptions change.</p>
           <ul>
@@ -473,8 +484,8 @@ window.SHACKADEMY_SECTIONS = {
           </ul>
         `,
       },
-      "steps":        { description: window.TAB_DESCRIPTIONS.steps,    },
-      "crystallisations": {
+      steps: { description: window.TAB_DESCRIPTIONS.steps },
+      crystallisations: {
         description: `
           <p>The Crystallisations tab allows you to model <strong>specific pension crystallisation events</strong> - the point at which pension benefits are formally accessed and tax-free cash is taken.</p>
           <p>For regular income in retirement, Voyant handles crystallisation automatically when the pension begins drawdown according to the Timing settings.</p>
@@ -482,16 +493,18 @@ window.SHACKADEMY_SECTIONS = {
           <p>If you want to model regular, consistent crystallisation events then it may be easier to manage that using the 'Planned Withdrawals' tab.</p>
         `,
       },
-      "beneficiaries": {
+      beneficiaries: {
         description: `
           <p>The Beneficiaries tab reflects what happens to your pension when you die.</p>
           <p>Refer to the tooltip for more details on the options available.</p>
         `,
       },
-      "transfers": { description: window.TAB_DESCRIPTIONS.transfers },
-      "liquidation-limits": { description: window.TAB_DESCRIPTIONS["liquidation-limits"] },
-      "drawdowns": { description: window.TAB_DESCRIPTIONS.drawdowns },
-      "annuity": {
+      transfers: { description: window.TAB_DESCRIPTIONS.transfers },
+      "liquidation-limits": {
+        description: window.TAB_DESCRIPTIONS["liquidation-limits"],
+      },
+      drawdowns: { description: window.TAB_DESCRIPTIONS.drawdowns },
+      annuity: {
         description: `
           <p>The Annuitization tab allows you to model the <strong>conversion of some or all of this pension pot into a guaranteed annuity income</strong> at a future point.</p>
           <p>You can specify the percentage of the fund to annuitise, the timing, escalation rate, and whether it pays on a single or joint life basis.</p>
@@ -510,7 +523,7 @@ window.SHACKADEMY_SECTIONS = {
     typeIndicator: "ukFinalSalaryInputStatus",
     lessons: ["pension-basics"],
     tabs: {
-      "basics": {
+      basics: {
         description: `
           <p>This is where you enter a <strong>defined benefit pension</strong> - common in the public sector (NHS, teachers, civil service, armed forces) and some older workplace schemes.</p>
           <p>Unlike defined contribution pensions, the benefit is a guaranteed income based on your salary and years of service - not a pot of money.</p>
@@ -523,7 +536,7 @@ window.SHACKADEMY_SECTIONS = {
           <p>Check your pension scheme statement carefully for the benefit amount, accrual rate, and normal retirement age - these vary significantly between schemes.</p>
         `,
       },
-      "timing": {
+      timing: {
         description: `
           <p>The Timing tab for a Final Salary pension sets <strong>when you intend to start drawing an income</strong> from the plan. This is typically your planned retirement date or a specific age event.</p>
           <p>If you start taking benefits before the scheme's Normal Retirement Age (entered in the Basics tab), Voyant will apply the actuarial reduction rate automatically.</p>
@@ -535,12 +548,12 @@ window.SHACKADEMY_SECTIONS = {
   // ============================================================
   // Annuity
   // ============================================================
- 
-  "annuity": {
+
+  annuity: {
     name: "Annuity",
     typeIndicator: "ukAnnuityInputStatus",
     tabs: {
-      "basics": {
+      basics: {
         description: `
           <p>This is where you enter an <strong>existing or future annuity</strong> - a financial product that converts a lump sum into a guaranteed income, either for life or a fixed term.</p>
           <p>The Status field determines how Voyant models it:</p>
@@ -551,7 +564,7 @@ window.SHACKADEMY_SECTIONS = {
           </ul>
         `,
       },
-      "timing": {
+      timing: {
         description: `
           <p>The Timing tab for an annuity sets <strong>when you intend to start drawing an income</strong> from the plan.</p>
         `,
@@ -565,20 +578,20 @@ window.SHACKADEMY_SECTIONS = {
             <li>Check Year View after saving to make sure payments are being funded as intended</li>
           </ul>
         `,
-      },      
+      },
     },
   },
- 
+
   // ============================================================
   // Drawdown Pension
   // ============================================================
- 
-  "drawdown": {
+
+  drawdown: {
     name: "Drawdown Pension",
     typeIndicator: "ukUnsecuredPensionInputDrawdownPensionType",
     lessons: ["pension-basics", "pension-withdrawals"],
     tabs: {
-      "basics": {
+      basics: {
         description: `
           <p>This is where you enter an <strong>existing drawdown pension</strong> - a crystallised pension pot that is already in drawdown at the plan start date. If you are modelling a pension that will move into drawdown during the plan, enter it as a Money Purchase pension instead - Voyant will create the drawdown pot automatically.</p>
           <ul>
@@ -587,18 +600,20 @@ window.SHACKADEMY_SECTIONS = {
           </ul>
         `,
       },
-      "growth": { description: window.TAB_DESCRIPTIONS.growth },
-      "fees": { description: window.TAB_DESCRIPTIONS.fees },
-      "beneficiaries": {
+      growth: { description: window.TAB_DESCRIPTIONS.growth },
+      fees: { description: window.TAB_DESCRIPTIONS.fees },
+      beneficiaries: {
         description: `
           <p>The Beneficiaries tab reflects what happens to your pension when you die.</p>
           <p>Refer to the tooltip for more details on the options available.</p>
         `,
       },
-      "steps":               { description: window.TAB_DESCRIPTIONS.steps,    },
-      "liquidation-limits": { description: window.TAB_DESCRIPTIONS["liquidation-limits"] },
-      "drawdowns": { description: window.TAB_DESCRIPTIONS.drawdowns },
-      "annuity": {
+      steps: { description: window.TAB_DESCRIPTIONS.steps },
+      "liquidation-limits": {
+        description: window.TAB_DESCRIPTIONS["liquidation-limits"],
+      },
+      drawdowns: { description: window.TAB_DESCRIPTIONS.drawdowns },
+      annuity: {
         description: `
           <p>The Annuitization tab allows you to model the <strong>conversion of some or all of this pension pot into a guaranteed annuity income</strong> at a future point.</p>
           <p>You can specify the percentage of the fund to annuitise, the timing, escalation rate, and whether it pays on a single or joint life basis.</p>
@@ -607,17 +622,17 @@ window.SHACKADEMY_SECTIONS = {
       },
     },
   },
- 
+
   // ============================================================
   // State Pension
   // ============================================================
- 
+
   "state-pension": {
     name: "State Pension",
     typeIndicator: "ukStatePensionInputOwnerLabel",
     lessons: ["pension-basics"],
     tabs: {
-      "basics": {
+      basics: {
         description: `
           <p>This is where you enter the <strong>UK State Pension</strong> for each person in the plan.</p>
           <p>Get the State Pension forecast for each person at <a href="https://www.gov.uk/check-state-pension" target="_blank" rel="noopener noreferrer">gov.uk/check-state-pension</a> - this gives you the projected amount and exact State Pension Age based on date of birth.</p>
@@ -640,8 +655,7 @@ window.SHACKADEMY_SECTIONS = {
     lessons: [],
 
     tabs: {
-
-      "basics": {
+      basics: {
         description: `
           <p>This is where you model <strong>share-based compensation</strong> such as Restricted Stock Units (RSUs) and share options.</p>
           <p>The key inputs here determine <strong>how the grant behaves over time</strong> within Voyant - including how it vests, whether it can be exercised, and how it links to your employment.</p>
@@ -654,7 +668,7 @@ window.SHACKADEMY_SECTIONS = {
         `,
       },
 
-      "growth": {
+      growth: {
         description: `
           <p>The Growth tab controls <strong>how the underlying share price is projected over time</strong>.</p>
           <p>This has a direct impact on the value of both vested and unvested shares.</p>
@@ -665,7 +679,7 @@ window.SHACKADEMY_SECTIONS = {
         `,
       },
 
-      "exercise": {
+      exercise: {
         description: `
           <p>The Exercise tab applies to <strong>option-based grants</strong> and controls when and how shares are exercised.</p>
           <p>Exercising an option means purchasing shares at the exercise price. This can create both a <strong>cashflow requirement</strong> and a <strong>taxable event</strong>, depending on the scheme.</p>
@@ -702,7 +716,7 @@ window.SHACKADEMY_SECTIONS = {
         `,
       },
 
-      "liquidation": {
+      liquidation: {
         description: `
           <p>The Liquidation tab controls <strong>how and when shares are sold</strong> once they are available.</p>
           <p>This determines whether shares are retained for growth or converted into cash to support spending.</p>
@@ -726,8 +740,7 @@ window.SHACKADEMY_SECTIONS = {
         `,
       },
 
-      "steps": { description: window.TAB_DESCRIPTIONS.steps },
-
+      steps: { description: window.TAB_DESCRIPTIONS.steps },
     },
   },
 
@@ -735,12 +748,12 @@ window.SHACKADEMY_SECTIONS = {
   // Debts
   // ============================================================
 
-  "debt": {
+  debt: {
     name: "Debt",
     typeIndicator: "debtInputOwnerLabel",
-    lessons: ["property-basics","overpayment","paydown-mortgage"],
+    lessons: ["property-basics", "overpayment", "paydown-mortgage"],
     tabs: {
-      "basics": {
+      basics: {
         description: `
           <p>This is where you enter a <strong>debt that needs to be repaid</strong>, such as a mortgage, loan, credit card, or other borrowing.</p>
           <p>The key inputs are the current balance, interest rate, payment type, and payment amount or duration. Together, these determine how the debt changes over time in Voyant.</p>
@@ -751,10 +764,10 @@ window.SHACKADEMY_SECTIONS = {
           </ul>
         `,
       },
-      "timing": {
+      timing: {
         description: window.TAB_DESCRIPTIONS.timing,
       },
-      "steps": {
+      steps: {
         description: window.TAB_DESCRIPTIONS.steps,
       },
       "payment-sources": {
@@ -779,7 +792,7 @@ window.SHACKADEMY_SECTIONS = {
           </ul>
         `,
       },
-      "links": {
+      links: {
         description: `
           <p>The Linked Property tab lets you connect this debt to a property in the plan.</p>
           <p>This is typically relevant for mortgages or other debts secured against a property. Linking the debt helps Voyant treat the borrowing alongside the asset it relates to.</p>
@@ -794,9 +807,9 @@ window.SHACKADEMY_SECTIONS = {
   "line-of-credit": {
     name: "Line of Credit",
     typeIndicator: "lineOfCreditInputOwnerLabel",
-    lessons: ["property-basics","overpayment","paydown-mortgage"],
+    lessons: ["property-basics", "overpayment", "paydown-mortgage"],
     tabs: {
-      "basics": {
+      basics: {
         description: `
           <p>This is where you enter a <strong>line of credit</strong> - flexible borrowing that can be drawn from over time.</p>
           <p>The credit limit can be entered as a fixed amount or based on a percentage of equity in a linked asset. The current balance reflects how much has already been borrowed.</p>
@@ -807,10 +820,10 @@ window.SHACKADEMY_SECTIONS = {
           </ul>
         `,
       },
-      "timing": {
+      timing: {
         description: window.TAB_DESCRIPTIONS.timing,
       },
-      "steps": {
+      steps: {
         description: window.TAB_DESCRIPTIONS.steps,
       },
       "payment-sources": {
@@ -835,7 +848,7 @@ window.SHACKADEMY_SECTIONS = {
           </ul>
         `,
       },
-      "links": {
+      links: {
         description: `
           <p>The Linked Property tab lets you connect the line of credit to a property in the plan.</p>
           <p>This is particularly important if the credit limit is based on a <strong>percentage of equity</strong>, because Voyant needs to know which property value to reference.</p>
@@ -849,7 +862,7 @@ window.SHACKADEMY_SECTIONS = {
       "liquidation-limits": {
         description: window.TAB_DESCRIPTIONS["liquidation-limits"],
       },
-      "drawdowns": {
+      drawdowns: {
         description: window.TAB_DESCRIPTIONS.drawdowns,
       },
     },
@@ -860,7 +873,7 @@ window.SHACKADEMY_SECTIONS = {
     typeIndicator: "reverseMortgageOwnerLabel",
     lessons: [],
     tabs: {
-      "basics": {
+      basics: {
         description: `
           <p>This is where you enter an <strong>equity release or reverse mortgage arrangement</strong>.</p>
           <p>The key inputs include whether the arrangement is new or existing, the mortgage amount, interest rate, any lump sum taken, annual advances, credit limit, and credit limit growth rate.</p>
@@ -870,7 +883,7 @@ window.SHACKADEMY_SECTIONS = {
           </ul>
         `,
       },
-      "links": {
+      links: {
         description: `
           <p>The Linked Property tab connects the equity release arrangement to the property it relates to.</p>
           <ul>
@@ -880,7 +893,7 @@ window.SHACKADEMY_SECTIONS = {
           </ul>
         `,
       },
-      "timing": {
+      timing: {
         description: window.TAB_DESCRIPTIONS.timing,
       },
       "onetime-payments": {
@@ -896,12 +909,12 @@ window.SHACKADEMY_SECTIONS = {
     },
   },
 
-  "loan": {
+  loan: {
     name: "Loan",
     typeIndicator: "loanInputOwnerLabel",
     lessons: [],
     tabs: {
-      "basics": {
+      basics: {
         description: `
           <p>This is where you enter a <strong>loan owed to someone in the plan</strong>.</p>
           <p>In this section, the lender is the person in the plan who has lent the money, and the borrower is the person who will repay it. Repayments are treated as money coming back into the plan.</p>
@@ -913,10 +926,10 @@ window.SHACKADEMY_SECTIONS = {
           </ul>
         `,
       },
-      "timing": {
+      timing: {
         description: window.TAB_DESCRIPTIONS.timing,
       },
-      "steps": {
+      steps: {
         description: window.TAB_DESCRIPTIONS.steps,
       },
       "onetime-payments": {
@@ -932,7 +945,6 @@ window.SHACKADEMY_SECTIONS = {
       },
     },
   },
- 
 
   // ============================================================
   // Protection
@@ -943,7 +955,7 @@ window.SHACKADEMY_SECTIONS = {
     typeIndicator: "ukTermProtectinInputOwnerLabel",
     lessons: ["insurance", "modelling-illness"],
     tabs: {
-      "basics": {
+      basics: {
         description: `
           <p>This is where you enter <strong>term assurance, endowment-style policies, death-in-service cover, and family income benefit</strong>.</p>
           <p>The key inputs determine who owns the policy, who is insured, what type of benefit is paid, how long the cover lasts, and how premiums are modelled.</p>
@@ -955,7 +967,7 @@ window.SHACKADEMY_SECTIONS = {
         `,
       },
 
-      "maturity": {
+      maturity: {
         description: `
           <p>The Term Maturity tab is used where the policy has a <strong>maturity value or end-of-term payout</strong>.</p>
           <p>This may be relevant for endowment-style policies where the policy has an investment value as well as protection features.</p>
@@ -968,7 +980,7 @@ window.SHACKADEMY_SECTIONS = {
         `,
       },
 
-      "beneficiaries": {
+      beneficiaries: {
         description: `
           <p>The Beneficiaries tab controls <strong>who receives the policy proceeds</strong> if the policy pays out.</p>
           <ul>
@@ -978,7 +990,7 @@ window.SHACKADEMY_SECTIONS = {
         `,
       },
 
-      "timing": {
+      timing: {
         description: `
           <p>The Timing tab controls <strong>when the policy starts and ends</strong> in the plan.</p>
           <p>The policy start event and the remaining term work together to determine whether a payout is made if the insured person dies during the plan.</p>
@@ -1008,7 +1020,7 @@ window.SHACKADEMY_SECTIONS = {
     typeIndicator: "ukWholeLifeProtectionInputOwnerLabel",
     lessons: ["insurance", "modelling-illness"],
     tabs: {
-      "basics": {
+      basics: {
         description: `
           <p>This is where you enter a <strong>whole life policy</strong> - cover designed to remain in force for life rather than for a fixed term.</p>
           <ul>
@@ -1019,7 +1031,7 @@ window.SHACKADEMY_SECTIONS = {
         `,
       },
 
-      "beneficiaries": {
+      beneficiaries: {
         description: `
           <p>The Beneficiaries tab controls <strong>who receives the whole life policy proceeds</strong>.</p>
           <ul>
@@ -1029,7 +1041,7 @@ window.SHACKADEMY_SECTIONS = {
         `,
       },
 
-      "timing": {
+      timing: {
         description: `
           <p>The Timing tab controls <strong>when the policy is introduced into the plan</strong>.</p>
           <p>Whole life cover usually remains in force for life, but the start date and premium timing still need to be modelled correctly.</p>
@@ -1046,9 +1058,9 @@ window.SHACKADEMY_SECTIONS = {
   "income-protection": {
     name: "Income Protection",
     typeIndicator: "ukIncomeProtectionInputOwnerLabel",
-    lessons: ["insurance","modelling-illness"],
+    lessons: ["insurance", "modelling-illness"],
     tabs: {
-      "basics": {
+      basics: {
         description: `
           <p>This is where you enter an <strong>income protection policy</strong>, designed to replace income if the insured person cannot work because of illness or injury.</p>
           <p>The key inputs determine the premium, coverage type, benefit amount, benefit duration, and how the cover increases over time.</p>
@@ -1060,7 +1072,7 @@ window.SHACKADEMY_SECTIONS = {
         `,
       },
 
-      "timing": {
+      timing: {
         description: `
           <p>The Timing tab controls <strong>when income protection cover and premiums apply</strong>.</p>
           <p>This matters because the policy should only provide cover during the period it is active.</p>
@@ -1076,16 +1088,16 @@ window.SHACKADEMY_SECTIONS = {
   "critical-illness": {
     name: "Critical Illness",
     typeIndicator: "ukCriticalIllnessProtectionInputOwnerLabel",
-    lessons: ["insurance","modelling-illness"],
+    lessons: ["insurance", "modelling-illness"],
     tabs: {
-      "basics": {
+      basics: {
         description: `
           <p>This is where you enter a <strong>critical illness policy</strong>, which pays a benefit if the insured person suffers a qualifying critical illness under the policy terms.</p>
           <p>The key inputs are the policy owner, premium, benefit amount, and remaining term.</p>
         `,
       },
 
-      "timing": {
+      timing: {
         description: `
           <p>The Timing tab controls <strong>when the critical illness policy is active</strong>.</p>
           <p>The timing settings and remaining term determine whether the policy provides cover at different points in the plan.</p>
@@ -1103,7 +1115,7 @@ window.SHACKADEMY_SECTIONS = {
     typeIndicator: "ukLongTermCareProtectionInputOwnerLabel",
     lessons: ["insurance", "modelling-illness", "aged-care"],
     tabs: {
-      "basics": {
+      basics: {
         description: `
           <p>This is where you enter a <strong>long-term care insurance policy</strong>, designed to provide benefits if care is needed later in life.</p>
           <p>The key inputs determine the benefit amount, benefit period, premiums, payment duration, and whether benefits increase over time.</p>
@@ -1115,7 +1127,7 @@ window.SHACKADEMY_SECTIONS = {
         `,
       },
 
-      "timing": {
+      timing: {
         description: `
           <p>The Timing tab controls <strong>when the long-term care policy is active</strong>.</p>
           <p>This affects when premiums are paid and when benefits may be available in the plan.</p>

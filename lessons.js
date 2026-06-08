@@ -10,7 +10,6 @@
 // =============================================================================
 
 window.SHACKADEMY_LESSONS = {
-
   "intro-to-voyant": {
     title: "Setting Up Voyant and Key Assumptions",
     url: "https://shackademy.com/path-player?courseid=voyant&unit=67734dec1c6b5ca11b094f0cUnit",
@@ -34,14 +33,14 @@ window.SHACKADEMY_LESSONS = {
   "savings-investments": {
     title: "Adding savings & Investments",
     url: "https://shackademy.com/path-player?courseid=voyant&unit=6773215dff7e551718002c16Unit",
-  },  
+  },
 
   "pension-basics": {
     title: "Adding pensions",
     url: "https://shackademy.com/path-player?courseid=voyant&unit=6773214bcbc96cfe9f04a018Unit",
   },
 
-  "insurance": {
+  insurance: {
     title: "Adding insurance policies",
     url: "https://shackademy.com/path-player?courseid=voyant&unit=6775a9a9609267a83207747aUnit",
   },
@@ -91,16 +90,16 @@ window.SHACKADEMY_LESSONS = {
     url: "https://shackademy.com/path-player?courseid=voyant&unit=67c8df51d38965f7be05737eUnit",
   },
 
-  "overpayments": {
+  overpayments: {
     title: "Mortgage Overpayments",
     url: "https://shackademy.com/path-player?courseid=voyant&unit=67c8e6b4ec0b07dcba08ec37Unit",
   },
-  
+
   "paydown-mortgage": {
     title: "Paying Off Your Mortgage Early",
     url: "https://shackademy.com/path-player?courseid=voyant&unit=67c8e55a712f13354c0ebb1cUnit",
   },
-  
+
   "modelling-illness": {
     title: "Illness or Long-Term Sickness",
     url: "https://shackademy.com/path-player?courseid=voyant&unit=67c8e5ba6e2bd3ccde01797fUnit",
@@ -110,5 +109,4 @@ window.SHACKADEMY_LESSONS = {
     title: "Aged Care",
     url: "https://shackademy.com/path-player?courseid=voyant&unit=67cf5bde70f0985195087f7aUnit",
   },
-
 };

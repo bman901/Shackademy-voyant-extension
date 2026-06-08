@@ -41,9 +41,11 @@ chrome.action.onClicked.addListener(async (tab) => {
   await updateTitle(next);
 
   // Tell the content script to activate or tear down
-  chrome.tabs.sendMessage(tab.id, {
-    type: next ? "SHACKADEMY_ENABLE" : "SHACKADEMY_DISABLE",
-  }).catch(() => {});
+  chrome.tabs
+    .sendMessage(tab.id, {
+      type: next ? "SHACKADEMY_ENABLE" : "SHACKADEMY_DISABLE",
+    })
+    .catch(() => {});
 });
 
 // Restore correct toolbar title on browser startup
