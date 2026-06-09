@@ -259,7 +259,7 @@ window.SHACKADEMY_FIELDS = [
     <h3>What to enter</h3>
     <p>If setting a preferred payment source, use the "Only Use Preferred Sources" to Pay the Expense very sparingly, if at all.
     <br>
-    When ticked, this setting can create artificial shortfalls if the preferred source is inadequately funded to pay the linked expense. These artificial shortfalls can prevent the software’s need analysers from returning results.
+    When ticked, this setting can create artificial shortfalls if the preferred source is inadequately funded to pay the linked expense. These artificial shortfalls can prevent Voyant’s need analysers from returning results.
     <br>
     <strong>When might you tick the “Only Use…”option? </strong>
     <br>
@@ -957,7 +957,7 @@ window.SHACKADEMY_FIELDS = [
       <h3>Types of Account</h3>
       <ul>
         <li><strong>Bypass Trust & Loan Trusts</strong> - Trusts do not form part of the liquidation order. Voyant will not take adhoc/as needed withdrawals to fulfil expenses.</li>
-        <li><strong>Discounted Gift Trusts (DGT)</strong> - A DGT does not form part of the liquidation order however the software will make automatic planned withdrawals from the investment.<sup>1</sup></li>
+        <li><strong>Discounted Gift Trusts (DGT)</strong> - A DGT does not form part of the liquidation order however Voyant will make automatic planned withdrawals from the investment.<sup>1</sup></li>
         <li><strong>Enterprise Investment Schemes (EIS)</strong> - EIS investments do not form part of the liquidation order. Adhoc withdrawals will not be taken from these investments. If withdrawals are needed these will need to be set up as Planned Withdrawals.<sup>2</sup></li>
         <li><strong>Lifetime ISA</strong> - Treated as a Tax Free asset. Voyant will not access until the owner is over the required age.</li>
         <li><strong>Onshore bond</strong> - Treated as a Tax Deferred asset. Voyant will treat withdrawals as tax deferred up to the allowance.</li>
@@ -1039,14 +1039,13 @@ window.SHACKADEMY_FIELDS = [
     label: "Purchase Value",
     helpText: `
       <h3>What to enter</h3>  
-      <p>Enter the original purchase value. This is needed for tax calculations.</p>
+      <p>Enter the original purchase value. This is needed for Voyant's tax calculations.</p>
       <h3>Additional notes</h3>
       <ul>
         <li><strong>Investment Bond</strong> - Enter the original investment amount.</li>
-        <li><strong>Unwrapped Investments</strong> - This field determines the Capital Gains Tax (CGT) applicable to any gains within the investment. If this box is left blank the software will assume that the whole amount is liable to CGT.</li>
+        <li><strong>Unwrapped Investments</strong> - This field helps Voyant determine the Capital Gains Tax (CGT) applicable to any gains within the investment. If this box is left blank Voyant will assume that the whole amount is liable to CGT.</li>
         <li><strong>Loan Balance (applicable to Loans Trusts only)</strong> - Input the balance of the loan as at the start date of the plan under 'Loan Balance'.</li>
-        <li><strong>Loan Amount (applicable to Bypass Trusts only)</strong> - Input the amount that was originally inherited into the Bypass Trust.</li>
-        <li><strong>Discounted Gift Trust</strong> - Input the original investment amount</li>
+        <li><strong>Discounted Gift Trust</strong> - Enter the original investment amount</li>
       </ul>
     `,
   },
@@ -1063,21 +1062,15 @@ window.SHACKADEMY_FIELDS = [
     label: "Year qualifying for IHT exemption",
     helpText: `
       <h3>What to enter</h3>  
-      <p><strong>Existing Investments</strong>
-      <br>
-      The date in the 'Qualifies for IHT Relief' only applies to existing investments. This field is not relevant to Transfers and New/Regular contributions into a BPR/APR investment.
-      <br>
-      'Year Qualifying for IHT Exemption' this is the date that the relief will be given i.e. after the 2 year qualifying period.
-      <br>
-      <strong>New Investments</strong>
-      <br>
-      For new investments, IHT relief occurs 2 years after the transfer or contribution made into the investment. The 'Year Qualifying for IHT Exemption' field will be left blank in this instance and the software will determine the correct year in which IHT relief will apply.
-      <br>
-      If you are entering multiple transfers into a new investment, these would be best entered as separate investments to allow the software to start the 2 year clock after each investment.
-      <br>
-      Please bear in mind that in the software, mortality is assumed to occur at the start of the year, whereas transfers occur at the end of the year.
-      <br>
-      This means that for an investment set up by a transfer in 2024, IHT relief will apply from the end of 2026 (2 years) i.e. showing on the software at the start of 2027. We would expect to see the BPR relief from 2027 onwards."</p>
+      <p><strong>Existing Investments</strong></p>
+      <p>The date in the 'Qualifies for IHT Relief' only applies to existing investments. This field is not relevant to Transfers and New/Regular contributions into a BPR/APR investment.
+      <p>'Year Qualifying for IHT Exemption' this is the date that the relief will be given i.e. after the 2 year qualifying period.</p>
+      <p><strong>New Investments</strong></p>
+      <p>For new, qualifying investments, IHT relief typically occurs 2 years after the transfer or contribution made into the investment.</p>
+      <p>The 'Year Qualifying for IHT Exemption' field can be left blank in this instance and Voyant will determine the year in which IHT relief will apply.</p>
+      <p>If you are entering multiple transfers into a new investment, these may be best entered as separate investments to allow Voyant to start the IHT exemption clock after each investment.</p>
+      <p>Please bear in mind that in Voyant, mortality is assumed to occur at the start of the year, whereas transfers occur at the end of the year.</p>
+      <p>This means that for a qualifying investment set up by a transfer in 2024, IHT relief will apply in Voyant from the end of 2026 (2 years) i.e. showing on Voyant at the start of 2027.</p>
     `,
   },
   {
@@ -1086,11 +1079,6 @@ window.SHACKADEMY_FIELDS = [
     helpText: `
       <h3>What to enter</h3>
       <p>Toggle this on if this investment qualifies for Business Property Relief (BPR) or Agricultural Property Relief (APR), which can reduce or eliminate the IHT liability on this asset.</p>
-      <h3>Tips</h3>
-      <ul>
-        <li>Business Property Relief reduces the value for IHT of the asset transferred. The asset must have been owned throughout the two years period prior to transfer. BPR is given at different rates depending on the asset.</li>
-        <li>Agricultural Property Relief is available for transfers of relevant property made either during life or on death.</li>
-      </ul>
     `,
   },
   {
@@ -1101,7 +1089,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the number of segments currently in force or, if it is a new purchase, to be purchased.</p>
       <h3>Tips</h3>
       <ul>
-        <li>The system will always default to 1 segment. If you are unsure of the number of segments within the Bond we would suggest that you enter 100 segments and follow up with your provider.</li>
+        <li>The system will always default to 1 segment. If you are unsure of the number of segments within the Bond we would suggest that you enter 100 segments as a starting point, and follow up with your provider.</li>
       </ul>
     `,
   },
@@ -1113,12 +1101,6 @@ window.SHACKADEMY_FIELDS = [
       <p>This is the total remaining value of all invested principal, i.e. original investment, plus any top-ups, less tax-deferred withdrawals.
       <br>
       This value should reflect the 'cost basis' of the asset as at the plan start date.
-      <br>
-      For example:
-      <br>
-      If there have been no previous withdrawals or top ups then this field will be the same as the Purchase Value.
-      <br>
-      If there has been 5% withdrawals prior to the start of the plan, this value should show the lower remaining principal/cost basis, so Voyant knows how many further 5% tax deferred withdrawals are allowed within the plan.
       <br>
       You may find this article useful when you are entering an existing Investment Bond: <a href="https://support.planwithvoyant.com/hc/en-us/articles/15359426508443-Enter-an-existing-Investment-Bond-Life-Fund-Segments-Previous-Withdrawals-Top-Ups" target="_blank">Entering an Existing Investment Bond</a></p>
       `,
@@ -1165,7 +1147,7 @@ window.SHACKADEMY_FIELDS = [
       <ul>
         <li><strong>Absolute / Bare Trust</strong> - the beneficiary has an immediate and irrevocable right to both the capital and income. The assets are treated as belonging to the beneficiary for tax purposes</li>
         <li><strong>Discretionary Trust</strong> - the trustees have discretion over how income and capital are distributed among the beneficiaries. Subject to relevant property IHT charges</li>
-        <li><strong>Interest in Possession</strong> - a named beneficiary has the right to income from the trust but not capital. The capital passes to remainder beneficiaries on the life tenant's death</li>
+        <li><strong>Interest in Possession</strong> - a named beneficiary (life tenant) has the right to income from the trust but not capital. The capital passes to remainder beneficiaries on the life tenant's death</li>
       </ul>
       <h3>Tips</h3>
       <ul>
@@ -1178,11 +1160,10 @@ window.SHACKADEMY_FIELDS = [
     label: "Discount Amount",
     helpText: `
       <h3>What to enter</h3>
-      <p>Enter the discounted amount - the portion of the initial DGT investment that HMRC treats as immediately outside your estate for IHT purposes. This is calculated by the provider at outset based on your age, health, and the income being withdrawn.</p>
+      <p>Enter the discounted amount - the portion of the initial DGT investment that is estimated to fall immediately outside your estate for IHT purposes. This is calculated by the provider at outset based on your age, health, and the income being withdrawn.</p>
       <h3>Tips</h3>
       <ul>
         <li>This figure should be shown on the DGT illustration or confirmation from the product provider</li>
-        <li>The discount is applied immediately on setup - the remainder of the investment falls outside your estate after seven years</li>
         <li>If the discount amount is not known, the provider can recalculate it</li>
       </ul>
     `,
@@ -1195,8 +1176,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the annual income amount being drawn from the Discounted Gift Trust. This is the regular payment the settlor receives from the trust and is a key input for calculating the discount.</p>
       <h3>Tips</h3>
       <ul>
-        <li>The income from a DGT is technically a return of capital, not income - it is not subject to income tax</li>
-        <li>This amount cannot be changed once the trust is established, so it should match the figure set at outset</li>
+        <li>This amount generally cannot be changed once the trust is established, so it should match the figure set at outset</li>
         <li>Voyant will model this as a regular annual payment to the settlor within the plan's cash flow</li>
       </ul>
     `,
@@ -1207,9 +1187,9 @@ window.SHACKADEMY_FIELDS = [
     helpText: `
       <h3>What to enter</h3>
       <p>Toggle this on if this EIS or SEIS investment is also listed on the Alternative Investment Market (AIM).</p>
-      <h3>Tips (as at April 2026)</h3>
+      <h3>Tips</h3>
       <ul>
-        <li>From April 2026, AIM-listed investments are subject to a reduced rate of IHT relief under BPR — check current HMRC guidance for the applicable rate. Voyant uses this toggle to apply the correct relief level</li>
+        <li>From April 2026, AIM-listed investments are subject to a reduced rate of IHT relief under BPR - check current HMRC guidance for the applicable rate. Voyant uses this toggle to apply the correct relief level</li>
         <li>Non-AIM EIS and SEIS investments are not affected by this change and continue to qualify for full BPR relief (subject to the two-year holding period)</li>
       </ul>
     `,
@@ -1222,7 +1202,6 @@ window.SHACKADEMY_FIELDS = [
       <p>Toggle this on if the gains on this unwrapped investment qualify for Business Asset Disposal Relief (formerly known as Entrepreneur's Relief). This reduces the effective CGT rate on qualifying gains.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Gains up to the lifetime limit are taxed at a discounted rate, rather than the standard CGT rate</li>
         <li>This relief typically applies to disposals of shares in personal trading companies, business assets, or qualifying partnership interests - not to passive investment portfolios</li>
         <li>Confirm eligibility with your tax adviser before toggling this on</li>
       </ul>
@@ -1236,12 +1215,8 @@ window.SHACKADEMY_FIELDS = [
       <p>Select how withdrawals should be taken from this investment bond - either by <strong>encashing segments</strong> or by taking a <strong>partial withdrawal</strong> across all segments.</p>
       <h3>Options</h3>
       <ul>
-        <li><strong>Segment Encashment</strong> - whole segments are surrendered. Each segment has its own 5% per annum tax-deferred allowance and its own gain calculation. This approach can spread gains across tax years</li>
+        <li><strong>Segment Encashment</strong> - whole segments are surrendered. Each segment has its own 5% per annum tax-deferred allowance and its own gain calculation</li>
         <li><strong>Partial Withdrawal</strong> - withdrawals are taken from across all segments proportionally. This draws down the tax-deferred 5% allowance across the whole policy simultaneously</li>
-      </ul>
-      <h3>Tips</h3>
-      <ul>
-        <li>Segment encashment is generally more flexible for tax planning purposes - speak to a tax adviser if you're unsure which approach is appropriate</li>
       </ul>
     `,
   },
@@ -1504,7 +1479,6 @@ window.SHACKADEMY_FIELDS = [
       <ul>
         <li>Only use this if the scheme rules allow early exercise.</li>
         <li>This is generally more relevant for options than RSUs.</li>
-        <li>If early exercise materially changes the tax position, check the modelling carefully.</li>
       </ul>
     `,
   },
@@ -1807,14 +1781,14 @@ window.SHACKADEMY_FIELDS = [
     label: "Asset Type",
     helpText: `
       <h3>What to enter</h3>
-      <p>Select the category that best describes this property. Voyant uses this to apply the correct tax treatment, including whether Principal Private Residence (PPR) relief applies on disposal.</p>
+      <p>Select the category that best describes this property.</p>
       <h3>Options</h3>
       <ul>
-        <li><strong>Main Residence</strong> - your primary home. Gains on disposal are fully exempt from CGT under PPR relief (subject to the final period exemption)</li>
-        <li><strong>Buy to Let</strong> - a residential property held as an investment. Rental income is taxable and gains on disposal are subject to CGT at the residential property rate</li>
-        <li><strong>Second Home / Holiday Home</strong> - a secondary property that is not your main residence. Subject to CGT on disposal</li>
-        <li><strong>Commercial Property</strong> - a non-residential property. Subject to CGT at the standard (non-residential) rate on disposal</li>
-        <li><strong>Land</strong> - undeveloped or agricultural land. Subject to CGT on disposal; APR may apply if farmed</li>
+        <li><strong>Main Residence</strong> - your primary home</li>
+        <li><strong>Buy to Let</strong> - a residential property held as an investment. Voyant treats rental income as taxable and gains on disposal are subject to CGT at the residential property rate</li>
+        <li><strong>Second Home / Holiday Home</strong> - a secondary property that is not your main residence. Voyant treats this as subject to CGT on disposal</li>
+        <li><strong>Commercial Property</strong> - a non-residential property. Voyant treats this as subject to CGT at the standard (non-residential) rate on disposal</li>
+        <li><strong>Land</strong> - undeveloped or agricultural land. Voyant treats this as subject to CGT on disposal; APR may apply if farmed</li>
       </ul>
     `,
   },
@@ -1823,7 +1797,7 @@ window.SHACKADEMY_FIELDS = [
     label: "Owner",
     helpText: `
       <h3>What to enter</h3>
-      <p>Select the owner or owners of this property. Ownership affects how rental income is taxed and how any CGT liability is calculated on disposal.</p>
+      <p>Select the owner or owners of this property. Ownership affects how rental income is taxed in Voyant and how any CGT liability is calculated on disposal.</p>
       <h3>Tips</h3>
       <ul>
         <li>If the property is jointly owned, select all relevant owners - Voyant will split income and gains proportionally</li>
@@ -1857,7 +1831,6 @@ window.SHACKADEMY_FIELDS = [
       </ul>
       <h3>Tips</h3>
       <ul>
-        <li>The distinction matters for IHT planning - Tenants in Common allows each owner to use their nil-rate band on their share, whereas Joint Tenants passes the full value to the survivor automatically</li>
         <li>Confirm the ownership structure with the title deeds or Land Registry if unsure</li>
       </ul>
     `,
@@ -1897,7 +1870,6 @@ window.SHACKADEMY_FIELDS = [
       <h3>Tips</h3>
       <ul>
         <li>When set to Yes, Voyant will treat the property as not yet owned and will model the purchase cost as an outgoing at the date specified in the Timing tab</li>
-        <li>The Market Value entered will be the purchase price - Voyant will grow this from the purchase date, not from today</li>
       </ul>
     `,
   },
@@ -1936,7 +1908,7 @@ window.SHACKADEMY_FIELDS = [
     helpText: `
       <h3>What to enter</h3>
       <p>Toggle this on if this property qualifies for the Residence Nil-Rate Band (RNRB) - the additional IHT allowance available when a main residence is passed to direct descendants.</p>
-      <h3>Based on current rules (as at April 2026)</h3>
+      <h3>Based on current rules</h3>
       <ul>
         <li>To qualify, the property must have been the deceased's main home at some point and must be inherited by direct descendants (children, grandchildren, stepchildren etc.)</li>
         <li>The RNRB is tapered for large estates - Voyant will apply the taper automatically based on the total estate value</li>
@@ -2015,7 +1987,7 @@ window.SHACKADEMY_FIELDS = [
     label: "Employer Contribution",
     helpText: `
       <h3>What to enter</h3>
-      <p>Whenever employer contributions are being made these should always be entered as a gross amount and they will be identified by the software as an 'unscheduled' contribution.</p>
+      <p>Whenever employer contributions are being made these should always be entered as a gross amount and they will be identified by Voyant as an 'unscheduled' contribution.</p>
     `,
   },
   {
@@ -2159,13 +2131,13 @@ window.SHACKADEMY_FIELDS = [
       <h3>What to enter</h3>
       <p>Two options are available to set how incomes will be taken from money purchases. These are UFPLS and Flexi (Flexible Access Drawdown) and they determine whether an element of taxable income will be included in each withdrawal or if withdrawals are to be taken entirely from the pension owner’s tax-free cash allowance if available.
       <br>
-      <strong>Flexible Access Drawdown</strong> = Allows scheduled withdrawals from money purchase pensions to be taken from the owner's tax-free cash allowance first. The total withdrawal amount specified will be tax free. With each amount withdrawn tax free, an additional 75% is crystallised and moved into a linked drawdown account, which the software creates automatically.
+      <strong>Flexible Access Drawdown</strong> = Allows scheduled withdrawals from money purchase pensions to be taken from the owner's tax-free cash allowance first. The total withdrawal amount specified will be tax free. With each amount withdrawn tax free, an additional 75% is crystallised and moved into a linked drawdown account, which Voyant creates automatically.
       <br>
-      <strong>Please Note</strong> - The Flexible Access Drawdown option can only work if the amount you are withdrawing is less than the pension’s overall tax-free cash allowance, which is normally 25% of the pension’s balance. For example, if you were to schedule a withdrawal of 50% or 100% of a pension’s total balance, the software will withdraw this amount. It will not limit withdrawals to only the tax-free allowance since the amount scheduled clearly exceeds it. You will receive a combination of taxable and tax-free cash, effectively an UFPLS withdrawal, even if you have the Flexible Access Withdrawal selected as the withdrawal strategy.
+      <strong>Please Note</strong> - The Flexible Access Drawdown option can only work if the amount you are withdrawing is less than the pension’s overall tax-free cash allowance, which is normally 25% of the pension’s balance. For example, if you were to schedule a withdrawal of 50% or 100% of a pension’s total balance, Voyant will withdraw this amount. It will not limit withdrawals to only the tax-free allowance since the amount scheduled clearly exceeds it. You will receive a combination of taxable and tax-free cash, effectively an UFPLS withdrawal, even if you have the Flexible Access Withdrawal selected as the withdrawal strategy.
       <br>
       With the Flexi option, when the tax free cash runs out there is still likely to be pension money available in the drawdown pot. You will need to set up another planned withdrawal from the Drawdown - MP pension to liquidate these funds.
       <br>
-      <strong>UFPLS</strong> = Withdrawals the Amount as 25% tax free and 75% potentially taxable. This is also the software’s default for 'as needed' withdrawals taken from money purchase pensions.
+      <strong>UFPLS</strong> = Withdrawals the Amount as 25% tax free and 75% potentially taxable. This is also Voyant’s default for 'as needed' withdrawals taken from money purchase pensions.
       <br>
       <strong>Note:</strong> The Pension Strategy window will not appear if only drawdown accounts are selected as there is no tax free element to them so all of the withdrawal is potentially taxable.</p>
     `,
@@ -2285,7 +2257,7 @@ window.SHACKADEMY_FIELDS = [
       <br>
       <strong>Assumed Interest Rate</strong>
       <br>
-      The software's default option allows the software to 'derive' an annuity rate by using an Assumed Interest Rate.
+      Voyant's default option allows the software to 'derive' an annuity rate by using an Assumed Interest Rate.
       <br>
       The Assumed Interest Rate on an annuity is the underlying interest rate assumption on which the annuity calculation is based (or would be based, by an actuary). It would ordinarily reflect an assumed yield on mid-dated UK Sovereign debt (Gilt Yield).
       <br>
@@ -2305,7 +2277,7 @@ window.SHACKADEMY_FIELDS = [
     label: "Assumed Interest Rate",
     helpText: `
       <h3>What to enter</h3>
-      <p>The software's default option allows the software to 'derive' an annuity rate by using an Assumed Interest Rate.
+      <p>Voyant's default option allows the software to 'derive' an annuity rate by using an Assumed Interest Rate.
       <br>
       The Assumed Interest Rate on an annuity is the underlying interest rate assumption on which the annuity calculation is based (or would be based, by an actuary). It would ordinarily reflect an assumed yield on mid-dated UK Sovereign debt (Gilt Yield).
       <br>
@@ -3178,7 +3150,7 @@ window.SHACKADEMY_FIELDS = [
       <h3>Options</h3>
       <ul>
         <li><strong>Taxable</strong> - the standard status for a crystallised drawdown pot. All withdrawals are subject to income tax at the owner's marginal rate</li>
-        <li><strong>Tax Free</strong> - applicable in specific circumstances, such as a drawdown pot held within a certain type of trust structure or an inherited pot where the original holder died before age 75 (correct as at April 2026). Voyant will not apply income tax to withdrawals</li>
+        <li><strong>Tax Free</strong> - applicable in specific circumstances, such as a drawdown pot held within a certain type of trust structure or an inherited pot where the original holder died before age 75. Voyant will not apply income tax to withdrawals</li>
       </ul>
       <h3>Tips</h3>
       <ul>
@@ -3221,7 +3193,7 @@ window.SHACKADEMY_FIELDS = [
     helpText: `
       <h3>What to enter</h3>
       <p>Enter the age at which the State Pension is due to start. This is typically the State Pension Age set by the government, but it can be deferred to a later age if the owner chooses to delay taking it.</p>
-      <h3>Tips (Based on current rules as at April 2026)</h3>
+      <h3>Tips</h3>
       <ul>
         <li>Deferring the State Pension increases the weekly amount received</li>
         <li>Check the government's personal forecast at <a href="https://www.gov.uk/check-state-pension" target="_blank">gov.uk/check-state-pension</a> for the exact date</li>
@@ -3250,7 +3222,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the annual State Pension amount. For a pension not yet in payment, enter the projected amount from the government's State Pension forecast.</p>
       <h3>Tips</h3>
       <ul>
-        <li>The State Pension escalates automatically in Voyant using the Triple Lock - the higher of National Average Earnings, CPI, or 2.5% under current government policy (April 2026) - using assumptions from your Plan Settings</li>
+        <li>The State Pension escalates automatically in Voyant using the Triple Lock - the higher of National Average Earnings, CPI, or 2.5% under current government policy - using assumptions from your Plan Settings</li>
         <li>Get the State Pension forecast at <a href="https://www.gov.uk/check-state-pension" target="_blank">gov.uk/check-state-pension</a></li>
       </ul>
     `,
