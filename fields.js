@@ -2039,16 +2039,23 @@ window.SHACKADEMY_FIELDS = [
     `,
   },
   {
+    key: "useBaseSalaryOnly",
+    label: "Use Base Salary Only",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Toggle this on if you want Voyant to only reference your base salary when calculating contributions as a percentage of income.</p>
+    `,
+  },
+  {
     key: "limitContributionsToAllowance",
     label: "Limit Contributions to Allowance",
     helpText: `
       <h3>What to enter</h3>
-      <p>Toggle this on if you want Voyant to automatically cap total pension contributions at the Annual Allowance for each tax year, preventing modelling of an accidental breach.</p>
+      <p>Toggle this on if you want Voyant to automatically cap total pension contributions at the Annual Allowance for each tax year.</p>
       <h3>Tips</h3>
       <ul>
         <li>The standard Annual Allowance may be reduced to the Money Purchase Annual Allowance (MPAA) if you have flexibly accessed a pension</li>
         <li>If you are deliberately modelling a scenario where contributions exceed the allowance (e.g. to show a tax charge), toggle this off</li>
-        <li>Voyant will still flag where contributions are on track to exceed the allowance in the Year View even if this is toggled off</li>
       </ul>
     `,
   },
@@ -2061,7 +2068,6 @@ window.SHACKADEMY_FIELDS = [
       <h3>Tips</h3>
       <ul>
         <li>This is especially important where there are multiple employments - make sure each pension is linked to the right one</li>
-        <li>If no employment is linked, employer contributions will still be modelled but will not automatically stop at retirement</li>
       </ul>
     `,
   },
@@ -2073,8 +2079,20 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the gross fixed employer contribution amount per year. This is added directly to the pension and Voyant treats it as an employer contribution for tax purposes.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Always enter as a gross annual amount - Voyant will handle the frequency conversion internally</li>
-        <li>If the employer contribution is a percentage of salary rather than a fixed amount, use the Matching contribution type instead</li>
+        <li>Always enter as a gross annual amount</li>
+        <li>If the employer contribution is a percentage of salary rather than a fixed amount, use the 'Percent of Income' contribution type instead</li>
+      </ul>
+    `,
+  },
+  {
+    key: "fixedContributionPercent",
+    label: "Fixed Contribution",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the gross percentage employer contribution made to the pension.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>If this should only take account of your base salary, ensure that is toggled on above</li>
       </ul>
     `,
   },
@@ -2086,27 +2104,8 @@ window.SHACKADEMY_FIELDS = [
       <p>Toggle this on if your pension contributions are made via a salary sacrifice arrangement rather than net pay or relief at source.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Under salary sacrifice, your gross salary is reduced by the contribution amount before tax and NI are calculated - meaning both you and your employer save on NI</li>
         <li>Voyant will adjust the income and tax calculations accordingly when this is toggled on</li>
         <li>Salary sacrifice is not available for all pension types - check with your employer or scheme provider if unsure</li>
-        <li>Note: salary sacrifice contributions count towards the Annual Allowance in the same way as other contributions</li>
-      </ul>
-    `,
-  },
-  {
-    key: "ukAnnuityAnnuitizationTimingType",
-    label: "Purchase At",
-    helpText: `
-      <h3>What to enter</h3>
-      <p>Select whether the annuity purchase is triggered by a specific <strong>age</strong> or by a <strong>timeline event</strong>.</p>
-      <h3>Options</h3>
-      <ul>
-        <li><strong>Age</strong> - the annuity is purchased when the owner reaches the age you enter in the Age field below</li>
-        <li><strong>Event</strong> - the annuity purchase is linked to a specific event on the timeline, which you can then move around to model different scenarios</li>
-      </ul>
-      <h3>Tips</h3>
-      <ul>
-        <li>Using an Event gives you more flexibility to test different annuity purchase timings without changing the age field each time</li>
       </ul>
     `,
   },
@@ -2130,15 +2129,19 @@ window.SHACKADEMY_FIELDS = [
     helpText: `
       <h3>What to enter</h3>
       <p>Two options are available to set how incomes will be taken from money purchases. These are UFPLS and Flexi (Flexible Access Drawdown) and they determine whether an element of taxable income will be included in each withdrawal or if withdrawals are to be taken entirely from the pension owner’s tax-free cash allowance if available.
+      <br><br>
+      <strong>Flexible Access Drawdown</strong> = Allows scheduled withdrawals from money purchase pensions to be taken from the owner's tax-free cash allowance first. The total withdrawal amount specified will be tax free assuming enough tax free cash remains in the pension. With each amount withdrawn tax free, an additional 75% is crystallised and moved into a linked drawdown account, which Voyant creates automatically.
+      <br><br>
+      <strong>Please Note</strong> - The Flexible Access Drawdown option can only work if the amount you are withdrawing is less than the pension’s overall tax-free cash allowance, which is normally 25% of the pension’s balance.
       <br>
-      <strong>Flexible Access Drawdown</strong> = Allows scheduled withdrawals from money purchase pensions to be taken from the owner's tax-free cash allowance first. The total withdrawal amount specified will be tax free. With each amount withdrawn tax free, an additional 75% is crystallised and moved into a linked drawdown account, which Voyant creates automatically.
+      For example, if you were to schedule a withdrawal of <strong>50% of a pension’s total balance</strong>, Voyant will withdraw this amount. It will not limit withdrawals to only the tax-free allowance.
       <br>
-      <strong>Please Note</strong> - The Flexible Access Drawdown option can only work if the amount you are withdrawing is less than the pension’s overall tax-free cash allowance, which is normally 25% of the pension’s balance. For example, if you were to schedule a withdrawal of 50% or 100% of a pension’s total balance, Voyant will withdraw this amount. It will not limit withdrawals to only the tax-free allowance since the amount scheduled clearly exceeds it. You will receive a combination of taxable and tax-free cash, effectively an UFPLS withdrawal, even if you have the Flexible Access Withdrawal selected as the withdrawal strategy.
-      <br>
-      With the Flexi option, when the tax free cash runs out there is still likely to be pension money available in the drawdown pot. You will need to set up another planned withdrawal from the Drawdown - MP pension to liquidate these funds.
-      <br>
-      <strong>UFPLS</strong> = Withdrawals the Amount as 25% tax free and 75% potentially taxable. This is also Voyant’s default for 'as needed' withdrawals taken from money purchase pensions.
-      <br>
+      You will receive a combination of taxable and tax-free cash, and in this example you would receive the full amount of tax free cash available (25%) with another 25% paid as a taxable amount.
+      <br><br>
+      <strong>UFPLS</strong> = Withdrawals the amount as 25% tax free and 75% potentially taxable. This is also Voyant’s default for 'as needed' withdrawals taken from money purchase pensions.
+      <br><br>
+      <strong>Please Note:</strong> The above examples do not account for any protected tax free cash you may have, in these instances the amount of tax free cash may be higher than the figures stated above.</p>      
+      <br><br>
       <strong>Note:</strong> The Pension Strategy window will not appear if only drawdown accounts are selected as there is no tax free element to them so all of the withdrawal is potentially taxable.</p>
     `,
   },
@@ -2154,7 +2157,7 @@ window.SHACKADEMY_FIELDS = [
       <br>
       <strong>Lump Sum</strong> - the remaining pension fund is paid as a cash lump sum to the nominated beneficiary on death.
       <br>
-      <strong>Move to Beneficiary Drawdown Pension</strong> - the fund is moved into a drawdown pension in the beneficiary's name, where it can be drawn down over time, potentially more tax-efficiently.</p>
+      <strong>Move to Beneficiary Drawdown Pension</strong> - the fund is moved into a drawdown pension in the beneficiary's name, where it can be drawn down over time.</p>
       <h3>Tips</h3>
       <ul>
         <li>James covers the difference between the two in <a href="https://shackademy.com/path-player?courseid=module-2&unit=6823c15306c62685ba04c70dUnit" target="_blank">this lesson.</a></li>
@@ -2170,6 +2173,23 @@ window.SHACKADEMY_FIELDS = [
     helpText: `
       <h3>What to enter</h3>
       <p>Are you intending to use any of this pension's funds to purchase an annuity? If so, toggle 'yes'</p>
+    `,
+  },
+  {
+    key: "ukAnnuityAnnuitizationTimingType",
+    label: "Purchase At",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select whether the annuity purchase is triggered by a specific <strong>age</strong> or by a <strong>timeline event</strong>.</p>
+      <h3>Options</h3>
+      <ul>
+        <li><strong>Age</strong> - the annuity is purchased when the owner reaches the age you enter in the Age field below</li>
+        <li><strong>Event</strong> - the annuity purchase is linked to a specific event on the timeline, which you can then move around to model different scenarios</li>
+      </ul>
+      <h3>Tips</h3>
+      <ul>
+        <li>Using an Event gives you more flexibility to test different annuity purchase timings without changing the age field each time</li>
+      </ul>
     `,
   },
   {
@@ -2212,7 +2232,7 @@ window.SHACKADEMY_FIELDS = [
       <p>When converting the pension to an annuity, what percentage is to be paid out as TFC before the annuity starts</p>
       <h3>Tips</h3>
       <ul>
-        <li>This is typically 25% but you should confirm</li>
+        <li>This is typically 25% but you should confirm with your adviser or pension provider</li>
       </ul>
     `,
   },
@@ -2262,12 +2282,12 @@ window.SHACKADEMY_FIELDS = [
       The Assumed Interest Rate on an annuity is the underlying interest rate assumption on which the annuity calculation is based (or would be based, by an actuary). It would ordinarily reflect an assumed yield on mid-dated UK Sovereign debt (Gilt Yield).
       <br>
       <a href="https://support.planwithvoyant.com/hc/en-us/articles/20098166624923-Annuity-Rates-Options-for-calculating-future-annuity-payments-UK" target="_blank">Explained further here</a>
-      <br>
+      <br><br>
       <strong>Specified Annuity Rate</strong>
       <br>
       Where you have a reasonable idea of the applicable market (annuity) rate, taking account of the expected age and circumstances, etc, you can change the Annuity Rate Calculation option to Specified Annuity Rate.
       <br>
-      If chosen, the % entered is the straightforward 'Conversion Rate, i.e. the rate at which a lump sum converts into an annuity
+      If chosen, the % entered is the straightforward 'Conversion Rate', i.e. the rate at which a lump sum converts into an annuity
       <br>
       e.g. a fund of £100,000 (after tax free cash) with a specified annuity rate of 5% will produce an annuity income of £5,000.</p>
     `,
@@ -2291,7 +2311,7 @@ window.SHACKADEMY_FIELDS = [
       <h3>What to enter</h3>
       <p>Where you have a reasonable idea of the applicable market (annuity) rate, taking account of the expected age and circumstances, etc, you can change the Annuity Rate Calculation option to Specified Annuity Rate.
       <br>
-      If chosen, the % entered is the straightforward 'Conversion Rate, i.e. the rate at which a lump sum converts into an annuity
+      If chosen, the % entered is the straightforward 'Conversion Rate', i.e. the rate at which a lump sum converts into an annuity
       <br>
       e.g. a fund of £100,000 (after tax free cash) with a specified annuity rate of 5% will produce an annuity income of £5,000.</p>
     `,
@@ -2349,7 +2369,7 @@ window.SHACKADEMY_FIELDS = [
       <ul>
         <li>The employment's Timing tab controls when you are treated as an active member of the scheme</li>
         <li>Any years the scheme is active within the plan are automatically added to your Years of Service to Date</li>
-        <li>If no employment is linked, you can instead enter a Pensionable Salary manually below - but this overrides the linked salary</li>
+        <li>If no employment is linked, you can instead enter a Pensionable Salary manually below</li>
       </ul>
     `,
   },
@@ -2362,7 +2382,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Select <strong>No</strong> if bonuses paid through the linked employment should also be included in the pensionable earnings calculation.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Most final salary schemes are based on basic salary only - check your scheme rules if you're unsure</li>
+        <li>Final salary schemes are typically based on basic salary only but scheme rules can vary - check your scheme rules if you're unsure</li>
       </ul>
     `,
   },
@@ -2429,7 +2449,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the percentage of your pension that would continue to be paid to a surviving spouse or partner if you were to die first.</p>
       <h3>Tips</h3>
       <ul>
-        <li>A common figure is 50%, though many public sector schemes (e.g. NHS, Teachers') pay a higher percentage - check your scheme rules</li>
+        <li>A common figure is 50%, though some public sector schemes (e.g. NHS, Teachers') may pay a higher percentage - check your scheme rules</li>
         <li>In the plan, if you are the first to pass away, Voyant will show the survivor's pension being paid to your spouse at this percentage</li>
         <li>If there is no survivor's pension, enter 0%</li>
       </ul>
@@ -2465,7 +2485,7 @@ window.SHACKADEMY_FIELDS = [
       </ul>
       <h3>Tips</h3>
       <ul>
-        <li>Most modern public sector schemes (NHS 2015, Teachers' 2015, LGPS) are CARE schemes</li>
+        <li>Modern public sector schemes (NHS 2015, Teachers' 2015, LGPS) are typically CARE schemes, but you should confirm</li>
         <li>Older "final salary" sections of these schemes typically use Last Year or an average</li>
         <li>Check your annual benefit statement or scheme booklet if you are unsure</li>
       </ul>
@@ -2520,7 +2540,7 @@ window.SHACKADEMY_FIELDS = [
       <ul>
         <li>If you take benefits before this age, Voyant will apply the Actuarial Reduction Rate you enter below</li>
         <li>For example: if the Normal Retirement Age is 65 but you retire at 60, an early retirement reduction will be applied</li>
-        <li>Most public sector schemes have a Normal Retirement Age of 65 or 67 - check your scheme booklet</li>
+        <li>Public sector schemes typically have a Normal Retirement Age of 65 or 67 - check your scheme booklet</li>
       </ul>
     `,
   },
@@ -2547,8 +2567,6 @@ window.SHACKADEMY_FIELDS = [
       <h3>Tips</h3>
       <ul>
         <li>For a <strong>Deferred</strong> or <strong>In Payment</strong> pension, the benefit amount is already a known figure - enter it here and Voyant will use it directly rather than calculating it</li>
-        <li>For an <strong>Active</strong> scheme, Voyant will calculate the benefit from your salary, accrual rate, and years of service - you do not need to enter an amount here</li>
-        <li>For an <strong>In Payment</strong> pension, enter the current annual income being received</li>
       </ul>
     `,
   },
@@ -2632,7 +2650,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Toggle this on if your scheme provides a pension to your surviving spouse or partner on your death.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Most defined benefit schemes include a spouse's or dependant's pension as a standard benefit - check your scheme booklet to confirm</li>
+        <li>Defined benefit schemes usually include a spouse's or dependant's pension as a standard benefit - check your scheme booklet to confirm</li>
         <li>Once enabled, you can set the calculation basis and percentage below</li>
         <li>Note: this is separate from the Survivor Percent field in the Basics tab, which applies while the pension is in payment. The widow's/widower's pension here relates to the death-in-service or pre-retirement death benefit</li>
       </ul>
@@ -2663,7 +2681,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the percentage of your pension that would be paid to your surviving spouse or partner as a widow's or widower's pension.</p>
       <h3>Tips</h3>
       <ul>
-        <li>A common figure is 50%, though many public sector schemes pay higher - check your scheme rules or annual benefit statement</li>
+        <li>A common figure is 50%, though some public sector schemes pay higher - check your scheme rules or annual benefit statement</li>
       </ul>
     `,
   },
@@ -2701,7 +2719,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Toggle this on if your scheme pays a lump sum death benefit - for example, a multiple of salary paid to your dependants if you die before retirement.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Many defined benefit schemes include a death-in-service lump sum of 2x, 3x, or 4x salary - check your scheme booklet</li>
+        <li>Some defined benefit schemes include a death-in-service lump sum of 2x, 3x, or 4x salary - check your scheme booklet</li>
         <li>Once enabled, enter the lump sum amount in the field below</li>
       </ul>
     `,
@@ -2754,7 +2772,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Toggle this on if you are making ongoing member contributions into this scheme. This allows Voyant to model your contributions as an outgoing within the plan.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Most active defined benefit scheme members pay a percentage of pensionable salary as a member contribution - check your payslip or scheme booklet for the rate</li>
+        <li>Active defined benefit scheme members typically pay a percentage of pensionable salary as a member contribution - check your payslip or scheme booklet for the rate</li>
         <li>Once enabled, complete the Contribution Type and amount/percentage fields below</li>
       </ul>
     `,
