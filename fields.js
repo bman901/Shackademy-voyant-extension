@@ -1874,6 +1874,20 @@ window.SHACKADEMY_FIELDS = [
     `,
   },
   {
+    key: "propertyInflationLabel",
+    label: "Inflation Rate",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>When entering a future purchase, enter the annual rate at which you expect this property's purchase price to grow. Voyant compounds this rate each year to project the property's future purchase price.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>The inflation rate affects the property value before purchase i.e. the growth in the purchase price. The growth rate (below) affects the property value post purchase.</li>
+        <li>Use a rate that reflects realistic long-term expectations for this type of property and location - past house price growth is not guaranteed to continue</li>
+        <li>You can model different rates for different properties - for example, a different rate for a rural holiday home versus a city-centre flat</li>
+      </ul>
+    `,
+  },
+  {
     key: "propertyGrowthLabel",
     label: "Growth Rate",
     helpText: `
@@ -1881,7 +1895,6 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the annual rate at which you expect this property's value to grow. Voyant compounds this rate each year to project the property's future value.</p>
       <h3>Tips</h3>
       <ul>
-        <li>The default growth rate can be found and changed in Dashboard > Plan Settings > Inflation/Growth</li>
         <li>Use a rate that reflects realistic long-term expectations for this type of property and location - past house price growth is not guaranteed to continue</li>
         <li>You can model different rates for different properties - for example, a different rate for a rural holiday home versus a city-centre flat</li>
       </ul>
@@ -2785,7 +2798,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Select whether your member contribution is expressed as a <strong>percentage of salary</strong> or as a <strong>fixed amount</strong>.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Defined benefit scheme contributions are almost always a percentage of pensionable salary - select Percent unless you know otherwise</li>
+        <li>Defined benefit scheme contributions are generally a percentage of pensionable salary</li>
       </ul>
     `,
   },
@@ -2797,7 +2810,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter your member contribution rate as a percentage of your pensionable salary.</p>
       <h3>Tips</h3>
       <ul>
-        <li>Your contribution rate is shown on your payslip and in your scheme booklet</li>
+        <li>Your contribution rate is usually shown on your payslip and in your scheme booklet</li>
         <li>Some schemes have tiered contribution rates based on salary - use the rate that applies to your current earnings</li>
       </ul>
     `,
@@ -2810,7 +2823,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter your annual member contribution as a fixed amount, if you have selected <strong>Amount</strong> as the contribution type.</p>
       <h3>Tips</h3>
       <ul>
-        <li>You can find this on your payslip - multiply your monthly contribution by 12 to get the annual figure</li>
+        <li>You can usually find this on your payslip - multiply your monthly contribution by 12 to get the annual figure</li>
       </ul>
     `,
   },
@@ -2822,8 +2835,6 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the rate at which your member contributions will increase each year within the plan.</p>
       <h3>Tips</h3>
       <ul>
-        <li>If your contribution is a percentage of salary and your salary grows each year, your contributions will increase automatically in line with that growth</li>
-        <li>If you have entered a fixed amount contribution, set an escalation rate here to keep pace with salary increases or inflation</li>
         <li>If contributions are unlikely to change, you can leave this at 0%</li>
       </ul>
     `,
@@ -2933,7 +2944,6 @@ window.SHACKADEMY_FIELDS = [
       <ul>
         <li>The capital element is calculated by HMRC and set at outset based on the annuitant's age and the purchase price - it does not change over the life of the annuity</li>
         <li>The provider will confirm the capital element at the time of purchase; it is also shown on the annuity policy document</li>
-        <li>This field does not apply to Pension Annuities</li>
       </ul>
     `,
   },
@@ -2945,7 +2955,7 @@ window.SHACKADEMY_FIELDS = [
       <p>For a <strong>Future</strong> annuity, enter the expected purchase price. Voyant will model this as a lump sum outgoing at the date you specify, and will calculate the resulting income based on the Annuity Rate Calculation settings below.</p>
       <h3>Tips</h3>
       <ul>
-        <li>If purchasing from pension funds, the purchase value should reflect the pension pot value at the point of purchase - you may want to link this to a pension drawdown event on the timeline</li>
+        <li>If purchasing from pension funds, the purchase value should reflect the pension pot value at the point of purchase - you may want to handle this directly in the pension under the 'Annuitization' tab</li>
         <li>Voyant uses this figure along with the Assumed or Specified Annuity Rate to calculate the projected income</li>
       </ul>
     `,
@@ -3010,7 +3020,6 @@ window.SHACKADEMY_FIELDS = [
       <h3>Tips</h3>
       <ul>
         <li>Fixed-term annuities are less common than lifetime annuities - check the policy document to confirm the term</li>
-        <li>This field only appears when Lifetime is set to No</li>
       </ul>
     `,
   },
@@ -3030,7 +3039,7 @@ window.SHACKADEMY_FIELDS = [
       </ul>
       <h3>Tips</h3>
       <ul>
-        <li>Check the annuity policy for the escalation basis - this is fixed at the time of purchase and cannot be changed</li>
+        <li>Check the annuity policy for the escalation basis - this is typically fixed at the time of purchase and cannot be changed</li>
       </ul>
     `,
   },
@@ -3141,7 +3150,6 @@ window.SHACKADEMY_FIELDS = [
       <h3>Tips</h3>
       <ul>
         <li>Use the most recent valuation from the provider - pension statements or online accounts are usually a good source</li>
-        <li>The plan start date is 6th April each year - see our lesson on updating plan years if you need guidance on timing</li>
       </ul>
     `,
   },
@@ -3172,7 +3180,7 @@ window.SHACKADEMY_FIELDS = [
       </ul>
       <h3>Tips</h3>
       <ul>
-        <li>The vast majority of drawdown pots are Taxable - only change this if you have confirmed the tax-free status applies</li>
+        <li>Drawdown pots are typically Taxable - only change this if you have confirmed the tax-free status applies</li>
         <li>For inherited drawdown, whether it is taxable depends on the age at death of the original holder - confirm with the scheme or a tax adviser if unsure</li>
       </ul>
     `,
@@ -3240,7 +3248,7 @@ window.SHACKADEMY_FIELDS = [
       <p>Enter the annual State Pension amount. For a pension not yet in payment, enter the projected amount from the government's State Pension forecast.</p>
       <h3>Tips</h3>
       <ul>
-        <li>The State Pension escalates automatically in Voyant using the Triple Lock - the higher of National Average Earnings, CPI, or 2.5% under current government policy - using assumptions from your Plan Settings</li>
+        <li>Under current government policy the State Pension escalates automatically in Voyant using the Triple Lock - the higher of National Average Earnings, CPI, or 2.5% - using assumptions from your Plan Settings</li>
         <li>Get the State Pension forecast at <a href="https://www.gov.uk/check-state-pension" target="_blank">gov.uk/check-state-pension</a></li>
       </ul>
     `,
@@ -3283,6 +3291,18 @@ window.SHACKADEMY_FIELDS = [
         <li>By default, Voyant escalates the State Pension using the Triple Lock (the higher of NAE, CPI, or 2.5%) - this is the current government policy</li>
         <li>Toggle this on if you want to model a scenario where the Triple Lock is removed or changed - for example, using a flat 2.5% or CPI-only increase</li>
         <li>This can be a useful stress-test for people who are significantly reliant on the State Pension in retirement</li>
+      </ul>
+    `,
+  },
+  {
+    key: "userEnteredLockRate",
+    label: "Manual Escalation Rate",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the rate at which you want the state pension to increase.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This will overwrite any triple-lock employed by Voyant. The state pension will grow consistently at the entered rate</li>
       </ul>
     `,
   },

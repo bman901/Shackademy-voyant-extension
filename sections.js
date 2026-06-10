@@ -189,6 +189,11 @@ window.SHACKADEMY_SECTIONS = {
     },
   },
 
+  // TODO: Milestone goal
+  // TODO: Net worth goal
+  // TODO: Education goal
+  // TODO: Gifting goal
+
   // ============================================================
   // Events & Stages
   // ============================================================
@@ -1142,4 +1147,8 @@ window.SHACKADEMY_SECTIONS = {
       },
     },
   },
+
+  //TODO: Transfers
+  //TODO: Planned Withdrawals
+  //TODO: Estate Plans
 };
