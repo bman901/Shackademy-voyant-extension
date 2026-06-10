@@ -142,7 +142,7 @@ window.SHACKADEMY_SECTIONS = {
   },
 
   // ============================================================
-  // Goals
+  // Pre-Retirenment & Retirement Goals
   // ============================================================
 
   goals: {
@@ -154,6 +154,7 @@ window.SHACKADEMY_SECTIONS = {
         description: `
           <p>Goals are how you model <strong>expenses and financial objectives</strong> in your plan - anything from school fees and holidays to home renovations or retirement spending. Each goal is an expense that Voyant will try to meet from your income and assets.</p>
           <p>Enter an annual amount and use the model to assess the impact on your plan. If a goal creates a shortfall, you can explore alternatives using What If scenarios.</p>
+          <p>We suggest using <strong>Goals rather than Expenses</strong> in Voyant as that then means you can easily track the progress on the Dashboard and Timeline tabs</p>
           <ul>
             <li>Use a name that's meaningful to you - it will appear on the timeline and in reports</li>
             <li>Check Year View > Expenses after saving to confirm the goal is appearing correctly</li>
@@ -189,10 +190,156 @@ window.SHACKADEMY_SECTIONS = {
     },
   },
 
-  // TODO: Milestone goal
-  // TODO: Net worth goal
-  // TODO: Education goal
-  // TODO: Gifting goal
+  // ============================================================
+  // Milestone Goal
+  // ============================================================
+
+  "milestone-goal": {
+    name: "Milestone Goal",
+    typeIndicator: "milestoneExpenseInputOwnerLabel",
+    lessons: ["income-expenses", "occassional-expenditure"],
+    tabs: {
+      basics: {
+        description: `
+          <p>A Milestone Goal models a <strong>one-off or specific expense</strong> tied to a particular life event - such as a wedding, a car purchase, or a home renovation.</p>
+          <p>Enter the amount and use the model to assess the impact on your plan. If the goal creates a shortfall, you can explore alternatives using What If scenarios.</p>
+          <p>We suggest using <strong>Goals rather than Expenses</strong> in Voyant as that then means you can easily track the progress on the Dashboard and Timeline tabs</p>
+          <ul>
+            <li>Use a name that's meaningful to you - it will appear on the timeline and in reports</li>
+            <li>Check Year View > Expenses after saving to confirm the goal is appearing correctly</li>
+          </ul>
+        `,
+      },
+      timing: {
+        description: `
+          <p>The Timing tab controls <strong>when this goal occurs</strong> in your plan.</p>
+          <p>Goals are linked to timeline events - so if a related event date changes, this goal will move automatically.</p>
+          <ul>
+            <li>Check the Shackademy lesson for a step-by-step walkthrough</li>
+          </ul>
+        `,
+      },
+      "payment sources": {
+        description: `
+          <p>The Payment Sources tab lets you specify <strong>which account or asset Voyant should use to pay for this goal</strong>. By default, Voyant will use whatever is available according to the liquidation order specified in plan settings.</p>
+          <p>Use this tab if you want a specific account to fund this goal - for example, using a dedicated savings account.</p>
+          <p>Use the "Only Use Preferred Sources" option very sparingly as it can create artificial shortfalls if the nominated account is insufficient.</p>
+        `,
+      },
+    },
+  },
+
+  // ============================================================
+  // Net Worth Goal
+  // ============================================================
+
+  "networth-goal": {
+    name: "Net Worth Goal",
+    typeIndicator: "networthGoalInput",
+    lessons: ["income-expenses"],
+    tabs: {
+      basics: {
+        description: `
+          <p>The Net Worth Goal works differently from other goals - it tracks progress towards a <strong>target Net Worth amount</strong> by a chosen point in the plan, rather than modelling an expense.</p>
+          <p>Net Worth includes property and liquid assets, less debts. It does not include assets held in Trust (these appear in the Plan Worth chart instead).</p>
+          <p>We suggest using <strong>Goals rather than Expenses</strong> in Voyant as that then means you can easily track the progress on the Dashboard and Timeline tabs</p>
+          <ul>
+            <li>The Net Worth goal amount is a <strong>future value</strong></li>
+            <li>Select an Event in the Timing section for when this goal should be assessed</li>
+            <li>Track progress towards this goal in the Dashboard, Timeline, and Financial Summary / Events & Goals reports</li>
+            <li>A result over 100% means the goal is exceeded by that amount</li>
+          </ul>
+        `,
+      },
+    },
+  },
+
+  // ============================================================
+  // Education Goal
+  // ============================================================
+
+  "education-goal": {
+    name: "Education Goal",
+    typeIndicator: "collegeExpenseInputOwnerLabel",
+    lessons: ["income-expenses", "occassional-expenditure"],
+    tabs: {
+      basics: {
+        description: `
+          <p>An Education Goal models the <strong>cost of education</strong> in your plan - such as school or university fees - as an expense that Voyant will try to meet from your income and assets.</p>
+          <p>We suggest using <strong>Goals rather than Expenses</strong> in Voyant as that then means you can easily track the progress on the Dashboard and Timeline tabs</p>
+          <ul>
+            <li>Use a name that's meaningful to you - it will appear on the timeline and in reports, e.g. "Emma - University Fees"</li>
+            <li>Check Year View > Expenses after saving to confirm the goal is appearing correctly</li>
+          </ul>
+        `,
+      },
+      timing: {
+        description: `
+          <p>The Timing tab controls <strong>when this goal starts and ends</strong> in your plan, and how frequently it occurs.</p>
+          <p>Goals are linked to timeline events - so if the relevant milestones change, any goals tied to it will move automatically.</p>
+          <p>Voyant will often suggest creating events for education goals. You can accept, or create/link your own manually.</p>
+          <ul>
+            <li>Education goals occur annually by default, if you want a frequency less regular than annual, use a Pre-Retirement or Retirement goal</li>
+            <li>Check the Shackademy lesson for a step-by-step walkthrough</li>
+          </ul>
+        `,
+      },
+      "payment sources": {
+        description: `
+          <p>The Payment Sources tab lets you specify <strong>which account or asset Voyant should use to pay for this goal</strong>. By default, Voyant will use whatever is available according to the liquidation order specified in plan settings.</p>
+          <p>Use this tab if you want a specific account to fund this goal - for example, a dedicated savings account for school fees.</p>
+          <p>Use the "Only Use Preferred Sources" option very sparingly as it can create artificial shortfalls if the nominated account is insufficient.</p>
+        `,
+      },
+      steps: {
+        description: window.TAB_DESCRIPTIONS.steps,
+      },
+    },
+  },
+
+  // ============================================================
+  // Gifting Goal
+  // ============================================================
+
+  "gifting-goal": {
+    name: "Gifting Goal",
+    typeIndicator: "legacyExpenseInputOwnerLabel",
+    lessons: ["income-expenses"],
+    tabs: {
+      basics: {
+        description: `
+          <p>A Gifting Goal models a <strong>gift made by the owner/s</strong> - to another person in the plan, a person outside the plan, or a charity - as an expense that Voyant will try to meet from your income and assets.</p>
+          <p>Enter the amount and use the model to assess the impact on your plan. If the goal creates a shortfall, you can explore alternatives using What If scenarios.</p>
+          <p>We suggest using <strong>Goals rather than Expenses</strong> in Voyant as that then means you can easily track the progress on the Dashboard and Timeline tabs</p>
+          <ul>
+            <li>Choose a Recipient Type first - this determines whether you select an existing person in the plan, or enter a name for someone outside the plan or a charity</li>
+            <li>Use a name that's meaningful to you - it will appear on the timeline and in reports</li>
+            <li>Check Year View > Expenses after saving to confirm the goal is appearing correctly</li>
+          </ul>
+        `,
+      },
+      timing: {
+        description: `
+          <p>The Timing tab controls <strong>when this gift starts and ends</strong> in your plan, and how frequently it occurs.</p>
+          <p>Goals are linked to timeline events - so if your retirement date changes, any goals tied to it will move automatically.</p>
+          <ul>
+            <li>Use the Expense Frequency field to model less-than-annual gifts</li>
+            <li>Check the Shackademy lesson for a step-by-step walkthrough</li>
+          </ul>
+        `,
+      },
+      "payment sources": {
+        description: `
+          <p>The Payment Sources tab lets you specify <strong>which account or asset Voyant should use to fund this gift</strong>. By default, Voyant will use whatever is available according to the liquidation order specified in plan settings.</p>
+          <p>Use this tab if you want a specific account to fund this gift - for example, a dedicated savings account.</p>
+          <p>Use the "Only Use Preferred Sources" option very sparingly as it can create artificial shortfalls if the nominated account is insufficient.</p>
+        `,
+      },
+      steps: {
+        description: window.TAB_DESCRIPTIONS.steps,
+      },
+    },
+  },
 
   // ============================================================
   // Events & Stages

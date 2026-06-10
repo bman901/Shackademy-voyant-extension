@@ -123,7 +123,7 @@ window.SHACKADEMY_FIELDS = [
   // ============================================================
 
   // ------------------------------------------------------------
-  // SUB-CATEGORY: N/A
+  // SUB-CATEGORY: Pre-Retirement & Retirement
   // ------------------------------------------------------------
 
   // ── Tab: Basics ──────────────────────────────────────────────
@@ -276,6 +276,241 @@ window.SHACKADEMY_FIELDS = [
       <li><a href="https://support.planwithvoyant.com/hc/en-us/articles/15113841453083-How-to-set-up-a-Payment-Source-on-a-Expense-UK" target="_blank">Voyant's lesson on using Payment Sources</a></li>
     </ul>
   `,
+  },
+
+  // ------------------------------------------------------------
+  // SUB-CATEGORY: Milestone Goal
+  // ------------------------------------------------------------
+
+  // ── Tab: Basics ──────────────────────────────────────────────
+
+  {
+    key: "milestoneExpenseInputOwnerLabel",
+    label: "Owner",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select the owner/s of the goal by expanding the menu and selecting / deselecting individuals by clicking on their names. You will see your selection/s in the owner window.</p>
+    `,
+  },
+  {
+    key: "milestoneExpenseInputName",
+    label: "Name",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Use a name that resonates with you - this will show on multiple insights & when you view the timeline</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>If this is a goal that relates to a specific person, consider starting with their name</li>
+        <li>e.g. "John - Wedding"</li>
+      </ul>
+    `,
+  },
+  {
+    key: "milestoneExpenseInputAmount",
+    label: "Amount",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the value of this goal. For example, if the milestone will cost £10,000, enter £10,000 here.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>The default is 'Annual' but you can change this on the right of the input box</li>
+        <li>Check 'Expenses' in the 'Year View' to validate this entry</li>
+      </ul>
+    `,
+  },
+  {
+    key: "milestoneExpenseGrowthLabel",
+    label: "Inflation Rate",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>This expense will increase over time at this rate.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>The default inflation rate is found in Dashboard view > Plan Settings > Inflation/Growth > Inflation Rate</li>
+        <li>Changing the default rate will only affect new plans created, you will need to manually change the rate for any existing plans</li>
+      </ul>
+    `,
+  },
+  {
+    key: "milestoneExpensePresentFutureValue",
+    label: "Goal entered as",
+    helpText: `
+      <h3>Tips</h3>
+      <ul>
+        <li><strong>Present Value:</strong> If you want the expense to increase with inflation from <strong>today</strong>, choose this</li>
+        <li><strong>Future Value:</strong> If you want the expense to increase with inflation from <strong>the chosen start date (Timing tab)</strong>, choose this</li>
+      </ul>
+    `,
+  },
+
+  // ------------------------------------------------------------
+  // SUB-CATEGORY: Education Goal
+  // ------------------------------------------------------------
+
+  // ── Tab: Basics ──────────────────────────────────────────────
+
+  {
+    key: "collegeExpenseInputOwnerLabel",
+    label: "Owner",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select the owner/s of the goal by expanding the menu and selecting / deselecting individuals by clicking on their names. You will see your selection/s in the owner window.</p>
+    `,
+  },
+  {
+    key: "collegeExpenseInputName",
+    label: "Name",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Use a name that resonates with you - this will show on multiple insights & when you view the timeline</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>If this is a goal that relates to a specific person, consider starting with their name</li>
+        <li>e.g. "Emma - University Fees"</li>
+      </ul>
+    `,
+  },
+  {
+    key: "expenseInputAmount",
+    label: "Amount",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the value of this goal. For example, if the education cost is £10,000 per year, enter £10,000 here.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>The default is 'Annual' but you can change this on the right of the input box</li>
+        <li>Check 'Expenses' in the 'Year View' to validate this entry</li>
+      </ul>
+    `,
+  },
+  {
+    key: "collegeExpenseInputGrowthLabel",
+    label: "Inflation Rate",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>This expense will increase over time at this rate.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>The default inflation rate is found in Dashboard view > Plan Settings > Inflation/Growth > Inflation Rate</li>
+        <li>Changing the default rate will only affect new plans created, you will need to manually change the rate for any existing plans</li>
+      </ul>
+    `,
+  },
+  {
+    key: "collegeExpensePresentFutureValue",
+    label: "Goal entered as",
+    helpText: `
+      <h3>Tips</h3>
+      <ul>
+        <li><strong>Present Value:</strong> If you want the expense to increase with inflation from <strong>today</strong>, choose this</li>
+        <li><strong>Future Value:</strong> If you want the expense to increase with inflation from <strong>the chosen start date (Timing tab)</strong>, choose this</li>
+      </ul>
+    `,
+  },
+
+  // ------------------------------------------------------------
+  // SUB-CATEGORY: Net Worth Goal
+  // ------------------------------------------------------------
+
+  // ── Tab: Basics ──────────────────────────────────────────────
+
+  {
+    key: "networthGoalInput",
+    label: "Name",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Use a name that resonates with you - this will show on multiple insights & when you view the timeline</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This goal relates to the owner/s' overall net worth, so a name describing the target is helpful</li>
+        <li>e.g. "Net worth target by retirement"</li>
+      </ul>
+    `,
+  },
+  {
+    key: "networthGoalAmountInput",
+    label: "Amount",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the net worth value the owner/s would like to achieve by the goal date.</p>
+    `,
+  },
+
+  // ------------------------------------------------------------
+  // SUB-CATEGORY: Gifting Goal
+  // ------------------------------------------------------------
+
+  // ── Tab: Basics ──────────────────────────────────────────────
+
+  {
+    key: "legacyExpenseInputOwnerLabel",
+    label: "Owner",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select the owner/s of the goal by expanding the menu and selecting / deselecting individuals by clicking on their names. You will see your selection/s in the owner window.</p>
+    `,
+  },
+  {
+    key: "legacyExpenseInputRecipientType",
+    label: "Recipient Type",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select whether the recipient of this gift is a person already included in the plan, a person outside of the plan, or a charity.</p>
+    `,
+  },
+  {
+    key: "legacyExpenseInputName",
+    label: "Recipient Name",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the name of the recipient. This field appears when the recipient type is set to 'Person outside of plan' or 'Charity'.</p>
+    `,
+  },
+  {
+    key: "legacyExpenseInputRecipientRef",
+    label: "Recipient",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select the recipient from the people already included in the plan. This field appears when the recipient type is set to 'Person in plan'.</p>
+    `,
+  },
+  {
+    key: "legacyExpenseInputAmount",
+    label: "Amount",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the value of this gift. For example, if the gift will be £10,000, enter £10,000 here.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>The default is 'Annual' but you can change this on the right of the input box</li>
+        <li>For a one-off goal, you can set the timing to start in one year and end in the following, or consider using a 'Milestone' goal</li>
+        <li>Check 'Expenses' in the 'Year View' to validate this entry</li>
+      </ul>
+    `,
+  },
+  {
+    key: "legacyExpenseGrowthLabel",
+    label: "Inflation Rate",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>This gift will increase over time at this rate.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>The default inflation rate is found in Dashboard view > Plan Settings > Inflation/Growth > Inflation Rate</li>
+        <li>Changing the default rate will only affect new plans created, you will need to manually change the rate for any existing plans</li>
+      </ul>
+    `,
+  },
+  {
+    key: "legacyExpensePresentFutureValue",
+    label: "Goal entered as",
+    helpText: `
+      <h3>Tips</h3>
+      <ul>
+        <li><strong>Present Value:</strong> If you want the gift to increase with inflation from <strong>today</strong>, choose this</li>
+        <li><strong>Future Value:</strong> If you want the gift to increase with inflation from <strong>the chosen start date (Timing tab)</strong>, choose this</li>
+      </ul>
+    `,
   },
 
   // ============================================================
