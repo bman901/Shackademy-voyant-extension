@@ -1518,6 +1518,7 @@ window.SHACKADEMY_SECTIONS = {
 
   "carry-over": {
     name: "Carryover Assumptions",
+    typeIndicator: "ukTaxAndAllowanceInfoInputExpectedRebate",
     lessons: ["intro-to-voyant"],
     tabs: {
       basics: {
