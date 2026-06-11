@@ -1515,4 +1515,25 @@ window.SHACKADEMY_SECTIONS = {
       },
     },
   },
+
+  "carry-over": {
+    name: "Carryover Assumptions",
+    lessons: ["intro-to-voyant"],
+    tabs: {
+      basics: {
+        description: `
+          <p>Carryover Assumptions are used to capture <strong>tax-related details that predate the start of the plan</strong>.</p>
+          <p>Select the relevant person at the top left before entering details, as these assumptions are entered per-person.</p>
+          <ul>
+            <li><strong>Basics</strong> - any outstanding tax rebates or amounts due from before the plan starts, and which country's tax rules should apply (England/Wales, Scotland, or Northern Ireland)</li>
+            <li><strong>Pension Allowance & Carry Forward</strong> - any pension protections, allowances, or carry forward from before the plan starts</li>
+            <li><strong>Nil Rate Band Carry Forward & Previous Transfers</strong> - any Inheritance Tax allowances inherited from a previously deceased spouse or civil partner, and any gifts made before the plan starts that may still be relevant for IHT</li>
+            <li><strong>Capital Gains</strong> - any gains already realised, losses carried forward, or relief previously claimed before the plan starts</li>
+            <li><strong>Tax Deductions</strong> and <strong>Tax Credits</strong> - any recurring deductions or credits not captured elsewhere in the plan</li>
+          </ul>
+          <p>Where it's unclear whether any of these apply or what figures to use, providers, account statements, previous tax returns, and the Shackademy community can be useful resources.</p>
+        `,
+      },
+    },
+  },
 };

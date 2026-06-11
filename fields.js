@@ -5889,4 +5889,253 @@ window.SHACKADEMY_FIELDS = [
       <p>Controls whether Planned Withdrawals are shown alongside income on the Income vs Expenditure Overview.</p>
     `,
   },
+
+  // ------------------------------------------------------------
+  // SUB-CATEGORY: Carryover Assumptions
+  // ------------------------------------------------------------
+
+  // ── Subheading: Basics ───────────────────────────────────────
+
+  {
+    key: "ukTaxAndAllowanceInfoInputExpectedRebate",
+    label: "Taxes Rebate",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>If a tax rebate is expected relating to a period before the start of the plan, that hasn't yet been received, enter it here.</p>
+    `,
+  },
+  {
+    key: "ukTaxAndAllowanceInfoInputTaxesDue",
+    label: "Taxes Due",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>If there's an outstanding tax liability relating to a period before the start of the plan, that is still due to be paid, enter it here.</p>
+    `,
+  },
+  {
+    key: "newUserInputProvince",
+    label: "Country",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select England/Wales, Scotland, or Northern Ireland, so that the appropriate tax rules are applied to this plan.</p>
+    `,
+  },
+
+  // ── Subheading: Pension Allowance & Carry Forward ────────────
+
+  {
+    key: "ukTaxInfoInputPensionProtectionType",
+    label: "Protection Type",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>If a form of pension protection is held, select the relevant option here.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>If no pension protection is held, this can be left as the default option</li>
+        <li>If unsure, check pension paperwork or contact the pension provider directly</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukTaxInfoInputPensionMaxTaxFreeCash",
+    label: "Maximum Allowed Tax-Free Cash",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>If there's an entitlement to a tax-free cash percentage that differs from the standard amount - for example, due to a protection held - enter it here.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This setting applies across all pensions on this plan</li>
+        <li>Related entries on individual pensions (e.g. Crystallisations) may also need reviewing alongside this field</li>
+        <li>If unsure what figure applies, check pension paperwork, or contact the pension provider</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukTaxInfoInputPensionProtectedAllowanceAmount",
+    label: "Remaining LSDBA",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>If there have been previous pension benefit crystallisation events before the plan starts, enter the remaining Lump Sum and Death Benefit Allowance here.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>If unsure of the remaining amount, check with the pension provider(s) involved</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukTaxInfoInputPensionProtectedTaxFreeCashAmt",
+    label: "Remaining Lump Sum Allowance",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>If there have been previous pension benefit crystallisation events before the plan starts, enter the remaining Lump Sum Allowance here.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>If unsure of the remaining amount, check with the pension provider(s) involved</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukTaxInfoInputPensionContributionCarryForward",
+    label: "Available Pension Contribution Carry Forward",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>If there's unused pension annual allowance carried forward from previous tax years, enter the available amount here.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Pension providers can usually confirm contribution history; an accountant or financial adviser can help calculate what's available to carry forward</li>
+      </ul>
+    `,
+  },
+
+  // ── Subheading: Nil Rate Band Carry Forward & Previous Transfers ──
+
+  {
+    key: "ukTaxInfoInputGiftExemptionCarryOver",
+    label: "Gift Exemption Carry Forward",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>If there's any unused annual gift exemption carried forward from the previous tax year, enter it here.</p>
+    `,
+  },
+  {
+    key: "ukTaxInfoInputIhtCarryOverPercent",
+    label: "IHT Nil Rate Band",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>If a percentage of the Nil Rate Band has been inherited from a deceased spouse or civil partner who died before the plan starts, enter that percentage here.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This field is only for transfers that occurred before the plan starts - transfers arising from a death during the plan are handled separately</li>
+        <li>If unsure whether this applies, this is something a solicitor, accountant, or financial adviser can usually help establish from the previous estate's records</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukTaxInfoInputResidenceNilRateBandCarryOverPercent",
+    label: "Residence Nil Rate Band",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>If a percentage of the Residence Nil Rate Band has been inherited from a deceased spouse or civil partner who died before the plan starts, enter that percentage here.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This field is only for transfers that occurred before the plan starts - transfers arising from a death during the plan are handled separately</li>
+        <li>If unsure whether this applies, this is something a solicitor, accountant, or financial adviser can usually help establish from the previous estate's records</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukTaxInfoInputBprAprCarryoverPct",
+    label: "BPR/APR Allowance Carry Forward",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>If a percentage of Business Property Relief or Agricultural Property Relief allowance has been inherited from a deceased spouse or civil partner who died before the plan starts, enter that percentage here.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>If unsure whether this applies, this is something a solicitor, accountant, or financial adviser can usually help establish from the previous estate's records</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukTaxInfoInputNilPET",
+    label: "Potentially Exempt Transfers",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>If any gifts have been made before the plan starts that may still be relevant for Inheritance Tax purposes, enter the value here.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Keeping a record of significant gifts (date, recipient, and value) is useful here</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukTaxInfoInputNilCLT",
+    label: "Chargeable Lifetime Transfers",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>If any chargeable lifetime transfers have been made before the plan starts that may still be relevant for Inheritance Tax purposes, enter the value here.</p>
+    `,
+  },
+
+  // ── Subheading: Capital Gains ─────────────────────────────────
+
+  {
+    key: "ukTaxInfoInputCapitalGainsRealisedYearToDate",
+    label: "Capital Gains Realised Year to Date",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>If any capital gains have already been realised in the current tax year, before you entered your details into Voyant, enter the amount here.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Remember, if entering details between April and October then we're looking at the current tax year. If entering details between October and April then we're looking at next tax year, so this won't be relevant.</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukTaxInfoInputCapitalGainsLossCarryOver",
+    label: "Carried Over Losses",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>If there are capital losses carried forward from previous tax years, enter the amount here.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This information is usually available from previous tax returns or, if applicable, an accountant</li>
+        <li>Remember, if entering details between April and October then we're looking at the current tax year. If entering details between October and April then we're looking at next tax year.</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukTaxInfoInputEntreprenuersCapGainsRelief",
+    label: "Entrepreneur's Relief Claimed to Date",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>If Business Asset Disposal Relief (formerly Entrepreneurs' Relief) has been claimed previously, enter the amount claimed to date.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This information is usually available from previous tax returns or, if applicable, an accountant</li>
+      </ul>
+    `,
+  },
+
+  // ── Subheading: Tax Deductions / Tax Credits ──────────────────
+
+  {
+    key: "taxCreditOrDeductionName",
+    label: "Name",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter a name for this item, as it should appear in the plan.</p>
+    `,
+  },
+  {
+    key: "taxCreditOrDeductionAmount",
+    label: "Amount",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the annual amount for this item.</p>
+    `,
+  },
+  {
+    key: "taxCreditOrDeductionIncomeOffset",
+    label: "Income Offset",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select whether this deduction relates to Income or Capital Gains.</p>
+    `,
+  },
+  {
+    key: "taxCreditOrDeductionType",
+    label: "Type",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select whether this is a Non-Refundable or Refundable tax credit.</p>
+    `,
+  },
+  {
+    key: "taxCreditOrDeductionGrowthRate",
+    label: "Escalation Rate",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>If this amount should increase each year, enter the rate here.</p>
+    `,
+  },
 ];
