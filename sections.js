@@ -58,6 +58,12 @@ window.TAB_LABELS = {
   "debt-payouts": "Debt Payouts",
   maturity: "Term Maturity",
   "assets-designation": "Asset Distribution",
+  defaultAges: "Default Ages",
+  assetAllocation: "Asset Allocation",
+  marketAssumptions: "Market Assumptions",
+  majorLoss: "Major Loss",
+  savings: "Savings Order",
+  calcs: "Calculation Settings",
 };
 
 window.TAB_DESCRIPTIONS = {
@@ -1402,6 +1408,107 @@ window.SHACKADEMY_SECTIONS = {
             <li>For 'Other', use the Distribution Breakdown to split the bequest between named people, 'Person Outside of Plan', or a Trust</li>
             <li>Specific items bequeathed to specific beneficiaries can also be modelled here</li>
             <li>Check Overview > Legacy to confirm the distribution is working as expected</li>
+          </ul>
+        `,
+      },
+    },
+  },
+
+  // ============================================================
+  // Plan Settings
+  // ============================================================
+
+  "plan-settings": {
+    name: "Plan Settings",
+    lessons: ["intro-to-voyant"],
+    tabs: {
+      defaultAges: {
+        description: `
+          <p>Sets default age-related assumptions used across the plan.</p>
+          <ul>
+            <li>'Default Mortality Age' is now reference-only - to change when an individual's plan ends, edit it in the Timeline</li>
+            <li>'Child Owned Accounts Available in Plan Until Age' controls when a child's own accounts (e.g. a Junior ISA) drop out of the plan's calculations</li>
+          </ul>
+        `,
+      },
+      basics: {
+        description: `
+          <p>Sets the default <strong>Inflation and Growth</strong> assumptions used throughout the plan - these apply to new items as they're added, and can be overridden at the individual item level.</p>
+          <ul>
+            <li>The Inflation Rate is also used for any 'Present Value' entry, and to escalate amounts entered in Steps</li>
+            <li>National Average Earnings escalates Employment and Other Income, and forms part of the Triple Lock used for the State Pension</li>
+            <li>Nil Rate Band Escalation and IHT Property Exemption Escalation Rate only take effect once the relevant frozen thresholds start to escalate (Nil Rate Band from 2030)</li>
+            <li>The two toggles at the bottom control whether all investment/retirement and savings/cash accounts default to growing via asset allocation rather than a fixed rate - changing these only affects new accounts going forward</li>
+          </ul>
+          <p>Changing these settings only affects <strong>new plans</strong> created after the change - for existing plans, growth assumptions can only be updated at the individual item level.</p>
+        `,
+      },
+      fees: {
+        description: `
+          <p>Sets default <strong>Product Fees</strong> and <strong>Ongoing Advice Fees</strong> by account type (Cash Savings, Taxable, Tax-Deferred, Tax-Free), plus default Taxable Investment assumptions.</p>
+          <ul>
+            <li>All fees are deducted from capital growth, and can be overridden at the individual account level</li>
+            <li>'Account Liquidation Annually' sets the default 'Capital Gains Realized Annually' figure for taxable investments</li>
+            <li>'Onshore Bond Default Internal Tax Rate' applies only to growth on onshore bonds, to better reflect their relative tax treatment versus offshore bonds</li>
+          </ul>
+        `,
+      },
+      assetAllocation: {
+        description: `
+          <p>This tab defines the <strong>default asset allocation</strong> used when setting an asset to grow using Portfolio/Holdings, rather than a fixed growth rate. This can be changed on an individual plan level.</p>
+          <ul>
+            <li>Used in conjunction with the Market Assumptions tab, which sets the underlying expected returns for each asset class</li>
+            <li>If 'Grow all investment and retirement accounts using asset allocation' is switched on (Inflation/Growth tab), all <strong>accounts set up after the change</strong> will use these allocations by default</li>
+            <li>Individual accounts can have their own asset allocation set on their Growth tab</li>
+          </ul>
+        `,
+      },
+      marketAssumptions: {
+        description: `
+          <p>This tab sets the <strong>expected return, volatility, and correlation assumptions</strong> for each asset class, used when accounts are grown via asset allocation.</p>
+          <ul>
+            <li>These assumptions work together with the Asset Allocation tab</li>
+            <li>Voyant provides a default set of market assumptions, which can be reviewed and changed for the plan if a different house view is preferred</li>
+            <li>These are the only Plan Settings assumptions that Voyant may periodically update on your behalf</li>
+          </ul>
+        `,
+      },
+      majorLoss: {
+        description: `
+          <p>This tab lets you define a <strong>custom market crash / major loss scenario</strong> that can be applied to a plan via a Timeline event, or used by the Market Crash Insight.</p>
+          <ul>
+            <li>'Default Age' sets the age of the primary client at which the loss begins by default - this can be changed when the event is added to the Timeline</li>
+            <li>'Number of Years' (1-5) sets how long the loss period runs for, with a separate growth deviation entered for each year</li>
+            <li>Deviations can be set as a 'Fixed Growth' adjustment, an 'Allocation Percentile' adjustment, or both - fixed growth affects accounts using a set growth rate, while allocation percentile affects accounts grown via asset allocation</li>
+            <li>To apply: add a 'Major Loss' Special Event to the Timeline, then check Year View > Investments and Pensions > Net Growth to confirm the deviation has been applied and that growth returns to normal afterwards</li>
+          </ul>
+        `,
+      },
+      liquidation: {
+        description: `
+          <p>The Liquidation Order sets the <strong>default order in which assets are drawn upon</strong> when income and cash savings aren't sufficient to meet expenses.</p>
+          <ul>
+            <li>This order can be reordered by dragging account types into your preferred sequence</li>
+            <li>Individual goals can override this via their own Payment Sources tab</li>
+          </ul>
+        `,
+      },
+      savings: {
+        description: `
+          <p>The Savings Order sets which <strong>account types receive priority</strong> when multiple contributions are due to be made in the same year.</p>
+          <ul>
+            <li>This order can be reordered by dragging account types into your preferred sequence</li>
+          </ul>
+        `,
+      },
+      calcs: {
+        description: `
+          <p>These settings control a number of <strong>plan-wide calculation behaviours</strong>.</p>
+          <ul>
+            <li>'Transfer all excess income / credits to savings' and 'Save excess income after retirement' control whether unallocated surplus is assumed spent (the default) or saved - these can be combined to cover both pre- and post-retirement</li>
+            <li>'Assume predeceased upon simultaneous death' affects how IHT and estate calculations treat a couple who die in the same year</li>
+            <li>'Crystallise final salary before money purchase' relates to the historic Lifetime Allowance test ordering and is rarely needed</li>
+            <li>The remaining toggles control what's shown on the Cashflow chart and Income vs Expenditure Overview by default - they affect display only, not the underlying calculations</li>
           </ul>
         `,
       },

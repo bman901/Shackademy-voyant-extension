@@ -5442,6 +5442,451 @@ window.SHACKADEMY_FIELDS = [
     `,
   },
 
-  //TODO: Plan Settings
-  //TODO: Expenses??
+  // ------------------------------------------------------------
+  // SUB-CATEGORY: Plan Settings
+  // ------------------------------------------------------------
+
+  // ── Tab: Default Ages ────────────────────────────────────────
+
+  {
+    key: "defaultMortalityAge",
+    label: "Default Mortality Age",
+    helpText: `
+      <h3>What this is</h3>
+      <p>This sets the age to which the plan runs by default for each owner, in the absence of any other mortality assumption being used.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This is now a reference value only and cannot be edited directly here</li>
+        <li>To change an individual's plan end age, you can move their mortality on the Timeline</li>
+      </ul>
+    `,
+  },
+  {
+    key: "childExcludeFromPlanAge",
+    label: "Child Owned Accounts Available in Plan Until Age",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Set the age at which a child's own accounts (e.g. a Junior ISA) stop being included in the plan's calculations - reflecting the point at which the funds pass out of the parents' control.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This only affects accounts owned by a child added to the plan as a 'Person'</li>
+        <li>From this age, the accounts will disappear in your plan</li>
+        <li>If you have scheduled regular contributions to the plans that disappear, or regular income from them, this will continue even though the plans themselves disappear</li>
+      </ul>
+    `,
+  },
+
+  // ── Tab: Inflation/Growth ─────────────────────────────────────
+
+  {
+    key: "rateOfInflation",
+    label: "Inflation Rate",
+    helpText: `
+      <h3>What this is</h3>
+      <p>The default rate used to inflate expenses and the future purchase price of properties. It is also the rate applied whenever a 'Present Value' is used anywhere in the plan, and is used to calculate future values entered in any Steps section.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This default can be overridden at the individual item level</li>
+        <li>Changing this will only affect new plans created - for existing plans, growth assumptions can only be updated at the item level</li>
+      </ul>
+    `,
+  },
+  {
+    key: "defaultCashSavingsGrowthRate",
+    label: "Savings Growth Rate",
+    helpText: `
+      <h3>What this is</h3>
+      <p>The default interest rate applied to cash/savings accounts, including the software's Default Surplus Account (e.g. "John's Cash"), provided the account isn't set to grow by Portfolio/Holdings.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This default can be overridden at the individual account level</li>
+        <li>Changing this will only affect new plans created - for existing plans, growth assumptions can only be updated at the item level</li>
+      </ul>
+    `,
+  },
+  {
+    key: "defaultInvestmentGrowthRate",
+    label: "Investment Growth Rate",
+    helpText: `
+      <h3>What this is</h3>
+      <p>The default capital growth rate applied to investments, money purchase pensions, and drawdown pensions, provided the account isn't set to grow by Portfolio/Holdings.</p>
+      <p>It is also used as the default growth rate for the hypothetical taxable savings account created by the Annual Savings Insight.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This default can be overridden at the individual account level</li>
+        <li>Changing this will only affect new plans created - for existing plans, growth assumptions can only be updated at the item level</li>
+      </ul>
+    `,
+  },
+  {
+    key: "propertyGrowthRate",
+    label: "Property Growth/Depreciation Rate",
+    helpText: `
+      <h3>What this is</h3>
+      <p>The default rate at which property values increase (or decrease, if entered as a negative figure) once owned.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>For a future property purchase, the Inflation Rate (not this rate) is used to calculate the future purchase price</li>
+        <li>This default can be overridden at the individual property level</li>
+        <li>Changing this will only affect new plans created - for existing plans, growth assumptions can only be updated at the item level</li>
+      </ul>
+    `,
+  },
+  {
+    key: "incomeGrowthRate",
+    label: "National Average Earnings",
+    helpText: `
+      <h3>What this is</h3>
+      <p>The default rate used to escalate Employment and Other Income amounts over time. It also forms part of the Triple Lock formula used to escalate the State Pension.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This default can be overridden at the individual income item level</li>
+        <li>Changing this will only affect new plans created - for existing plans, growth assumptions can only be updated at the item level</li>
+      </ul>
+    `,
+  },
+  {
+    key: "defaultAnnuityAssumedInterestRate",
+    label: "Annuity Assumed Interest Rate",
+    helpText: `
+      <h3>What this is</h3>
+      <p>The default rate used to convert an accumulated pension fund into an annuity, or to calculate payments for any future annuity purchase. It is also used if 'Assumed Interest Rate' is selected in the Longevity Risk (Annuity) Insight.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This default can be overridden at the individual item level</li>
+        <li>Changing this will only affect new plans created - for existing plans, growth assumptions can only be updated at the item level</li>
+      </ul>
+    `,
+  },
+  {
+    key: "defaultPriceIndex",
+    label: "CPI",
+    helpText: `
+      <h3>What this is</h3>
+      <p>The Consumer Prices Index rate. Where selected, it can be used to inflate items such as final salary pension and annuity payouts, and is used to escalate the Residential Nil Rate Band (RNRB).</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This rate is also used by the 'Real Money' option (on Dashboard and Let's See) to show present-value figures</li>
+      </ul>
+    `,
+  },
+  {
+    key: "retailPriceIndex",
+    label: "RPI",
+    helpText: `
+      <h3>What this is</h3>
+      <p>The Retail Price Index rate. Where selected, it can be used to inflate items such as final salary pension and annuity payouts.</p>
+    `,
+  },
+  {
+    key: "defaultTaxTableEscalationRate",
+    label: "Default Tax Table Assumptions",
+    helpText: `
+      <h3>What this is</h3>
+      <p>An across-the-board annual escalation rate applied to future tax-related assumptions - tax brackets, allowances, thresholds, and contribution allowances for investments and pensions.</p>
+    `,
+  },
+  {
+    key: "ukIHTExemptionEscalationRate",
+    label: "Nil Rate Band Escalation",
+    helpText: `
+      <h3>What this is</h3>
+      <p>The rate used to escalate the UK Inheritance Tax Nil Rate Band.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>The Nil Rate Band is fixed at £325,000 by legislation until 2030 - this setting only affects escalation from 2030 onwards</li>
+      </ul>
+    `,
+  },
+  {
+    key: "ukIHTPropertyExemptionEscalationRate",
+    label: "IHT Property Exemption Escalation Rate",
+    helpText: `
+      <h3>What this is</h3>
+      <p>The rate used to escalate the threshold at which the Residence Nil Rate Band begins to be tapered away.</p>
+    `,
+  },
+  {
+    key: "defaultGiltRate",
+    label: "15 year Gilt Rate",
+    helpText: `
+      <h3>What this is</h3>
+      <p>Used for GAD table look-ups when limiting drawdown pension withdrawals to a percentage of GAD.</p>
+    `,
+  },
+  {
+    key: "isYieldReinvested",
+    label: "Reinvest Investment Yield",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Sets the default for whether yield on unwrapped investments and ISAs is reinvested or paid out annually.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>By default Voyant reinvests yield rather than paying it out</li>
+        <li>This can be overridden at the individual account level</li>
+        <li>Changing this will only affect new plans created - for existing plans, this can only be updated at the item level</li>
+      </ul>
+    `,
+  },
+  {
+    key: "growByAssetAllocation",
+    label: "Grow all investment and retirement accounts using asset allocation",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Switching this on automatically sets all investment and retirement accounts to grow using asset allocation (Portfolio/Holdings) rather than a fixed growth rate.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This is usually switched off by default</li>
+        <li>When switched on, the 'Grow this account by' dropdown on individual accounts will be locked to 'Portfolio/Holdings' and cannot be changed to 'Entered Growth Rate'</li>
+      </ul>
+    `,
+  },
+  {
+    key: "cashGrowByAssetAllocation",
+    label: "Grow all savings and cash accounts using 100% cash allocation",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Switching this on automatically sets all savings and cash accounts to grow using a 100% cash asset allocation, rather than a fixed interest rate.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This is usually switched off by default</li>
+        <li>When switched on, the 'Grow this account by' dropdown on individual accounts will be locked to 'Portfolio/Holdings' and cannot be changed to 'Entered Interest Rate'</li>
+      </ul>
+    `,
+  },
+
+  // ── Tab: Fees & Taxation ──────────────────────────────────────
+
+  {
+    key: "ce0e199e-0268-4931-9e12-eb950cdb83ce",
+    label: "Product Fees - Cash Savings",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>The default annual product fee applied to cash savings accounts. Fees are deducted from capital growth.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This default can be overridden at the individual account level</li>
+        <li>Changing this will only affect new plans created - for existing plans, fees can only be updated at the item level</li>
+      </ul>
+    `,
+  },
+  {
+    key: "dc49f3fd-951d-4fc5-a523-9e684491679e",
+    label: "Product Fees - Taxable",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>The default annual product fee applied to taxable (unwrapped) investment accounts. Fees are deducted from capital growth.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This default can be overridden at the individual account level</li>
+        <li>Changing this will only affect new plans created - for existing plans, fees can only be updated at the item level</li>
+      </ul>
+    `,
+  },
+  {
+    key: "d65bcb85-7079-4e00-b047-a008cb706810",
+    label: "Product Fees - Tax-Deferred",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>The default annual product fee applied to tax-deferred accounts (e.g. pensions, bonds). Fees are deducted from capital growth.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This default can be overridden at the individual account level</li>
+        <li>Changing this will only affect new plans created - for existing plans, fees can only be updated at the item level</li>
+      </ul>
+    `,
+  },
+  {
+    key: "dcc403ad-a02e-40e1-9205-7353d2b97e8a",
+    label: "Product Fees - Tax-Free",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>The default annual product fee applied to tax-free accounts (e.g. ISAs). Fees are deducted from capital growth.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This default can be overridden at the individual account level</li>
+        <li>Changing this will only affect new plans created - for existing plans, fees can only be updated at the item level</li>
+      </ul>
+    `,
+  },
+  {
+    key: "d5dd7d10-eb15-4eee-9303-a64fa4110948",
+    label: "Ongoing Advice Fees - Cash Savings",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>The default annual ongoing advice fee applied to cash savings accounts. Fees are deducted from capital growth.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This default can be overridden at the individual account level</li>
+        <li>Changing this will only affect new plans created - for existing plans, fees can only be updated at the item level</li>
+      </ul>
+    `,
+  },
+  {
+    key: "c53a4689-d169-4699-9ce5-b276e3c526c7",
+    label: "Ongoing Advice Fees - Taxable",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>The default annual ongoing advice fee applied to taxable (unwrapped) investment accounts. Fees are deducted from capital growth.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This default can be overridden at the individual account level</li>
+        <li>Changing this will only affect new plans created - for existing plans, fees can only be updated at the item level</li>
+      </ul>
+    `,
+  },
+  {
+    key: "dba039ae-3d6d-4e0f-a073-b57126ffaa65",
+    label: "Ongoing Advice Fees - Tax-Deferred",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>The default annual ongoing advice fee applied to tax-deferred accounts (e.g. pensions, bonds). Fees are deducted from capital growth.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This default can be overridden at the individual account level</li>
+        <li>Changing this will only affect new plans created - for existing plans, fees can only be updated at the item level</li>
+      </ul>
+    `,
+  },
+  {
+    key: "cc8d86ab-14f2-437e-84d4-1199df4fca00",
+    label: "Ongoing Advice Fees - Tax-Free",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>The default annual ongoing advice fee applied to tax-free accounts (e.g. ISAs). Fees are deducted from capital growth.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This default can be overridden at the individual account level</li>
+        <li>Changing this will only affect new plans created - for existing plans, fees can only be updated at the item level</li>
+      </ul>
+    `,
+  },
+  {
+    key: "percentYearlyGainsTaxed",
+    label: "Account Liquidation Annually",
+    helpText: `
+      <h3>What this is</h3>
+      <p>Sets the default for the 'Capital Gains Realized Annually' field, available on some taxable investments (e.g. unwrapped investments) in the Growth section.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This default can be overridden at the individual account level</li>
+        <li>Changing this will only affect new plans created - for existing plans, this can only be updated at the item level</li>
+      </ul>
+    `,
+  },
+  {
+    key: "defaultInternalTaxRate",
+    label: "Onshore Bond Default Internal Tax Rate",
+    helpText: `
+      <h3>What this is</h3>
+      <p>Sets the default internal tax rate applied to onshore bonds, capturing the relative tax difference between onshore and offshore bonds.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This rate is applied only to growth on the account - e.g. a 20% rate would reduce a 5% headline growth rate to 4% (a 1% reduction, i.e. 20% of the growth)</li>
+        <li>Unless you have reason to change this, we would suggest leaving it as is</li>
+      </ul>
+    `,
+  },
+
+  // ── Tab: Major Loss ───────────────────────────────────────────
+
+  {
+    key: "defaultStartAge",
+    label: "Default Age",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Sets the default age of the primary client at which a Major Loss Event or the Market Crash Insight will begin.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This can be changed to a different age/year when adding a specific Major Loss event to the Timeline</li>
+      </ul>
+    `,
+  },
+  {
+    key: "numberOfYears",
+    label: "Number of Years (1 to 5)",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Sets how many consecutive years the Major Loss event runs for - between 1 and 5.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>For each year, you can set a separate growth deviation under 'Fixed Growth' and/or 'Allocation Percentile'</li>
+        <li>Use Year View > Investments and Pensions > Net Growth to check the deviation has been applied, and that growth returns to normal afterwards</li>
+      </ul>
+    `,
+  },
+
+  // ── Tab: Calculation Settings ─────────────────────────────────
+
+  {
+    key: "crystallizeFinalSalaryBeforeMoneyPurchase",
+    label: "Crystallise final salary before money purchase",
+    helpText: `
+      <h3>What this is</h3>
+      <p>Relates to the historic Lifetime Allowance test, and controls which pension type was tested first if both final salary and money purchase pensions crystallised in the same year.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Usually switched off by default</li>
+      </ul>
+    `,
+  },
+  {
+    key: "transferExcessCreditsToSavings",
+    label: "Transfer all excess income / credits to savings",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Switch this on if you want unallocated surplus income to be assumed saved, rather than spent.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Usually switched off by default - Voyant normally assumes unallocated surplus is spent</li>
+        <li>Leaving this switched off is the conservative approach</li>
+      </ul>
+    `,
+  },
+  {
+    key: "saveIncomeAfterRetirement",
+    label: "Save excess income after retirement",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Switch this on if you want surplus income to be assumed saved during retirement, rather than spent.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Usually switched off by default</li>
+        <li>Before retirement, surplus is still assumed spent unless 'Transfer all excess income / credits to savings' is also switched on</li>
+      </ul>
+    `,
+  },
+  {
+    key: "assumePredeceasedUponSimultaneousDeath",
+    label: "Assume predeceased upon simultaneous death",
+    helpText: `
+      <h3>What this is</h3>
+      <p>When both clients die in the same year (simultaneous mortality), this setting tells Voyant to assume the younger client predeceases the older client.</p>
+    `,
+  },
+  {
+    key: "showBasicExpensesLine",
+    label: "Show Basic Expenses Line (Cashflow Chart)",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Controls whether the 'basic needs' line is shown by default on cashflow charts.</p>
+    `,
+  },
+  {
+    key: "includeCashNotDisplayedInIncome",
+    label:
+      "Income incomes not displayed on Cash Flow chart (Income vs Expenditures)",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Controls whether incomes that are hidden from the cash flow chart - such as protection payouts - are shown on the Income vs Expenditure Overview.</p>
+    `,
+  },
+  {
+    key: "includeWithdrawalsInIncome",
+    label: "Include Planned Withdrawals with Incomes (Income vs Expenditures)",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Controls whether Planned Withdrawals are shown alongside income on the Income vs Expenditure Overview.</p>
+    `,
+  },
 ];
