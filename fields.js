@@ -5210,9 +5210,238 @@ window.SHACKADEMY_FIELDS = [
   `,
   },
 
-  //TODO: Expenses??
-  //TODO: Transfers
-  //TODO: Planned Withdrawals
-  //TODO: Estate Plans
+  // ------------------------------------------------------------
+  // SUB-CATEGORY: Transfer
+  // ------------------------------------------------------------
+
+  // ── Tab: Basics ──────────────────────────────────────────────
+
+  {
+    key: "transferType",
+    label: "Transferring",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Choose whether this transfer should move a <strong>Specific Amount</strong>, or <strong>All Available</strong> funds from the source.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li><strong>All Available:</strong> useful for sweeping all surplus or all remaining funds in an account into another account</li>
+        <li><strong>Specific Amount:</strong> use this when you want to transfer a fixed sum, such as a one-off lump sum or a regular contribution amount</li>
+      </ul>
+    `,
+  },
+  {
+    key: "transferAmount",
+    label: "Amount",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the amount to be transferred. This field appears when 'Transferring' is set to 'Specific Amount'.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>For a recurring transfer, this is the amount transferred each period</li>
+        <li>For a one-off transfer (e.g. investing a windfall), enter the lump sum amount</li>
+      </ul>
+    `,
+  },
+  {
+    key: "isFutureValue",
+    label: "Transfer entered as",
+    helpText: `
+      <h3>Tips</h3>
+      <ul>
+        <li><strong>Present Value:</strong> If you want the transfer amount to increase with inflation from <strong>today</strong>, choose this</li>
+        <li><strong>Future Value:</strong> If you want the transfer amount to increase with inflation from <strong>the chosen start date (Timing tab)</strong>, choose this</li>
+        <li>Check the Year View to ensure this represents what you want</li>
+      </ul>
+    `,
+  },
+  {
+    key: "transferBeforeExpenses",
+    label: "Transfer Before Paying Expenses",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select 'Yes' if this transfer should be prioritised <strong>before</strong> the plan's expenses are met - this prevents the funds being used to cover expenses instead.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>If left as 'No', expenses will be met first, with any remaining funds contributed to the target account</li>
+      </ul>
+    `,
+  },
+  {
+    key: "recurringTransfer",
+    label: "Recurring",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Tick this box if the transfer should repeat over a period of time, rather than occurring as a one-off.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>For a recurring transfer, ensure two events exist on the Timeline tab - one to mark the start and one to mark the end</li>
+        <li>For example, a recurring transfer from a General Investment Account into an ISA could run from 'Start' to 'Retirement'</li>
+      </ul>
+    `,
+  },
+
+  // ------------------------------------------------------------
+  // SUB-CATEGORY: Planned Withdrawals
+  // ------------------------------------------------------------
+
+  // ── Tab: Basics ──────────────────────────────────────────────
+
+  {
+    key: "drawdownInputName",
+    label: "Name",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter a name for this Planned Withdrawal - this is how it will appear in Let's See > Cashflow.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Use a name that's meaningful to you, especially if the owner has multiple planned withdrawals</li>
+      </ul>
+    `,
+  },
+  {
+    key: "drawdownScheduledWithdrawalDollarAmount",
+    label: "Amount",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the fixed annual amount to be withdrawn. This amount cannot be changed to a different frequency - planned withdrawals are always entered as an <strong>annual</strong> amount.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Check Year View > Cashflow after saving to confirm the withdrawal is appearing correctly</li>
+      </ul>
+    `,
+  },
+  {
+    key: "drawdownScheduledWithdrawalPercent",
+    label: "Amount",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the percentage amount to be withdrawn.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>This percentage will be taken from all the 'Selected Accounts' below</li>
+        <li>Check Year View > Cashflow after saving to confirm the withdrawal is appearing correctly</li>
+      </ul>
+    `,
+  },
+  {
+    key: "drawdownWithdrawalFixAmountDistributionType",
+    label: "Distribution Type",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>This option is only relevant when <strong>multiple accounts</strong> are selected for this withdrawal.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li><strong>Each:</strong> the amount entered is withdrawn from each selected account simultaneously - useful for splitting withdrawals between two people's pensions, for example</li>
+        <li><strong>Total:</strong> the amount entered is withdrawn from the first account in the Selected Accounts list until depleted, then moves on to the next account - effectively setting an account-by-account liquidation order</li>
+      </ul>
+    `,
+  },
+  {
+    key: "drawdownIsSingleEvent",
+    label: "Recurring",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Choose whether this withdrawal should occur once, or repeat over a period of time.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li><strong>No:</strong> a one-off withdrawal - set the timing by dragging the relevant event into the Withdrawal Timing box on the Timing tab</li>
+        <li><strong>Yes:</strong> a recurring withdrawal - set the start and end by dragging events into the Withdrawal Starts and Withdrawal Ends boxes on the Timing tab</li>
+      </ul>
+    `,
+  },
+
+  // ------------------------------------------------------------
+  // SUB-CATEGORY: Estate Plan
+  // ------------------------------------------------------------
+
+  // ── Tab: Basics ──────────────────────────────────────────────
+
+  {
+    key: "estatePlanInputOwnerLabel",
+    label: "Owner",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select the owner of this Estate Plan.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Only one Estate Plan can be created per person in the plan</li>
+        <li>An Estate Plan is only needed if Voyant's default distribution logic doesn't reflect the owner's actual wishes (e.g. a will that bequests part of the estate to children on first death)</li>
+      </ul>
+    `,
+  },
+  {
+    key: "estatePlanInputName",
+    label: "Name",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter a name for this Estate Plan.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>Use a name that's meaningful to you - this will help distinguish it if there are multiple Estate Plans in the household</li>
+      </ul>
+    `,
+  },
+  {
+    key: "estatePlanInputLiquidation",
+    label: "Liquidate Designated Assets for IHT",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select whether a specific asset bequeathed in the Asset Distribution screen should be <strong>liquidated</strong> to pay any IHT due on it.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li><strong>No:</strong> the asset will be shown as transferred (in specie) in the Legacy screen, with any IHT met from elsewhere in the estate</li>
+        <li><strong>Yes:</strong> the asset will be shown as liquidated in the Legacy screen, with the IHT met from its own proceeds</li>
+      </ul>
+      <h3>Reference</h3>
+      <ul>
+        <li>Voyant's help article: <a href="https://support.planwithvoyant.com/hc/en-us/articles/49450955718811-How-to-add-an-Estate-Plan-UK" target="_blank">How to add an Estate Plan</a></li>
+        <li>Voyant's help article: <a href="https://support.planwithvoyant.com/hc/en-us/articles/49503230436635-Estate-Plans-How-to-distribute-specified-assets-to-specified-beneficiaries-UK" target="_blank">How to distribute specified assets to specified beneficiaries</a></li>
+      </ul>
+    `,
+  },
+
+  // ── Tab: Asset Distribution ──────────────────────────────────
+
+  {
+    key: "distributionType",
+    label: "Type",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Select how this distribution should be calculated.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li><strong>Percentage:</strong> available for bequests to Charity, Spouse, or Other - a share of the estate</li>
+        <li><strong>Amount:</strong> a fixed sum, available for bequests to Charity, Spouse, or Other</li>
+        <li><strong>Percentage of Threshold:</strong> only available for 'Other' (including non-legal partners) - models a proportion of the Nil Rate Band being left to a beneficiary other than the spouse or charity</li>
+      </ul>
+      <h3>Reference</h3>
+      <ul>
+        <li>Voyant's help article: <a href="https://support.planwithvoyant.com/hc/en-us/articles/49450955718811-How-to-add-an-Estate-Plan-UK" target="_blank">How to add an Estate Plan</a></li>
+        <li>Voyant's help article: <a href="https://support.planwithvoyant.com/hc/en-us/articles/49503230436635-Estate-Plans-How-to-distribute-specified-assets-to-specified-beneficiaries-UK" target="_blank">How to distribute specified assets to specified beneficiaries</a></li>
+      </ul>
+    `,
+  },
+  {
+    key: "distributionPercent",
+    label: "Percentage",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the percentage of the estate (or, for 'Other', the percentage of the Nil Rate Band threshold) to be distributed to this beneficiary category.</p>
+    `,
+  },
+  {
+    key: "distributionAmount",
+    label: "Amount",
+    helpText: `
+      <h3>What to enter</h3>
+      <p>Enter the fixed amount to be distributed to this beneficiary category.</p>
+      <h3>Tips</h3>
+      <ul>
+        <li>For bequests split between multiple beneficiaries (e.g. children in equal shares), enter the total amount here, then set each beneficiary's share in the Distribution Breakdown</li>
+      </ul>
+    `,
+  },
+
   //TODO: Plan Settings
+  //TODO: Expenses??
 ];

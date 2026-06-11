@@ -57,6 +57,7 @@ window.TAB_LABELS = {
   links: "Linked Property",
   "debt-payouts": "Debt Payouts",
   maturity: "Term Maturity",
+  "assets-designation": "Asset Distribution",
 };
 
 window.TAB_DESCRIPTIONS = {
@@ -666,8 +667,6 @@ window.SHACKADEMY_SECTIONS = {
     },
   },
 
-  // TODO: Drawdown Pensions
-
   // ============================================================
   // DB Pension
   // ============================================================
@@ -742,15 +741,18 @@ window.SHACKADEMY_SECTIONS = {
 
   drawdown: {
     name: "Drawdown Pension",
-    typeIndicator: "ukUnsecuredPensionInputDrawdownPensionType",
+    typeIndicator: "ukUnsecuredPensionInputOwnerLabel",
     lessons: ["pension-basics", "pension-withdrawals"],
     tabs: {
       basics: {
         description: `
-          <p>This is where you enter an <strong>existing drawdown pension</strong> - a crystallised pension pot that is already in drawdown at the plan start date. If you are modelling a pension that will move into drawdown during the plan, enter it as a Money Purchase pension instead - Voyant will create the drawdown pot automatically.</p>
+          <p>This is where you enter an <strong>existing drawdown pension</strong> - a crystallised pension pot that is already in drawdown at the plan start date.</p>
+          <p>If you are modelling a pension that will move into drawdown during the plan, enter it as a Money Purchase pension instead - Voyant will create the drawdown pot automatically.</p>
           <ul>
             <li>The Initial Balance field is needed for Voyant to correctly calculate the Lump Sum Death Benefit Allowance on growth</li>
             <li>Check the Type and Tax Status (if relevant) carefully</li>
+            <li>For 'Linked Drawdown' plans i.e. those created automatically when a Money Purchase pension is entered, review the growth tab to ensure it reflects what you expect.</li>
+            <li>A Linked Drawdown pension only becomes relevant if you take tax free cash without taking the full taxable element of the pension.</li>
           </ul>
         `,
       },
@@ -1295,7 +1297,114 @@ window.SHACKADEMY_SECTIONS = {
     },
   },
 
-  //TODO: Transfers
-  //TODO: Planned Withdrawals
-  //TODO: Estate Plans
+  // ============================================================
+  // Transfers
+  // ============================================================
+
+  transfer: {
+    name: "Transfer",
+    typeIndicator: "transferType",
+    lessons: ["lump-sums"],
+    tabs: {
+      basics: {
+        description: `
+          <p>Transfers let you move money <strong>between accounts</strong>, or <strong>from surplus income/lump sums into a savings or investment account</strong>.</p>
+          <ul>
+            <li>To invest a one-off lump sum (e.g. a windfall or property sale proceeds), set 'Transfer From' to 'All Surplus' and 'Transfer To' the receiving account</li>
+            <li>To move money regularly between two accounts (e.g. GIA to ISA), select both accounts and tick 'Recurring'</li>
+            <li>A transfer can be entered from either side - as a transfer-in to the receiving account, or a transfer-out from the source account</li>
+            <li>Use 'Transfer Before Paying Expenses' if you want to prevent a lump sum being used to meet expenses first</li>
+          </ul>
+        `,
+      },
+      timing: {
+        description: `
+          <p>The Timing tab controls <strong>when this transfer occurs</strong>.</p>
+          <ul>
+            <li>For a one-off transfer, select the event marking when the funds become available (e.g. a windfall payout)</li>
+            <li>For a recurring transfer, select a start event and an end event on the Timeline - e.g. 'Start' and 'Retirement'</li>
+            <li>Check the Shackademy lesson for a step-by-step walkthrough</li>
+          </ul>
+        `,
+      },
+    },
+  },
+
+  // ============================================================
+  // Planned Withdrawals
+  // ============================================================
+
+  "planned-withdrawals": {
+    name: "Planned Withdrawals",
+    typeIndicator: "drawdownInputName",
+    lessons: ["managing-withdrawals", "pension-withdrawals"],
+    tabs: {
+      basics: {
+        description: `
+          <p>Planned Withdrawals let you take a <strong>hands-on approach</strong> to scheduling future income from accounts, rather than relying on Voyant's default liquidation order.</p>
+          <ul>
+            <li>It's good practice to select the source account/s under 'Available Accounts' first, as this can release additional fields (e.g. for pensions)</li>
+            <li>If you select multiple accounts, use 'Distribution Type' to control whether the amount is taken from 'Each' account or 'Total'led across them in order</li>
+            <li>Amounts are always entered as an annual figure</li>
+            <li>For money purchase pensions, you can also choose between Flexible Access Drawdown (tax-free first) and UFPLS (mixed taxable/tax-free)</li>
+          </ul>
+        `,
+      },
+      timing: {
+        description: `
+          <p>The Timing tab controls <strong>when this withdrawal occurs</strong>.</p>
+          <ul>
+            <li>For a one-off withdrawal, drag the relevant event into the Withdrawal Timing box</li>
+            <li>For a recurring withdrawal, drag events into the Withdrawal Starts and Withdrawal Ends boxes</li>
+            <li>You can add a new event to the timeline directly from this screen if needed by double clicking the relevant year</li>
+          </ul>
+        `,
+      },
+      steps: {
+        description: `
+          <p>Steps let you <strong>increase or decrease</strong> a recurring planned withdrawal at a future point.</p>
+          <ul>
+            <li>Steps can only occur in years between the withdrawal's start and end events - not in the start or end year itself</li>
+            <li>Only one step is allowed per year</li>
+            <li>Only recurring withdrawals can be stepped - one-off withdrawals cannot</li>
+          </ul>
+        `,
+      },
+    },
+  },
+
+  // ============================================================
+  // Estate Plan
+  // ============================================================
+
+  "estate-plan": {
+    name: "Estate Plan",
+    typeIndicator: "estatePlanInputOwnerLabel",
+    lessons: ["estate-plan", "asset-distribution"],
+    tabs: {
+      basics: {
+        description: `
+          <p>An Estate Plan lets you override Voyant's <strong>default estate distribution logic</strong> to reflect the owner's actual will - for example, if part of the estate is bequeathed to children on first death rather than passing entirely to the spouse.</p>
+          <ul>
+            <li>Select the owner and give the plan a name</li>
+            <li>Decide whether designated assets (set up in Asset Distribution) should be liquidated to pay any IHT due, or passed on as-is</li>
+            <li>Only one Estate Plan can be set up per person</li>
+            <li>Pensions are not normally part of the estate - their distribution is set on each pension's own Beneficiaries screen</li>
+          </ul>
+        `,
+      },
+      "assets-designation": {
+        description: `
+          <p>The Asset Distribution tab is where you set <strong>who receives what</strong> from the estate, and in what order.</p>
+          <ul>
+            <li>Set the Distribution order so that the residual beneficiary (typically the spouse) is last - e.g. Other > Charity > Spouse</li>
+            <li>Click each row to enter its details, choosing 'Percentage', 'Amount', or (for 'Other') 'Percentage of Threshold'</li>
+            <li>For 'Other', use the Distribution Breakdown to split the bequest between named people, 'Person Outside of Plan', or a Trust</li>
+            <li>Specific items bequeathed to specific beneficiaries can also be modelled here</li>
+            <li>Check Overview > Legacy to confirm the distribution is working as expected</li>
+          </ul>
+        `,
+      },
+    },
+  },
 };

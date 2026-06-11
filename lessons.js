@@ -109,4 +109,14 @@ window.SHACKADEMY_LESSONS = {
     title: "Aged Care",
     url: "https://shackademy.com/path-player?courseid=voyant&unit=67cf5bde70f0985195087f7aUnit",
   },
+
+  "estate-plan": {
+    title: "Voyant Help - Entering an Estate Plan",
+    url: "https://support.planwithvoyant.com/hc/en-us/articles/49450955718811-How-to-add-an-Estate-Plan-UK",
+  },
+
+  "asset-distribution": {
+    title: "Voyant Help - Distributing assets to specified beneficiaries",
+    url: "https://support.planwithvoyant.com/hc/en-us/articles/49503230436635-Estate-Plans-How-to-distribute-specified-assets-to-specified-beneficiaries-UK",
+  },
 };
