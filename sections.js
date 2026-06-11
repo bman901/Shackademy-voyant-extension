@@ -1420,7 +1420,7 @@ window.SHACKADEMY_SECTIONS = {
 
   "plan-settings": {
     name: "Plan Settings",
-    typeIndicator: "defaultMortalityAge",
+    typeIndicator: "rateOfInflation",
     lessons: ["intro-to-voyant"],
     tabs: {
       defaultAges: {
