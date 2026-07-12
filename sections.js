@@ -1516,6 +1516,23 @@ window.SHACKADEMY_SECTIONS = {
     },
   },
 
+  yearView: {
+    name: "Year View",
+    lessons: ["intro-to-voyant"],
+    tabs: {
+      basics: {
+        description: `
+          <p>Year View shows a <strong>year by year breakdown</strong> of every account in the plan, split across separate tables for Investments, Pensions, Property, and Debts.</p>
+          <ul>
+            <li>Use the year selector at the top to move through the plan year by year</li>
+            <li>Each table shows the account's balance at the end of that year, along with growth, contributions, and withdrawals where relevant</li>
+            <li>This is a useful place to check that transfers, withdrawals, and growth assumptions are behaving as expected</li>
+          </ul>
+        `,
+      },
+    },
+  },
+
   "carry-over": {
     name: "Carryover Assumptions",
     typeIndicator: "ukTaxAndAllowanceInfoInputExpectedRebate",

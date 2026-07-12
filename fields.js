@@ -6138,4 +6138,123 @@ window.SHACKADEMY_FIELDS = [
       <p>If this amount should increase each year, enter the rate here.</p>
     `,
   },
+
+  // ============================================================
+  // CATEGORY: Year View
+  // ============================================================
+  // These entries are matched by column header text plus the aria-label of
+  // the ancestor table, not by a label's for/id. See SHACKADEMY_COLUMN_HEADERS
+  // below, and getColumnHeaderKey in content.js.
+  //
+  // {{TAX_YEAR_RANGE}} is replaced at render time with the tax year shown in
+  // Voyant's year selector, e.g. "2026/27". See interpolateHelpText in
+  // content.js.
+  // ------------------------------------------------------------
+
+  {
+    key: "yearViewInvestmentEOYBalance",
+    label: "EOY Balance (Investment)",
+    helpText: `
+      <h3>What this shows</h3>
+      <p>The projected value of this investment as at the end of the {{TAX_YEAR_RANGE}} tax year.</p>
+    `,
+  },
+  {
+    key: "yearViewInvestmentNetGrowth",
+    label: "Net Growth (Investment)",
+    helpText: `
+      <h3>What this shows</h3>
+      <p>The growth applied to this investment during the {{TAX_YEAR_RANGE}} tax year, after any fees.</p>
+    `,
+  },
+  {
+    key: "yearViewPensionEOYBalance",
+    label: "EOY Balance (Pension)",
+    helpText: `
+      <h3>What this shows</h3>
+      <p>The projected value of this pension as at the end of the {{TAX_YEAR_RANGE}} tax year.</p>
+    `,
+  },
+  {
+    key: "yearViewPensionNetGrowth",
+    label: "Net Growth (Pension)",
+    helpText: `
+      <h3>What this shows</h3>
+      <p>The growth applied to this pension during the {{TAX_YEAR_RANGE}} tax year, after any fees.</p>
+    `,
+  },
+  {
+    key: "yearViewPropertyValue",
+    label: "Value (Property)",
+    helpText: `
+      <h3>What this shows</h3>
+      <p>The projected value of this property as at the end of the {{TAX_YEAR_RANGE}} tax year.</p>
+    `,
+  },
+  {
+    key: "yearViewPropertyDebts",
+    label: "Debts (Property)",
+    helpText: `
+      <h3>What this shows</h3>
+      <p>Any outstanding debt linked to this property (e.g. a mortgage) as at the end of the {{TAX_YEAR_RANGE}} tax year.</p>
+    `,
+  },
+  {
+    key: "yearViewDebtEOYBalance",
+    label: "EOY Balance (Debt)",
+    helpText: `
+      <h3>What this shows</h3>
+      <p>The projected outstanding balance of this debt as at the end of the {{TAX_YEAR_RANGE}} tax year.</p>
+    `,
+  },
+];
+
+// -----------------------------------------------------------------------------
+// Year View column header targets
+// -----------------------------------------------------------------------------
+// Unlike the fields above (matched by a label's for/id), these are matched by
+// their own visible text combined with the aria-label of the ancestor
+// role="table" wrapper, since Voyant gives each Year View variant its own
+// aria-label (Investment Details, Pension Details, Property Details, Debt
+// Details), and the header divs themselves carry no id/for.
+//
+// Each entry's key must match a field entry's key above.
+// -----------------------------------------------------------------------------
+
+window.SHACKADEMY_COLUMN_HEADERS = [
+  {
+    key: "yearViewInvestmentEOYBalance",
+    tableLabel: "Year View Investment Details",
+    columnText: "EOY Balance",
+  },
+  {
+    key: "yearViewInvestmentNetGrowth",
+    tableLabel: "Year View Investment Details",
+    columnText: "Net Growth",
+  },
+  {
+    key: "yearViewPensionEOYBalance",
+    tableLabel: "Year View Pension Details",
+    columnText: "EOY Balance",
+  },
+  {
+    key: "yearViewPensionNetGrowth",
+    tableLabel: "Year View Pension Details",
+    columnText: "Net Growth",
+  },
+  {
+    key: "yearViewPropertyValue",
+    tableLabel: "Year View Property Details",
+    columnText: "Value",
+  },
+  {
+    key: "yearViewPropertyDebts",
+    tableLabel: "Year View Property Details",
+    columnText: "Debts",
+  },
+  {
+    key: "yearViewDebtEOYBalance",
+    tableLabel: "Year View Debt Details",
+    columnText: "EOY Balance",
+  },
 ];

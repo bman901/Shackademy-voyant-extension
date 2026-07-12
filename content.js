@@ -165,6 +165,71 @@
     return labelEl.getAttribute("for") || labelEl.getAttribute("id") || null;
   }
 
+  // Column header targets are matched by their own text combined with the
+  // aria-label of the ancestor role="table" wrapper, since Voyant gives each
+  // Year View variant (Investment Details, Pension Details, etc.) its own
+  // aria-label, and the header divs themselves carry no id/for.
+  function getColumnHeaderKey(el) {
+    const table = el.closest('[role="table"][aria-label]');
+    if (!table) return null;
+    const tableLabel = table.getAttribute("aria-label");
+    const text = el.textContent.trim().replace(/\s+/g, " ");
+    const match = (window.SHACKADEMY_COLUMN_HEADERS || []).find(
+      (c) => c.tableLabel === tableLabel && c.columnText === text,
+    );
+    return match ? match.key : null;
+  }
+
+  function getTargetKey(el) {
+    if (el.tagName === "LABEL") {
+      return getLabelKey(el);
+    }
+    if (el.getAttribute("role") === "columnheader") {
+      return getColumnHeaderKey(el);
+    }
+    return null;
+  }
+
+  // Reads the tax year off Voyant's year selector (data-test-year) and
+  // returns tokens for substitution into help text. Returns null if not found.
+  function getCurrentTaxYear() {
+    const el = document.querySelector("[data-test-year]");
+    if (!el) return null;
+    const year = parseInt(el.getAttribute("data-test-year"), 10);
+    return Number.isNaN(year) ? null : year;
+  }
+
+  function interpolateHelpText(html) {
+    const year = getCurrentTaxYear();
+    if (year === null) return html;
+    const nextYearShort = String(year + 1).slice(-2);
+    return html
+      .replace(/\{\{TAX_YEAR\}\}/g, year)
+      .replace(/\{\{TAX_YEAR_RANGE\}\}/g, `${year}/${nextYearShort}`);
+  }
+
+  // Rewrites Voyant's year dropdown label (e.g. "2026") to a tax year range
+  // (e.g. "2026/27"), based on the data-test-year attribute. Re-run on every
+  // enhancement pass so it stays correct if the user changes year.
+  function updateYearLabels() {
+    document.querySelectorAll("[data-test-year]").forEach((wrapper) => {
+      const year = parseInt(wrapper.getAttribute("data-test-year"), 10);
+      if (Number.isNaN(year)) return;
+
+      const label = wrapper.querySelector(
+        "button[data-dropdown-button] > span",
+      );
+      if (!label) return;
+
+      const nextYearShort = String(year + 1).slice(-2);
+      const expected = `${year}/${nextYearShort}`;
+
+      if (label.textContent.trim() !== expected) {
+        label.textContent = expected;
+      }
+    });
+  }
+
   function toEmbedUrl(url) {
     if (!url) return null;
     try {
@@ -185,11 +250,16 @@
 
   // Extract segments from Voyant's hash URL
   // Hash format: #/userId/planId/edit/itemId/tab
+  // Year View has its own shorter route: #/userId/planId/year-view
   function parseHash() {
     const parts = window.location.hash.split("/");
+    if (parts[3] === "year-view") {
+      return { itemId: null, tab: null, isYearView: true };
+    }
     return {
       itemId: parts.length >= 5 ? parts[4] : null,
       tab: parts.length >= 6 ? parts[5].toLowerCase() : null,
+      isYearView: false,
     };
   }
 
@@ -198,7 +268,15 @@
   // ---------------------------------------------------------------------------
 
   function detectPageContext() {
-    const { itemId: newItemId, tab: newTab } = parseHash();
+    const { itemId: newItemId, tab: newTab, isYearView } = parseHash();
+
+    if (isYearView) {
+      currentItemId = null;
+      currentTabKey = null;
+      currentSectionKey = "yearView";
+      updateContextPanel();
+      return;
+    }
 
     // Tab changed within same item - update tab key and re-render, keep section
     if (newItemId && newItemId === currentItemId && currentSectionKey) {
@@ -262,56 +340,71 @@
   // ---------------------------------------------------------------------------
 
   function findTargets() {
-    return Array.from(document.querySelectorAll("label")).filter((el) => {
-      const key = getLabelKey(el);
+    const labels = Array.from(document.querySelectorAll("label")).filter(
+      (el) => {
+        const key = getTargetKey(el);
+        return key && fieldMap.has(key);
+      },
+    );
+    const columnHeaders = Array.from(
+      document.querySelectorAll('div[role="columnheader"]'),
+    ).filter((el) => {
+      const key = getTargetKey(el);
       return key && fieldMap.has(key);
     });
+    return [...labels, ...columnHeaders];
   }
 
-  function enhanceTarget(labelEl) {
-    if (labelEl.getAttribute(ENHANCED_ATTR) === "true") return;
+  function enhanceTarget(targetEl) {
+    if (targetEl.getAttribute(ENHANCED_ATTR) === "true") return;
 
-    const key = getLabelKey(labelEl);
+    const key = getTargetKey(targetEl);
     const field = fieldMap.get(key);
     if (!field) return;
 
-    labelEl.setAttribute(ENHANCED_ATTR, "true");
-    labelEl.classList.add("shackademy-enhanced");
-    labelEl.setAttribute("role", "button");
-    labelEl.setAttribute("tabindex", "0");
-    labelEl.setAttribute("aria-haspopup", "dialog");
-    labelEl.setAttribute(
+    targetEl.setAttribute(ENHANCED_ATTR, "true");
+    targetEl.classList.add("shackademy-enhanced");
+    targetEl.setAttribute("tabindex", "0");
+    targetEl.setAttribute("aria-haspopup", "dialog");
+    targetEl.setAttribute(
       "aria-label",
       `Open Shackademy help for ${field.label}`,
     );
 
-    if (!labelEl.querySelector(`.${BADGE_CLASS}`)) {
+    // Only labels get role="button", we don't want to overwrite Voyant's own
+    // role="columnheader" on the Year View table headers.
+    if (targetEl.tagName === "LABEL") {
+      targetEl.setAttribute("role", "button");
+    }
+
+    if (!targetEl.querySelector(`.${BADGE_CLASS}`)) {
       const badge = document.createElement("span");
       badge.className = BADGE_CLASS;
       badge.textContent = "?";
       badge.setAttribute("aria-hidden", "true");
-      labelEl.appendChild(badge);
+      targetEl.appendChild(badge);
     }
 
-    labelEl.addEventListener("click", (e) => {
+    targetEl.addEventListener("click", (e) => {
       e.preventDefault();
       e.stopPropagation();
       openModal(field);
     });
 
-    labelEl.addEventListener("keydown", (e) => {
+    targetEl.addEventListener("keydown", (e) => {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
         openModal(field);
       }
     });
 
-    visibleFields.set(key, { field, el: labelEl });
+    visibleFields.set(key, { field, el: targetEl });
     return true;
   }
 
   function runEnhancement() {
     const anyNew = findTargets().map(enhanceTarget).some(Boolean);
+    updateYearLabels();
     if (anyNew) {
       updateFieldsPanel();
       updateContextPanel();
@@ -408,7 +501,7 @@
       ${tabsHTML}
       <div id="shackademy-modal-body">
         <div class="shackademy-panel active" data-panel="details" role="tabpanel">
-          <div class="shackademy-help-content">${field.helpText}</div>
+          <div class="shackademy-help-content">${interpolateHelpText(field.helpText)}</div>
           ${lessonButtonHTML}
         </div>
         ${videoPanelHTML}
@@ -754,7 +847,7 @@
         visibleFields.clear();
 
         findTargets().forEach((labelEl) => {
-          const key = getLabelKey(labelEl);
+          const key = getTargetKey(labelEl);
           const field = fieldMap.get(key);
 
           if (field) {
