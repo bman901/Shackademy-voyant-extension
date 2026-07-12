@@ -110,6 +110,11 @@ window.SHACKADEMY_LESSONS = {
     url: "https://shackademy.com/path-player?courseid=voyant&unit=67cf5bde70f0985195087f7aUnit",
   },
 
+  "year-view": {
+    title: "Problem Solving Using Year View",
+    url: "https://shackademy.com/path-player?courseid=voyant&unit=67c8dfa058ae6fc357008ab5Unit",
+  },
+
   "estate-plan": {
     title: "Voyant Help - Entering an Estate Plan",
     url: "https://support.planwithvoyant.com/hc/en-us/articles/49450955718811-How-to-add-an-Estate-Plan-UK",

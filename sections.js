@@ -1518,15 +1518,23 @@ window.SHACKADEMY_SECTIONS = {
 
   yearView: {
     name: "Year View",
-    lessons: ["intro-to-voyant"],
+    lessons: ["year-view"],
     tabs: {
       basics: {
         description: `
-          <p>Year View shows a <strong>year by year breakdown</strong> of every account in the plan, split across separate tables for Investments, Pensions, Property, and Debts.</p>
+          <p>Year View shows a <strong>year by year breakdown</strong> of every account in the plan, split across separate tables for Cash Flow (income), Expenses, Investments, Pensions, Property, Debts, Protection (insurance), and Taxes.</p>
+          <p>You can navigate through years in any of the following ways:</p>
           <ul>
-            <li>Use the year selector at the top to move through the plan year by year</li>
+            <li>Use the arrow keys on your keyboard</li>
+            <li>Use the floating arrows on the left and right of the screen</li>
+            <li>Use the slider in the middle of the page (under the graph, and above the tab headings)</li>
+            <li>Use the year selector at the top right of the page</li>
+          </ul>
+          <p>Other notes:</p>
+          <ul>
             <li>Each table shows the account's balance at the end of that year, along with growth, contributions, and withdrawals where relevant</li>
             <li>This is a useful place to check that transfers, withdrawals, and growth assumptions are behaving as expected</li>
+            <li>To view these figures in real money terms, navigate to Dashboard, select the three vertical dots in the top right corner (next to 'Year View') and select 'Real Money' - you can't make this change in Year View itself</li>
           </ul>
         `,
       },
